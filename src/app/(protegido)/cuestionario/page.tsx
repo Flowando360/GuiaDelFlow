@@ -1,6 +1,6 @@
 import { redirect } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
-import { PASOS } from '@/lib/cuestionario/estructura';
+import { PASOS, codigosDelPaso } from '@/lib/cuestionario/estructura';
 import { CuestionarioForm } from './CuestionarioForm';
 
 type RespuestasJson = Record<string, unknown>;
@@ -18,7 +18,9 @@ function calcularPasoDeInicio(respuestas: RespuestasJson): number {
     } else if (paso.tipo === 'cuestionamientos') {
       const campos = ['razon', 'cuestionamiento_1', 'cuestionamiento_2', 'cuestionamiento_3'];
       if (campos.some((c) => !cuestionamientos[c])) return i;
-    } else if (paso.tipo === 'likert' || paso.tipo === 'ninez') {
+    } else if (paso.tipo === 'likert') {
+      if (codigosDelPaso(paso).some((c) => likert[c] === undefined)) return i;
+    } else if (paso.tipo === 'ninez') {
       if (paso.codigos.some((c) => likert[c] === undefined)) return i;
     }
   }

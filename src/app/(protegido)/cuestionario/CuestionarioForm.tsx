@@ -2,7 +2,14 @@
 
 import { useState, useTransition } from 'react';
 import Image from 'next/image';
-import { PASOS, TOTAL_PASOS, IMAGEN_POR_PASO, textoPregunta, opcionesPregunta } from '@/lib/cuestionario/estructura';
+import {
+  PASOS,
+  TOTAL_PASOS,
+  IMAGEN_POR_PASO,
+  textoPregunta,
+  opcionesPregunta,
+  codigosDelPaso,
+} from '@/lib/cuestionario/estructura';
 import { IMG } from '@/lib/imagenesWeb';
 import { guardarPaso, finalizarCuestionario } from './actions';
 
@@ -51,8 +58,9 @@ export function CuestionarioForm({
         if (!cuestionamientos[c]) return 'Completá los 4 campos antes de seguir.';
       }
     } else if (paso.tipo === 'likert' || paso.tipo === 'ninez') {
-      for (const codigo of paso.codigos) {
-        if (likert[codigo] === undefined) return 'Respondé todas las preguntas de esta pantalla antes de seguir.';
+      const codigos = paso.tipo === 'likert' ? codigosDelPaso(paso) : paso.codigos;
+      for (const codigo of codigos) {
+        if (likert[codigo] === undefined) return 'Responde todas las preguntas de esta pantalla antes de seguir.';
       }
     }
     return null;
@@ -63,8 +71,9 @@ export function CuestionarioForm({
     if (paso.tipo === 'cuestionamientos') return { cuestionamientos };
     // likert / ninez: solo mandamos los códigos de ESTE paso, el server
     // hace merge con lo que ya había en otros pasos.
+    const codigos = paso.tipo === 'likert' ? codigosDelPaso(paso) : paso.codigos;
     const parcial: RespuestasJson = {};
-    for (const codigo of paso.codigos) parcial[codigo] = likert[codigo];
+    for (const codigo of codigos) parcial[codigo] = likert[codigo];
     return { likert: parcial };
   }
 
@@ -133,7 +142,23 @@ export function CuestionarioForm({
             {paso.tipo === 'cuestionamientos' && (
               <PasoCuestionamientos valores={cuestionamientos} onCambiar={setCuestionamientos} />
             )}
-            {(paso.tipo === 'likert' || paso.tipo === 'ninez') && (
+            {paso.tipo === 'likert' &&
+              paso.bloques.map((bloque, i) => (
+                <div key={bloque.id} className={i > 0 ? 'border-t border-flow-100 pt-6' : undefined}>
+                  {paso.bloques.length > 1 && (
+                    <h2 className="mb-4 text-sm font-bold uppercase tracking-wide text-flow-600">{bloque.titulo}</h2>
+                  )}
+                  <div className="space-y-6">
+                    <PasoPreguntas
+                      codigos={bloque.codigos}
+                      tipo="likert"
+                      valores={likert}
+                      onCambiar={(codigo, valor) => setLikert((prev) => ({ ...prev, [codigo]: valor }))}
+                    />
+                  </div>
+                </div>
+              ))}
+            {paso.tipo === 'ninez' && (
               <PasoPreguntas
                 key={paso.id}
                 codigos={paso.codigos}

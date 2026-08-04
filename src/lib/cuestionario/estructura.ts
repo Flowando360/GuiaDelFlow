@@ -41,12 +41,24 @@ export interface PasoCuestionamientos {
   subtitulo: string;
 }
 
+/**
+ * Un bloque = un aspecto (los mismos 5 códigos de siempre, sin tocar).
+ * Varios bloques pueden convivir en una sola pantalla (ver PasoLikert) —
+ * eso es lo único que cambia: la cantidad de pantallas, no las preguntas
+ * ni el cálculo.
+ */
+export interface BloqueLikert {
+  id: string; // nombre del aspecto, igual al que usa el motor de cálculo
+  titulo: string;
+  codigos: string[];
+}
+
 export interface PasoLikert {
   tipo: 'likert';
-  id: string; // nombre del aspecto (Dependencia, Pasado, ...)
+  id: string; // slug de la pantalla (puede agrupar 1 o más aspectos)
   titulo: string;
   subtitulo: string;
-  codigos: string[];
+  bloques: BloqueLikert[];
 }
 
 export interface PasoNinez {
@@ -59,10 +71,18 @@ export interface PasoNinez {
 
 export type Paso = PasoDemografico | PasoCuestionamientos | PasoLikert | PasoNinez;
 
+/** Todos los códigos Likert de un paso (sea de 1 o varios bloques). */
+export function codigosDelPaso(paso: PasoLikert): string[] {
+  return paso.bloques.flatMap((b) => b.codigos);
+}
+
 // ── El cuestionario completo, paso a paso ──────────────────────────────
 // El nombre/email ya se capturan en el registro (cuenta), no se repiten
-// acá. El orden temático de los bloques Likert sigue el mismo que
-// flowando_kb/calculation_order.json.
+// acá. Los 15 aspectos Likert siguen siendo exactamente los mismos que
+// calcula el motor (flowando_kb/calculation_order.json) — lo único que
+// cambió acá es cómo se agrupan en pantallas, para acortar el
+// cuestionario sin tocar ni una pregunta ni un resultado (pedido del
+// usuario 2026-08-04, después de terminar de responderlo una vez).
 
 export const PASOS: Paso[] = [
   {
@@ -107,115 +127,109 @@ export const PASOS: Paso[] = [
   },
   {
     tipo: 'likert',
-    id: 'Dependencia',
-    titulo: 'En cuanto a la atención de los demás',
+    id: 'pasado-felicidad',
+    titulo: 'En cuanto a tu bienestar y tu relación con el pasado',
     subtitulo: 'Responde de acuerdo a tus comportamientos habituales.',
-    codigos: [...CODIGOS_SUMA_LIKERT.Dependencia],
+    bloques: [
+      { id: 'Pasado', titulo: 'Tu relación con el pasado', codigos: [...CODIGOS_SUMA_LIKERT.Pasado] },
+      { id: 'Felicidad', titulo: 'Tu bienestar y satisfacción', codigos: [...CODIGOS_SUMA_LIKERT.Felicidad] },
+    ],
   },
   {
     tipo: 'likert',
-    id: 'Pasado',
-    titulo: 'En cuanto a tu relación con el pasado',
+    id: 'dependencia-pertenencia',
+    titulo: 'En cuanto a la atención de los demás y tu sentido de pertenencia',
     subtitulo: 'Responde de acuerdo a tus comportamientos habituales.',
-    codigos: [...CODIGOS_SUMA_LIKERT.Pasado],
+    bloques: [
+      { id: 'Dependencia', titulo: 'La atención de los demás', codigos: [...CODIGOS_SUMA_LIKERT.Dependencia] },
+      { id: 'Pertenencia', titulo: 'Tu sentido de pertenencia', codigos: [...CODIGOS_SUMA_LIKERT.Pertenencia] },
+    ],
   },
   {
     tipo: 'likert',
-    id: 'Compromiso',
-    titulo: 'En cuanto a cómo sostienes tus compromisos',
+    id: 'compromiso-responsabilidad',
+    titulo: 'En cuanto a tus compromisos y tu responsabilidad',
     subtitulo: 'Responde de acuerdo a tus comportamientos habituales.',
-    codigos: [...CODIGOS_SUMA_LIKERT.Compromiso],
+    bloques: [
+      { id: 'Compromiso', titulo: 'Cómo sostienes tus compromisos', codigos: [...CODIGOS_SUMA_LIKERT.Compromiso] },
+      {
+        id: 'Responsabilidad',
+        titulo: 'Cómo asumes tu responsabilidad',
+        codigos: [...CODIGOS_SUMA_LIKERT.Responsabilidad],
+      },
+    ],
   },
   {
     tipo: 'likert',
-    id: 'Responsabilidad',
-    titulo: 'En cuanto a cómo asumes tu responsabilidad',
+    id: 'cambios-recursividad',
+    titulo: 'En cuanto a cómo te adaptas y resuelves',
     subtitulo: 'Responde de acuerdo a tus comportamientos habituales.',
-    codigos: [...CODIGOS_SUMA_LIKERT.Responsabilidad],
+    bloques: [
+      { id: 'Cambios', titulo: 'Cómo vives los cambios', codigos: [...CODIGOS_SUMA_LIKERT.Cambios] },
+      {
+        id: 'Recursividad',
+        titulo: 'Tu creatividad para resolver',
+        codigos: [...CODIGOS_SUMA_LIKERT.Recursividad],
+      },
+    ],
   },
   {
     tipo: 'likert',
-    id: 'Felicidad',
-    titulo: 'En cuanto a tu bienestar y satisfacción',
+    id: 'equipo-comunicacion',
+    titulo: 'En cuanto a cómo trabajas y te comunicas con otros',
     subtitulo: 'Responde de acuerdo a tus comportamientos habituales.',
-    codigos: [...CODIGOS_SUMA_LIKERT.Felicidad],
+    bloques: [
+      {
+        id: 'TrabajoEnEquipo',
+        titulo: 'Cómo trabajas con otros',
+        codigos: [...CODIGOS_SUMA_LIKERT.TrabajoEnEquipo],
+      },
+      { id: 'Comunicación', titulo: 'Cómo te comunicas', codigos: [...CODIGOS_SUMA_LIKERT.Comunicación] },
+    ],
   },
   {
     tipo: 'likert',
-    id: 'Cambios',
-    titulo: 'En cuanto a cómo vives los cambios',
+    id: 'liderazgo',
+    titulo: 'En cuanto a tu forma de liderar e inspirar',
     subtitulo: 'Responde de acuerdo a tus comportamientos habituales.',
-    codigos: [...CODIGOS_SUMA_LIKERT.Cambios],
+    bloques: [
+      { id: 'Liderazgo_1', titulo: 'Tu forma de liderar', codigos: [...CODIGOS_SUMA_LIKERT.Liderazgo_1] },
+      { id: 'Liderazgo_2', titulo: 'Cómo inspiras a otros', codigos: [...CODIGOS_SUMA_LIKERT.Liderazgo_2] },
+    ],
   },
   {
     tipo: 'likert',
-    id: 'TrabajoEnEquipo',
-    titulo: 'En cuanto a cómo trabajas con otros',
+    id: 'negociacion-frustracion',
+    titulo: 'En cuanto a cómo resuelves desacuerdos y frustraciones',
     subtitulo: 'Responde de acuerdo a tus comportamientos habituales.',
-    codigos: [...CODIGOS_SUMA_LIKERT.TrabajoEnEquipo],
+    bloques: [
+      { id: 'Negociación', titulo: 'Cómo resuelves desacuerdos', codigos: [...CODIGOS_SUMA_LIKERT.Negociación] },
+      {
+        id: 'Frustración',
+        titulo: 'Cómo enfrentas la frustración',
+        codigos: [...CODIGOS_SUMA_LIKERT.Frustración],
+      },
+    ],
   },
   {
     tipo: 'likert',
-    id: 'Liderazgo_1',
-    titulo: 'En cuanto a tu forma de liderar',
-    subtitulo: 'Responde de acuerdo a tus comportamientos habituales.',
-    codigos: [...CODIGOS_SUMA_LIKERT.Liderazgo_1],
-  },
-  {
-    tipo: 'likert',
-    id: 'Liderazgo_2',
-    titulo: 'En cuanto a cómo inspiras a otros',
-    subtitulo: 'Responde de acuerdo a tus comportamientos habituales.',
-    codigos: [...CODIGOS_SUMA_LIKERT.Liderazgo_2],
-  },
-  {
-    tipo: 'likert',
-    id: 'Comunicación',
-    titulo: 'En cuanto a cómo te comunicas',
-    subtitulo: 'Responde de acuerdo a tus comportamientos habituales.',
-    codigos: [...CODIGOS_SUMA_LIKERT.Comunicación],
-  },
-  {
-    tipo: 'likert',
-    id: 'Negociación',
-    titulo: 'En cuanto a cómo resuelves desacuerdos',
-    subtitulo: 'Responde de acuerdo a tus comportamientos habituales.',
-    codigos: [...CODIGOS_SUMA_LIKERT.Negociación],
-  },
-  {
-    tipo: 'likert',
-    id: 'Inteligencias',
-    titulo: 'Tu lugar de brillo',
-    subtitulo: 'Nueve formas distintas de ser inteligente — marca qué tan de acuerdo estás con cada una.',
-    codigos: [...CODIGOS_INTELIGENCIAS],
-  },
-  {
-    tipo: 'likert',
-    id: 'Frustración',
-    titulo: 'En cuanto a cómo enfrentas la frustración',
-    subtitulo: 'Responde de acuerdo a tus comportamientos habituales.',
-    codigos: [...CODIGOS_SUMA_LIKERT.Frustración],
-  },
-  {
-    tipo: 'likert',
-    id: 'Recursividad',
-    titulo: 'En cuanto a tu creatividad para resolver',
-    subtitulo: 'Responde de acuerdo a tus comportamientos habituales.',
-    codigos: [...CODIGOS_SUMA_LIKERT.Recursividad],
-  },
-  {
-    tipo: 'likert',
-    id: 'Estabilidad_Emocional',
+    id: 'estabilidad',
     titulo: 'En cuanto a tu equilibrio emocional',
     subtitulo: 'Responde de acuerdo a tus comportamientos habituales.',
-    codigos: [...CODIGOS_SUMA_LIKERT.Estabilidad_Emocional],
+    bloques: [
+      {
+        id: 'Estabilidad_Emocional',
+        titulo: 'Tu equilibrio emocional',
+        codigos: [...CODIGOS_SUMA_LIKERT.Estabilidad_Emocional],
+      },
+    ],
   },
   {
     tipo: 'likert',
-    id: 'Pertenencia',
-    titulo: 'En cuanto a tu sentido de pertenencia',
-    subtitulo: 'Responde de acuerdo a tus comportamientos habituales.',
-    codigos: [...CODIGOS_SUMA_LIKERT.Pertenencia],
+    id: 'inteligencias',
+    titulo: 'Tu lugar de brillo',
+    subtitulo: 'Nueve formas distintas de ser inteligente — marca qué tan de acuerdo estás con cada una.',
+    bloques: [{ id: 'Inteligencias', titulo: 'Tu lugar de brillo', codigos: [...CODIGOS_INTELIGENCIAS] }],
   },
   {
     tipo: 'ninez',
@@ -232,21 +246,14 @@ export const TOTAL_PASOS = PASOS.length;
 export const IMAGEN_POR_PASO: Record<string, ClaveImagenWeb> = {
   'sobre-ti': 'eureka',
   cuestionamientos: 'escribe',
-  Dependencia: 'triste',
-  Pasado: 'medita',
-  Compromiso: 'p5',
-  Responsabilidad: 'compu',
-  Felicidad: 'eureka',
-  Cambios: 'puente',
-  TrabajoEnEquipo: 'pmundo',
-  Liderazgo_1: 'p3',
-  Liderazgo_2: 'p6',
-  Comunicación: 'escena3',
-  Negociación: 'p2',
-  Inteligencias: 'eureka',
-  Frustración: 'triste',
-  Recursividad: 'ilumina',
-  Estabilidad_Emocional: 'medita',
-  Pertenencia: 'pmundo',
+  'pasado-felicidad': 'medita',
+  'dependencia-pertenencia': 'pmundo',
+  'compromiso-responsabilidad': 'compu',
+  'cambios-recursividad': 'puente',
+  'equipo-comunicacion': 'escena3',
+  liderazgo: 'p3',
+  'negociacion-frustracion': 'triste',
+  estabilidad: 'ilumina',
+  inteligencias: 'eureka',
   ninez: 'eureka',
 };
