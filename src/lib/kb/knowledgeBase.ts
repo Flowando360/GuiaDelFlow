@@ -35,7 +35,7 @@ import Talento_Innato from '../../../flowando_kb/knowledge_base/Talento_Innato.j
 import Talento_Potenciar from '../../../flowando_kb/knowledge_base/Talento_Potenciar.json';
 import TrabajoEnEquipo from '../../../flowando_kb/knowledge_base/TrabajoEnEquipo.json';
 
-import questionnaire from '../../../flowando_kb/questionnaire.json';
+export { questionnaire } from './questionnaire';
 
 /**
  * Los 30 aspectos, indexados por el mismo nombre que usa
@@ -75,5 +75,3 @@ export const KNOWLEDGE_BASE = {
 } as const;
 
 export type NombreAspecto = keyof typeof KNOWLEDGE_BASE;
-
-export { questionnaire };

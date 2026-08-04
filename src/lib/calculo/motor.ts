@@ -1,6 +1,8 @@
-import { KNOWLEDGE_BASE, questionnaire } from '../kb/knowledgeBase';
+import { KNOWLEDGE_BASE } from '../kb/knowledgeBase';
+import { questionnaire } from '../kb/questionnaire';
 import { reducirNumerologico, sumaDigitos } from './numerologia';
 import { calcularEdad, septenio, signoZodiacal } from './fechas';
+import { CODIGOS_SUMA_LIKERT } from './codigos';
 import type {
   DatosNacimiento,
   RespuestasCuestionario,
@@ -57,12 +59,6 @@ function sumaLikert(respuestas: RespuestasCuestionario, codigos: string[]): numb
   }, 0);
 }
 
-function rangoCodigos(desde: number, hasta: number): string[] {
-  const out: string[] = [];
-  for (let i = desde; i <= hasta; i++) out.push(`C${i}`);
-  return out;
-}
-
 // ── Niñez: letra más frecuente (ver README + calculation_order.json →
 //    detalle_calculo_ninez) ─────────────────────────────────────────────
 
@@ -110,24 +106,6 @@ function calcularInteligencias(respuestas: RespuestasCuestionario): ResultadoAsp
 }
 
 // ── Motor principal ──────────────────────────────────────────────────
-
-const CODIGOS_SUMA_LIKERT: Record<string, string[]> = {
-  Dependencia: rangoCodigos(9, 13),
-  Pasado: rangoCodigos(14, 18),
-  Compromiso: rangoCodigos(19, 23),
-  Responsabilidad: rangoCodigos(24, 28),
-  Felicidad: rangoCodigos(29, 33),
-  Cambios: rangoCodigos(34, 38),
-  TrabajoEnEquipo: rangoCodigos(39, 43),
-  Liderazgo_1: rangoCodigos(44, 48),
-  Liderazgo_2: rangoCodigos(49, 53),
-  Comunicación: rangoCodigos(54, 58),
-  Negociación: rangoCodigos(59, 63),
-  Frustración: rangoCodigos(73, 77),
-  Recursividad: rangoCodigos(78, 82),
-  Estabilidad_Emocional: rangoCodigos(83, 87),
-  Pertenencia: rangoCodigos(88, 92),
-};
 
 /**
  * Calcula los 30 aspectos en el orden obligatorio que documenta

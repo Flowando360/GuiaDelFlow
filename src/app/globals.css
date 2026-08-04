@@ -1,26 +1,32 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --flow-bg: #faf5ff;
+  --flow-text: #1e1b4b;
+  --flow-purple-50: #faf5ff;
+  --flow-purple-100: #ede9fe;
+  --flow-purple-200: #ddd6fe;
+  --flow-purple-400: #a855f7;
+  --flow-purple-600: #7c3aed;
+  --flow-purple-800: #5b21b6;
+  --flow-purple-900: #4c1d95;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-flow-bg: var(--flow-bg);
+  --color-flow-text: var(--flow-text);
+  --color-flow-50: var(--flow-purple-50);
+  --color-flow-100: var(--flow-purple-100);
+  --color-flow-200: var(--flow-purple-200);
+  --color-flow-400: var(--flow-purple-400);
+  --color-flow-600: var(--flow-purple-600);
+  --color-flow-800: var(--flow-purple-800);
+  --color-flow-900: var(--flow-purple-900);
+  --font-sans: var(--font-nunito);
+  --font-serif: var(--font-playfair);
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: linear-gradient(175deg, #faf5ff 0%, #f5f0ff 40%, #ede9fe 100%);
+  min-height: 100vh;
 }

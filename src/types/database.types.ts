@@ -8,7 +8,11 @@
  *   npm run db:types
  *
  * — y de ahí en adelante regenerar después de cada migración nueva, en vez
- * de editar este archivo a mano.
+ * de editar este archivo a mano. El campo `Relationships: []` y las
+ * secciones `Views`/`Functions` vacías son necesarias para que
+ * @supabase/supabase-js infiera bien los tipos (ver GenericSchema /
+ * GenericTable en su código fuente) — el generador oficial también los
+ * incluye siempre, aunque estén vacíos.
  */
 
 export type FlowDocumentoTipo = 'guia' | 'carta';
@@ -39,6 +43,7 @@ export interface Database {
           fecha_nacimiento?: string | null;
           created_at?: string;
         };
+        Relationships: [];
       };
       flow_cuestionarios: {
         Row: {
@@ -68,6 +73,7 @@ export interface Database {
           created_at?: string;
           updated_at?: string;
         };
+        Relationships: [];
       };
       flow_resultados: {
         Row: {
@@ -91,6 +97,7 @@ export interface Database {
           aspectos?: Record<string, any>;
           calculado_at?: string;
         };
+        Relationships: [];
       };
       flow_carta_intake: {
         Row: {
@@ -120,6 +127,7 @@ export interface Database {
           cuestionamiento_3?: string;
           created_at?: string;
         };
+        Relationships: [];
       };
       flow_documentos: {
         Row: {
@@ -152,7 +160,12 @@ export interface Database {
           generado_at?: string | null;
           created_at?: string;
         };
+        Relationships: [];
       };
     };
+    Views: Record<string, never>;
+    Functions: Record<string, never>;
+    Enums: Record<string, never>;
+    CompositeTypes: Record<string, never>;
   };
 }
