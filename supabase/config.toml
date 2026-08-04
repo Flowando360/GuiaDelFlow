@@ -1,0 +1,22 @@
+# Configuración local de Supabase CLI (para `supabase start` / desarrollo local).
+# El proyecto REMOTO real es el compartido con Círculo de Crecimiento
+# (ref zmpggzrmsuudxyjtobzy) — ver README.md.
+project_id = "guiadelflow"
+
+[api]
+enabled = true
+port = 55321
+
+[db]
+port = 55322
+
+[studio]
+enabled = true
+port = 55323
+
+[auth]
+enabled = true
+site_url = "http://localhost:3000"
+additional_redirect_urls = ["https://localhost:3000"]
+jwt_expiry = 3600
+enable_signup = true
