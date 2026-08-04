@@ -4,8 +4,8 @@
  * incrustarlas en el PDF). Acá alcanza con la ruta pública normal, ya que
  * Next.js sirve todo lo que está en public/ tal cual.
  *
- * Se usan solo los nombres de archivo SIN espacios para no lidiar con
- * URL-encoding en el src de las imágenes.
+ * La mayoría son nombres de archivo sin espacios; las pocas "escenaN" que
+ * sí los tienen van con encodeURI para que el navegador las pida bien.
  */
 const BASE = '/images/flow-optimizado';
 
@@ -24,6 +24,7 @@ export const IMG = {
   p6: `${BASE}/Personajes6.jpg`,
   pmundo: `${BASE}/PersonajesMundo.jpg`,
   edificio: `${BASE}/EdificioFlow.jpg`,
+  escena3: encodeURI(`${BASE}/escena 3.jpg`), // dos personajes conversando
 } as const;
 
 export type ClaveImagenWeb = keyof typeof IMG;

@@ -241,7 +241,7 @@ export const IMAGEN_POR_PASO: Record<string, ClaveImagenWeb> = {
   TrabajoEnEquipo: 'pmundo',
   Liderazgo_1: 'p3',
   Liderazgo_2: 'p6',
-  Comunicación: 'escribe',
+  Comunicación: 'escena3',
   Negociación: 'p2',
   Inteligencias: 'eureka',
   Frustración: 'triste',
