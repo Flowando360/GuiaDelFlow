@@ -1,0 +1,39 @@
+{
+  "sheet": "Estabilidad_Emocional",
+  "tipo_calculo": "suma_likert",
+  "preambulo": [
+    "La Emocionalidad",
+    "Estabilidad emocional - El arte de mantenerse en equilibrio",
+    "Suma C83-C87"
+  ],
+  "num_resultados": 3,
+  "resultados": [
+    {
+      "min": 5.0,
+      "max": 10.0,
+      "introduccion": "Las emociones están en todo lo que hacemos: unas nos impulsan, otras nos retan, pero todas nos enseñan. Gestionarlas con inteligencia no significa reprimirlas, sino entenderlas y usarlas a nuestro favor. Cuando encontramos equilibrio en nuestro mundo interno, tomamos mejores decisiones, nos adaptamos sin perder el rumbo y construimos relaciones más sanas. No se trata de evitar sentir, sino de transformar cada emoción en una herramienta de crecimiento.",
+      "titulo": "Baja estabilidad emocional",
+      "descripcion": "Tus emociones pueden ser intensas, y eso no es algo malo. Significa que sientes profundamente, que todo te importa, que tu mundo interior está lleno de vida. Sin embargo, a veces, esas emociones pueden desbordarse y tomar el control de tus decisiones o relaciones. Tal vez reaccionas con rapidez, y luego te cuesta volver al equilibrio. Es natural, especialmente si estás atravesando momentos de cambio o estrés. Pero también es posible aprender a canalizar lo que sientes sin que te gobierne. Puedes desarrollar herramientas para respirar antes de reaccionar, para ponerle nombre a lo que vives y decidir cómo responder. No se trata de ser perfecto, sino de conocerte y crear un espacio interno más estable. Tu sensibilidad es una fuerza poderosa. Solo necesitas darle dirección y cuidado. Estás en el camino. Y cada paso que das hacia el equilibrio emocional, es también un paso hacia tu libertad y plenitud.",
+      "recomendacion": "Practica la autorregulación emocional con ejercicios de respiración y mindfulness. Cuando te enfrentes a una situación desafiante, pregúntate: ¿Estoy reaccionando desde la emoción o desde la razón? Escribe sobre lo que sientes para procesarlo mejor y busca estrategias como el anclaje emocional, donde recuerdas un momento de calma antes de responder impulsivamente.",
+      "reflexion": "Sentir mucho no es debilidad, es una invitación a conocerte mejor. A veces, lo más valiente es pausar, observar lo que pasa dentro y aprender a sostenerte. Tu bienestar no depende de lo externo, sino de cómo decides habitarte. Cultiva tu calma, que incluso en el caos, tú puedes ser tu refugio."
+    },
+    {
+      "min": 11.0,
+      "max": 18.0,
+      "introduccion": "Las emociones están en todo lo que hacemos: unas nos impulsan, otras nos retan, pero todas nos enseñan. Gestionarlas con inteligencia no significa reprimirlas, sino entenderlas y usarlas a nuestro favor. Cuando encontramos equilibrio en nuestro mundo interno, tomamos mejores decisiones, nos adaptamos sin perder el rumbo y construimos relaciones más sanas. No se trata de evitar sentir, sino de transformar cada emoción en una herramienta de crecimiento.",
+      "titulo": "Moderada estabilidad emocional",
+      "descripcion": "Por lo general, manejas bien tus emociones, aunque hay momentos donde sientes que podrías tener más control. Sabes identificar lo que sientes, pero cuando la presión aumenta, a veces cuesta sostener la calma. Eso no te hace débil, te hace humano. Estás en un punto de equilibrio: ya no vives dominado por tus emociones, pero aún estás construyendo tu propia estabilidad interior. Lo valioso es que reconoces tus límites y estás dispuesto a fortalecerlos. Esta conciencia te permite crecer con intención. Aprender a gestionar las emociones no significa reprimirlas, sino permitirte transitarlas con más sabiduría. Puedes apoyarte en herramientas como la respiración consciente, la escritura, la escucha o la pausa. Tu camino emocional ya está en marcha. Cada situación difícil que enfrentas es una oportunidad para afinar tu respuesta y seguir creciendo. Confía: estás cada vez más cerca de ese estado interno donde habita tu verdadera fuerza.",
+      "recomendacion": "Trabaja en fortalecer tu capacidad de afrontamiento con técnicas como la reestructuración cognitiva, que consiste en cuestionar pensamientos negativos y reformularlos en ideas más constructivas. Pregúntate: ¿Estoy viendo esta situación desde una perspectiva equilibrada? También puede ayudarte llevar un diario emocional para identificar patrones y mejorar tu respuesta ante el estrés.",
+      "reflexion": "Ya has descubierto que sentir con consciencia es una fuerza. No reprimes, exploras. No te frenas, eliges. Esa conexión contigo te permite avanzar con equilibrio, incluso cuando algo se sacude dentro. Cuida ese espacio emocional que has construido. Tu centro es la brújula que te mantiene en ruta."
+    },
+    {
+      "min": 19.0,
+      "max": 25.0,
+      "introduccion": "Las emociones están en todo lo que hacemos: unas nos impulsan, otras nos retan, pero todas nos enseñan. Gestionarlas con inteligencia no significa reprimirlas, sino entenderlas y usarlas a nuestro favor. Cuando encontramos equilibrio en nuestro mundo interno, tomamos mejores decisiones, nos adaptamos sin perder el rumbo y construimos relaciones más sanas. No se trata de evitar sentir, sino de transformar cada emoción en una herramienta de crecimiento.",
+      "titulo": "Alta estabilidad emocional",
+      "descripcion": "Tienes un equilibrio interno sólido, que se nota en tu forma de actuar, decidir y acompañar a otros. Sabes manejar tus emociones con madurez, responder con calma ante el estrés y adaptarte a los cambios sin perder el rumbo. Tu capacidad para mantener la serenidad en momentos desafiantes te convierte en una persona confiable, inspiradora y con una visión clara. Esta estabilidad no significa frialdad, sino presencia consciente. Sabes cuándo expresar lo que sientes y cómo hacerlo de forma que construya, no que destruya. Tu inteligencia emocional es una fortaleza que impacta positivamente en tus relaciones, en tus decisiones y en tu bienestar general. Sigue cultivando ese centro interno: con prácticas que te conecten contigo, con momentos de pausa y con vínculos que sumen. Estás en un lugar donde tu calma se vuelve guía para otros. Y esa capacidad de sostener, en medio del caos, es una forma hermosa de liderazgo.",
+      "recomendacion": "Sigue cultivando tu estabilidad emocional ayudando a otros a gestionar mejor sus emociones. Pregúntate: ¿Cómo puedo compartir mis estrategias para el manejo del estrés con quienes lo necesitan? También es importante recordar que está bien expresar emociones intensas cuando sea necesario, ya que la estabilidad emocional no significa reprimir, sino saber canalizar.",
+      "reflexion": "Habitarte con serenidad te hace poderoso. Tu estabilidad no niega lo que sientes, lo abraza con madurez y perspectiva. Eres un faro, incluso en mares revueltos. Sigue cultivando esa paz que no depende de lo externo. Tu interior es tu punto de partida, tu ancla, tu mayor herramienta para transformar."
+    }
+  ]
+}

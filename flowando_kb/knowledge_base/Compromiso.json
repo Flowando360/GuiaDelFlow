@@ -1,0 +1,39 @@
+{
+  "sheet": "Compromiso",
+  "tipo_calculo": "suma_likert",
+  "preambulo": [
+    "Determinación con Alma",
+    "Capacidad de compromiso - La fuerza detrás de nuestras decisiones",
+    "Suma C19-C23"
+  ],
+  "num_resultados": 3,
+  "resultados": [
+    {
+      "min": 5.0,
+      "max": 10.0,
+      "introduccion": "Empezar algo nuevo es emocionante, pero el verdadero desafío está en seguir cuando la motivación baja y los obstáculos aparecen. Terminar lo que iniciamos no solo nos da satisfacción, sino que fortalece nuestra confianza, disciplina y propósito. Cada meta alcanzada, por pequeña que sea, nos recuerda que somos capaces. El éxito no está solo en comenzar, sino en tener la determinación de llegar hasta el final.",
+      "titulo": "Dificultad para finalizar proyectos",
+      "descripcion": "Tiendes a dejar proyectos inconclusos, lo cual puede estar relacionado con una pérdida de motivación, falta de planificación o incluso miedo a no cumplir las expectativas. Inicias con entusiasmo, pero al avanzar, es posible que otros intereses o distracciones te desvíen de tu objetivo inicial. Esta tendencia no significa falta de capacidad, sino que podrías necesitar fortalecer tu enfoque, establecer objetivos más claros o trabajar en tu confianza personal. Reconocer este patrón es el primer paso para transformar la energía de inicio en constancia. Con las herramientas adecuadas, puedes canalizar tu impulso creativo hacia la concreción, creando una nueva relación con los desafíos y llevándolos hasta el final. ¡Tienes el poder de construir desde la intención y cerrar con éxito lo que te propones!",
+      "recomendacion": "Trabaja en desarrollar hábitos de constancia. Una técnica útil es la regla de los dos minutos: cuando sientas que procrastinas, comprométete a trabajar en la tarea solo por dos minutos. Muchas veces, esto te impulsará a seguir. También puedes dividir tus proyectos en micro-metas, celebrando cada pequeño avance para mantenerte motivado/a.",
+      "reflexion": "A veces cuesta cerrar lo que empezamos, pero hacerlo fortalece tu confianza. Terminar un proyecto es recordarte que puedes avanzar. Las cosas inconclusas pesan; lo que completas, te libera. Hoy es un buen día para demostrarte que puedes llegar al final. Tu poder está en terminar."
+    },
+    {
+      "min": 11.0,
+      "max": 18.0,
+      "introduccion": "Empezar algo nuevo es emocionante, pero el verdadero desafío está en seguir cuando la motivación baja y los obstáculos aparecen. Terminar lo que iniciamos no solo nos da satisfacción, sino que fortalece nuestra confianza, disciplina y propósito. Cada meta alcanzada, por pequeña que sea, nos recuerda que somos capaces. El éxito no está solo en comenzar, sino en tener la determinación de llegar hasta el final.",
+      "titulo": "Terminación parcial de proyectos",
+      "descripcion": "Tienes la capacidad de finalizar algunas tareas, especialmente aquellas que despiertan tu interés o pasión. Sin embargo, es posible que cuando algo te parece tedioso, repetitivo o desafiante, te cueste mantener el ritmo o la motivación. Esto puede llevarte a dejar ciertas tareas a medias o postergarlas. No es falta de compromiso, sino una invitación a cultivar constancia, desarrollar técnicas de organización personal y establecer prioridades más claras. Trabajar desde el propósito también puede ayudarte a mantener el foco incluso en las etapas menos estimulantes del proceso. Recuerda que completar un proyecto no es solo cumplir una meta: es honrar tu energía creativa. ¡Tienes el potencial para equilibrar inspiración y disciplina y llegar más lejos con lo que empiezas!",
+      "recomendacion": "Encuentra tu motor interno. Pregúntate: ¿Por qué este proyecto es importante para mí? Si el interés no es suficiente, intenta gamificar el proceso, estableciendo recompensas por cada hito alcanzado. Además, prueba la técnica del bloqueo de tiempo, reservando momentos específicos del día para avanzar sin distracciones.",
+      "reflexion": "Estás en camino. Ya no se trata solo de empezar, sino de sostener y cerrar con intención. Cada cierre trae claridad, refuerza tu confianza y abre espacio para lo nuevo. No te exijas perfección, solo coherencia. Dar el último paso es honrar todo lo que ya recorriste hasta aquí."
+    },
+    {
+      "min": 19.0,
+      "max": 25.0,
+      "introduccion": "Empezar algo nuevo es emocionante, pero el verdadero desafío está en seguir cuando la motivación baja y los obstáculos aparecen. Terminar lo que iniciamos no solo nos da satisfacción, sino que fortalece nuestra confianza, disciplina y propósito. Cada meta alcanzada, por pequeña que sea, nos recuerda que somos capaces. El éxito no está solo en comenzar, sino en tener la determinación de llegar hasta el final.",
+      "titulo": "Alta disciplina y compromiso",
+      "descripcion": "Eres una persona que sabe cerrar ciclos. Tienes una gran capacidad para mantener el foco, organizarte y avanzar, incluso cuando los obstáculos aparecen. Tu nivel de compromiso te convierte en alguien confiable, constante y determinado. No necesitas motivación externa, porque tu impulso nace del propósito y del valor que encuentras en lo que haces. Esta fortaleza es un motor poderoso tanto en lo personal como en lo profesional. Al reconocer tus metas, sabes trazar un camino y sostenerlo hasta el final. Además, tu ejemplo puede inspirar a otros a desarrollar su propia disciplina desde la intención y la autonomía. ¡Sigue cultivando esa constancia con equilibrio y escucha interna! Lo que hoy construyes con compromiso será la base sólida de tus mayores logros.",
+      "recomendacion": "Asegúrate de que tu enfoque no se convierta en rigidez. Aunque es genial ser disciplinado/a, también es importante evaluar si los proyectos siguen alineados con tus objetivos y bienestar. De vez en cuando, pregúntate: ¿Estoy terminando esto porque realmente quiero o solo por cumplir? Recuerda que la flexibilidad también es parte del crecimiento.",
+      "reflexion": "Tu constancia es una fuerza transformadora. No solo inicias, también cierras. Terminar lo que comienzas es parte de tu esencia. Cada ciclo que completas fortalece tu liderazgo y claridad. Sigue así: comprometido con tus metas, fiel a tu camino. Eres ejemplo de evolución consciente."
+    }
+  ]
+}

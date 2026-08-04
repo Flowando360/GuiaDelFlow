@@ -1,0 +1,39 @@
+{
+  "sheet": "TrabajoEnEquipo",
+  "tipo_calculo": "suma_likert",
+  "preambulo": [
+    "Trabajo en Equipo",
+    "Trabajo en equipo - Construcción colectiva con propósito",
+    "Suma C39-C43"
+  ],
+  "num_resultados": 3,
+  "resultados": [
+    {
+      "min": 5.0,
+      "max": 10.0,
+      "introduccion": "Ningún gran logro se alcanza solo. Delegar y colaborar no solo hace el camino más ligero, sino que potencia el talento y fortalece conexiones. Cuando confiamos y distribuimos responsabilidades con inteligencia, cada persona aporta su valor y brilla en lo suyo. El éxito no está en hacerlo todo, sino en construir juntos, sumando habilidades y creando algo más grande de lo que podríamos lograr por separado.",
+      "titulo": "Dificultad para delegar y tendencia al control total",
+      "descripcion": "Sueles asumir la mayoría de las responsabilidades porque confías en tu capacidad y te cuesta dejar que otros tomen el control. Tal vez sientes que si tú no lo haces, no saldrá bien, o que es más rápido hacerlo por tu cuenta. Esta actitud te ha llevado lejos, pero también puede estar generando agotamiento, estrés o sensación de carga excesiva. Además, puede limitar el crecimiento de quienes te rodean, porque no les das el espacio para desarrollarse. Delegar no significa perder el control, sino multiplicar capacidades. Es una forma de construir confianza, de fomentar el talento y de crear equipos más fuertes. Puedes comenzar por pasos pequeños, entregando tareas con claridad y acompañamiento. Te sorprenderá lo que otros pueden aportar cuando se sienten responsables. Dejar ir no es debilidad: es estrategia, crecimiento y visión compartida. Cuando aprendes a soltar, todo fluye mejor. Incluso tú.",
+      "recomendacion": "Empieza delegando pequeñas tareas y observa los resultados. Define expectativas claras y ofrece retroalimentación en lugar de supervisión excesiva. Pregúntate: ¿Qué me impide confiar más en mi equipo? Recuerda que delegar no es una señal de debilidad, sino una estrategia inteligente para optimizar tu tiempo y potenciar el talento colectivo.",
+      "reflexion": "Controlarlo todo no es sinónimo de hacerlo bien. A veces, soltar es lo que libera tu verdadero potencial. Delegar no es perder poder, es multiplicarlo. Confiar en otros no te quita valor, te expande. El liderazgo real empieza cuando dejas de cargar solo y comienzas a construir en colectivo."
+    },
+    {
+      "min": 11.0,
+      "max": 18.0,
+      "introduccion": "Ningún gran logro se alcanza solo. Delegar y colaborar no solo hace el camino más ligero, sino que potencia el talento y fortalece conexiones. Cuando confiamos y distribuimos responsabilidades con inteligencia, cada persona aporta su valor y brilla en lo suyo. El éxito no está en hacerlo todo, sino en construir juntos, sumando habilidades y creando algo más grande de lo que podríamos lograr por separado.",
+      "titulo": "Delegación ocasional con cierta resistencia",
+      "descripcion": "Sabes que delegar es necesario y lo haces en ciertas situaciones, pero aún hay una parte de ti que quiere tener el control. Tal vez te cuesta confiar en que los demás hagan las cosas como tú esperas, o sientes que te toma más tiempo explicar que hacerlas tú mismo. Esta postura puede parecer práctica, pero con el tiempo limita tu energía y el desarrollo de quienes te rodean. Estás en una etapa donde ya identificas esta resistencia, y eso es el primer paso para transformarla. Puedes seguir avanzando, soltando poco a poco y aprendiendo a acompañar desde la confianza. Cuando delegas con intención, liberas espacio para lo que realmente importa y fortaleces a tu equipo. No se trata de desentenderte, sino de compartir. Tu liderazgo puede ser aún más poderoso si aprendes a multiplicarte a través de otros. Porque no todo pasa por tus manos… y eso también está bien.",
+      "recomendacion": "Practica la delegación estratégica, identificando tareas en las que otros pueden aportar valor. En lugar de enfocarte en cómo lo harías tú, confía en los diferentes enfoques de tu equipo. Pregúntate: ¿Cómo puedo aprovechar mejor las fortalezas de los demás? Recuerda que un equipo fuerte no se mide solo por su capacidad individual, sino por la confianza y colaboración entre sus miembros.",
+      "reflexion": "Sabes que no tienes que hacerlo todo, pero a veces cuesta soltar. Delegar requiere práctica, y cada vez que lo haces, creces. Confiar no es rendirse, es elegir compartir. Lo valioso no es solo el resultado, sino el proceso de construir juntos. Paso a paso, vas aprendiendo a confiar más."
+    },
+    {
+      "min": 19.0,
+      "max": 25.0,
+      "introduccion": "Ningún gran logro se alcanza solo. Delegar y colaborar no solo hace el camino más ligero, sino que potencia el talento y fortalece conexiones. Cuando confiamos y distribuimos responsabilidades con inteligencia, cada persona aporta su valor y brilla en lo suyo. El éxito no está en hacerlo todo, sino en construir juntos, sumando habilidades y creando algo más grande de lo que podríamos lograr por separado.",
+      "titulo": "Habilidad avanzada para delegar y trabajar en equipo",
+      "descripcion": "Tienes una mentalidad colaborativa y una gran confianza en el talento de los demás. Sabes que delegar no es soltar, es construir con otros. Reconoces que cuando compartes responsabilidades, no solo optimizas tu tiempo, sino que potencias el desarrollo de quienes te rodean. Esta habilidad genera equipos más autónomos, creativos y comprometidos. Tu liderazgo no se impone, se comparte. Confías, acompañas, das espacio y sabes cuándo intervenir. Eso te convierte en un referente inspirador. Delegar es una decisión consciente que parte de tu claridad, tu visión y tu deseo de generar impacto colectivo. Estás en un punto donde tu capacidad de guiar se alinea con la habilidad de empoderar a otros. Y eso es liderazgo del bueno: el que deja huella sin necesidad de controlar. Sigue fluyendo con esta actitud abierta y generosa. Porque cuando confías, enseñas. Y cuando enseñas, multiplicas tu impacto.",
+      "recomendacion": "Sigue potenciando esta habilidad promoviendo un liderazgo basado en la confianza y la comunicación abierta. Fomenta la autonomía en tu equipo, dándoles espacio para tomar decisiones y asumir responsabilidades. Reflexiona: ¿Cómo puedo fortalecer aún más la confianza en mi equipo para que sigan creciendo juntos?",
+      "reflexion": "Tu liderazgo inspira porque sabes sumar talentos. No compites, conectas. No controlas, coordinas. Confías en el potencial colectivo y entiendes que el brillo compartido es más potente. Seguir delegando con propósito te hace crecer, y hace que todos crezcan contigo. Eso es liderazgo real."
+    }
+  ]
+}

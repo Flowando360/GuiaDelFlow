@@ -1,0 +1,121 @@
+{
+  "sheet": "CARACTER",
+  "tipo_calculo": "formula_fecha_identificador",
+  "preambulo": [
+    {
+      "campo": "CATEGORÍA",
+      "valor": "TALENTOS PODEROSOS"
+    },
+    {
+      "campo": "TÍTULO DE LA CATEGORÍA:",
+      "valor": "Las fortalezas que nos hacen únicos y nos impulsan hacia el éxito"
+    },
+    {
+      "campo": "ASPECTO:",
+      "valor": "CARÁCATER"
+    },
+    {
+      "campo": "BASE DE CÁLCULO:",
+      "valor": "FECHA DE NACIMIENTO"
+    },
+    {
+      "campo": "CÁLCULO:",
+      "valor": "SIGNO ZODIACAL CON LAS SIGUIENTES EQUIVALENCIAS\n1=ARIES\n2=TAURO\n3=GÉMINIS\n4=CANCER\n5=LEO\n6=VIRGO\n7=LIBRA\n8=ESCORPION\n9=SAGITARIO\n10=CAPRICORNIO\n11=ACUARIO\n12=PISCIS"
+    },
+    {
+      "campo": "DESC. ASPECTO",
+      "valor": "Carácter - La esencia que nos define"
+    },
+    {
+      "campo": "INTRODUCCIÓN",
+      "valor": "Conocer tu carácter es como descubrir el código secreto de tu esencia. Es entender qué te mueve, qué te desafía y cómo construyes tu camino. No se trata de encasillarte, sino de reconocer las fuerzas que te moldean y convertirlas en tu mejor herramienta. Cuando te conoces, decides con claridad, te expresas con autenticidad y fluyes sin resistencia. Tu esencia es única, úsala para crear la vida que realmente vibra contigo."
+    }
+  ],
+  "num_resultados": 12,
+  "resultados": [
+    {
+      "valor": 1.0,
+      "titulo": "Fuego que inicia, acción sin miedo.",
+      "descripcion": "Eres pura energía en movimiento, la chispa que enciende el cambio. No pides permiso: actúas. No esperas el momento perfecto, lo creas con decisión. Tienes una fuerza imparable que te impulsa a avanzar sin tregua, con la mirada siempre puesta en lo que sigue. Esa inquietud es tu esencia, el fuego que te distingue y te hace brillar. Cuando todo a tu alrededor parece estático, eres quien enciende la llama que transforma. Tomas la iniciativa sin dudar, porque sabes que el progreso es para quienes lo provocan. No te conformas con lo predecible: buscas desafíos, los enfrentas y los conviertes en oportunidades. Tu impaciencia no es un defecto, es tu motor vital. La pasión por los retos te define: conviertes ideas en acción y dejas huella en cada paso. Eres impulso, intensidad y revolución en estado puro.",
+      "subtitulo": "de Tu Carácter, siempre ten presente...",
+      "recomendacion": "Usa tu impulso con estrategia: no se trata solo de fuerza, sino de visión. Aprende a escuchar, porque liderar también es saber cuándo colaborar. Disfruta el proceso sin obsesionarte con la meta; la magia está en cada paso que das. Fluye con propósito, porque así es como se gana de verdad."
+    },
+    {
+      "valor": 2.0,
+      "titulo": "Fuerza tranquila, constancia y placer.",
+      "descripcion": "Eres el cimiento firme en un mundo de cambios. Tu esencia es estabilidad, paciencia y un amor profundo por lo que realmente importa. No tomas decisiones a la ligera, pero cuando eliges algo, lo sostienes con determinación hasta verlo florecer. Disfrutas lo bello, lo tangible, lo que se construye con esfuerzo y se saborea con el alma. No solo buscas seguridad, la creas. Tu persistencia es tu mayor fortaleza y tu manera de cuidar lo que amas te hace inolvidable. Si algo vale la pena, lo nutres, lo proteges y lo llevas hasta su máximo esplendor. Y ahí, en tu amor por lo auténtico y lo duradero, está tu magia. La vida te enseña que lo mejor no siempre es lo rápido, sino lo que se construye con dedicación. Eres paciencia, fuerza y estabilidad en su expresión más pura.",
+      "subtitulo": "de Tu Carácter, siempre ten presente...",
+      "recomendacion": "Abraza el cambio, porque lo seguro no siempre es lo fijo. Disfruta sin apego, cuando sueltas, el placer se multiplica. No temas moverte, lo cómodo puede ser tentador, pero tu evolución merece más. Fluye con valentía, porque crecer también es saber soltar lo que ya no vibra contigo."
+    },
+    {
+      "valor": 3.0,
+      "titulo": "Mente ágil, curiosidad y cambio constante.",
+      "descripcion": "Tu mente es un universo de ideas, conexiones y aprendizajes constantes. No hay nada que disfrutes más que descubrir, conversar y explorar nuevas perspectivas. A veces, tu rapidez mental te hace cambiar de opinión antes de decidir, pero esa flexibilidad es lo que te permite adaptarte y encontrar siempre una salida brillante. Eres versátil, rápido y siempre en busca de respuestas. Tu carácter es ágil, ingenioso y adaptable. La rutina te aburre; la novedad te impulsa. No te quedas en un solo lugar, porque sabes que el conocimiento no tiene fronteras. Donde otros ven confusión, tú ves posibilidades. Tu ingenio y tu versatilidad son tu mayor fortaleza. Tu esencia es el cambio, y en cada conversación dejas una chispa de conocimiento. Eres la revolución de las ideas en movimiento.",
+      "subtitulo": "de Tu Carácter, siempre ten presente...",
+      "recomendacion": "Escucha más allá de las palabras, porque lo esencial se siente, no se dice. Profundiza, dominar algo con pasión te da poder real. Y no olvides pausar, porque no necesitas estar en todas partes para ser relevante. Tu presencia vale más cuando nace desde tu esencia."
+    },
+    {
+      "valor": 4.0,
+      "titulo": "Emoción profunda, refugio y protección.",
+      "descripcion": "Tu carácter es emocional, intuitivo y profundamente leal. Eres refugio para quienes amas y barrera para quienes no han ganado tu confianza. Sientes todo con intensidad, pero no siempre lo muestras. Sabes que la verdadera fortaleza no está en endurecerse, sino en saber a quién abrirle la puerta de tu mundo interior. Tu intuición es un faro que te guía en la vida. Sabes cuándo algo no vibra bien, y aunque a veces te cueste soltar, aprendes que tu paz es más valiosa que cualquier conexión que no te nutra. Tienes la magia de hacer sentir a los demás en casa, pero recuerda: tú también mereces ser cuidado con la misma intensidad con la que cuidas a los demás. Aprende a proteger tu corazón sin perder su calidez. Eres profundidad, intuición y lealtad en estado puro.",
+      "subtitulo": "de Tu Carácter, siempre ten presente...",
+      "recomendacion": "Pon límites sin culpa: cuidar tu energía es un acto de amor propio. Exprésate, lo que no se dice pesa, y tu voz merece espacio. Atrévete a salir de lo cómodo; fuera de tu caparazón también hay lugares donde tu alma puede florecer. El mundo espera tu versión más auténtica."
+    },
+    {
+      "valor": 5.0,
+      "titulo": "Luz propia, pasión y magnetismo natural.",
+      "descripcion": "Eres magnetismo en su máxima expresión. Tu carácter es seguro, expresivo y lleno de pasión. Puedes liderar, inspirar y contagiar entusiasmo. Sabes lo que vales y no dudas en mostrarlo. No necesitas buscar atención, simplemente la atraes. Eres carisma y confianza en estado puro. Naciste para brillar, pero recuerda: la grandeza no es solo ser el centro, sino iluminar a otros también. El verdadero liderazgo no impone, inspira. Quienes te rodean sienten tu energía y se ven impulsados a ser mejores. No hay espacio para la mediocridad en tu mundo, solo para la excelencia. La seguridad con la que te mueves no es arrogancia, es conocimiento de tu propio valor. Mantén tu fuego encendido y sigue dejando huella en cada paso. Eres luz, pasión y un imán de éxito.",
+      "subtitulo": "de Tu Carácter, siempre ten presente...",
+      "recomendacion": "Brilla sin miedo, pero nunca a costa de apagar a otros. Tu luz se nota más cuando ilumina sin eclipsar. Escucha con intención; ser protagonista también es saber aprender. Y sobre todo, sé auténtico: no vivas para likes ni aplausos, vive para sentirte pleno y libre en tu verdad."
+    },
+    {
+      "valor": 6.0,
+      "titulo": "Orden, detalle y maestría en lo simple.",
+      "descripcion": "Tienes un carácter analítico, meticuloso y profundamente práctico. Para ti, cada detalle importa, cada acción debe tener sentido y cada esfuerzo debe llevar a la excelencia. No buscas llamar la atención, buscas resultados impecables. Eres la perfección en la imperfección, el equilibrio entre la lógica y el corazón. Tu mente analiza, resuelve y mejora todo a su paso. La estructura te da paz, la organización te potencia y la eficiencia te define. No eres de los que dejan cabos sueltos, porque entiendes que la grandeza se construye en lo minucioso. Aunque no siempre te lo reconozcan, tu labor es esencial. Tu capacidad de ver más allá del caos y encontrar soluciones es un don que pocos poseen. Sigue perfeccionando tu mundo y enseñando a otros que la verdadera maestría está en el detalle.",
+      "subtitulo": "de Tu Carácter, siempre ten presente...",
+      "recomendacion": "Suelta la autocrítica, porque no necesitas ser perfecto para ser valioso. Eres suficiente, justo así como eres. Fluye con el caos, ahí también hay belleza. No todo debe tener sentido para tener propósito. Y recuerda: no solo des, también recibe. Mereces tanto amor como el que entregas."
+    },
+    {
+      "valor": 7.0,
+      "titulo": "Equilibrio, belleza y conexión con otros.",
+      "descripcion": "Tu carácter es armonioso, sociable y diplomático. Eres un puente entre ideas, entre personas, entre perspectivas. Buscas justicia, belleza y conexión. Sabes que cada historia tiene dos versiones y que la verdadera inteligencia está en comprenderlas ambas. Tu esencia es unir, tu don es comprender. Pero recuerda: no siempre puedes ser el mediador, a veces elegir por ti mismo es el mayor acto de amor propio. La armonía que irradias no significa ausencia de lucha, sino la capacidad de encontrar el punto medio en el caos. Tu voz es suave pero poderosa, porque sabes que no es la fuerza sino la estrategia la que logra cambios duraderos. Inspiras confianza, tu presencia es calmante y tu mente está hecha para resolver. No temas desbalancear la balanza cuando sea necesario, porque a veces, romper el equilibrio es la única forma de encontrar el verdadero orden.",
+      "subtitulo": "de Tu Carácter, siempre ten presente...",
+      "recomendacion": "Decide sin miedo, tu verdad no necesita aprobación. No todas las respuestas tienen que gustarle a todos. No te disuelvas en los demás, las relaciones sanas te elevan, no te apagan. Y si algo se mueve cuando hablas desde tu verdad, que se mueva; a veces el conflicto es solo el comienzo del verdadero crecimiento."
+    },
+    {
+      "valor": 8.0,
+      "titulo": "Intensidad, misterio y transformación constante.",
+      "descripcion": "Eres profundidad pura, un océano de emociones ocultas. Tu carácter es magnético, reservado y apasionado. Nada en ti es superficial: o sientes con todo o no sientes en absoluto. No temes al cambio porque has renacido mil veces. Tu mirada ve más allá de lo evidente, y tu lealtad es tan intensa como tu silencio. Guardas secretos como si fueran tesoros y, aunque no muestras todo de inmediato, quien logra entrar en tu mundo descubre una conexión sin igual. La intensidad de tu ser puede asustar a algunos, pero a los valientes los hipnotiza. Tu instinto no falla: percibes lo que otros no ven y transformas lo que tocas. No tienes miedo de dejar atrás lo que no suma, porque sabes que cada final es un nuevo comienzo.",
+      "subtitulo": "de Tu Carácter, siempre ten presente...",
+      "recomendacion": "Deja fluir, no necesitas controlarlo todo para mantener tu poder. A veces soltar es el verdadero acto de fuerza. Ama sin miedo, no todos vienen a herirte—algunos llegan para quedarse y sanar contigo. Y no te lo tragues todo: hablar también es liberarte, también es empezar a curar."
+    },
+    {
+      "valor": 9.0,
+      "titulo": "Espíritu libre, aventura y sabiduría.",
+      "descripcion": "Tu carácter es libre, aventurero y siempre en movimiento. No soportas las jaulas, sean físicas o mentales. Eres explorador por naturaleza y filósofo por instinto. Buscas verdades, pero nunca te aferras a una sola. Para ti, la vida es una ruta infinita y el destino final es el crecimiento. Eres expansión, aventura y búsqueda sin límites. Pero recuerda: la libertad no siempre está en el movimiento, a veces está en la paz de saber quién eres. Te adaptas con facilidad, porque entiendes que cada experiencia trae consigo una lección. No temes soltar lo que ya no vibra contigo, porque sabes que lo desconocido siempre tiene algo valioso que ofrecer. Tu espíritu inquieto necesita espacio para volar, pero también momentos de calma para reflexionar y encontrar significado en el viaje.",
+      "subtitulo": "de Tu Carácter, siempre ten presente...",
+      "recomendacion": "Echa raíces sin perder tus alas; la estabilidad no es jaula si eliges bien dónde florecer. Tu energía es sagrada, no la dispersa: enfócala con intención. Y cuando escuches, hazlo con el alma. No todo requiere respuesta; Algunas verdades llegan cuando te haces amigo del silencio."
+    },
+    {
+      "valor": 10.0,
+      "titulo": "Disciplina, ambición y construcción sólida.",
+      "descripcion": "Eres pura disciplina y resistencia. Tu carácter es estratégico, ambicioso y paciente. Sabes que las cosas grandes no se logran de la noche a la mañana, y no te molesta esperar porque confías en tu esfuerzo. No buscas caminos fáciles, buscas caminos seguros. Y siempre, siempre llegas a la cima. Tu mente estratégica construye imperios, pero recuerda: no todo es trabajo, la vida también es disfrute. Tienes una visión clara del futuro y no dejas que las distracciones te desvíen. La constancia es tu sello, y aunque el camino sea largo, sabes que cada paso cuenta. No permites que el fracaso te defina, porque entiendes que cada tropiezo es una lección. Tu éxito es producto de tu esfuerzo y tu determinación, y por eso, cada logro vale el doble.",
+      "subtitulo": "de Tu Carácter, siempre ten presente...",
+      "recomendacion": "Descansa sin culpa: tu valor no depende solo de lo que logras. Disfruta el proceso, no pongas en pausa tu felicidad esperando la meta. A veces, lo inesperado guarda el mayor crecimiento. Lo sólido no siempre es lo más seguro. Soltar también es avanzar. Fluye, respira, y recuerda que tú estás creciendo."
+    },
+    {
+      "valor": 11.0,
+      "titulo": "Innovación, rebeldía y visión del futuro.",
+      "descripcion": "Eres visión en su forma más pura. Tu mente es libre, creativa y llena de ideas que desafían lo establecido. No sigues tendencias, las creas. Inspiras desde lo auténtico, lideras desde lo diferente. Tu poder no está en imponer, sino en abrir caminos donde nadie más ha mirado. No necesitas aprobación, porque tu brújula es interna. Eres innovación en movimiento, pensamiento que transforma y alma que conecta con lo colectivo. Naciste para cambiar paradigmas, pero recuerda: la revolución también nace del ejemplo. Tu presencia despierta curiosidad y empuja a otros a cuestionar, explorar, evolucionar. No hay espacio para lo convencional en tu mundo, solo para lo que se atreve a romper moldes. Tu desapego no es frialdad, es libertad consciente. Mantén tu mente abierta y tu corazón conectado con tu propósito. Eres chispa de futuro, conciencia viva y un canal de cambio.",
+      "subtitulo": "de Tu Carácter, siempre ten presente...",
+      "recomendacion": "Tu mente habita el futuro, pero no olvides que el presente es donde tus ideas toman forma. Comparte tu visión, pero con empatía: no todos están listos para lo nuevo. Aterriza tus conceptos. Innovar no es solo imaginar, es crear estructuras reales que inspiren, impacten y abran caminos donde antes no existían."
+    },
+    {
+      "valor": 12.0,
+      "titulo": "Sueño, intuición y magia en lo sutil.",
+      "descripcion": "Eres profundidad en movimiento, una ola de sensibilidad que transforma sin hacer ruido. No fuerzas el cambio: lo inspiras desde dentro, tocando lo invisible. Tu magia está en percibir lo que otros no ven, en soñar caminos nuevos cuando todo parece estancado. No esperas el momento perfecto: lo intuyes, lo sientes y fluyes hacia él con confianza serena. Tu poder es suave pero imparable, como el agua que encuentra su curso. Donde otros ven límites, tú ves posibilidades sutiles que nacen del alma. Tomas la iniciativa desde la empatía, conectando con lo esencial. Tu ternura no es debilidad, es fuerza creadora. Te mueves entre mundos, traduces emociones en visión, sueños en inspiración. No necesitas gritar para ser escuchado: tu presencia transforma. Eres arte, intuición, creación y misterio en estado puro. Dejas huella en lo invisible. Eres puente, susurro y océano.",
+      "subtitulo": "de Tu Carácter, siempre ten presente...",
+      "recomendacion": "Pon límites con amor: no estás aquí para absorberlo todo, sino para cuidar tu luz. Exprésate sin temor: tu mundo interior es poesía viva, merece ser compartido. Y confía en tu intuición: lo que otros ignoran, tú ya lo has sentido. Esa voz es tu faro."
+    }
+  ]
+}

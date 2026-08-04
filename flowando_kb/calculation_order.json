@@ -1,0 +1,81 @@
+{
+  "descripcion": "El motor de calculo de Flowando NO puede correr los 32 aspectos en paralelo. Los aspectos 'compuestos' dependen de resultados ya calculados de otros aspectos. Este archivo define el orden obligatorio de ejecucion.",
+
+  "paso_1_directos_de_fecha_o_likert": {
+    "descripcion": "Se calculan primero. No dependen de ningun otro aspecto.",
+    "aspectos": [
+      "TALENTO_UNICO",
+      "TEMPERAMENTO",
+      "CARACTER",
+      "ETAPA_FLOW",
+      "Talento_Innato",
+      "Talento_Potenciar",
+      "Proposito_1",
+      "DesafioInterior",
+      "Desafio_Sanacion",
+      "Niñez",
+      "Dependencia", "Pasado", "Compromiso", "Responsabilidad", "Felicidad",
+      "Cambios", "TrabajoEnEquipo", "Liderazgo_1", "Liderazgo_2", "Comunicación",
+      "Negociación", "Frustración", "Recursividad", "Estabilidad_Emocional",
+      "Pertenencia", "Inteligencias"
+    ]
+  },
+
+  "detalle_calculo_ninez": {
+    "descripcion": "RESUELTO 2026-08-04. Niñez usa 'letra_frecuente', no una suma numerológica, pese a estar clasificada como formula_numerologica_compuesta por coincidencia de formato de columnas (ver README). Fuente: C93-C97, cada una con 5 opciones A-E (ver questionnaire.json -> preguntas_likert_codificadas[].opciones y perfil_letra_valor_ninez).",
+    "algoritmo": [
+      "1. Tomar las 5 respuestas (letra A-E) de C93, C94, C95, C96, C97.",
+      "2. Contar cuántas veces aparece cada letra.",
+      "3. La letra con más apariciones determina el resultado: A=valor 1, B=2, C=3, D=4, E=5 (ver perfil_letra_valor_ninez en questionnaire.json).",
+      "4. Desempate (si 2+ letras empatan en el conteo máximo): revisar las respuestas en el orden de prioridad C93 -> C95 -> C94 -> C96 -> C97 (de más conductual/concreta a más aspiracional) y usar la primera letra de ese recorrido que esté entre las empatadas."
+    ],
+    "ejemplo_desempate": "Respuestas C93=A, C94=D, C95=D, C96=A, C97=E -> conteo A=2, D=2, E=1 -> empate A/D -> se revisa C93 primero: C93=A está entre las empatadas -> gana A (valor 1)."
+  },
+
+  "paso_2_compuestos": {
+    "descripcion": "Requieren que el paso 1 ya haya terminado.",
+    "aspectos": {
+      "Proposito_2": {
+        "formula": "TALENTO_UNICO.residuo + Talento_Innato.valor + Talento_Potenciar.valor + Proposito_1.valor, reducido a <=11",
+        "depende_de": ["TALENTO_UNICO", "Talento_Innato", "Talento_Potenciar", "Proposito_1"]
+      },
+      "Desafio_Libera": {
+        "formula": "DesafioInterior.valor + Desafio_Sanacion.valor, reducido a <=11",
+        "depende_de": ["DesafioInterior", "Desafio_Sanacion"]
+      },
+      "CualidadesPotencia": {
+        "formula": "DesafioInterior.valor + Desafio_Sanacion.valor + Talento_Innato.valor + Talento_Potenciar.valor, reducido a <=11",
+        "depende_de": ["DesafioInterior", "Desafio_Sanacion", "Talento_Innato", "Talento_Potenciar"]
+      }
+    }
+  },
+
+  "paso_3_doble_compuesto": {
+    "descripcion": "Requiere que Proposito_2 (paso 2) ya este calculado.",
+    "aspectos": {
+      "Integra": {
+        "formula": "Talento_Innato.valor + Talento_Potenciar.valor + Proposito_2.valor, reducido a <=11",
+        "depende_de": ["Talento_Innato", "Talento_Potenciar", "Proposito_2"]
+      }
+    }
+  },
+
+  "regla_de_reduccion_numerologica": "Sumar los digitos del numero resultante repetidamente hasta obtener un valor <= 11. A diferencia de la numerologia clasica, NO se reduce mas alla de 11 (se preserva el 11 como 'numero maestro', igual que 1-10).",
+
+  "resuelto_2026_08_04_rango_desafio_interior": {
+    "conclusion": "El rango 1-11 de DesafioInterior esta completo, sin huecos. No hay edge-case pendiente.",
+    "por_que": "El dia de nacimiento va de 1 a 31, es decir maximo 2 digitos, asi que la suma de sus digitos (una sola pasada, tal como muestra el ejemplo del preambulo: dia 24 -> 2+4=6) nunca puede superar 11 y por lo tanto nunca necesita una segunda pasada de reduccion. Calculando la suma de digitos para los 31 dias posibles se obtienen exactamente los valores {1,2,3,4,5,6,7,8,9,10,11} sin faltantes: los dias 19 y 28 dan 10 (1+9 y 2+8), y el dia 29 da 11 (2+9) -- el unico dia que alcanza el maximo. Coincide con num_resultados=11 en DesafioInterior.json, que ya tiene los 11 resultados redactados (valor 1.0 a 11.0)."
+  },
+
+  "resuelto_2026_08_04_reduccion_numerologica_compuestos": {
+    "conclusion": "La regla ya documentada en 'regla_de_reduccion_numerologica' (sumar digitos repetidamente hasta obtener <=11, sin excepcion para 10 u 11 porque esos valores ya cumplen la condicion de parada) es suficiente y esta confirmada por el texto fuente. No hace falta una regla especial adicional.",
+    "evidencia_fuente": "Las 4 hojas de BC_MADRE.xlsx para estos aspectos (Proposito_2, Desafio_Libera, CualidadesPotencia, Integra) usan la MISMA frase literal en su campo CALCULO: 'se reduce a un numero menor o igual a 11'. El ejemplo de Desafio_Libera (7+4=11 -> 'se deja asi') confirma que 10/11 no se reducen mas alla -- no por una excepcion especial, sino porque ya satisfacen '<=11'. El ejemplo de Proposito_2 (0+3+7+5=15 -> 1+5=6) confirma el metodo de suma de digitos.",
+    "cuando_hace_falta_una_segunda_pasada_en_la_practica": {
+      "metodo": "Se calculo el rango real de cada compuesto a partir de los rangos ya confirmados de sus aspectos base (Talento_Innato, Talento_Potenciar, Proposito_1, DesafioInterior, Desafio_Sanacion, Proposito_2: todos 1-11; TALENTO_UNICO.residuo: 0-11 por año%12) y se revisó si el digito-suma de una sola pasada puede superar 11 en algun punto de ese rango.",
+      "Proposito_2": "4 terminos, suma maxima 44. Unico valor de suma intermedia en [3,44] cuyo digito-suma de una pasada da >11 es exactamente 39 (3+9=12, todavia >11, requiere 2a pasada: 1+2=3). Todos los demas valores posibles del rango ya quedan <=11 en una sola pasada.",
+      "CualidadesPotencia": "4 terminos, suma maxima 44, misma estructura que Proposito_2: solo suma=39 necesita 2a pasada (resultado final 3).",
+      "Desafio_Libera": "2 terminos, suma maxima 22. El digito-suma maximo alcanzable en ese rango es 10 (para suma=19) -- nunca supera 11, nunca necesita 2a pasada.",
+      "Integra": "3 terminos, suma maxima 33. El digito-suma maximo alcanzable en ese rango es 11 (para suma=19 o 29) -- nunca supera 11, nunca necesita 2a pasada."
+    }
+  }
+}

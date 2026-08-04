@@ -1,0 +1,418 @@
+{
+  "preguntas_sin_codigo_demograficas_y_abiertas": [
+    "Dirección de correo electrónico",
+    "Nombres y Apellidos",
+    "¿Cómo te gusta que te llamen? (Puede ser uno de tus nombres, un diminutivo o un apodo)",
+    "Con cual género te identificas",
+    "Fecha exacta de nacimiento",
+    "País y Ciudad de Nacimiento",
+    "Teléfono de Contacto",
+    "¿Qué te impulsa a descubrir tu guía del Flow y llevar tu potencial al siguiente nivel?",
+    "Pregunta 1",
+    "Pregunta 2",
+    "Pregunta 3",
+    "Soy"
+  ],
+  "preguntas_likert_codificadas": [
+    {
+      "codigo": "C9",
+      "pregunta": "Cuando las personas me reconocen o elogian, me siento mucho más feliz."
+    },
+    {
+      "codigo": "C10",
+      "pregunta": "Si no recibo suficiente atención de los demás, empiezo a dudar de mi valor."
+    },
+    {
+      "codigo": "C11",
+      "pregunta": "Me preocupa bastante lo que piensen los demás sobre mí."
+    },
+    {
+      "codigo": "C12",
+      "pregunta": "Si mis logros no son reconocidos, siento que no tienen el mismo valor."
+    },
+    {
+      "codigo": "C13",
+      "pregunta": "A menudo busco maneras de destacar o captar la atención en los grupos."
+    },
+    {
+      "codigo": "C14",
+      "pregunta": "Paso mucho tiempo pensando en cómo eran las cosas antes y cómo han cambiado."
+    },
+    {
+      "codigo": "C15",
+      "pregunta": "Me cuesta dejar ir recuerdos o experiencias del pasado."
+    },
+    {
+      "codigo": "C16",
+      "pregunta": "Siento que mis mejores momentos ya quedaron atrás."
+    },
+    {
+      "codigo": "C17",
+      "pregunta": "Comparo constantemente mi presente con lo que viví en el pasado."
+    },
+    {
+      "codigo": "C18",
+      "pregunta": "Los recuerdos de lo que fui o viví influyen mucho en cómo me siento hoy."
+    },
+    {
+      "codigo": "C19",
+      "pregunta": "Empiezo proyectos con entusiasmo, pero muchas veces los dejo a medias."
+    },
+    {
+      "codigo": "C20",
+      "pregunta": "Si una tarea se vuelve difícil o aburrida, me cuesta seguir adelante."
+    },
+    {
+      "codigo": "C21",
+      "pregunta": "Me siento realmente satisfecho/a solo cuando termino lo que empiezo."
+    },
+    {
+      "codigo": "C22",
+      "pregunta": "A menudo me distraigo o procrastino en lugar de enfocarme en terminar una tarea."
+    },
+    {
+      "codigo": "C23",
+      "pregunta": "Me esfuerzo en completar mis proyectos, incluso cuando requieren tiempo o son desafiantes."
+    },
+    {
+      "codigo": "C24",
+      "pregunta": "Cuando las cosas no salen bien, a veces siento que la culpa es de otros o de lo que pasó alrededor"
+    },
+    {
+      "codigo": "C25",
+      "pregunta": "Me cuesta aceptar que mis decisiones han influido en los resultados que obtengo."
+    },
+    {
+      "codigo": "C26",
+      "pregunta": "Reflexiono sobre lo que pude haber hecho diferente cuando algo no sale como esperaba."
+    },
+    {
+      "codigo": "C27",
+      "pregunta": "Estoy dispuesto/a a asumir la responsabilidad de mis errores, incluso cuando no es fácil."
+    },
+    {
+      "codigo": "C28",
+      "pregunta": "Creo que la mayoría de las veces soy el principal responsable de lo que sucede en mi vida."
+    },
+    {
+      "codigo": "C29",
+      "pregunta": "Me siento satisfecho/a con mi vida en general."
+    },
+    {
+      "codigo": "C30",
+      "pregunta": "En la mayoría de los días, me siento en equilibrio emocionalmente."
+    },
+    {
+      "codigo": "C31",
+      "pregunta": "Disfruto de los pequeños momentos y las actividades cotidianas."
+    },
+    {
+      "codigo": "C32",
+      "pregunta": "Me siento agradecido/a por lo que tengo en mi vida."
+    },
+    {
+      "codigo": "C33",
+      "pregunta": "Tengo relaciones personales que me hacen sentir acompañado/a y apoyado/a."
+    },
+    {
+      "codigo": "C34",
+      "pregunta": "Me siento cómodo/a adaptándome a nuevas formas de hacer las cosas."
+    },
+    {
+      "codigo": "C35",
+      "pregunta": "Cuando las cosas no salen como esperaba, busco ajustar mi enfoque en lugar de resistirme."
+    },
+    {
+      "codigo": "C36",
+      "pregunta": "Me entusiasma la idea de aprender nuevas habilidades y enfrentar nuevos desafíos."
+    },
+    {
+      "codigo": "C37",
+      "pregunta": "Prefiero mantener las cosas como están en lugar de arriesgarme con un cambio."
+    },
+    {
+      "codigo": "C38",
+      "pregunta": "Veo el cambio como una oportunidad para crecer, en lugar de un obstáculo."
+    },
+    {
+      "codigo": "C39",
+      "pregunta": "Me siento cómodo/a delegando tareas cuando sé que los demás pueden hacerlas bien."
+    },
+    {
+      "codigo": "C40",
+      "pregunta": "Prefiero hacer las cosas por mi cuenta en lugar de depender de otros."
+    },
+    {
+      "codigo": "C41",
+      "pregunta": "Cuando trabajo en equipo, valoro las opiniones y aportes de los demás."
+    },
+    {
+      "codigo": "C42",
+      "pregunta": "Confío en que mi equipo cumplirá con sus responsabilidades sin necesidad de supervisar todo el tiempo."
+    },
+    {
+      "codigo": "C43",
+      "pregunta": "Me siento cómodo/a pidiendo ayuda cuando la necesito."
+    },
+    {
+      "codigo": "C44",
+      "pregunta": "Me siento cómodo/a tomando decisiones importantes en situaciones difíciles."
+    },
+    {
+      "codigo": "C45",
+      "pregunta": "Me motiva guiar a otros para alcanzar objetivos comunes."
+    },
+    {
+      "codigo": "C46",
+      "pregunta": "Prefiero que otros asuman la responsabilidad en lugar de liderar un grupo."
+    },
+    {
+      "codigo": "C47",
+      "pregunta": "Me gusta ser el/la primero/a en tomar la iniciativa y dar el ejemplo."
+    },
+    {
+      "codigo": "C48",
+      "pregunta": "Disfruto inspirar a otros y ayudarles a desarrollar su potencial."
+    },
+    {
+      "codigo": "C49",
+      "pregunta": "Me siento cómodo/a tomando decisiones rápidamente y asumiendo la responsabilidad."
+    },
+    {
+      "codigo": "C50",
+      "pregunta": "Prefiero involucrar a mi equipo en las decisiones y fomentar un enfoque colaborativo."
+    },
+    {
+      "codigo": "C51",
+      "pregunta": "Me motiva inspirar a los demás para que alcancen su máximo potencial."
+    },
+    {
+      "codigo": "C52",
+      "pregunta": "Prefiero dar libertad a mi equipo para que resuelva los problemas con autonomía."
+    },
+    {
+      "codigo": "C53",
+      "pregunta": "Disfruto influir en las personas y guiarlas hacia una visión compartida."
+    },
+    {
+      "codigo": "C54",
+      "pregunta": "Me siento cómodo/a expresando mis opiniones, incluso si son diferentes a las de los demás."
+    },
+    {
+      "codigo": "C55",
+      "pregunta": "A veces evito decir lo que pienso para no generar conflictos."
+    },
+    {
+      "codigo": "C56",
+      "pregunta": "Me frustra que los demás no comprendan mi punto de vista y me esfuerzo en que lo hagan."
+    },
+    {
+      "codigo": "C57",
+      "pregunta": "Cuando algo me molesta, prefiero guardármelo en lugar de decirlo directamente."
+    },
+    {
+      "codigo": "C58",
+      "pregunta": "Suelo decir las cosas de forma clara, directa y sin faltar al respeto."
+    },
+    {
+      "codigo": "C59",
+      "pregunta": "En una discusión, mi prioridad es ganar, aunque la otra parte pierda."
+    },
+    {
+      "codigo": "C60",
+      "pregunta": "Siempre apuesto por soluciones equilibradas que favorezcan a ambas partes."
+    },
+    {
+      "codigo": "C61",
+      "pregunta": "En una negociación, estoy dispuesto/a a ceder para llegar a un acuerdo."
+    },
+    {
+      "codigo": "C62",
+      "pregunta": "Prefiero evitar los conflictos, incluso si mis necesidades no son satisfechas."
+    },
+    {
+      "codigo": "C63",
+      "pregunta": "Cuando surge un desacuerdo, me enfoco en soluciones que funcionen para ambos."
+    },
+    {
+      "codigo": "C64",
+      "pregunta": "Disfruto leer, escribir y jugar con las palabras."
+    },
+    {
+      "codigo": "C65",
+      "pregunta": "Me gustan los desafíos matemáticos, los acertijos y los juegos de lógica."
+    },
+    {
+      "codigo": "C66",
+      "pregunta": "Tengo una gran facilidad para imaginar y visualizar ideas en mi mente."
+    },
+    {
+      "codigo": "C67",
+      "pregunta": "La música me mueve profundamente; disfruto escucharla, cantarla o tocar algún instrumento."
+    },
+    {
+      "codigo": "C68",
+      "pregunta": "Aprendo mejor cuando uso mi cuerpo, me muevo o experimento físicamente."
+    },
+    {
+      "codigo": "C69",
+      "pregunta": "Me entiendo bien con las personas y sé captar sus emociones fácilmente."
+    },
+    {
+      "codigo": "C70",
+      "pregunta": "Me gusta reflexionar sobre mis pensamientos y emociones; me conozco bien."
+    },
+    {
+      "codigo": "C71",
+      "pregunta": "Siento una conexión especial con la naturaleza y disfruto estar al aire libre."
+    },
+    {
+      "codigo": "C72",
+      "pregunta": "A menudo pienso en el sentido de la vida y en preguntas profundas sobre la existencia."
+    },
+    {
+      "codigo": "C73",
+      "pregunta": "Cuando las cosas no salen como quiero, siento una gran insatisfacción que me lleva a la tristeza."
+    },
+    {
+      "codigo": "C74",
+      "pregunta": "Me cuesta ser paciente cuando las cosas tardan más de lo esperado."
+    },
+    {
+      "codigo": "C75",
+      "pregunta": "Si enfrento un obstáculo, intento adaptarme y encontrar soluciones."
+    },
+    {
+      "codigo": "C76",
+      "pregunta": "Suelo mantener la calma, incluso cuando las cosas no salen según lo planeado."
+    },
+    {
+      "codigo": "C77",
+      "pregunta": "Cuando enfrento frustración, tiendo a responder con enojo o impaciencia."
+    },
+    {
+      "codigo": "C78",
+      "pregunta": "Si un plan no funciona, busco nuevas soluciones sin frustrarme."
+    },
+    {
+      "codigo": "C79",
+      "pregunta": "Me gusta encontrar formas creativas y originales para resolver problemas."
+    },
+    {
+      "codigo": "C80",
+      "pregunta": "En situaciones complicadas, me adapto y ajusto mis estrategias rápidamente."
+    },
+    {
+      "codigo": "C81",
+      "pregunta": "Reflexiono sobre mis errores y trato de aprender de ellos."
+    },
+    {
+      "codigo": "C82",
+      "pregunta": "Prefiero dividir problemas complejos en pasos pequeños y manejables."
+    },
+    {
+      "codigo": "C83",
+      "pregunta": "Suelo mantener la calma incluso en momentos de mucha presión."
+    },
+    {
+      "codigo": "C84",
+      "pregunta": "Cuando algo me sale mal, me cuesta recuperarme y seguir adelante."
+    },
+    {
+      "codigo": "C85",
+      "pregunta": "Puedo gestionar mi enojo sin reaccionar de forma impulsiva."
+    },
+    {
+      "codigo": "C86",
+      "pregunta": "Si me enfrento a una situación difícil, trato de enfocarme en soluciones en lugar de dejarme llevar por la preocupación."
+    },
+    {
+      "codigo": "C87",
+      "pregunta": "Me cuesta manejar mis emociones y a veces me desbordo fácilmente."
+    },
+    {
+      "codigo": "C88",
+      "pregunta": "Me siento aceptado/a y valorado/a en mis grupos (familia, amigos, trabajo)."
+    },
+    {
+      "codigo": "C89",
+      "pregunta": "Cuando comparto mis ideas, siento que los demás las toman en cuenta."
+    },
+    {
+      "codigo": "C90",
+      "pregunta": "Tengo un grupo o comunidad en la que me siento parte esencial y significativa."
+    },
+    {
+      "codigo": "C91",
+      "pregunta": "Cuando enfrento dificultades, sé que puedo contar con el apoyo de los demás."
+    },
+    {
+      "codigo": "C92",
+      "pregunta": "Siento que mi identidad y crecimiento están influenciados por los grupos a los que pertenezco."
+    },
+    {
+      "codigo": "C93",
+      "pregunta": "Las actividades que amaba cuando era niño/a",
+      "opciones": [
+        { "letra": "A", "texto": "Correr, trepar, hacer deporte o cualquier reto físico que me hiciera sentir vivo/a" },
+        { "letra": "B", "texto": "Dibujar, inventar historias, disfrazarme o crear cosas con mis manos" },
+        { "letra": "C", "texto": "Organizar juegos con otros y decidir a qué jugábamos o cómo" },
+        { "letra": "D", "texto": "Jugar en equipo, compartir mis cosas y hacer planes con amigos o hermanos" },
+        { "letra": "E", "texto": "Armar rompecabezas, construir con bloques o preguntar cómo funcionaban las cosas" }
+      ]
+    },
+    {
+      "codigo": "C94",
+      "pregunta": "Cuando jugaba o me sumergía en algo que me gustaba, Me Sentía…",
+      "opciones": [
+        { "letra": "A", "texto": "Lleno/a de energía, como si nada pudiera detenerme" },
+        { "letra": "B", "texto": "Libre para imaginar e inventar mundos nuevos" },
+        { "letra": "C", "texto": "Seguro/a guiando a los demás y viendo que me seguían" },
+        { "letra": "D", "texto": "En sintonía con los demás, parte de algo compartido" },
+        { "letra": "E", "texto": "Concentrado/a, resolviendo un reto o entendiendo cómo algo funcionaba" }
+      ]
+    },
+    {
+      "codigo": "C95",
+      "pregunta": "Mi forma favorita de enfrentar los desafíos cuando era niño/a era…",
+      "opciones": [
+        { "letra": "A", "texto": "Lanzarme sin pensarlo mucho y aprender haciendo" },
+        { "letra": "B", "texto": "Buscarle una vuelta creativa o distinta" },
+        { "letra": "C", "texto": "Reunir a otros y tomar la iniciativa" },
+        { "letra": "D", "texto": "Pedir ayuda o resolverlo junto a otros" },
+        { "letra": "E", "texto": "Pensarlo bien y analizarlo antes de actuar" }
+      ]
+    },
+    {
+      "codigo": "C96",
+      "pregunta": "Si hubiera podido elegir \"el día perfecto\" en mi infancia, habría sido…",
+      "opciones": [
+        { "letra": "A", "texto": "Uno lleno de aventura, movimiento y algo nuevo por descubrir" },
+        { "letra": "B", "texto": "Uno dedicado a crear: dibujar, inventar, actuar o escribir" },
+        { "letra": "C", "texto": "Uno organizando y liderando un juego con muchos amigos" },
+        { "letra": "D", "texto": "Uno rodeado de mi gente, haciendo algo juntos" },
+        { "letra": "E", "texto": "Uno explorando cómo funcionan las cosas o resolviendo un acertijo" }
+      ]
+    },
+    {
+      "codigo": "C97",
+      "pregunta": "Cuando me imaginaba \"lo que quería ser de grande\", soñaba con…",
+      "opciones": [
+        { "letra": "A", "texto": "Ser explorador/a, deportista o alguien que vive aventuras" },
+        { "letra": "B", "texto": "Ser artista, escritor/a, diseñador/a o creador/a de algo" },
+        { "letra": "C", "texto": "Ser líder, maestro/a o alguien que guía a otros" },
+        { "letra": "D", "texto": "Trabajar en equipo por una causa o proyecto compartido" },
+        { "letra": "E", "texto": "Ser científico/a, inventor/a o alguien que resuelve problemas" }
+      ]
+    }
+  ],
+  "perfil_letra_valor_ninez": {
+    "descripcion": "Mapeo fijo letra -> valor de Niñez.json. La letra es la MISMA en las 5 preguntas C93-C97 (no se aleatoriza por pregunta), para que 'letra más frecuente' sea un conteo directo.",
+    "A": { "valor": 1, "titulo": "Tu esencia es la acción y la aventura" },
+    "B": { "valor": 2, "titulo": "Tu esencia es la creatividad y la expresión" },
+    "C": { "valor": 3, "titulo": "Tu esencia es guiar e inspirar" },
+    "D": { "valor": 4, "titulo": "Tu esencia es la colaboración y el trabajo en equipo" },
+    "E": { "valor": 5, "titulo": "Tu esencia es el análisis y la resolución de problemas" }
+  },
+  "nota": "RESUELTO 2026-08-04: C93-C97 (ecos de la infancia) ya tienen opcion multiple A-E, ver 'opciones' en cada pregunta y el mapeo en 'perfil_letra_valor_ninez'. Regla de calculo y desempate documentadas en flowando_kb/README.md y calculation_order.json."
+}

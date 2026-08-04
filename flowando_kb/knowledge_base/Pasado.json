@@ -1,0 +1,39 @@
+{
+  "sheet": "Pasado",
+  "tipo_calculo": "suma_likert",
+  "preambulo": [
+    "El Pasado",
+    "El pasado en el aquí y el ahora - Sanar para avanzar",
+    "Suma C14-C18"
+  ],
+  "num_resultados": 3,
+  "resultados": [
+    {
+      "min": 5.0,
+      "max": 10.0,
+      "introduccion": "El pasado nos ha moldeado, pero aferrarnos a él puede frenar nuestro crecimiento. Pregúntate cuánto impacta en tu presente y si ha llegado el momento de soltarlo. A veces, dejar ir es el primer paso para fluir con más ligereza y crear nuevas oportunidades.",
+      "titulo": "Presencia y fluidez con el pasado",
+      "descripcion": "Tienes la habilidad de mirar tu historia con madurez y perspectiva. Sabes que el pasado forma parte de tu camino, pero no te encadenas a él. Lo observas, lo honras, lo comprendes... y luego eliges avanzar. Esta actitud te permite vivir el presente con más ligereza, porque has aprendido que cada experiencia dejó una huella, pero no una condena. Disfrutas recordar, aprender de lo vivido, compartir memorias significativas, pero sin que eso limite tu capacidad de crear nuevas experiencias. Fluyes entre el ayer y el hoy con una sabiduría que te da estabilidad emocional. Eres capaz de rescatar lo valioso y soltar lo que ya no suma. Esta forma de estar en el mundo te permite acompañar a otros, construir con raíces sólidas y vivir con apertura. Tu mirada hacia el pasado no es melancólica ni evasiva: es lúcida, agradecida y transformadora. Y eso te da fuerza para vivir con más libertad.",
+      "recomendacion": "Usa tu habilidad para vivir en el presente como una fuente de inspiración para otros. Comparte tu perspectiva con quienes puedan estar atrapados en el ayer. Además, sigue cultivando esta mentalidad practicando la gratitud y enfocado en el hoy.",
+      "reflexion": "El pasado no está para frenarte, sino para enseñarte. Recordar con amor es sabiduría, pero quedarte atrapado en lo que fue impide avanzar. Suelta con compasión. La atención plena o la escritura reflexiva pueden ayudarte a convertir recuerdos en impulso, no en ancla."
+    },
+    {
+      "min": 11.0,
+      "max": 18.0,
+      "introduccion": "El pasado nos ha moldeado, pero aferrarnos a él puede frenar nuestro crecimiento. Pregúntate cuánto impacta en tu presente y si ha llegado el momento de soltarlo. A veces, dejar ir es el primer paso para fluir con más ligereza y crear nuevas oportunidades.",
+      "titulo": "Equilibrio entre nostalgia y presente",
+      "descripcion": "Es natural que sientas una conexión especial con tu pasado. Los recuerdos felices, los aprendizajes, los momentos que marcaron tu historia... todo eso tiene un valor profundo. Sin embargo, también sabes que es necesario encontrar un equilibrio. A veces, ciertas experiencias pasadas pueden influir más de lo que imaginas en cómo ves tu presente o proyectas tu futuro. Tal vez hay ciclos que no has terminado de cerrar, o emociones que vuelven sin avisar. Reconocerlo es el primer paso para liberarte de esas ataduras. Tu reto no es olvidar, sino integrar. El pasado puede ser una fuente de fuerza, no una jaula. Si te permites vivir el presente con mayor atención y gratitud, podrás descubrir nuevas formas de bienestar. Tienes todo para avanzar, sin renunciar a tu historia. Solo necesitas recordar que cada día trae una nueva oportunidad para crear momentos igual de memorables. Tu vida sigue escribiéndose aquí y ahora.",
+      "recomendacion": "Practica la atención plena para anclarte más en el presente. Cuando notes que tu mente se va demasiado al pasado, puedes escribir sobre tus recuerdos y darles un cierre consciente para que no ocupen más espacio del necesario.",
+      "reflexion": "La nostalgia puede ser puente o prisión. Honrar tu historia es parte del camino, pero quedarte en ella te aleja del ahora. Si algo pesa, suéltalo con conciencia. El presente también necesita espacio para florecer. Habitarlo con intención es un acto profundo de libertad."
+    },
+    {
+      "min": 19.0,
+      "max": 25.0,
+      "introduccion": "El pasado nos ha moldeado, pero aferrarnos a él puede frenar nuestro crecimiento. Pregúntate cuánto impacta en tu presente y si ha llegado el momento de soltarlo. A veces, dejar ir es el primer paso para fluir con más ligereza y crear nuevas oportunidades.",
+      "titulo": "Peso del pasado en tu presente",
+      "descripcion": "Hay recuerdos, emociones o experiencias que siguen influyendo de forma profunda en tu día a día. Tal vez te cuesta soltar ciertas historias, o hay situaciones no resueltas que se activan sin que lo notes. Es natural protegernos aferrándonos a lo conocido, pero cuando ese pasado comienza a pesar más que a sostener, puede limitar tu crecimiento. La buena noticia es que no estás atrapado: estás en proceso. Y ese proceso comienza al reconocer qué necesitas transformar. Mirar el pasado con honestidad es valiente. Liberarte de culpas, soltar expectativas antiguas, reinterpretar lo vivido… todo eso puede abrirte a una nueva versión de ti. No se trata de olvidar, sino de sanar. Estás llamado a escribir un nuevo capítulo con más libertad, y eso empieza por cerrar algunos anteriores con amor. Tu historia no termina donde dolió. Comienza donde decides crecer. El pasado puede ser raíz, no peso. Y tú puedes elegir cómo seguir.",
+      "recomendacion": "Reflexiona sobre qué aspectos del pasado te siguen afectando y busca formas de procesarlos. Terapias como la escritura emocional, la meditación o incluso conversar con alguien de confianza pueden ayudarte a liberar ese peso. Pequeños pasos en esta dirección te ayudarán a sentirte más ligero/a y presente.",
+      "reflexion": "Recordar está bien, pero vivir atrapado en lo que ya fue limita tu presente. Tu historia no te define, te prepara. Si duele, míralo con atención y suéltalo. Mindfulness o escribir lo que sientes pueden ayudarte a liberar lo que ya no necesitas y seguir creando desde tu verdad."
+    }
+  ]
+}

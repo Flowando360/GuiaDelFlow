@@ -1,0 +1,39 @@
+{
+  "sheet": "Frustración",
+  "tipo_calculo": "suma_likert",
+  "preambulo": [
+    "La Frustración",
+    "Tolerancia a la frustración - Resiliencia en acción",
+    "Suma C73-C77"
+  ],
+  "num_resultados": 3,
+  "resultados": [
+    {
+      "min": 5.0,
+      "max": 10.0,
+      "introduccion": "La vida no siempre sigue el guion que imaginamos. A veces los planes cambian, los errores llegan y las puertas se cierran. Pero el verdadero crecimiento no está en evitar caídas, sino en aprender a levantarnos. Adaptarnos, seguir adelante y ver oportunidades donde antes solo había obstáculos nos hace más fuertes. Cada desafío superado nos acerca un paso más a nuestras metas. Confía en el proceso.",
+      "titulo": "Baja tolerancia a la frustración",
+      "descripcion": "Cuando las cosas no salen como esperas, es probable que sientas enojo, impaciencia o desmotivación. Es una reacción humana, sobre todo cuando pones el corazón en lo que haces. Sin embargo, si aprendes a observar estas emociones con calma, puedes transformar esa energía en resiliencia. La frustración te está hablando: tal vez de una expectativa, una necesidad o una forma de ver el éxito que puedes revisar. Desarrollar tolerancia no significa resignarse, sino aprender a fluir con lo que no se puede controlar. Tu potencial se expande cuando te das el permiso de fallar, de ajustar el rumbo y de confiar en el proceso. Cada desafío es una oportunidad para fortalecer tu mente, tu flexibilidad y tu capacidad de respuesta. Recuerda: no se trata de evitar el error, sino de aprender a seguir, incluso con él. Tu crecimiento empieza cuando decides que los tropiezos también son parte del camino.",
+      "recomendacion": "Practica técnicas de regulación emocional como la respiración profunda o el cambio de perspectiva. Pregúntate: ¿Este problema seguirá siendo importante en un mes o un año? También puedes entrenar tu paciencia exponiéndote gradualmente a situaciones incómodas y desafiándote a manejarlas de manera diferente.",
+      "reflexion": "Cuando todo parece cuesta arriba, no es señal de rendirse, sino de que estás creciendo. La frustración no te define, solo revela cuánto confías en ti. Aprende a respirar hondo, soltar el control y dar ese paso más. Porque a veces, lo que parece un tropiezo… es solo parte del salto."
+    },
+    {
+      "min": 11.0,
+      "max": 18.0,
+      "introduccion": "La vida no siempre sigue el guion que imaginamos. A veces los planes cambian, los errores llegan y las puertas se cierran. Pero el verdadero crecimiento no está en evitar caídas, sino en aprender a levantarnos. Adaptarnos, seguir adelante y ver oportunidades donde antes solo había obstáculos nos hace más fuertes. Cada desafío superado nos acerca un paso más a nuestras metas. Confía en el proceso.",
+      "titulo": "Moderada tolerancia a la frustración",
+      "descripcion": "Tienes la capacidad de mantenerte en pie frente a los desafíos, aunque a veces sientes que ciertos contratiempos te superan. Hay momentos en los que logras mantener la calma y avanzar con claridad, pero también hay otros donde la frustración toma más espacio del que quisieras. Es completamente válido sentirte así: estás en equilibrio, en ese punto donde ya reconoces tus emociones, pero aún estás afinando tu forma de responder a ellas. Lo importante es que estás en camino de fortalecer esa resiliencia emocional. Con práctica, conciencia y paciencia, puedes aprender a adaptarte cada vez mejor a lo inesperado. Recuerda que la flexibilidad es una herramienta poderosa, y que los momentos incómodos también traen aprendizajes. Estás mucho más preparado de lo que crees. Y cada vez que eliges respirar antes de reaccionar, te estás entrenando para fluir con más sabiduría. Tu progreso ya comenzó.",
+      "recomendacion": "Fortalece tu capacidad de adaptación identificando qué situaciones te generan más frustración y desarrollando estrategias para afrontarlas. Pregúntate: ¿Puedo cambiar esta situación o solo mi forma de reaccionar ante ella? Aplicar la mentalidad de crecimiento y enfocarte en lo que sí puedes controlar te ayudará a reducir el impacto emocional de los imprevistos.",
+      "reflexion": "Estás en ese punto en que sabes que los retos duelen, pero también transforman. Y aunque a veces dudes, sigues adelante. No necesitas tener todo resuelto, solo recordar que cada intento, cada error y cada pausa también cuentan como parte de tu evolución. Sigue fluyendo, sigue creyendo."
+    },
+    {
+      "min": 19.0,
+      "max": 25.0,
+      "introduccion": "La vida no siempre sigue el guion que imaginamos. A veces los planes cambian, los errores llegan y las puertas se cierran. Pero el verdadero crecimiento no está en evitar caídas, sino en aprender a levantarnos. Adaptarnos, seguir adelante y ver oportunidades donde antes solo había obstáculos nos hace más fuertes. Cada desafío superado nos acerca un paso más a nuestras metas. Confía en el proceso.",
+      "titulo": "Alta tolerancia a la frustración",
+      "descripcion": "Tienes una admirable capacidad para adaptarte, mantener la calma y seguir avanzando incluso cuando las cosas no salen como esperabas. Sabes que los errores, los cambios de planes o las demoras no son fracasos, sino parte del proceso de crecimiento. Tu mente está entrenada para enfocarse en soluciones, no en obstáculos. Esta habilidad te permite enfrentar desafíos con inteligencia emocional, inspirar a otros y sostenerte firme en medio del caos. No reaccionas impulsivamente, eliges cómo responder. Eso habla de madurez, autoconocimiento y fortaleza interna. Este nivel de tolerancia te da una ventaja en cualquier entorno, porque te vuelve más resiliente, confiable y estratégico. Sigue cultivando esa estabilidad, sin olvidar que también puedes darte permiso para sentir. La verdadera fortaleza está en combinar calma con humanidad. Eres ejemplo de cómo fluir sin perder el rumbo. Y esa actitud puede ser faro para quienes aún buscan su equilibrio.",
+      "recomendacion": "Sigue cultivando tu resiliencia y comparte tus estrategias con quienes puedan beneficiarse de ellas. Pregúntate: ¿Cómo puedo usar mi capacidad de adaptación para ayudar a otros a manejar mejor sus frustraciones? También es importante recordar que ser tolerante no significa reprimir emociones; asegúrate de darte espacios para procesar lo que sientes cuando enfrentas dificultades.",
+      "reflexion": "Tienes la fuerza de quien ha aprendido que los obstáculos no frenan, enseñan. Ya no temes tropezar porque sabes levantarte con más claridad. Mantente en movimiento, sin perder de vista tu propósito. Tu resiliencia es luz en el camino. Sigue así: constante, valiente, con flow y con fuego."
+    }
+  ]
+}

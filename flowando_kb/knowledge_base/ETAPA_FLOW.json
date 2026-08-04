@@ -1,0 +1,114 @@
+{
+  "sheet": "ETAPA_FLOW",
+  "tipo_calculo": "formula_fecha_identificador",
+  "preambulo": [
+    {
+      "campo": "CATEGORÍA",
+      "valor": "DESAFÍOS"
+    },
+    {
+      "campo": "TÍTULO DE LA CATEGORÍA:",
+      "valor": "Los retos que nos impulsan a evolucionar"
+    },
+    {
+      "campo": "ASPECTO:",
+      "valor": "ETAPA DEL FLOW"
+    },
+    {
+      "campo": "BASE DE CÁLCULO:",
+      "valor": "FECHA DE NACIMIENTO"
+    },
+    {
+      "campo": "CÁLCULO:",
+      "valor": "SEPTENIO QUE VIVE LA PERSONA"
+    },
+    {
+      "campo": "DESC. ASPECTO",
+      "valor": "Etapa del Flow - Tu ciclo de crecimiento y transformación"
+    },
+    {
+      "campo": "INTRODUCCIÓN",
+      "valor": "Saber en qué etapa del flow estás es como desbloquear un mapa de tu propio crecimiento. Cada fase trae retos, aprendizajes y oportunidades para evolucionar. Cuando reconoces tu momento, fluyes con autenticidad, tomas decisiones más alineadas y potencias tu talento con intención. Entender tu proceso te permite soltar la resistencia y crear desde tu esencia. Descubre tu ritmo, confía en él y haz magia con tu crecimiento."
+    }
+  ],
+  "num_resultados": 11,
+  "resultados": [
+    {
+      "valor": 1.0,
+      "titulo": "Transitas el camino de \"El Despertar Mágico\".",
+      "descripcion": "Estás en la etapa más mágica de todas: el origen del viaje, donde la vida es un gran laboratorio de asombro. Aquí cada experiencia es una semilla, cada pregunta una puerta, y cada juego una forma de aprender. Tu imaginación es poderosa y tu curiosidad, inagotable. Todo lo que ves te invita a explorar, a tocar, a experimentar. Estás construyendo la base emocional, sensorial y afectiva de lo que serás mañana. Este es el tiempo de confiar en tu instinto, de seguir la alegría, de aprender jugando. El aprendizaje nace del movimiento, del arte, de los vínculos y de la libertad de ser. Permítete vivir con asombro, soltar el juicio y sumergirte en la experiencia. Lo que hoy siembras en forma de juego y emoción, será tu fuerza interior para toda la vida. Disfruta de ser quien eres ahora. Tu magia está despierta, y el mundo está listo para verla brillar.",
+      "subtitulo": "De tu etapa del Flow, simpre ten presente",
+      "reflexion": "Juega, explora y maravíllate. Crea, sueña sin límites y rodéate de amor. Escucha, observa y pregunta con curiosidad. Corre, baila, toca, siente y confía en ti. Tu cuerpo, mente y corazón están aprendiendo a la vez. La vida recién empieza y tú eres el protagonista de la historia más increíble: ¡la tuya!"
+    },
+    {
+      "valor": 2.0,
+      "titulo": "Transitas el camino de \"\"El Descubrimiento del Yo\"",
+      "descripcion": "Estás en una etapa vital donde todo empieza a tomar forma dentro de ti. Tu identidad se está gestando, y con ella, surgen emociones intensas, preguntas profundas y un deseo de entender tu lugar en el mundo. Comienzas a ver diferencias, a desarrollar opiniones propias y a probarte en nuevas experiencias. Esta es una etapa de descubrimiento, de ensayo y error, de sueños grandes y búsquedas auténticas. Nada está fijo, y eso es parte del proceso. Explorar quién eres implica equivocarte, dudar, cambiar de opinión y volver a empezar. Tu crecimiento ocurre mientras te mueves, mientras haces y sientes. No tengas miedo de romper moldes, de cuestionar o de reinventarte. Cada paso que das, incluso los que parecen inciertos, te están acercando a tu mejor versión. Estás escribiendo tu historia con intención. Y eso es un acto profundo de creación personal. Sigue explorando, el mundo te espera.",
+      "subtitulo": "De tu etapa del Flow, simpre ten presente",
+      "reflexion": "Explora lo que te apasiona, prueba, crea, conoce y aprende sin miedo. Expresa lo que sientes, lo que piensas y lo que sueñas. Atrévete a equivocarte, porque ahí también se crece. Rodéate de personas que te inspiren y te impulsen. Tu energía es sagrada y tu autenticidad, el mejor GPS para encontrar tu camino."
+    },
+    {
+      "valor": 3.0,
+      "titulo": "Transitas el camino de \"El despertar de la identidad\"",
+      "descripcion": "En esta etapa comienzas a tomar decisiones que reflejan lo que sueñas, piensas y valoras. Es el momento de salir al mundo con una identidad más definida, de probar tu voz, de hacerte cargo de tus elecciones. Te enfrentas a nuevos retos, responsabilidades y oportunidades de crecimiento. Empiezas a comprender quién eres más allá de tu entorno, y eso puede ser tan emocionante como desafiante. A veces dudarás, otras avanzarás con firmeza, pero cada experiencia suma en la construcción de tu autenticidad. Este es un momento ideal para proyectar lo que quieres y alinear tus acciones con tus valores. Ya no se trata solo de soñar, sino de construir con intención. No temas equivocarte: el error también forma parte del despertar. Confía en lo que intuyes, en lo que te mueve, en lo que te hace vibrar. Tu identidad está emergiendo con fuerza. Y eso es hermoso de ver.",
+      "subtitulo": "De tu etapa del Flow, simpre ten presente",
+      "reflexion": "Define tu propio camino, escucha tu voz interior y crea una ruta con sentido. Desarrolla habilidades que te impulsen y confía en tu evolución. Acepta el cambio como aliado del crecimiento. Reinventarte es parte del viaje. Rodéate de personas que te inspiren y eleven tu energía. Tu autenticidad es tu mejor guía."
+    },
+    {
+      "valor": 4.0,
+      "titulo": "Transitas el camino de \"El Despertar del Yo Auténtico\"",
+      "descripcion": "Has vivido experiencias que te han moldeado y ahora estás en una etapa de consolidación. Ya no estás buscando tanto hacia afuera, sino hacia adentro. Te preguntas quién eres realmente y qué significa vivir alineado con tu verdad. Este es un momento de madurez emocional, de tomar decisiones más conscientes y de soltar lo que ya no vibra contigo. Comienzas a elegir relaciones, proyectos y caminos que reflejan tus valores más profundos. La autenticidad se vuelve tu brújula, y cada paso que das te lleva a un mayor equilibrio entre lo que haces y lo que sientes. A veces redefinirás tus metas, otras veces reafirmarás tu rumbo. No estás perdido, estás afinando tu propósito. Esta etapa no es el final, sino el inicio de una vida más genuina. Recuerda: la madurez no mata la magia, la dirige. Y tú estás aprendiendo a dirigir tu luz con intención.",
+      "subtitulo": "De tu etapa del Flow, simpre ten presente",
+      "reflexion": "Reconéctate contigo. ¿Vas por el camino que quieres o el que esperan de ti? Equilibra pasión y bienestar: el éxito también se siente. Usa tu experiencia para inspirar y guiar a otros. Comparte tu sabiduría. Y nunca dejes de crecer: siempre hay nuevas formas de expandir tu potencial."
+    },
+    {
+      "valor": 5.0,
+      "titulo": "Transitas el camino de \"La Integración y Propósito\"",
+      "descripcion": "Has recorrido un camino lleno de aprendizajes, caídas, logros y reflexiones. Ahora estás en una etapa donde todo eso empieza a integrarse. Ya no necesitas demostrar tanto, ahora quieres vivir con más sentido. Estás eligiendo con intención, priorizando lo que te llena y soltando lo que ya no aporta valor. Esta etapa te invita a vivir desde el propósito, a mirar hacia adentro y preguntarte: ¿Qué quiero hacer con lo que sé? ¿Cómo quiero usar mi energía? El tiempo cobra otro valor, porque ya no buscas solo resultados, sino plenitud. Puedes crear con más calma, disfrutar con más presencia y actuar con más sabiduría. Es un momento para alinear tu hacer con tu ser. Y en esa coherencia, encuentras poder. Estás listo para construir con más foco, más conexión y más autenticidad. Lo vivido se convierte en motor. Y tú, en un canal claro de impacto real.",
+      "subtitulo": "De tu etapa del Flow, simpre ten presente",
+      "reflexion": "Prioriza tu bienestar. La vida no es solo metas, también es disfrutarlas. Escucha cuerpo, mente y corazón. Afirma tu propósito y genera impacto consciente. Abraza la transformación: cambiar es crecer. Y nunca apagues tu curiosidad, porque siempre hay más por explorar y aprender."
+    },
+    {
+      "valor": 6.0,
+      "titulo": "Transitas el camino de \"El Propósito y la Plenitud\"",
+      "descripcion": "Has llegado a una etapa de maestría interior. Ya no te defines por lo que logras, sino por lo que eres. Has aprendido a soltar cargas, a cuidar tu energía y a priorizar lo que realmente importa. Tu autenticidad se ha vuelto tu bandera, y tu experiencia, una guía para otros. Sabes disfrutar sin culpa, crear sin presión y vivir sin máscaras. Esta es la etapa donde la sabiduría se siente en el cuerpo: en la calma con la que eliges, en la claridad con la que dices no, en la alegría con la que compartes. No necesitas velocidad, necesitas dirección. Sigue explorando, aprendiendo, inspirando. Tu propósito ya no está afuera, está en cada cosa que haces desde la conciencia. Estás en plenitud, no por haber llegado, sino por saber vivir lo que hay. Esa es tu gran conquista: estar en paz contigo, con tu camino, con tu forma de brillar.",
+      "subtitulo": "De tu etapa del Flow, simpre ten presente",
+      "reflexion": "Escucha tu voz. Ya no necesitas validación externa: confía en lo que sabes y deseas. Cuida tu energía, no todo merece tu atención. Comparte tu legado, inspiras más de lo que crees. Y sobre todo, disfruta sin culpa: te lo mereces. Regálate gozo, expansión y momentos que te hagan vibrar."
+    },
+    {
+      "valor": 7.0,
+      "titulo": "Transitas el camino de  \"El despertar del legado\"",
+      "descripcion": "Has recorrido muchos senderos, enfrentado batallas internas y externas, y hoy llegas a un punto donde todo lo vivido cobra un nuevo sentido. Comprendes que el verdadero legado no se mide en logros visibles, sino en el impacto que dejas en las personas, en las ideas, en el mundo. Tu voz tiene peso, tu presencia inspira y tu mirada contiene sabiduría. Esta etapa es de liderazgo con propósito, de decisiones conscientes, de influencia desde la experiencia. Ya no necesitas correr, solo avanzar con intención. Has integrado lo aprendido, has redefinido tus metas, y ahora puedes guiar con empatía y visión. Tu autenticidad se siente como fuerza tranquila, como presencia firme. Estás dejando huella sin forzarlo, simplemente siendo quien eres. Este es el tiempo de dar desde la plenitud, de compartir lo aprendido y de disfrutar el poder de tu historia. Tu legado está en marcha. Y es profundamente transformador.",
+      "subtitulo": "De tu etapa del Flow, simpre ten presente",
+      "reflexion": "Refuerza tu legado: que cada paso deje huella con intención. Profundiza en tu autoconocimiento, acepta los cambios con sabiduría. Atrévete a simplificar, suelta lo que pesa y enfócate en lo esencial. Rodéate de energía alineada: personas y proyectos que eleven tu vibración y honren tu esencia."
+    },
+    {
+      "valor": 8.0,
+      "titulo": "Transitas el camino de \"La Plenitud Consciente\"",
+      "descripcion": "Has aprendido a surfear las olas de la vida y ahora navegas con sabiduría, sin la prisa del deber ni el ruido de las expectativas. Estás en una etapa de plenitud real, donde todo lo vivido se convierte en claridad. El éxito ha cambiado de forma: ya no es alcanzar, es elegir. Has ganado la libertad de priorizar con quién compartes tu tiempo, qué te nutre y qué quieres dejar como huella. Este es el momento de vivir desde lo esencial, sin esfuerzo innecesario. Tu voz, tu historia y tu energía son faros para otros. Vives con más presencia, más profundidad y menos ruido. La autenticidad se volvió hábito, y la paz, elección. Sigue compartiendo tu luz con el mundo, pero sin olvidarte de disfrutarla tú también. Esta etapa no es una llegada, es una celebración. Una pausa consciente para agradecer y seguir fluyendo con amor, calma y propósito.",
+      "subtitulo": "De tu etapa del Flow, simpre ten presente",
+      "reflexion": "Disfruta la sabiduría que te ha dado la experiencia: ya no necesitas correr, eliges con intención. Afina tu propósito, construye tu legado con cada acción. Invierte en tu bienestar físico, emocional y espiritual. Y no dejes de explorar… la vida sigue sorprendiendo si mantienes viva la chispa de la curiosidad."
+    },
+    {
+      "valor": 9.0,
+      "titulo": "Transitas el camino de \"El Legado Sabio\"",
+      "descripcion": "Has llegado a una etapa de integración profunda. Miras atrás y reconoces el valor de cada paso, de cada lección, de cada persona que cruzó tu camino. Hoy entiendes que el tiempo no se mide en velocidad, sino en presencia. Esta es una fase donde la sabiduría no solo se piensa, se habita. Priorizar lo esencial, lo sereno y lo verdadero se vuelve tu forma de vivir. Ya no necesitas correr, ahora eliges quedarte donde el alma se siente en casa. La autenticidad se vuelve tu refugio, y cada decisión parte de lo que realmente nutre. Tu mirada es más compasiva, tu ritmo más amable, tu propósito más claro. Este es un momento para inspirar sin imponer, para compartir sin exigir y para disfrutar sin apuro. Has cultivado un legado interno valioso, y ahora puedes compartirlo con quienes lo necesiten. Estás viviendo desde la raíz. Y eso, es poder en estado puro.",
+      "subtitulo": "De tu etapa del Flow, simpre ten presente",
+      "reflexion": "Honra tu historia, cada paso ha valido la pena. Celebra quién eres y lo que has construido. Comparte tu conocimiento, inspira y deja huella en quienes vienen detrás. Rodéate de amor verdadero: familia, amigos, conexiones reales. Y escucha tu cuerpo: muévete, descansa, aliméntate y disfruta la vida."
+    },
+    {
+      "valor": 10.0,
+      "titulo": "Transitas el camino de \"El Horizonte Esencial\".",
+      "descripcion": "Has cruzado muchas estaciones de la vida y ahora transitas un momento de contemplación y disfrute. La prisa ya no marca tu paso, la urgencia perdió protagonismo, y lo que queda es la esencia más pura de quien eres. Cada instante se vuelve valioso, cada conversación, una oportunidad para conectar desde lo auténtico. Esta es una etapa de saborear el presente con gratitud, de vivir desde el corazón y de valorar lo que permanece cuando todo lo demás se ha ido. Ya no se trata de acumular, sino de seleccionar: momentos, personas, experiencias. Has descubierto que el éxito está en lo simple, en lo honesto, en lo que te hace sentir en paz. Es tiempo de descansar en lo que sabes, de abrazar tu historia y de ofrecer tu presencia como un regalo. Estás en el horizonte de lo esencial. Y desde ahí, todo lo que haces se llena de propósito real.",
+      "subtitulo": "De tu etapa del Flow, simpre ten presente",
+      "reflexion": "Vive en el aquí y ahora, sin aferrarte al pasado ni preocuparte por el futuro. Comparte tu historia, tu experiencia es un tesoro para quienes vienen detrás. Encuentra gozo en las pequeñas cosas: la simplicidad es el mayor lujo. Y sigue creando, porque la expresión auténtica no tiene edad."
+    },
+    {
+      "valor": 11.0,
+      "titulo": "Transitas el camino de \"El Legado Vivo\"",
+      "descripcion": "Has vivido intensamente, aprendido con valentía y amado con profundidad. Cada experiencia ha tejido la historia única que hoy eres. Esta es la etapa donde el tiempo se disfruta sin prisa, donde el amor se da sin condiciones y donde el ser se expresa sin necesidad de demostrar. Tu presencia inspira, tu palabra guía y tu luz toca corazones. No hay nada que probar, solo vida por saborear. Es momento de compartir tu sabiduría, de sembrar desde la calma y de acompañar a otros sin perderte a ti. Tu legado no está solo en lo que hiciste, sino en lo que transmites con tu forma de estar. Honras lo vivido y lo conviertes en medicina para el presente. Esta etapa es una celebración de la vida en su forma más auténtica. Estás aquí para disfrutar, para amar sin miedo y para seguir siendo faro, incluso en la quietud. Tu legado está vivo, porque tú lo estás.",
+      "subtitulo": "De tu etapa del Flow, simpre ten presente",
+      "reflexion": "Disfruta tu legado: lo que has construido vive en quienes has inspirado. Abraza la serenidad, la paz es el mayor tesoro de esta etapa. Cuenta tus historias, tu experiencia es fuente de inspiración. Vive con gratitud, cada día es un regalo que merece ser saboreado con amor, presencia y plena consciencia."
+    }
+  ]
+}

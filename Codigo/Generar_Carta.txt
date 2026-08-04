@@ -1,0 +1,57 @@
+"Necesito que generes una carta personal para [NOMBRE] en PDF tamaño carta (8.5 x 11 pulgadas). En el proyecto encuentras 3 imágenes: escena_5.jpg, FlowiCarticas.jpg y LogoFlowAndoOficial.jpg. También te adjunto el PDF original de su Guía del Flow para que lo leas y respondas sus cuestionamientos basándote en lo que dice. Además, te adjunto la transcripción de la conversación que tuve con ella. Y 
+La carta tiene exactamente 5 páginas. Aquí está todo lo que necesitas:
+
+DATOS DE LA PERSONA:
+
+Nombre: [Anye]
+Fecha: [07/03/2009]
+Razón por la que hace la guía: [Porque Cursando último año de bachillerato y Quiero estar segura de lo que quiero estudiar ]
+Cuestionamiento 1: [Me inquieta y estresa no saber que quiero estudiar ]
+Cuestionamiento 2: [No tengo claridad sobre que carrera debo elegir y eso me frustra ]
+Cuestionamiento 3: [Quiero Sentirme más segura de mi misma]
+
+
+ESTRUCTURA DE LAS 5 PÁGINAS:
+— Página 1 (PORTADA): Fondo degradado morado claro a violeta a fucsia suave. Logo FlowAndo arriba izquierda. Tag 'Una carta para ti'. Nombre de la persona en 80pt Playfair Display. Estrella ✦. Línea de color. Frase personalizada en cursiva relacionada con su esencia según su guía. Imagen escena_5.jpg. Fecha abajo centrada.
+— Página 2 (INTRODUCCIÓN): Header con logo, título 'Carta personal · FlowAndo' y número 02. Saludo 'Hola,' en cursiva. Título '[NOMBRE], qué bonito es leerte.' en grande. Línea decorativa. Párrafo 1: por qué está haciendo la guía y lo que eso dice de ella. Párrafo 2: quién es según su guía del flow (carácter, talentos, propósito). Párrafo 3: puente hacia los cuestionamientos.
+— Página 3 (CUESTIONAMIENTO 01): Header número 03. Bloque con fondo #faf5ff y borde izquierdo morado, que contiene: etiqueta 'CUESTIONAMIENTO 01', el texto del cuestionamiento en cursiva Playfair, y 3 párrafos de respuesta conectados directamente con lo que dice la guía. Después del bloque: un párrafo de cierre suelto.
+— Página 4 (CUESTIONAMIENTO 02): Header número 04. Mismo bloque con cuestionamiento 2 y 3 párrafos de respuesta. Debajo del bloque: imagen FlowiCarticas.jpg al 82% de ancho, con pie de foto en cursiva morado claro relacionado con el cuestionamiento.
+— Página 5 (CUESTIONAMIENTO 03 + CIERRE): Header número 05. Bloque con cuestionamiento 3 y 3 párrafos de respuesta. Luego 2 párrafos de cierre cálido. Luego firma: 'CON TODO EL CARIÑO DEL MUNDO,' en pequeño, 'Flowi ♥' en 24pt Playfair cursiva morado, y 'El Lab del Talento · FlowAndo · [FECHA]' pequeño.
+
+PALETA DE COLORES:
+
+Texto principal: #2e1065
+Texto bloques: #3b0764
+Morado titular: #4c1d95
+Morado acento: #7c3aed
+Morado claro etiquetas: #a855f7
+Pie de foto y firma label: #a78bfa
+Footer texto: #d8b4fe
+Fondo bloques: #faf5ff
+Portada degradado: #faf5ff → #ede9fe → #f5d0fe
+
+TIPOGRAFÍAS: Nunito (cuerpo) + Playfair Display (títulos y cursivas). Ambas de Google Fonts.
+Tamaños: cuerpo 12pt línea 1.75, bloques respuesta 11.5pt línea 1.74, etiquetas bloque 8pt, pregunta bloque 14pt cursiva.
+
+MÉTODO TÉCNICO OBLIGATORIO — sigue estos pasos exactamente:
+1. Genera cada una de las 5 páginas como un HTML independiente con WeasyPrint.
+2. Cada HTML tiene su propio @page { size: 8.5in 11in; } con los márgenes que correspondan.
+3. La portada usa margin: 0 y min-height: 100vh con flexbox para distribuir el contenido.
+4. Las páginas internas usan margin: 0.55in 0.65in 0.55in 0.65in con @bottom-left y @bottom-right para los footers: 'CARTA PARA [NOMBRE]' y 'FLOWANDO · 2026'.
+5. Cada página se convierte en un PdfReader con pypdf.
+6. Tomas SOLO la primera página (reader.pages[0]) de cada uno.
+7. Los unes todos en un PdfWriter y escribes el archivo final.
+8. Verificas visualmente con pdftoppm todas las páginas antes de entregar.
+Este método es obligatorio porque si usas un solo HTML largo con page-break-before: always, el texto se corta entre páginas y las imágenes quedan solas en páginas vacías.
+
+TONO: Como una amiga muy cercana que leyó la guía completa y conoce a la persona en profundidad. Cálido, claro, directo, emocionalmente consciente. Cada respuesta a un cuestionamiento debe conectar directamente con algo específico que dice la guía de la persona — no respuestas genéricas." Considera también la conversación que te adjunto
+
+En resumen
+Revisa toda la información que te he proporcionado y redacta una carta para la protagonista, como si fueras una amiga cercana que desea orientarla o guiarla desde el conocimiento profundo que tiene de ella.
+Lo único que cambia de persona a persona es:
+
+El PDF de su guía
+Su nombre, fecha y cuestionamientos
+La frase de portada (se personaliza según su esencia)
+
+Todo lo demás — diseño, colores, método técnico, tono — es siempre igual.

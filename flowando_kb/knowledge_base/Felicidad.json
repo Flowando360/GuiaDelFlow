@@ -1,0 +1,37 @@
+{
+  "sheet": "Felicidad",
+  "tipo_calculo": "suma_likert",
+  "preambulo": [
+    "Suma C29-C33"
+  ],
+  "num_resultados": 3,
+  "resultados": [
+    {
+      "min": 5.0,
+      "max": 10.0,
+      "introduccion": "La felicidad no es solo alegría, es un equilibrio entre satisfacción, bienestar y propósito. A veces nos obsesionamos con la meta y olvidamos que el verdadero tesoro está en el camino. Cada reto y logro moldea nuestra evolución. Vivir el presente nos permite descubrir la belleza en cada etapa, incluso en los desafíos. Al final, la felicidad no es un destino, sino cómo disfrutamos el viaje.",
+      "titulo": "Sensación de insatisfacción o vacío",
+      "descripcion": "Es posible que sientas que algo no encaja del todo, como si faltara una pieza en tu rompecabezas interior. Tal vez hay áreas de tu vida que no te generan plenitud o relaciones que ya no resuenan contigo. Esa sensación de vacío no es señal de fracaso, es una invitación. Es tu alma diciéndote que es momento de replantear, de mirar hacia adentro y de buscar algo más auténtico. El malestar puede ser el inicio de una gran transformación si eliges escucharlo con valentía. Pregúntate qué necesitas soltar, qué quieres crear, qué te está pidiendo la vida en este momento. No tienes que tener todas las respuestas ahora, solo abrirte a buscarlas con honestidad. Esta incomodidad es un portal hacia un propósito más profundo. Y tú tienes todo para atravesarlo. Lo que hoy pesa, mañana puede ser impulso. Lo que hoy duele, mañana puede ser guía. Tu plenitud está más cerca de lo que crees.",
+      "recomendacion": "Dedica tiempo a identificar qué aspectos de tu vida necesitan más atención. Un buen ejercicio es escribir sobre lo que sientes y preguntarte: ¿Qué pequeños cambios podría hacer hoy para sentirme mejor? La felicidad no llega de golpe, sino que se construye con acciones diarias alineadas con tu bienestar.",
+      "reflexion": "Sentir que falta algo puede ser la señal para reconectar con lo esencial. No todo se resuelve al llegar a una meta, a veces se encuentra al caminar con presencia. Cada paso, incluso el incierto, tiene algo que mostrarte. La plenitud no está en el destino, está en cómo decides habitar el viaje.\n\nLa Felicidad\nLa felicidad - La alquimia del bienestar"
+    },
+    {
+      "min": 11.0,
+      "max": 18.0,
+      "introduccion": "La felicidad no es solo alegría, es un equilibrio entre satisfacción, bienestar y propósito. A veces nos obsesionamos con la meta y olvidamos que el verdadero tesoro está en el camino. Cada reto y logro moldea nuestra evolución. Vivir el presente nos permite descubrir la belleza en cada etapa, incluso en los desafíos. Al final, la felicidad no es un destino, sino cómo disfrutamos el viaje.",
+      "titulo": "Felicidad moderada con áreas de mejora",
+      "descripcion": "Tu vida tiene momentos de alegría, conexión y logro, pero también hay espacios donde sientes que algo puede mejorar. Tal vez hay pensamientos que vuelven, relaciones que ya no fluyen igual o rutinas que no te llenan del todo. Esta sensación no significa que estés mal, sino que estás en un punto de consciencia que te permite observar con más claridad. Estás en transición: agradeces lo que tienes, pero sabes que puedes ir más allá. Hay un llamado interno a equilibrar mejor tus días, a cuidar ciertos aspectos de ti o a soltar cargas innecesarias. La clave está en hacer pequeños ajustes con intención. Escucha lo que necesitas, actúa con amor propio y rodéate de lo que te nutre. Estás en proceso, y eso es valioso. Cada paso hacia tu bienestar es un acto de valentía. Sigue fluyendo hacia una vida más alineada con tu esencia. Ya comenzaste, y lo estás haciendo bien.",
+      "recomendacion": "Identifica qué áreas de tu vida te generan más satisfacción y cuáles podrías mejorar. Practicar la gratitud diaria ayuda a enfocarte en lo positivo sin ignorar los aspectos que necesitan ajustes. También puede ser útil hacer actividades que te conecten con tu propósito, como aprender algo nuevo o dedicarte más a tus pasiones.",
+      "reflexion": "Hay momentos en que todo parece bien, pero algo aún pide más sentido. Es la vida recordándote que aún puedes profundizar, afinar tu mirada y disfrutar más el camino. No te distraigas con la meta, saborea los trayectos. El arte de vivir está en sentir, incluso cuando todo parece estar bien."
+    },
+    {
+      "min": 19.0,
+      "max": 25.0,
+      "introduccion": "La felicidad no es solo alegría, es un equilibrio entre satisfacción, bienestar y propósito. A veces nos obsesionamos con la meta y olvidamos que el verdadero tesoro está en el camino. Cada reto y logro moldea nuestra evolución. Vivir el presente nos permite descubrir la belleza en cada etapa, incluso en los desafíos. Al final, la felicidad no es un destino, sino cómo disfrutamos el viaje.",
+      "titulo": "Alto nivel de felicidad y bienestar",
+      "descripcion": "Estás en un momento en el que sabes reconocer lo bueno de tu vida y apreciarlo con sinceridad. Tienes la capacidad de disfrutar lo cotidiano, valorar lo que tienes y fluir con lo que eres. Esta forma de estar en el mundo no implica que todo sea perfecto, sino que eliges una actitud positiva frente a los desafíos. Tu bienestar nace de tu capacidad para adaptarte, aprender y mantener el foco en lo esencial. Sabes transformar experiencias en aprendizajes y mantenerte en equilibrio emocional, incluso en momentos de cambio. Esta mentalidad te permite vivir con mayor plenitud y también inspirar a quienes te rodean. Eres un ejemplo de que la felicidad no es un destino, sino una forma de caminar. Sigue cultivando esta mirada con presencia, gratitud y propósito. Cada elección consciente que haces contribuye a expandir ese estado de bienestar que hoy habita en ti. Y eso vale más de lo que imaginas.",
+      "recomendacion": "Sigue cultivando tu bienestar y comparte tu energía con quienes te rodean. Asegúrate de seguir explorando nuevas formas de crecimiento y expansión. Un buen hábito es hacer una lista semanal de cosas que te hicieron sentir bien, para reforzar la consciencia de tu felicidad.",
+      "reflexion": "Estás fluyendo con la vida, y eso ya es una victoria. Pero incluso en la plenitud, el viaje sigue siendo una invitación a descubrir más, a inspirarte con lo cotidiano. La felicidad real no se estanca, se expande. Sigue avanzando con gratitud. Porque la magia está, y siempre estará, en el camino."
+    }
+  ]
+}

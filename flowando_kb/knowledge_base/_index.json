@@ -1,0 +1,122 @@
+{
+  "TEMPERAMENTO": {
+    "tipo_calculo": "formula_fecha_residuo",
+    "num_resultados": 12
+  },
+  "TALENTO_UNICO": {
+    "tipo_calculo": "formula_fecha_residuo_elemento",
+    "num_resultados": 48
+  },
+  "Desafio_Libera": {
+    "tipo_calculo": "formula_numerologica_compuesta",
+    "num_resultados": 11
+  },
+  "CualidadesPotencia": {
+    "tipo_calculo": "formula_numerologica_compuesta",
+    "num_resultados": 11
+  },
+  "Integra": {
+    "tipo_calculo": "formula_numerologica_compuesta",
+    "num_resultados": 11
+  },
+  "Desafio_Sanacion": {
+    "tipo_calculo": "formula_numerologica_compuesta",
+    "num_resultados": 11
+  },
+  "DesafioInterior": {
+    "tipo_calculo": "formula_numerologica_compuesta",
+    "num_resultados": 11
+  },
+  "Talento_Innato": {
+    "tipo_calculo": "formula_numerologica",
+    "num_resultados": 11
+  },
+  "Inteligencias": {
+    "tipo_calculo": "pregunta_unica_umbral",
+    "num_resultados": 9
+  },
+  "Niñez": {
+    "tipo_calculo": "formula_numerologica_compuesta",
+    "num_resultados": 5
+  },
+  "Negociación": {
+    "tipo_calculo": "suma_likert",
+    "num_resultados": 4
+  },
+  "Cambios": {
+    "tipo_calculo": "suma_likert",
+    "num_resultados": 3
+  },
+  "Compromiso": {
+    "tipo_calculo": "suma_likert",
+    "num_resultados": 3
+  },
+  "Responsabilidad": {
+    "tipo_calculo": "suma_likert",
+    "num_resultados": 3
+  },
+  "TrabajoEnEquipo": {
+    "tipo_calculo": "suma_likert",
+    "num_resultados": 3
+  },
+  "Pertenencia": {
+    "tipo_calculo": "suma_likert",
+    "num_resultados": 3
+  },
+  "Dependencia": {
+    "tipo_calculo": "suma_likert",
+    "num_resultados": 3
+  },
+  "Felicidad": {
+    "tipo_calculo": "suma_likert",
+    "num_resultados": 3
+  },
+  "Estabilidad_Emocional": {
+    "tipo_calculo": "suma_likert",
+    "num_resultados": 3
+  },
+  "Frustración": {
+    "tipo_calculo": "suma_likert",
+    "num_resultados": 3
+  },
+  "Pasado": {
+    "tipo_calculo": "suma_likert",
+    "num_resultados": 3
+  },
+  "Comunicación": {
+    "tipo_calculo": "suma_likert",
+    "num_resultados": 4
+  },
+  "Liderazgo_2": {
+    "tipo_calculo": "suma_likert",
+    "num_resultados": 5
+  },
+  "Liderazgo_1": {
+    "tipo_calculo": "suma_likert",
+    "num_resultados": 3
+  },
+  "Talento_Potenciar": {
+    "tipo_calculo": "formula_numerologica",
+    "num_resultados": 11
+  },
+  "Proposito_1": {
+    "tipo_calculo": "formula_numerologica",
+    "num_resultados": 11
+  },
+  "Proposito_2": {
+    "tipo_calculo": "formula_numerologica",
+    "num_resultados": 11
+  },
+  "CARACTER": {
+    "tipo_calculo": "formula_fecha_identificador",
+    "num_resultados": 12
+  },
+  "ETAPA_FLOW": {
+    "tipo_calculo": "formula_fecha_identificador",
+    "num_resultados": 11
+  },
+  "Recursividad": {
+    "tipo_calculo": "suma_likert",
+    "num_resultados": 3
+  }
+}

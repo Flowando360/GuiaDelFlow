@@ -1,0 +1,114 @@
+{
+  "sheet": "Proposito_2",
+  "tipo_calculo": "formula_numerologica",
+  "preambulo": [
+    {
+      "campo": "CATEGORÍA",
+      "valor": "TALENTOS PODEROSOS"
+    },
+    {
+      "campo": "TÍTULO DE LA CATEGORÍA:",
+      "valor": "La Brújula de tu consciencia"
+    },
+    {
+      "campo": "ASPECTO:",
+      "valor": "Propósito Guía"
+    },
+    {
+      "campo": "BASE DE CÁLCULO:",
+      "valor": "Fecha de Nacimiento"
+    },
+    {
+      "campo": "CÁLCULO:",
+      "valor": "Se obtiene sumando los valores que ya se obtuvieron en:\nTalento único+ Talento Innato+talento a potenciar+propósito de Vida\nPor ejemplo, si la persona tiene: \ntalento único=0\nTalento Innato=3\nTalento a Potenciar=7\nPropósito de vida=5\nSu propósito guía será la suma de 0+3+7+5=15\nLuego se reduce a un número entre 1 y 11\nEl resultado es 5+1=6\nEs decir, el propósito guía de la persona será el número 6"
+    },
+    {
+      "campo": "DESC. ASPECTO",
+      "valor": "La Brújula consciente de tu crecimiento personal"
+    },
+    {
+      "campo": "INTRODUCCIÓN",
+      "valor": "El propósito de vida es la llama interna que nos impulsa a crear, transformar y dejar huella. Es una energía en constante evolución que da sentido a nuestras decisiones y nos conecta con lo que realmente nos mueve. Descubrirlo es el primer paso para vivir con autenticidad, sintiendo que cada acción suma a algo más grande. Es así como escribimos el guion de nuestra vida y nos convertimos en los protagonistas de nuestra propia historia."
+    }
+  ],
+  "num_resultados": 11,
+  "resultados": [
+    {
+      "valor": 1.0,
+      "titulo": "El arte de alinear mente y corazón: la clave para una vida auténtica",
+      "descripcion": "Dedica cada día un momento para encontrar ese equilibrio entre lo que piensa tu mente y lo que siente tu corazón. Ambos son partes esenciales de ti, y cuando trabajan juntos en armonía, puedes tomar decisiones más auténticas y actuar desde un lugar de confianza y propósito.Tu mente te aporta claridad y lógica, mientras que tu corazón te conecta con lo que realmente te inspira y te llena de sentido. Al lograr que ambos se escuchen y colaboren, creas un espacio interno donde las dudas se disipan y puedes avanzar con seguridad hacia lo que verdaderamente importa.Este balance no es algo que se alcance de inmediato, pero es un trabajo constante que vale la pena. Al practicarlo cada día, aprenderás a vivir con más coherencia, alineado con tus valores y tus deseos más profundos. ¡Haz de esta conexión un hábito, y verás cómo tu vida fluye con mayor paz y propósito!",
+      "subtitulo": "de Tu Propósito Guía, siempre ten presente...",
+      "recomendacion": "Dedicar tiempo a alinear lo que piensas con lo que sientes es un acto de poder personal. Cuando tu mente y tu corazón caminan en la misma dirección, tus acciones se vuelven auténticas, coherentes y llenas de propósito. Ese equilibrio interno es tu verdadera fuerza. ¡Vívelo a tu manera!"
+    },
+    {
+      "valor": 2.0,
+      "titulo": "Descubre tu fuego interno: lo que te apasiona define tu camino",
+      "descripcion": "Dedica cada día un momento para mirar dentro de ti y descubrir qué es lo que realmente mueve tu espíritu. Pregúntate con honestidad: ¿qué es eso que te llena de vida, que te enciende por dentro y te impulsa a querer más? Reconocer lo que te apasiona es el primer paso para construir una vida que esté alineada con lo que verdaderamente eres.Tus pasiones son como un faro que guía tu camino, te dan dirección y propósito. Puede ser algo grande o algo sencillo, no importa el tamaño, lo importante es cómo te hace sentir. Conectarte con aquello que te inspira te dará la fuerza para superar cualquier desafío y la energía para crear la vida que deseas.Haz de este ejercicio un hábito diario. Observa tus emociones, tus intereses, los momentos que más disfrutas. Cada día es una nueva oportunidad para acercarte más a lo que enciende tu alma. ¿Qué te apasiona hoy? ¡Empieza por ahí y construye desde ese fuego interno que te hace único!",
+      "subtitulo": "de Tu Propósito Guía, siempre ten presente...",
+      "recomendacion": "Identifica lo que enciende tu alma y conviértelo en brújula. Lo que te apasiona no es casualidad: es la pista más honesta hacia tu propósito. Cuando sigues ese fuego interior, cada paso cobra sentido y se alinea con lo que viniste a ser. Tu pasión es el mapa. ¡Atrévete a seguirlo!"
+    },
+    {
+      "valor": 3.0,
+      "titulo": "Brilla con propósito: optimismo, creatividad y servicio en acción",
+      "descripcion": "Haz de cada día una oportunidad para proyectar lo mejor de ti: tu optimismo, tu creatividad y esa capacidad única que tienes para servir y dar a los demás. Estas cualidades no solo reflejan tu esencia, sino que también tienen el poder de transformar todo lo que tocas y a quienes te rodean.El optimismo te permite ver posibilidades donde otros ven barreras. Es tu herramienta para mantenerte motivado y contagiar energía positiva. La creatividad es tu chispa para encontrar soluciones, para soñar y para hacer realidad tus ideas más auténticas. Y tu acción de servir y dar a los demás es el motor que conecta todo esto con un propósito mayor, convirtiendo tus dones en un regalo para el mundo.Trabajar cada día en estas áreas no significa ser perfecto, sino ser consciente de cómo puedes contribuir y brillar desde donde estás. Al hacerlo, no solo creces tú, sino que también inspiras a los demás a sacar lo mejor de sí mismos. ¡Eres una fuente de impacto positivo, y proyectar esas cualidades hará que tu luz alcance aún más lejos!",
+      "subtitulo": "de Tu Propósito Guía, siempre ten presente...",
+      "recomendacion": "Usa tu optimismo como luz, tu creatividad como motor y tu capacidad de servir como puente para generar un impacto auténtico en el mundo. Estás hecho(a) para crear posibilidades donde otros ven límites. Cuando fluyes con propósito, tu huella se convierte en inspiración viva."
+    },
+    {
+      "valor": 4.0,
+      "titulo": "Tu seguridad interior: la fortaleza que te guía en cada paso",
+      "descripcion": "Dedica cada día un momento para fortalecer esa seguridad interior que te permite enfrentar cualquier situación con confianza y determinación. Tu seguridad interna es tu ancla, la base sobre la que construyes tus decisiones, tus relaciones y tu camino.Esto no significa que tengas que tener todas las respuestas, sino que confíes en ti mismo, en tus capacidades y en tu intuición. Cada vez que te enfrentes a un desafío, recuerda todo lo que ya has superado y cómo esas experiencias te han hecho más fuerte.Fortalecer tu seguridad interior es un proceso constante: se trata de escuchar tu voz interna, respetar tus límites y actuar desde lo que realmente valoras. Con cada pequeño paso que des hacia ti mismo, sentirás cómo crece esa fuerza que te hace único y auténtico.Recuerda: tu seguridad no depende de las opiniones externas, sino de lo que tú sabes y crees sobre ti. Al trabajar en ella cada día, te convertirás en una versión más firme, más consciente y más plena de ti mismo. ¡Eres capaz de más de lo que imaginas, y todo empieza por confiar en tu esencia!",
+      "subtitulo": "de Tu Propósito Guía, siempre ten presente...",
+      "recomendacion": "Trabaja en fortalecer tu seguridad interior: ahí vive tu verdadero poder. Cuando confías en ti y en tu capacidad de superar cualquier reto, todo cambia. Los obstáculos se transforman en aprendizajes, y tu camino se vuelve más firme, más tuyo, más alineado con lo que realmente eres."
+    },
+    {
+      "valor": 5.0,
+      "titulo": "El poder de compartir: convierte tu conocimiento en inspiración",
+      "descripcion": "Dedica cada día a perfeccionar tu habilidad para transmitir conocimientos. Tienes un don especial para conectar ideas y compartirlas de manera que otros puedan entenderlas, aplicarlas y crecer con ellas. Trabajar en esta capacidad no solo enriquece a quienes te escuchan, sino que también fortalece tu propia comprensión y confianza.Para mejorar en esta habilidad, enfócate en entender profundamente lo que quieres enseñar, encontrando formas claras y creativas de expresarlo. Aprende a escuchar a tu audiencia, comprendiendo lo que necesitan y cómo puedes aportarles valor desde tu experiencia.La clave para transmitir conocimientos no está solo en lo que dices, sino en cómo lo haces. Sé auténtico, busca ejemplos que conecten con las emociones y las experiencias de los demás, y adapta tu mensaje para que tenga un impacto real.Al trabajar en esto cada día, descubrirás que no solo estás enseñando, sino también inspirando. La energía que pones en compartir tu conocimiento tiene el poder de transformar vidas, incluidas la tuya. ¡Tu habilidad para enseñar es un regalo, y cada día es una nueva oportunidad para fortalecerlo y llevarlo a otro nivel!",
+      "subtitulo": "de Tu Propósito Guía, siempre ten presente...",
+      "recomendacion": "Desarrolla tu habilidad para transmitir conocimientos con claridad y pasión. Enseñar desde el corazón conecta, transforma y deja huella. No se trata solo de lo que sabes, sino de cómo lo compartes. Tu forma de comunicar puede encender ideas y abrir caminos en quienes te escuchan."
+    },
+    {
+      "valor": 6.0,
+      "titulo": "Construye cimientos sólidos: estabilidad y constancia para crecer",
+      "descripcion": "Dedica cada día a construir estabilidad y constancia en tu vida. Estas dos cualidades son como los cimientos de una casa: te brindan la solidez necesaria para crecer, avanzar y enfrentar cualquier desafío sin perder el equilibrio.La estabilidad no significa que todo será perfecto o que no habrá cambios, sino que sabrás mantener la calma y la claridad, incluso cuando las cosas no salgan como esperas. Es aprender a confiar en tu capacidad para adaptarte y seguir adelante con seguridad.La constancia, por otro lado, es lo que te impulsa a seguir trabajando en tus metas, paso a paso, incluso cuando los resultados no son inmediatos. Es un recordatorio de que los grandes logros se construyen con pequeñas acciones repetidas día a día.Al trabajar en estas cualidades, no solo fortalecerás tu vida personal, sino también tus relaciones y proyectos. Ser constante y estable te permite generar confianza en ti mismo y en los demás, construyendo una base sólida para todo lo que deseas lograr. ¡Haz de la estabilidad y la constancia tus aliados diarios, y verás cómo todo empieza a fluir con más armonía!",
+      "subtitulo": "de Tu Propósito Guía, siempre ten presente...",
+      "recomendacion": "Construye estabilidad y constancia en tu vida para mantener el equilibrio en cada etapa. Recuerda que las bases sólidas no limitan tu crecimiento, lo impulsan. Estar en paz contigo y con tu proceso es la clave para avanzar con propósito y firmeza, sin perder tu esencia."
+    },
+    {
+      "valor": 7.0,
+      "titulo": "La calma como estrategia: toma decisiones con prudencia y claridad",
+      "descripcion": "Haz de cada día una oportunidad para fortalecer tu habilidad de resolver situaciones con calma y prudencia. Estas cualidades no solo te ayudan a tomar decisiones más claras y acertadas, sino que también te permiten mantener la serenidad en momentos de tensión o incertidumbre.La calma es tu mejor aliada para observar las cosas con objetividad, sin dejarte llevar por emociones impulsivas. Te da el espacio necesario para reflexionar, evaluar opciones y elegir el mejor camino. Por su parte, la prudencia es esa guía que te ayuda a actuar con sabiduría, midiendo las posibles consecuencias antes de decidir.Practicar estas habilidades no significa evitar los problemas, sino enfrentarlos con confianza y equilibrio. Cada vez que te tomes un momento para respirar, analizar y responder en lugar de reaccionar, estarás fortaleciendo tu capacidad de manejar las situaciones más desafiantes.Recuerda que la calma y la prudencia no solo benefician tus decisiones, sino que también transmiten paz a quienes te rodean. Trabaja en ellas todos los días, y descubrirás cómo se convierten en una base sólida para construir soluciones y avanzar con seguridad en cualquier circunstancia. ¡Esa tranquilidad es tu mayor fortaleza!",
+      "subtitulo": "de Tu Propósito Guía, siempre ten presente...",
+      "recomendacion": "Cultiva la calma y la prudencia como aliadas en tu camino. No todo requiere una respuesta inmediata; a veces, la mejor decisión nace del silencio y la reflexión. Desde ese centro sereno, puedes ver con más claridad y actuar con mayor sabiduría."
+    },
+    {
+      "valor": 8.0,
+      "titulo": "Entre lo espiritual y lo material: encuentra el equilibrio perfecto",
+      "descripcion": "Dedica cada día a cuidar el equilibrio entre lo espiritual y lo material en tu vida. Ambas dimensiones son importantes y complementarias, y encontrar armonía entre ellas te permitirá vivir con más propósito, plenitud y bienestar.Lo espiritual te conecta con tu esencia, con lo que trasciende y te da sentido. Es tu refugio interno, el lugar donde encuentras paz, inspiración y fortaleza. Por otro lado, lo material te permite construir, crear y vivir en el mundo físico, dándote las herramientas necesarias para manifestar tus sueños y necesidades.Trabajar en este equilibrio significa honrar ambos aspectos: dedicar tiempo a nutrir tu espíritu a través de la meditación, la reflexión o cualquier práctica que te eleve, mientras también cuidas de tus responsabilidades y metas terrenales con enfoque y dedicación.Recuerda que lo espiritual no está separado de lo material; se reflejan el uno en el otro. Cuando actúas desde un lugar de conexión interna, lo que creas en el mundo material cobra más sentido y autenticidad. ¡Cada día es una oportunidad para alinear tu interior con tu exterior y vivir una vida verdaderamente balanceada!",
+      "subtitulo": "de Tu Propósito Guía, siempre ten presente...",
+      "recomendacion": "Encuentra el balance entre lo espiritual y lo material. Ambos mundos son parte de ti: uno te conecta con el propósito, el otro te da estructura. Cuando los integras con conciencia, creas una vida plena, auténtica y en armonía contigo y con el mundo."
+    },
+    {
+      "valor": 9.0,
+      "titulo": "Convierte tu aprendizaje en sabiduría: el arte de crecer con intención",
+      "descripcion": "Dedica cada día a transformar tus aprendizajes en sabiduría. Aprender no es solo acumular información o experiencias, sino integrarlas en tu vida de una manera que te transforme, que te guíe y que te haga crecer.La sabiduría nace cuando reflexionas sobre lo que has vivido, cuando comprendes las lecciones que hay detrás de cada éxito o desafío. Es el arte de convertir cada experiencia, grande o pequeña, en una herramienta para avanzar con más claridad y propósito.Cada día es una nueva oportunidad para mirar tus aprendizajes con intención. Pregúntate: ¿Qué me enseñó esta situación? ¿Cómo puedo aplicarlo para mejorar mi vida y la de quienes me rodean? Al hacerlo, estarás cultivando no solo conocimiento, sino también profundidad y conexión contigo mismo.La sabiduría no llega de un día para otro, pero con cada paso consciente que des hacia ella, estarás construyendo un camino más auténtico y lleno de sentido. ¡Confía en que cada aprendizaje tiene un propósito, y haz de ellos el cimiento de tu crecimiento personal!",
+      "subtitulo": "de Tu Propósito Guía, siempre ten presente...",
+      "recomendacion": "Convierte cada aprendizaje en una semilla de evolución. No importa cuán pequeño sea, todo lo que vives tiene el poder de impulsarte. Aprende, crece y sigue fluyendo con propósito. Cada paso consciente te acerca a tu mejor versión."
+    },
+    {
+      "valor": 10.0,
+      "titulo": "Disciplina y seguridad: la fórmula imparable para alcanzar tus sueños",
+      "descripcion": "Dedica cada día a fortalecer tu disciplina y tu seguridad personal. La disciplina es esa fuerza interna que te permite mantenerte constante en tus objetivos, incluso cuando el camino se vuelve desafiante. Es el puente entre lo que sueñas y lo que logras, y trabajar en ella te permitirá alcanzar tus metas con confianza.Por otro lado, tu seguridad propia es el ancla que te mantiene firme frente a cualquier circunstancia. Construirla implica confiar en tus capacidades, en tus decisiones y en el valor que aportas al mundo. Es recordarte cada día que eres capaz, merecedor y suficiente para enfrentar lo que venga.Al unir disciplina y seguridad, creas una combinación poderosa. La disciplina te ayuda a avanzar con pasos firmes, y la seguridad te da la tranquilidad de saber que cada paso que das está en sintonía con lo que realmente quieres.Trabaja en ello con pequeñas acciones diarias: mantén tus compromisos, celebra tus logros y recuerda que cada esfuerzo que haces es una inversión en ti mismo. ¡Eres tu mejor proyecto, y el poder de tu disciplina y seguridad es el motor que te llevará lejos!",
+      "subtitulo": "de Tu Propósito Guía, siempre ten presente...",
+      "recomendacion": "Fortalece tu disciplina y tu seguridad interior. Son tus mejores aliadas para avanzar con firmeza, sin perder el rumbo. Cree en tu proceso y en tu capacidad de lograr lo que te propones. Con enfoque y constancia, todo es posible."
+    },
+    {
+      "valor": 11.0,
+      "titulo": "La magia de agradecer: el camino hacia una vida llena de abundancia",
+      "descripcion": "Dedica cada día un momento a practicar el agradecimiento por todas las bendiciones que la vida te ha dado. Reconocer lo bueno que tienes, incluso en los días más desafiantes, es una forma poderosa de nutrir tu espíritu y atraer aún más cosas positivas a tu vida.El agradecimiento no solo es un acto, es una actitud. Te permite mirar el mundo desde una perspectiva de abundancia, valorando desde las cosas más simples hasta los logros más grandes. Cada sonrisa, cada experiencia y cada aprendizaje son regalos que merecen ser reconocidos.Hacer de esta práctica un hábito te ayudará a mantenerte enfocado en lo que realmente importa, a fortalecer tu resiliencia y a encontrar paz incluso en los momentos más difíciles. Recuerda: cuando agradeces, abres las puertas a nuevas oportunidades y a una mayor conexión contigo mismo y con el mundo.Cada día es una nueva oportunidad para agradecer. Tómate ese tiempo, hazlo parte de tu rutina, y observa cómo la gratitud transforma tu forma de vivir y de relacionarte con todo lo que te rodea. ¡Agradecer es una forma de multiplicar las bendiciones!",
+      "subtitulo": "de Tu Propósito Guía, siempre ten presente...",
+      "recomendacion": "Practica la gratitud cada día.  Es una puerta poderosa que abre tu mente y tu corazón a nuevas oportunidades, aprendizajes y conexiones. Agradecer te ancla en el presente, te da claridad para valorar lo que tienes y te prepara para recibir lo mejor que está por venir."
+    }
+  ]
+}

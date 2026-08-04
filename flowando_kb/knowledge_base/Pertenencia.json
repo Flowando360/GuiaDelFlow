@@ -1,0 +1,39 @@
+{
+  "sheet": "Pertenencia",
+  "tipo_calculo": "suma_likert",
+  "preambulo": [
+    "La Pertenencia",
+    "Sentirte parte de algo te da fuerza y propósito - El motor del sentido de vida",
+    "Suma C88-C92"
+  ],
+  "num_resultados": 3,
+  "resultados": [
+    {
+      "min": 5.0,
+      "max": 10.0,
+      "introduccion": "Pertenecer es más que encajar, es sentirnos parte de algo que nos inspira y nos impulsa. Ya sea en un equipo, una comunidad o una causa, el sentido de pertenencia nos da seguridad, nos motiva a aportar y nos conecta con algo más grande. Cuando encontramos ese lugar donde crecemos y somos valorados, florecemos. Porque juntos no solo avanzamos, sino que construimos vínculos auténticos y significativos.",
+      "titulo": "Explorador/a en busca de conexión",
+      "descripcion": "Es posible que a veces sientas que no encajas del todo en los grupos que te rodean. Buscas conversaciones más profundas, personas con valores afines y espacios donde puedas ser tú sin tener que explicarte tanto. Esta sensación de diferencia puede generar incertidumbre, pero también te impulsa a buscar lo que realmente te nutre. Estás en una etapa de exploración, y eso es valioso. No te conformas con lo superficial, vas tras conexiones auténticas, y ese deseo te abrirá puertas a nuevas comunidades, personas y formas de pertenecer. Tal vez aún no encontraste “tu tribu”, pero eso no significa que no exista: significa que estás en camino. Sigue explorando desde tu autenticidad, confiando en que al mostrarte tal como eres, atraerás entornos que te valoren de verdad. Tu búsqueda no es soledad, es claridad. Y cada paso que das te acerca más a las conexiones que mereces. Sigue buscando, sin dejar de ser tú.",
+      "recomendacion": "Atrévete a ampliar tu círculo social participando en actividades alineadas con tus intereses. Pregúntate: ¿Dónde podría encontrar personas con quienes compartir mi autenticidad? Recuerda que el sentido de pertenencia no viene solo de encajar, sino de sentirte aceptado/a tal como eres.",
+      "reflexion": "A veces buscamos pertenecer sin saber a dónde. Pero cuando encuentras un espacio donde puedes ser tú, compartir y crecer, todo cambia. No se trata de encajar, sino de conectar con propósito. Cultiva esos lazos reales. La fuerza no está en estar rodeado, sino en sentirte parte de algo que resuena."
+    },
+    {
+      "min": 11.0,
+      "max": 18.0,
+      "introduccion": "Pertenecer es más que encajar, es sentirnos parte de algo que nos inspira y nos impulsa. Ya sea en un equipo, una comunidad o una causa, el sentido de pertenencia nos da seguridad, nos motiva a aportar y nos conecta con algo más grande. Cuando encontramos ese lugar donde crecemos y somos valorados, florecemos. Porque juntos no solo avanzamos, sino que construimos vínculos auténticos y significativos.",
+      "titulo": "Vínculos en construcción",
+      "descripcion": "En general, sientes que perteneces, pero hay momentos donde esa sensación tambalea. Tal vez aún estás construyendo relaciones más profundas, o simplemente estás redefiniendo qué tipo de vínculos te hacen bien. Es un proceso natural, sobre todo cuando estás en una etapa de crecimiento personal. A veces, sentir que no encajas del todo es la señal de que estás cambiando. Y eso no es pérdida: es evolución. Estás aprendiendo a equilibrar tu individualidad con el deseo de pertenecer, a expresar lo que eres sin dejar de conectar. Esta fase es perfecta para elegir conscientemente con quién compartir tu energía. No necesitas encajar en todos lados, solo encontrar espacios donde puedas florecer tal como eres. Con el tiempo, esos vínculos se volverán más genuinos y sostenibles. Confía en tu proceso, porque cada interacción te está enseñando algo sobre ti. Estás construyendo relaciones con intención. Y eso ya es un gran avance.",
+      "recomendacion": "Fortalece tus relaciones invirtiendo tiempo en quienes te hacen sentir valorado/a. Pregúntate: ¿Estoy siendo yo mismo/a en mis círculos sociales? Si hay dudas, busca espacios donde puedas expresarte sin reservas y fortalecer los lazos que realmente suman a tu vida.",
+      "reflexion": "Estás en esa etapa donde los vínculos se exploran, se prueban, se sienten. Aún no todo está claro, pero hay señales de conexión genuina. Sigue buscando espacios donde ser tú no sea un reto, sino una bienvenida. La pertenencia nace donde puedes crecer con otros, sin dejar de ser tú."
+    },
+    {
+      "min": 19.0,
+      "max": 25.0,
+      "introduccion": "Pertenecer es más que encajar, es sentirnos parte de algo que nos inspira y nos impulsa. Ya sea en un equipo, una comunidad o una causa, el sentido de pertenencia nos da seguridad, nos motiva a aportar y nos conecta con algo más grande. Cuando encontramos ese lugar donde crecemos y somos valorados, florecemos. Porque juntos no solo avanzamos, sino que construimos vínculos auténticos y significativos.",
+      "titulo": "Eres parte del todo",
+      "descripcion": "Te sientes integrado, valorado y acompañado en tus entornos. Has encontrado personas, comunidades o espacios donde puedes ser tú, con tu luz, tus ideas y tu forma única de estar en el mundo. Tus relaciones te nutren, te sostienen y te inspiran. Y tú también haces lo mismo con los demás. Probablemente eres alguien que cultiva el cuidado, que escucha, que acompaña, que construye comunidad con intención. Esta sensación de pertenencia no es casualidad: es el resultado de tu apertura, tu autenticidad y tu disposición a conectar de forma real. Estás donde necesitas estar, y lo sabes. Además, tu presencia ayuda a que otros también encuentren su lugar. Ser parte del todo no es perderte en la masa, es resonar con quienes vibran como tú. Sigue cuidando esas relaciones, porque son parte de tu fuerza. Y recuerda: tu autenticidad no solo es bienvenida, es necesaria para que el grupo siga creciendo.",
+      "recomendacion": "Sigue cultivando estos lazos y ofrece tu apoyo a quienes aún buscan su lugar. Pregúntate: ¿Cómo puedo ayudar a que otros se sientan bienvenidos e incluidos? Compartir tu experiencia y abrir espacios para la conexión puede hacer una gran diferencia en la vida de alguien más.",
+      "reflexion": "Ya sabes lo que es pertenecer de verdad. Estás en red, en conexión con un propósito mayor. No necesitas demostrar, solo aportar desde tu autenticidad. Ahí floreces. Ahí multiplicas tu impacto. Cuidas tu tribu, y tu tribu te cuida. Eres parte del todo, y eso también te transforma."
+    }
+  ]
+}

@@ -1,0 +1,114 @@
+{
+  "sheet": "Talento_Innato",
+  "tipo_calculo": "formula_numerologica",
+  "preambulo": [
+    {
+      "campo": "CATEGORÍA",
+      "valor": "TALENTOS PODEROSOS"
+    },
+    {
+      "campo": "TÍTULO DE LA CATEGORÍA:",
+      "valor": "Tu talento innato y auténtico."
+    },
+    {
+      "campo": "ASPECTO:",
+      "valor": "TALENTO INNATO"
+    },
+    {
+      "campo": "BASE DE CÁLCULO:",
+      "valor": "Fecha de Nacimiento"
+    },
+    {
+      "campo": "CÁLCULO:",
+      "valor": "Se obtiene sumando los dos últimos dígitos del año de nacimiento.\nPor ejemplo si una persona nació en 1998\nse toma el 98, 9+8=17 y se reduce a un número menor o igual a 11\nEs decir 1+7=8 \nEl número de su talento innato, auténtico es el 8"
+    },
+    {
+      "campo": "DESC. ASPECTO",
+      "valor": "Talento Innato - El Talento que fluye sin esfuerzo"
+    },
+    {
+      "campo": "INTRODUCCIÓN",
+      "valor": "Dentro de ti hay un poder inigualable, una esencia auténtica que solo tú puedes aportar al mundo. No necesitas buscar fuera lo que ya es parte de ti y fluye sin esfuerzo. Tus talentos innatos son tu firma, la chispa que te hace único. A veces, la duda intenta opacarlos, pero la verdad es clara: cuando confías en tu magia y la dejas fluir, creas, inspiras y transformas sin límites."
+    }
+  ],
+  "num_resultados": 11,
+  "resultados": [
+    {
+      "valor": 1.0,
+      "titulo": "El arte de escuchar tu alma y transformar con autenticidad",
+      "descripcion": "Tu mayor poder está en escuchar lo que realmente sientes. Tienes esa habilidad especial de dejarte guiar por lo que te inspira, lo que te mueve de verdad. Creas y transformas desde un lugar lleno de creatividad y pasión, siempre buscando el “por qué” y el “para qué” de cada experiencia. No te quedas en la superficie, vas profundo, y eso te da una fuerza especial para inspirar a los demás.Cuando sigues tu corazón, conectas de forma auténtica con el mundo, y eso se siente en todo lo que haces.\n\n**Bonus especial:** Tienes el don de estar en sintonía con tu alma, y esa fortaleza espiritual y honesta que irradias se nota… y transforma.",
+      "subtitulo": "de Tus Talentos innatos, siempre ten presente...",
+      "recomendacion": "Confía en tu capacidad para inspirar, porque lo haces sin siquiera intentarlo. Tu autenticidad es tu superpoder: real, sin adornos, y profundamente magnética. No necesitas seguir moldes para impactar, solo ser tú. Quien se atreve a mostrarse tal cual es, enciende la chispa en los demás."
+    },
+    {
+      "valor": 2.0,
+      "titulo": "La magia de conectar desde el corazón y crear espacios genuinos",
+      "descripcion": "¿Sabes cuál es tu mayor fortaleza? Esa capacidad única que tienes de entregarte a los demás desde un lugar auténtico y sincero. Das lo mejor de ti sin esperar nada a cambio, simplemente porque lo sientes en el alma.\nAceptas a las personas tal como son, sin intentar cambiarlas. Tu forma de conectar es genuina, y eso hace que quienes te rodean se sientan libres de ser ellos mismos.\nTu energía inspira confianza, crea vínculos reales y abre espacios donde los demás pueden crecer y fluir sin máscaras.\n\n**Bonus especial:** Irradias seguridad y calma. Aunque la vida te ponga retos, sabes dominar el lado negativo y ver siempre el lado positivo. Y eso, créelo… también transforma.",
+      "subtitulo": "de Tus Talentos innatos, siempre ten presente...",
+      "recomendacion": "Mantén tu energía positiva, esa que ilumina espacios y levanta ánimos. Pero ojo: también mereces recibir lo que das. No estás aquí solo para sostener a otros, tu bienestar también importa. El equilibrio nace cuando aprendes a nutrirte con la misma fuerza con la que cuidas a los demás."
+    },
+    {
+      "valor": 3.0,
+      "titulo": "Tu empatía ilumina y transforma cada encuentro",
+      "descripcion": "Tu mayor fortaleza está en esa increíble capacidad que tienes para escuchar de verdad. No solo oyes, **conectas, entiendes y estás presente**. Eso, créeme, no lo logra cualquiera.\nTu optimismo es contagioso. Tienes una luz que inspira porque sabes ver lo bueno incluso en lo difícil. Y lo más especial es cómo usas tu creatividad para motivar, animar y ayudar a los demás a verse con amor y valentía.\nEsa mezcla de **empatía, entusiasmo y originalidad** es lo que te hace único(a).\n\n**Bonus especial:** Siempre irradias positivismo. Quien se acerque a ti en momentos tristes, encontrará el ánimo que necesita para seguir adelante.",
+      "subtitulo": "de Tus Talentos innatos, siempre ten presente...",
+      "recomendacion": "Usa tu optimismo como faro y tu escucha activa como puente. Tienes la combinación perfecta para inspirar, conectar y transformar realidades. A veces, solo hace falta una palabra genuina o una mirada presente para generar un impacto profundo. Tu presencia consciente puede mover montañas."
+    },
+    {
+      "valor": 4.0,
+      "titulo": "Tu intuición como brújula para el equilibrio y la claridad",
+      "descripcion": "Tienes un don increíble: **tu intuición**. Esa capacidad de sentir más allá de lo evidente te permite encontrar el equilibrio incluso en los momentos más difíciles.\nCuando todo parece complicado, tú ves el lado positivo y creas armonía. Y lo más valioso es que no solo lo haces para ti: también sabes guiar a los demás.\nTu intuición es como una brújula interior que te orienta con claridad, ayudándote a tomar decisiones auténticas y con sentido.\n\n**Bonus especial:** Desde tu fuerza interior, inspiras y guías con objetividad, convirtiéndote en un referente de equilibrio para quienes te rodean.",
+      "subtitulo": "de Tus Talentos innatos, siempre ten presente...",
+      "recomendacion": "Confía en tu intuición, esa brújula interna que rara vez se equivoca. No todo necesita lógica para tener sentido: a veces el alma sabe antes que la mente. Escucha esa voz silenciosa que te guía con sabiduría. Cuando te alineas con tu verdad interior, las decisiones fluyen con claridad y poder."
+    },
+    {
+      "valor": 5.0,
+      "titulo": "La capacidad de enseñar con pasión y transformar con inspiración",
+      "descripcion": "**Tu mayor fortaleza está en tu capacidad para enseñar.**\nNo solo compartes conocimientos, transformas el aprendizaje en una experiencia que motiva e inspira. Tienes un talento natural para despertar curiosidad y hacer que los demás se sientan cómodos explorando nuevas ideas.\nLo más especial es que disfrutas ver a los demás crecer. Tu pasión por compartir deja huella y crea espacios donde aprender se vuelve algo profundo y transformador.\n\n**Bonus especial:** Enseñar es tu superpoder. Quienes aprenden contigo sienten tu fuerza interior y conectan con el valor genuino de cada enseñanza.",
+      "subtitulo": "de Tus Talentos innatos, siempre ten presente...",
+      "recomendacion": "Usa tu habilidad para enseñar como canal de inspiración. Tienes el don de explicar con pasión y claridad, haciendo que el conocimiento cobre vida. Cada palabra tuya puede abrir caminos en otros. Enseñar no es solo informar, es encender fuegos. Y tú, sin duda, sabes cómo hacerlo brillar."
+    },
+    {
+      "valor": 6.0,
+      "titulo": "Tu fortaleza interior y sabiduría crean impacto y confianza",
+      "descripcion": "**Tu mayor fortaleza es tu fuerza interior y mental.**\nTienes una estabilidad sólida que te permite mantener el equilibrio, incluso en los momentos más desafiantes. Eres constante, firme y tu sola presencia transmite seguridad, paz y confianza.\nSabes cuándo hablar, cómo hacerlo y qué decir. Tus palabras, siempre sabias, claras y oportunas, tienen el poder de dejar una huella profunda.\n\n**Bonus especial:** Eres una persona centrada, con gran claridad en tus ideas. Esa lucidez no solo te orienta a ti, también guía, inspira e influye positivamente a quienes te rodean. Irradias calma, generas confianza y transformas desde el ejemplo.",
+      "subtitulo": "de Tus Talentos innatos, siempre ten presente...",
+      "recomendacion": "Mantén tu equilibrio interno como ancla y faro. Tu sabiduría no grita, guía con serenidad. Esa calma que llevas dentro es fuerza en estado puro, y cuando la compartes, contagia paz. No necesitas imponer, solo estar presente. Tu manera de liderar es suave, pero deja huellas profundas."
+    },
+    {
+      "valor": 7.0,
+      "titulo": "Tu resiliencia convierte los desafíos en oportunidades",
+      "descripcion": "Tu mayor fortaleza está en tu espíritu fuerte y seguro, ese que te da la calma para enfrentar cualquier situación sin perder el centro. Tienes una base sólida que te permite moverte con equilibrio, incluso cuando todo se complica. Tu resiliencia es admirable: no importa el tamaño del reto, siempre encuentras la forma de adaptarte, aprender y avanzar con una paz que inspira. No solo enfrentas los desafíos, los transformas en oportunidades reales de crecimiento. Eres estabilidad y perseverancia en acción. Esa mezcla de fuerza interior y serenidad es un verdadero regalo, tanto para ti como para quienes te rodean.\n\n**Bonus especial:** Desde tu centro puedes elevarte por encima de cualquier situación y ayudar a otros a hacer lo mismo. ??",
+      "subtitulo": "de Tus Talentos innatos, siempre ten presente...",
+      "recomendacion": "Apóyate en tu resiliencia, esa fuerza silenciosa que te impulsa a seguir. Cada reto que enfrentas es una puerta disfrazada de obstáculo, y tú tienes la llave. Aprende, adapta, evoluciona. Transformas lo difícil en impulso y lo incierto en oportunidad. Tu crecimiento es constante y poderoso."
+    },
+    {
+      "valor": 8.0,
+      "titulo": "El equilibrio entre lo material y lo espiritual te guía al éxito",
+      "descripcion": "Tu mayor fortaleza es tu habilidad para equilibrar lo material con lo espiritual. Caminas con los pies en la tierra, pero con el corazón conectado a lo que te inspira. Esa armonía te permite tomar decisiones con claridad, avanzar con enfoque y nunca perder de vista lo que realmente importa. Tienes una visión de futuro que no solo te impulsa a soñar, sino a actuar con valentía. Lo tuyo no es solo planear, es manifestar. Lo que te hace únicx es cómo cuidas tanto de lo que te da estabilidad como de lo que alimenta tu espíritu. Esa coherencia te guía hacia el éxito, manteniéndote fiel a lo que te hace feliz y pleno.\n\n**Bonus especial:** Desde tu fuerza espiritual puedes sanar, inspirar y transformar. Ya sea en la medicina o lo holístico, eres canal de bienestar.",
+      "subtitulo": "de Tus Talentos innatos, siempre ten presente...",
+      "recomendacion": "Encuentra el balance entre lo material y lo espiritual, porque vivir con plenitud es nutrir ambos mundos. No se trata de elegir, sino de integrar: conectar con lo que te da estabilidad sin perder lo que enciende tu alma. Ahí, en ese punto de equilibrio, florece tu auténtico poder."
+    },
+    {
+      "valor": 9.0,
+      "titulo": "El don de la maestría, la excelencia y la intuición profunda",
+      "descripcion": "Tu mayor fortaleza es tu habilidad para equilibrar lo material con lo espiritual. Caminas con los pies en la tierra, pero con el alma conectada a lo que te inspira y te llena de propósito. Esa armonía interna te permite tomar decisiones con claridad, avanzar con enfoque y nunca perder de vista lo que realmente importa. Tienes una visión de futuro que no solo te impulsa a soñar, sino también a actuar con valentía. Lo tuyo no es solo planear, es manifestar. Cuidas lo que te da estabilidad sin descuidar lo que alimenta tu espíritu. Esa coherencia te guía al éxito, manteniéndote fiel a lo que te hace feliz.\n\n**Bonus especial:** Desde tu fuerza espiritual puedes sanar cuerpo, mente o alma. Ya sea desde la medicina o lo holístico, eres canal de bienestar.",
+      "subtitulo": "de Tus Talentos innatos, siempre ten presente...",
+      "recomendacion": "Confía en tu capacidad para alcanzar la excelencia, pero recuerda: la humildad es lo que eleva tu grandeza. Brillar no significa dejar de aprender, sino inspirar sin ego. El verdadero poder está en crecer sin olvidar tus raíces. Sigue avanzando con confianza, corazón abierto y los pies en la tierra."
+    },
+    {
+      "valor": 10.0,
+      "titulo": "Tu compromiso y disciplina son la clave de tu liderazgo",
+      "descripcion": "Tu mayor fortaleza está en tu capacidad de comprometerte con lo que realmente importa. No solo decides, actúas. Eres de esas personas que no se queda en las palabras, sino que lleva las cosas a la acción con firmeza y determinación. Tu seguridad te impulsa a tomar el control y liderar con claridad. Lo que te hace único es tu disciplina, ese motor que te mantiene enfocado incluso cuando las cosas se complican. Sabes que los grandes logros requieren esfuerzo y tú tienes lo necesario para llegar hasta el final. Además, tu liderazgo inspira a otros a confiar y seguir tu visión. Esa combinación de compromiso, decisión y coherencia te convierte en alguien que no solo persigue metas, sino que las alcanza con propósito.\n\n**Bonus especial:** Todo lo que sientes, dices y haces lo manifiestas con coherencia. Por eso, eres alguien en quien se puede confiar.",
+      "subtitulo": "de Tus Talentos innatos, siempre ten presente...",
+      "recomendacion": "Usa tu compromiso como ancla y tu determinación como motor. Tienes todo para liderar con impacto, pero el verdadero poder está en hacerlo con coherencia. Cuando tus acciones reflejan tus valores, inspiras de verdad. Liderar no es solo guiar, es ser ejemplo vivo de lo que sueñas construir."
+    },
+    {
+      "valor": 11.0,
+      "titulo": "Tu sabiduría es luz y guía para quienes buscan crecer",
+      "descripcion": "Tu mayor fortaleza es esa capacidad única de expresar sabiduría en lo que dices y haces. Tienes una forma especial de ver la vida, de reflexionar y compartir ideas que inspiran a los demás y los invitan a crecer. Esa sabiduría no viene de la nada; es el resultado de tu conciencia, tus experiencias y tu compromiso con conocerte a fondo y evolucionar.\nTu vida está llena de bendiciones, pero también de una responsabilidad importante: trabajar en ti mismo con constancia, humildad y sinceridad. Esa búsqueda de ser tu mejor versión es lo que te permite seguir creciendo y usar tu sabiduría de manera auténtica, amorosa y poderosa.\nEres alguien que tiene mucho que aportar al mundo. Sigue comprometido contigo, porque ese camino interior fortalece tu impacto y te ayuda a brillar aún más.\n\n**Bonus Especial:** Tu vida está colmada de bendiciones. Eso te permite descansar en tu poder espiritual y actuar con libertad y paz.",
+      "subtitulo": "de Tus Talentos innatos, siempre ten presente...",
+      "recomendacion": "Vive con integridad, incluso cuando nadie mire. Esa coherencia entre lo que piensas, sientes y haces es tu mayor fortaleza. Comparte tu sabiduría sin imponer, con generosidad y apertura. Tu ejemplo es luz para otros, y tu autenticidad tiene el poder de transformar todo lo que toca."
+    }
+  ]
+}

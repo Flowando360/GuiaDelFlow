@@ -1,0 +1,39 @@
+{
+  "sheet": "Responsabilidad",
+  "tipo_calculo": "suma_likert",
+  "preambulo": [
+    "La Responsabilidad",
+    "Asumir la responsabilidad - Poder, autonomía y madurez",
+    "Suma C24-C28"
+  ],
+  "num_resultados": 3,
+  "resultados": [
+    {
+      "min": 5.0,
+      "max": 10.0,
+      "introduccion": "Cada decisión que tomamos moldea nuestro camino. Ser responsables no es solo cumplir, es asumir el control de nuestra vida y crecimiento. Cuando dejamos de buscar excusas y tomamos el mando, empezamos a construir la realidad que queremos. Aprender de los errores y actuar con intención nos da poder. Al final, no importa lo que nos pase, sino lo que hacemos con ello.",
+      "titulo": "Tendencia a culpar factores externos",
+      "descripcion": "En algunas situaciones, tiendes a ver los resultados como producto de lo que pasa afuera: personas, circunstancias o condiciones que parecen estar fuera de tu control. Esta perspectiva puede hacerte sentir limitado, frustrado o estancado, como si no tuvieras el poder de cambiar tu realidad. Pero aquí hay una oportunidad valiosa: comenzar a mirar hacia dentro. El primer paso es preguntarte qué sí está en tus manos, qué puedes hacer distinto, cómo puedes responder ante lo que no puedes controlar. La responsabilidad personal no es una carga, es una llave. Cuando reconoces tu parte, te liberas del papel de espectador y te conviertes en protagonista de tu camino. Este cambio de enfoque transforma tu forma de actuar, decidir y avanzar. Estás a un paso de recuperar tu poder. Solo necesitas empezar a usarlo. Porque aunque no controlas todo, sí puedes elegir cómo reaccionas. Y eso cambia todo.",
+      "recomendacion": "Empieza a preguntarte: ¿Qué parte de esta situación está bajo mi control? Llevar un diario de autorreflexión puede ayudarte a identificar patrones y a ver cómo tus acciones influyen en los resultados. Recuerda que asumir responsabilidad no significa culparse, sino reconocer tu capacidad para cambiar y mejorar.",
+      "reflexion": "Echar culpas puede calmar el ego, pero te aleja de tu poder. La vida cambia cuando asumes que no todo depende de lo externo. Cada vez que eliges actuar con responsabilidad, te acercas a tu mejor versión. No se trata de controlarlo todo, sino de responder con consciencia y crecer."
+    },
+    {
+      "min": 11.0,
+      "max": 18.0,
+      "introduccion": "Cada decisión que tomamos moldea nuestro camino. Ser responsables no es solo cumplir, es asumir el control de nuestra vida y crecimiento. Cuando dejamos de buscar excusas y tomamos el mando, empezamos a construir la realidad que queremos. Aprender de los errores y actuar con intención nos da poder. Al final, no importa lo que nos pase, sino lo que hacemos con ello.",
+      "titulo": "Responsabilidad parcial, pero con oportunidades de mejora",
+      "descripcion": "Tienes una conciencia inicial sobre el impacto de tus acciones, aunque a veces tiendes a centrarte más en lo que ocurre afuera que en lo que puedes transformar desde adentro. Reconoces que hay cosas que dependen de ti, pero quizá aún subestimas tu influencia en algunos resultados. Esta mirada es parte de un proceso natural de crecimiento. La buena noticia es que estás cada vez más cerca de hacer ese giro de foco: de la queja a la acción, de la expectativa al compromiso. Puedes comenzar por observar tus respuestas ante los desafíos y preguntarte qué aprendizajes traen. No se trata de culpas, sino de asumir tu poder creativo. Cada paso hacia una mayor responsabilidad personal te acerca a una vida más auténtica y plena. Estás en proceso, y eso ya es un gran avance. Recuerda: tu evolución no se mide en perfección, sino en intención y constancia. Estás despertando a tu capacidad de transformar.",
+      "recomendacion": "Practica la mentalidad de crecimiento, recordando que cada experiencia trae consigo una oportunidad de aprendizaje. Cuando enfrentes un desafío, en lugar de enfocarte en lo que está fuera de tu control, pregúntate: ¿Qué puedo hacer diferente la próxima vez? Esto te ayudará a fortalecer tu poder personal.",
+      "reflexion": "Ya sabes que algunas cosas están en tus manos, y estás aprendiendo a asumirlas. Cada paso consciente que das fortalece tu camino. Reconocer tus zonas de mejora no te debilita, te libera. La evolución empieza cuando decides ser protagonista, no espectador. Y ese cambio ya comenzó."
+    },
+    {
+      "min": 19.0,
+      "max": 25.0,
+      "introduccion": "Cada decisión que tomamos moldea nuestro camino. Ser responsables no es solo cumplir, es asumir el control de nuestra vida y crecimiento. Cuando dejamos de buscar excusas y tomamos el mando, empezamos a construir la realidad que queremos. Aprender de los errores y actuar con intención nos da poder. Al final, no importa lo que nos pase, sino lo que hacemos con ello.",
+      "titulo": "Alto nivel de responsabilidad personal",
+      "descripcion": "Tienes una conciencia clara de que tus decisiones, acciones y actitudes tienen un impacto directo en tu vida. Sabes que no puedes controlar todo lo que sucede, pero sí puedes elegir cómo reaccionas ante cada situación. Esta mentalidad te permite aprender con rapidez, adaptarte con sabiduría y avanzar con foco. No buscas culpables, buscas caminos. Asumes lo bueno y lo difícil con la misma madurez, y eso te convierte en una persona resiliente y confiable. Tu nivel de responsabilidad personal te da una ventaja poderosa: la libertad de construir desde tu esencia. Estás en un punto donde la reflexión y la acción se alinean. Puedes inspirar a otros, liderar procesos y tomar decisiones con base en lo que realmente importa. Sigue sosteniendo esa actitud valiente. Porque cuando eliges hacerte cargo, estás eligiendo también tu poder de transformación. Y ese, es tu superpoder más valioso.",
+      "recomendacion": "Usa esta habilidad para inspirar a otros. Muchas personas luchan con la idea de asumir responsabilidad personal, y compartir tu perspectiva puede ser valioso. También, asegúrate de equilibrar la autocrítica con la compasión hacia ti mismo/a. No todo depende de ti, y reconocer cuándo soltar también es un signo de sabiduría.",
+      "reflexion": "Eres dueño de tu historia. Sabes que cada elección cuenta, y asumes tus actos con consciencia y coraje. No buscas excusas, buscas aprendizajes. Esa claridad te impulsa, te hace confiable y te conecta con tu propósito. Sigue eligiendo con intención. Estás creando un camino con sentido."
+    }
+  ]
+}

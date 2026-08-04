@@ -1,0 +1,13 @@
+{
+  "skipDangerousModePermissionPrompt": true,
+  "permissions": {
+    "defaultMode": "bypassPermissions",
+    "allow": [
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(curl -s \"$SUPABASE_URL/rest/v1/* *)",
+      "Bash(git rev-list *)",
+      "Bash(git push *)"
+    ]
+  }
+}

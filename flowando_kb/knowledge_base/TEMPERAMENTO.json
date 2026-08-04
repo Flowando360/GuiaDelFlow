@@ -1,0 +1,121 @@
+{
+  "sheet": "TEMPERAMENTO",
+  "tipo_calculo": "formula_fecha_residuo",
+  "preambulo": [
+    {
+      "campo": "CATEGORÍA",
+      "valor": "TALENTOS PODEROSOS"
+    },
+    {
+      "campo": "TÍTULO DE LA CATEGORÍA:",
+      "valor": "Las fortalezas que nos hacen únicos y nos impulsan hacia el éxito"
+    },
+    {
+      "campo": "ASPECTO:",
+      "valor": "TEMPERAMENTO"
+    },
+    {
+      "campo": "BASE DE CÁLCULO:",
+      "valor": "Fecha de Nacimiento"
+    },
+    {
+      "campo": "CÁLCULO:",
+      "valor": "El residuo de dividir por 12 el año de nacimiento: Por ejemplo para calcular el **residuo de 1978 dividido entre 12**:\n1978 \\div 12 = 164  con un residuo de 10: Esto significa que:1978 = 12 * 164 + 10"
+    },
+    {
+      "campo": "DESC. ASPECTO",
+      "valor": "Temperamento - La energía con la que nos expresamos"
+    },
+    {
+      "campo": "INTRODUCCIÓN",
+      "valor": "Tu temperamento es como el ADN de tu esencia, la energía con la que llegaste al mundo y que moldea cómo sientes, reaccionas y te conectas con tu entorno. Es la base de tu personalidad, el impulso detrás de tus decisiones, tu manera de afrontar retos y vibrar con la vida. Conocerlo te da claridad, te ayuda a potenciar tus fortalezas y a navegar tus desafíos con mayor equilibrio. ¡Descúbrelo y fluye contigo!"
+    }
+  ],
+  "num_resultados": 12,
+  "resultados": [
+    {
+      "valor": 0.0,
+      "titulo": "Ingenioso y travieso.",
+      "descripcion": "Tú, el alma de la aventura, siempre tienes una idea brillante bajo la manga y un plan inesperado que nadie vio venir. Tu creatividad no descansa: mientras otros ven problemas, tú ves oportunidades. Tu mente curiosa y rápida transforma cualquier momento en algo único. Tu energía es contagiosa, no puedes quedarte quieto(a); vives para explorar y probar cosas nuevas. Haces reír a todos con tu humor épico y tu espontaneidad irresistible. Aunque parezcas relajado(a), eres estratégico(a) y sabes mover tus piezas como nadie. Te adaptas con facilidad y siempre estás listo(a) para lo que venga.\n\n**Bonus:** Tu lado más \"picante\"\nA veces, tu inquietud puede hacer que te aburras rápido o saltes de una cosa a otra sin terminar lo que empezaste. También puedes ser un poco travieso(a), pero, seamos honestos… eso es parte de tu encanto.",
+      "subtitulo": "Deja que el magnetismo de tu Temperamento cree puentes; siempre ten presente...",
+      "recomendacion": "Tu energía es contagiosa, llena de chispa e impulso. Vas con todo, y eso inspira. Solo recuerda: cerrar ciclos también es parte del viaje. Terminar lo que empiezas te permite celebrar logros reales y seguir creciendo con más claridad. Tu poder no solo está en empezar, sino en llegar con fuerza."
+    },
+    {
+      "valor": 1.0,
+      "titulo": "Meticuloso y valiente.",
+      "descripcion": "Tú, el que llega con determinación, estilo y una presencia que impone. Caminas con seguridad, hablas con convicción y dejas huella en cada paso. Eres pura determinación: si dices que harás algo, lo haces con excelencia. Tu carisma único hace que todos te escuchen: inspiras respeto sin buscarlo. La organización es tu superpoder, nada se te escapa. Eres valiente, directo(a) y prefieres la verdad, aunque incomode. Y sí, brillas sin esfuerzo: ya sea por tu estilo, tu inteligencia o tu capacidad de resolver lo que sea.\n\n**Bonus:** Tu lado más \"picante\"\nTu perfeccionismo y franqueza pueden hacer que seas un poco exigente con los demás (y contigo mismo). A veces, esperas que todos tengan tu nivel de disciplina, pero recuerda que cada quien tiene su propio ritmo.",
+      "subtitulo": "Deja que el magnetismo de tu Temperamento cree puentes; siempre ten presente...",
+      "recomendacion": "Tu pasión por la excelencia es inspiradora, empuja límites y eleva estándares. Pero recuerda: no todo tiene que ser perfecto para brillar. A veces, lo auténtico deja más huella que lo impecable. Permítete fluir, soltar un poco el control y confiar en que tu luz igual va a deslumbrar."
+    },
+    {
+      "valor": 2.0,
+      "titulo": "Leal y protector.",
+      "descripcion": "Tú, el guardián leal, el amigo incondicional que siempre está cuando más se necesita. Eres pura nobleza, valentía y honestidad. Si alguien gana tu confianza, la tiene para siempre. No das tu lealtad fácilmente, pero cuando lo haces, es inquebrantable. Luchas por la justicia, no soportas la traición ni las mentiras. Tu corazón enorme te hace protector(a), siempre dispuesto(a) a apoyar y cuidar. Eres valiente, firme, y no te rindes ante nada cuando se trata de proteger lo que amas. Inspiras respeto, confianza y admiración sin tener que aparentar. Solo siendo tú, ya haces una gran diferencia.\n\n**Bonus:** Tu lado más \"picante\"\nTu gran lealtad a veces te juega en contra, porque te cuesta soltar a quienes no te valoran. Además, puedes ser un poco desconfiado(a) y reservado(a) al principio, pero una vez que te abres, eres un tesoro.",
+      "subtitulo": "Deja que el magnetismo de tu Temperamento cree puentes; siempre ten presente...",
+      "recomendacion": "Tu lealtad es un tesoro: firme, profunda, real. Das lo mejor de ti sin reservas, y eso vale oro. Solo asegúrate de entregarla a quienes de verdad la valoran y también te cuidan. Estás para relaciones recíprocas, no para cargar vínculos rotos. Tu fidelidad merece un lugar seguro para florecer."
+    },
+    {
+      "valor": 3.0,
+      "titulo": "Generoso y optimista.",
+      "descripcion": "Tú, el alma bondadosa que vive con el corazón por delante. Eres puro carisma, ternura y resiliencia. Siempre estás dispuesto(a) a apoyar y compartir, con una generosidad tan genuina que los demás se sienten valorados a tu lado. Sabes disfrutar la vida, gozar lo simple y encontrar magia en lo cotidiano. Tu paciencia es admirable y tu energía transmite paz. Aunque pareces suave, llevas una fuerza interior poderosa. Cuando la vida te reta, te levantas con más sabiduría y una sonrisa. Eres auténtico(a), sin filtros, y eso te hace irresistible.\n\n**Bonus:** Tu lado más \"picante\"\nTu amor por la comodidad puede hacer que a veces te cueste salir de tu zona de confort. También puedes ser un poco confiado(a) con personas que no lo merecen, pero eso solo demuestra tu gran corazón.",
+      "subtitulo": "Deja que el magnetismo de tu Temperamento cree puentes; siempre ten presente...",
+      "recomendacion": "Tu calidez hace del mundo un lugar más amable. Irradias cercanía, y eso sana. Disfruta sin culpa lo que ya has logrado, pero no te quedes solo en lo cómodo. Tus sueños también merecen espacio y acción. El equilibrio está en agradecer el presente sin dejar de construir el futuro que deseas."
+    },
+    {
+      "valor": 4.0,
+      "titulo": "Astuto y persuasivo",
+      "descripcion": "Eres el influencer OG (original gangster) que siempre está dos pasos adelante. Tu temperamento incluye aspectos muy cool: eres súper inteligente, detectas oportunidades con facilidad, cazas tendencias y resuelves problemas como un genio. Tienes una visión estratégica que pocos poseen. Además, tienes carisma de sobra. La gente se siente atraída por tu personalidad magnética: encantas en persona y dominas las redes como nadie. Nunca te rindes; si te fijas un objetivo, lo consigues. Tu persistencia es tu sello. Y sí, eres súper creativo(a). Tu mente brilla con ideas únicas y soluciones inesperadas. Guardas un poco de misterio: eres cercano, pero siempre dejas algo a la imaginación. Eso te hace aún más interesante.\n**Bonus:**\n A veces eres calculador(a) o competitivo(a), pero eso solo significa que buscas destacar siempre, y lo logras.",
+      "subtitulo": "Deja que el magnetismo de tu Temperamento cree puentes; siempre ten presente...",
+      "recomendacion": "Tu ingenio es tu superpoder: rápido, agudo, brillante. Pero recuerda que la confianza no solo nace del talento, también se construye con transparencia, coherencia y verdad. No se trata solo de deslumbrar, sino de conectar desde lo auténtico. Esa es la magia que realmente deja huella."
+    },
+    {
+      "valor": 5.0,
+      "titulo": "Paciente y determinado.",
+      "descripcion": "Eres esa persona en la que todos confían porque siempre sabes mantenerte firme y enfocado(a). Eres trabajador(a) nivel legendario: cuando te comprometes con algo, lo haces al 200%. No necesitas motivación externa porque tu ética de trabajo es brutal. Si fueras un meme, serías el \"mantente concentrado, sin excusas\". Eres confiable como un mejor amigo de toda la vida: cuando dices que vas a hacer algo, lo haces, sin fallas ni decepciones. Un verdadero pilar. Tienes paciencia infinita, prefieres ir a tu ritmo y hacer las cosas bien. Eres como esa persona que pasa horas editando un vídeo hasta que queda perfecto. Y además, eres increíblemente honesto(a). No te gusta el drama ni los rodeos. Si algo no te parece, lo dices con respeto y firmeza. ¡Eso te hace auténtico(a) e inolvidable!\n**Bonus:** Tu lado más real\nA veces eres tan metódico(a) que te cuesta adaptarte a cambios repentinos o ceder en discusiones. Pero eso es porque valoras la estabilidad, la seguridad y siempre te enfocas en tus metas.",
+      "subtitulo": "Deja que el magnetismo de tu Temperamento cree puentes; siempre ten presente...",
+      "recomendacion": "Tu constancia es admirable, una base firme que sostiene todo lo que construyes. Pero no olvides abrirte al cambio: a veces, lo inesperado trae las sorpresas más grandes. Evolucionar no es traicionar tu esencia, es expandirla. Sigue constante, sí, pero también curioso por lo nuevo que puede nacer."
+    },
+    {
+      "valor": 6.0,
+      "titulo": "Valiente e impulsivo.",
+      "descripcion": "Tú, eres un alma rebelde y poderosa. No pasas desapercibido(a), y es que tu vibra tiene algo único. Eres audaz y valiente, no le temes al riesgo y te lanzas de cabeza a lo desconocido porque sabes que la vida es para los valientes. Tienes una energía infinita que contagia, subes la vibra donde llegas y motivas a los demás a seguirte. Eres súper independiente, haces las cosas a tu manera y trazas tu propio camino. Aunque eres fuerte, también tienes un corazón gigante: leal, protector(a) y siempre listo(a) para defender a quienes amas. Y sí, tienes esa vibra de líder nato, la gente confía en ti porque eres auténtico(a) y valiente.\n\n**Bonus:** Tu lado \"picante\"\nA veces puedes ser un poco impulsivo(a) o incluso testarudo(a), pero eso es porque tienes un fuego interno que te hace vivir la vida al máximo.\nEres como un protagonista de película: valiente, independiente, pero con un corazón que nunca deja de brillar.",
+      "subtitulo": "Deja que el magnetismo de tu Temperamento cree puentes; siempre ten presente...",
+      "recomendacion": "Tu valentía inspira: tienes el fuego para ir al frente sin dudar. Pero recuerda, no todo se gana con impulso. A veces, respirar antes de actuar es el movimiento más sabio. La estrategia también es fuerza. Elegir tus batallas con intención te convierte en alguien que no solo lucha, sino que trasciende."
+    },
+    {
+      "valor": 7.0,
+      "titulo": "Sensible y diplomático.",
+      "descripcion": "Tienes un combo de características que te hacen único(a) y encantador(a). Eres elegante sin esfuerzo, con una energía sofisticada que atrae sin intentar demasiado. Tu estilo, tu forma de hablar y hasta cómo decoras tu espacio tiene un toque especial. Eres tranquilo(a), pero astuto(a): prefieres la paz, aunque siempre tienes un plan B. Tu empatía es otro nivel, sabes cómo hacer sentir bien a los demás y siempre estás ahí cuando más se necesita. Tienes un ojo estético brutal, desde la moda hasta los detalles más simples. Además, prefieres la estabilidad, buscas seguridad sin dejar de abrirte a nuevas experiencias.\n\n**Bonus:** Tu lado más \"real\"\nA veces, ser tan pacífico(a) te puede llevar a evitar conflictos importantes o no querer tomar decisiones difíciles. Pero cuando necesitas ponerte serio(a), lo haces con clase y determinación.",
+      "subtitulo": "Deja que el magnetismo de tu Temperamento cree puentes; siempre ten presente...",
+      "recomendacion": "Tu sensibilidad es un regalo, no una debilidad. Es la puerta a tu empatía, tu intuición y tu forma única de ver el mundo. No dudes de tu fortaleza: sentir profundamente también es resistir con el alma. Puedes enfrentar más de lo que imaginas, y lo harás con una belleza que toca e inspira."
+    },
+    {
+      "valor": 8.0,
+      "titulo": "Carismático y enérgico.",
+      "descripcion": "Tú eres esa persona que siempre está en el centro de la acción, brillando sin siquiera intentarlo. Tu energía y personalidad son simplemente épicas. Eres puro liderazgo: inspiras confianza y motivas sin esfuerzo, como ese amigo que arma planes y todos siguen felizmente. Tu energía es imparable, siempre buscando proyectos que te hagan sentir vivo(a). Brillas como nadie: tu chispa es imposible de ignorar y siempre logras destacar. Además, tienes una visión clara y ambiciosa, sueñas en grande y haces que las cosas pasen. Y aunque eres fuerte y seguro(a), tu corazón enorme te hace protector(a) y leal.\n\n**Bonus:** Tu lado más \"picante\"\nPor otro lado, a veces puedes ser un poco perfeccionista o impaciente. Te gusta que las cosas salgan bien, y cuando no lo hacen, te frustras. Pero eso solo pasa porque tienes estándares altos, y eso es algo admirable.",
+      "subtitulo": "Deja que el magnetismo de tu Temperamento cree puentes; siempre ten presente...",
+      "recomendacion": "Tu brillo es natural, imposible de ignorar. Pero recuerda: cuando compartes luz, no te apagas, te expandes. Deja que otros también tengan su momento; el verdadero liderazgo se multiplica, no compite. Guiar con generosidad te hace aún más grande. Porque liderar también es elevar a los demás."
+    },
+    {
+      "valor": 9.0,
+      "titulo": "Misterioso y estratégico.",
+      "descripcion": "Eres como ese amigo sabio y misterioso que siempre tiene la respuesta perfecta, pero no la entrega a cualquiera. Tienes una vibración única. Eres profundamente sabia(o): tu mente analiza con precisión y siempre encuentra la mejor salida. Te rodea un aura de misterio que despierta curiosidad, porque sabes cuándo hablar y cuándo observar. Tienes una elegancia natural que no sigue tendencias, simplemente fluye contigo. Eres emocionalmente fuerte: puedes sentir intensamente, pero mantener la calma como nadie. Y tu intuición… de otro nivel. Lees el ambiente con una sensibilidad casi mágica.\n\n**Bonus:** Tu lado menos frío\nA veces, tu lado reservado puede hacer que parezcas distante o difícil de entender. También puedes ser un poco posesivo(a) cuando algo o alguien realmente te importa. Pero oye, eso solo demuestra lo apasionado(a) que eres.",
+      "subtitulo": "Deja que el magnetismo de tu Temperamento cree puentes; siempre ten presente...",
+      "recomendacion": "Tu intuición es poderosa, casi mágica. Escúchala, es tu brújula interna. Pero también confía en quienes han estado ahí, constantes y reales. No todo se trata de ir en solitario; a veces, el verdadero poder está en reconocer las alianzas que te cuidan y te impulsan a llegar más lejos."
+    },
+    {
+      "valor": 10.0,
+      "titulo": "Libre y apasionado.",
+      "descripcion": "Eres pura energía con una vibra magnética que busca nuevas aventuras todo el tiempo. Tienes una vitalidad que inspira: siempre en movimiento, explorando ideas, lugares y retos. Tu carisma es inigualable, haces que cualquiera se sienta bienvenido. La independencia es tu motor; aunque escuchas a los demás, siempre sigues tu intuición. Tu creatividad y espontaneidad brillan sin esfuerzo: improvisas como nadie y eso te hace único(a). Tienes una vibra optimista que levanta el ánimo de todos. La gente siente que todo es posible contigo.\n\n**Bonus:** Tu lado más \"real\"\nA veces puedes ser un poco impaciente o incluso inquieto(a) porque siempre quieres estar haciendo algo. Además, aunque amas la libertad, puedes sentirte inseguro(a) si no encuentras el rumbo correcto. Pero, al final del día, siempre te reinventas y sigues adelante.",
+      "subtitulo": "Deja que el magnetismo de tu Temperamento cree puentes; siempre ten presente...",
+      "recomendacion": "Tu espíritu libre es increíble, una fuerza que rompe moldes y crea caminos propios. Solo recuerda: no todos los compromisos son cadenas. Algunos suman, acompañan y potencian tu viaje. Elegir con conciencia también es libertad. Tu aventura puede crecer aún más cuando compartes el vuelo."
+    },
+    {
+      "valor": 11.0,
+      "titulo": "Creativo y empático.",
+      "descripcion": "Tienes la energía de un personaje principal auténtico, creativo y con un corazón enorme. Tu imaginación no tiene límites: desde tus outfits hasta cómo decoras tu espacio, todo lo haces con estilo y un toque artístico único. Eres esa persona amable que siempre está pendiente de los demás, que manda un \"¿todo bien?\" cuando nota algo. Tu vibra tranquila pero magnética hace que todos se sientan cómodos contigo. No necesitas ser el centro de atención para brillar. Eres leal, confiable y tienes un don para lo estético: tu estilo siempre transmite quién eres.\n\n**Bonus:** Tu lado realista\nAunque eres un amor, a veces puedes ser un poco inseguro(a) o preocuparte demasiado por lo que piensen los demás. Pero eso solo pasa porque te importa mucho hacer las cosas bien y mantener la paz con todos.",
+      "subtitulo": "Deja que el magnetismo de tu Temperamento cree puentes; siempre ten presente...",
+      "recomendacion": "Tu creatividad no tiene límites, es un torrente de ideas únicas y poderosas. Solo necesitas un poco de estructura para canalizar esa magia. Cuando ordenas tu caos creativo, lo imposible empieza a tomar forma. Imagina lo que puedes lograr cuando tu talento y enfoque van en la misma dirección."
+    }
+  ]
+}

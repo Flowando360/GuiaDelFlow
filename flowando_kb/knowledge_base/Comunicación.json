@@ -1,0 +1,48 @@
+{
+  "sheet": "Comunicación",
+  "tipo_calculo": "suma_likert",
+  "preambulo": [
+    "La Comunicación",
+    "Comunicación - Conectar con impacto y claridad",
+    "Suma C54-C58"
+  ],
+  "num_resultados": 4,
+  "resultados": [
+    {
+      "min": 5.0,
+      "max": 10.0,
+      "introduccion": "Tu comunicación tiene más impacto del que imaginas. Cada palabra, tono y gesto pueden acercarte o alejarte de los demás. Ser consciente de cómo te expresas no solo mejora tus relaciones, sino que te ayuda a conectar con claridad y autenticidad. No es solo lo que dices, sino cómo lo dices y cómo se recibe. Comunicarte con intención y empatía transforma conversaciones en conexiones reales.",
+      "titulo": "Comunicación Pasiva",
+      "descripcion": "Tu forma de comunicar puede estar marcada por el deseo de evitar conflictos o incomodidades. Tal vez prefieres guardar tus opiniones, ya sea por inseguridad, miedo al rechazo o por querer mantener la armonía. Y aunque esto puede parecer una forma de protegerte, con el tiempo podría llevarte a sentirte invisibilizado o incomprendido. Tu voz también importa, y tienes derecho a expresar lo que sientes y piensas con claridad y respeto. La comunicación no tiene que ser agresiva para ser firme, ni ruidosa para ser escuchada. Puedes comenzar poco a poco, explorando espacios seguros donde practicar decir lo que necesitas. Dar ese paso puede abrirte a relaciones más auténticas y a un reconocimiento más profundo de tu valor. No se trata de cambiar tu esencia, sino de permitirte habitarla con más libertad. Porque cuando te expresas desde tu verdad, creas conexiones más reales y espacios de crecimiento verdadero.",
+      "recomendacion": "Trabaja en expresar tus ideas con seguridad. Empieza con afirmaciones simples, como decir lo que prefieres en lo cotidiano. Pregúntate: ¿Qué es lo peor que podría pasar si digo lo que pienso? Tu voz es valiosa, merece ser escuchada. Hablar con claridad también es un acto de amor propio.",
+      "reflexion": "Callar por miedo o incomodidad debilita tu mensaje y tu presencia. La comunicación pasiva es ceder tu voz sin darte permiso de habitarla. Puedes ser amable sin desaparecerte. Expresarte con respeto también es un acto de amor propio. Habla desde tu verdad, incluso cuando tiemble la voz."
+    },
+    {
+      "min": 11.0,
+      "max": 18.0,
+      "introduccion": "Tu comunicación tiene más impacto del que imaginas. Cada palabra, tono y gesto pueden acercarte o alejarte de los demás. Ser consciente de cómo te expresas no solo mejora tus relaciones, sino que te ayuda a conectar con claridad y autenticidad. No es solo lo que dices, sino cómo lo dices y cómo se recibe. Comunicarte con intención y empatía transforma conversaciones en conexiones reales.",
+      "titulo": "Comunicación Pasivo-Agresiva",
+      "descripcion": "A veces, cuando algo te molesta, no lo expresas de forma directa. Tal vez usas el sarcasmo, el silencio o las indirectas como vía para soltar lo que sientes. Esta forma de comunicar puede surgir de la necesidad de evitar el conflicto abierto, pero a la larga puede generar malentendidos, tensiones y una sensación de distancia emocional con los demás. Lo que no se dice claramente, se interpreta, y eso puede volverse un obstáculo en tus relaciones. Tienes mucho por decir y tu voz merece ser escuchada sin filtros confusos. La buena noticia es que puedes transformar esta forma de expresarte en una comunicación más honesta y consciente. El primer paso es reconocer tus emociones y luego darles un canal claro, con respeto y firmeza. No necesitas esconder lo que sientes, solo aprender a nombrarlo de forma que construya. Comunicarte desde tu verdad, sin máscaras, te acerca más a los demás y a ti mismo.",
+      "recomendacion": "Practica la comunicación directa con respeto. En vez de esperar que adivinen lo que piensas, exprésalo con claridad y amabilidad. Pregúntate: ¿Cómo decir lo que siento sin indirectas? Usa frases en primera persona como: “Me siento…” o “Me gustaría…”. Hablar claro también es un acto de amor.",
+      "reflexion": "El silencio cargado o la ironía constante generan distancia. Cuando no expresas lo que sientes con claridad, tu energía habla por ti. Mereces relaciones basadas en honestidad, no en suposiciones. Comunicarte desde la transparencia transforma. Sé claro, incluso cuando duela."
+    },
+    {
+      "min": 19.0,
+      "max": 25.0,
+      "introduccion": "Tu comunicación tiene más impacto del que imaginas. Cada palabra, tono y gesto pueden acercarte o alejarte de los demás. Ser consciente de cómo te expresas no solo mejora tus relaciones, sino que te ayuda a conectar con claridad y autenticidad. No es solo lo que dices, sino cómo lo dices y cómo se recibe. Comunicarte con intención y empatía transforma conversaciones en conexiones reales.",
+      "titulo": "Comunicación Asertiva",
+      "descripcion": "Has desarrollado una forma de comunicarte que equilibra claridad y respeto, y eso es una gran fortaleza. Sabes cómo expresar tus ideas sin agredir, y cómo defender tu punto de vista sin invalidar el de los demás. Esta habilidad te permite construir relaciones sanas, generar acuerdos y resolver conflictos de manera constructiva. Tu voz tiene poder, y sabes usarla con conciencia. Escuchas activamente, das espacio a la diferencia y sabes cuándo decir que sí o que no. Aun así, recuerda que la asertividad es un músculo que se sigue entrenando con cada experiencia. Puedes seguir profundizando en esta forma de comunicar, ampliando tu empatía sin dejar de ser firme. Cada vez que te comunicas desde la autenticidad, estás sembrando confianza y creando conexiones más humanas. Sigue fluyendo con esa energía clara y coherente. Tu comunicación es una herramienta poderosa para transformar conversaciones en verdaderos encuentros.",
+      "recomendacion": "Fortalece tu habilidad para comunicarte con confianza y empatía. Practica la escucha activa y asegúrate de que tu mensaje sea claro. Pregúntate: ¿Cómo puedo ayudar a otros a mejorar su comunicación a través de mi ejemplo? Liderar con la palabra también transforma realidades.",
+      "reflexion": "Decir lo que piensas sin herir, y escuchar sin rendirte, es una habilidad poderosa. La comunicación asertiva honra tus límites y respeta los de otros. No se trata de tener la razón, sino de construir puentes. Cuando hablas desde el centro, inspiras confianza y generas conexión real."
+    },
+    {
+      "min": 26.0,
+      "max": 30.0,
+      "introduccion": "Tu comunicación tiene más impacto del que imaginas. Cada palabra, tono y gesto pueden acercarte o alejarte de los demás. Ser consciente de cómo te expresas no solo mejora tus relaciones, sino que te ayuda a conectar con claridad y autenticidad. No es solo lo que dices, sino cómo lo dices y cómo se recibe. Comunicarte con intención y empatía transforma conversaciones en conexiones reales.",
+      "titulo": "Comunicación Agresiva",
+      "descripcion": "Tienes una gran determinación y no temes decir lo que piensas, pero a veces, tu forma de comunicar puede sentirse dominante o invasiva para los demás. Tal vez buscas que tu opinión prevalezca, pero podrías estar dejando poco espacio para el diálogo o la construcción conjunta. La firmeza es una virtud, sin duda, pero cuando se combina con empatía, se convierte en una herramienta de transformación. Puedes seguir siendo directo y claro, pero sin que eso implique herir o cerrar puertas. Aprender a leer el contexto, a escuchar con apertura y a elegir palabras que construyan, puede hacer que tu mensaje tenga aún más impacto. Recuerda que ser escuchado no depende de hablar más fuerte, sino de conectar con quienes te rodean. Estás en camino de descubrir cómo potenciar tu comunicación sin apagar la de los demás. Ahí está el verdadero poder: en lograr que tu voz inspire, y no solo imponga.",
+      "recomendacion": "Trabaja en moderar tu tono y construir conversaciones más colaborativas. Pregúntate: ¿Estoy dejando espacio para que los demás expresen sus ideas? Reformula tus mensajes con una actitud más positiva y abierta. Fomenta el diálogo genuino por encima de la imposición.",
+      "reflexion": "Cuando comunicas desde la imposición, anulas el espacio del otro. Gritar no te hace más fuerte, solo más lejano. El respeto también se expresa con firmeza. La verdadera seguridad está en transmitir con claridad, sin herir. Hablar con poder no significa atropellar, sino conectar."
+    }
+  ]
+}

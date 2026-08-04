@@ -1,0 +1,111 @@
+{
+  "sheet": "Proposito_1",
+  "tipo_calculo": "formula_numerologica",
+  "preambulo": [
+    {
+      "campo": "CATEGORÍA",
+      "valor": "TALENTOS PODEROSOS"
+    },
+    "TÍTULO DE LA CATEGORÍA:",
+    {
+      "campo": "ASPECTO:",
+      "valor": "Propósito de Vida"
+    },
+    {
+      "campo": "BASE DE CÁLCULO:",
+      "valor": "Fecha de Nacimiento"
+    },
+    {
+      "campo": "CÁLCULO:",
+      "valor": "Se obtiene sumando todos los dígitos de la fecha de nacimiento, incluyendo el año de 4 dígitos\nLuego se reduce el resultado a un número del 1 al 11\nEjemplo:\nFecha de nacimiento: 24 de agosto de 1993\nDía: 24\nMes: 8\nAño: 1993 → 1 + 9 + 9 + 3 = 22\n\nAhora sumamos todos los componentes:\n24 + 8 + 22 = 54\n5 + 4 = 9\n\nEl número de Propósito sería el 9"
+    },
+    {
+      "campo": "DESC. ASPECTO",
+      "valor": "La llama que da sentido a tu historia"
+    },
+    {
+      "campo": "INTRODUCCIÓN",
+      "valor": "El propósito de vida es la llama interna que nos impulsa a crear, transformar y dejar huella. Es una energía en constante evolución que da sentido a nuestras decisiones y nos conecta con lo que realmente nos mueve. Descubrirlo es el primer paso para vivir con autenticidad, sintiendo que cada acción suma a algo más grande. Es así como escribimos el guion de nuestra vida y nos convertimos en los protagonistas de nuestra propia historia."
+    }
+  ],
+  "num_resultados": 11,
+  "resultados": [
+    {
+      "valor": 1.0,
+      "titulo": "El amor como brújula de vida",
+      "descripcion": "Todo lo que hagas en tu vida tiene el potencial de convertirse en una experiencia de amor profundo. Ese amor no es solo hacia los demás, sino también hacia ti mismo y hacia lo que le da sentido a tu existencia. A través de prácticas y disciplinas espirituales que cultiven tu interior, irás descubriendo y fortaleciendo un gran poder interno que ya habita en ti.Ese poder no solo te transformará, sino que también te dará las herramientas para guiar y apoyar a otros. Con tu ejemplo, con tu presencia y con tus palabras, podrás ayudar a las personas a reconectar con su esencia, con esa parte de ellos mismos que a veces se pierde en el ruido del día a día.Lo más hermoso de este camino es que mientras creces y evolucionas, también creas un impacto positivo en quienes te rodean. Tu vida se convierte en un puente para que otros descubran el amor, la fuerza y la autenticidad que también llevan dentro. ¡Ese es un propósito poderoso y lleno de significado!",
+      "subtitulo": "para tu hacer en la vida, siempre ten presente...",
+      "recomendacion": "Cada experiencia, incluso la más retadora, guarda una semilla de crecimiento. Si miras con el corazón abierto, verás lecciones valiosas y oportunidades para evolucionar. Y cuando eliges compartir amor en el proceso, inspiras a otros a hacer lo mismo. Ahí empieza la magia."
+    },
+    {
+      "valor": 2.0,
+      "titulo": "Devoción: el arte de vivir con propósito",
+      "descripcion": "Todo lo que haces lleva consigo un sentido de devoción profunda. No es solo lo que haces, sino el porqué y el cómo lo haces, desde un lugar de conexión con algo mucho más grande que tú mismo. Cada acción, cada paso, refleja tu deseo de estar alineado con el Universo y con aquello que trasciende lo cotidiano.Tu búsqueda constante es por esa conexión con lo esencial, con lo que realmente importa en la vida. No te quedas en la superficie; buscas lo profundo, lo que tiene significado, lo que eleva tu espíritu y te recuerda que formas parte de algo infinito y poderoso.Ese enfoque hace que todo lo que emprendes tenga propósito y valor, no solo para ti, sino también para los demás. Vivir con esa conexión te transforma y, al mismo tiempo, inspira a quienes te rodean a encontrar su propio vínculo con lo trascendental. ¡Esa devoción es tu brújula y la clave para impactar el mundo de una manera única y auténtica!",
+      "subtitulo": "para tu hacer en la vida, siempre ten presente...",
+      "recomendacion": "Cuando te conectas con lo esencial, todo cobra sentido. Tus decisiones se vuelven más claras, tus acciones más auténticas. No necesitas hacer más, solo hacer con propósito. Deja que esa voz interior —tu verdad más profunda— sea la brújula que marque tu camino. Ahí está tu poder."
+    },
+    {
+      "valor": 3.0,
+      "titulo": "Justicia y equidad: tu misión en el mundo",
+      "descripcion": "Tu propósito está profundamente ligado a la búsqueda de igualdad y justicia en el mundo. En todo lo que hagas, trabajarás con dedicación para asegurarte de que cada persona tenga las mismas oportunidades y el respeto que merece. No solo es algo que haces, es algo que te define.Tu plenitud vendrá del acto noble de dar lo mejor de ti para construir un mundo más justo, defendiendo la equidad en cada situación, sin importar lo difícil que parezca. Tienes la capacidad de ver más allá de lo evidente y de actuar con firmeza para corregir las injusticias, con un corazón comprometido y lleno de empatía.Esa pasión por la justicia y la igualdad no solo te transforma, sino que inspira a otros a hacer lo mismo. Eres un ejemplo vivo de que el cambio comienza con cada acción, y tu camino refleja un profundo deseo de construir un futuro donde la equidad sea la base de todas las relaciones y decisiones. ¡Esa es tu misión, y cada paso que das hacia ella tiene un impacto significativo!",
+      "subtitulo": "para tu hacer en la vida, siempre ten presente...",
+      "recomendacion": "Tu pasión por la justicia tiene el poder de transformar realidades. No estás aquí solo para observar, estás para accionar. Usa esa fuerza para alzar la voz, construir puentes y abrir caminos donde antes solo había muros. El cambio empieza cuando decides actuar con propósito y corazón."
+    },
+    {
+      "valor": 4.0,
+      "titulo": "La intuición como tu mejor guía",
+      "descripcion": "Vas a desarrollar un vínculo profundo con tu intuición, ese poder interno que muchas veces tiene respuestas antes de que las encuentres en tu mente. A medida que lo fortalezcas, aprenderás a confiar plenamente en tu instinto, esa voz interna que te guía incluso en los momentos más inciertos.Además, empezarás a escuchar más a tu cuerpo, porque él también es una herramienta poderosa para tomar decisiones. Cada sensación, cada señal que te envía, será como un mapa que te ayudará a elegir el camino correcto con mayor claridad y confianza.Esa conexión con tu intuición y tu cuerpo te permitirá tomar decisiones más auténticas, alineadas con quién eres realmente. Es un talento que te dará seguridad, te permitirá fluir mejor en la vida y enfrentarte a cada desafío desde un lugar de sabiduría y autoconfianza. ¡Sigue cultivando esa habilidad, porque será uno de tus mayores aliados!",
+      "subtitulo": "para tu hacer en la vida, siempre ten presente...",
+      "recomendacion": "Escuchar tu intuición es confiar en esa voz sabia que vive dentro de ti. No siempre grita, pero siempre sabe. Cuando tomas decisiones desde ahí, conectas con lo que eres de verdad. Deja que te guíe con calma y certeza, porque tu autenticidad florece cuando sigues tu verdad interior."
+    },
+    {
+      "valor": 5.0,
+      "titulo": "Cuerpo y enseñanza: el equilibrio perfecto",
+      "descripcion": "La enseñanza y el cuidado de tu cuerpo serán pilares fundamentales en tu vida, los elementos que definirán tu camino y te permitirán impactar tanto en ti mismo como en los demás. Esto significa que atravesarás procesos de aprendizaje que requieren conciencia, dedicación y disciplina. Cada paso que des en este viaje será una oportunidad para crecer y para perfeccionar tus habilidades, tanto en el ámbito personal como en el de guiar a otros.Cuando te comprometas con este proceso, convertirás la enseñanza en algo mucho más que transmitir conocimiento. Será una experiencia profundamente gratificante, donde aprenderás al mismo tiempo que inspiras a los demás. El cuidado de tu cuerpo también jugará un rol clave, porque es el vehículo que te permitirá sostener y expresar todo lo que deseas compartir con el mundo.En esta combinación de autoconocimiento, aprendizaje y disciplina, encontrarás la verdadera plenitud. No solo marcarás tu propio destino, sino que también serás un faro para otros que buscan su propio camino. ¡Ese balance entre enseñar, cuidar de ti mismo y evolucionar es lo que te hará brillar!",
+      "subtitulo": "para tu hacer en la vida, siempre ten presente...",
+      "recomendacion": "Integra el aprendizaje y el cuidado del cuerpo como parte esencial de tu evolución. Tu mente crece con conocimiento, pero tu energía se sostiene desde el bienestar. Escúchate, respétate y haz de cada hábito una elección consciente. Ese equilibrio es la base para avanzar con poder y claridad."
+    },
+    {
+      "valor": 6.0,
+      "titulo": "Eres un faro de paz en la tormenta",
+      "descripcion": "Tu propósito en esta vida es ser ese lugar de calma, equilibrio y paz al que otros pueden acudir en medio del caos. Aunque el entorno a veces pueda estar lleno de turbulencia y desafíos, tú tienes una fortaleza interior que te permite mantenerte firme, inalterable y sereno.Eres como un ancla en un mar agitado: das estabilidad y confianza a quienes te rodean. Esa capacidad de proyectar calma y de actuar con equidad, incluso en los momentos más difíciles, te convierte en una fuente de consuelo y sosiego para los demás. Las personas encuentran en ti un ejemplo de cómo afrontar la vida con serenidad y claridad.Ese papel no solo impacta a quienes te rodean, sino que también te conecta profundamente con tu propio ser. Es un propósito que va más allá de las palabras, es una energía que transmites y una misión que cumple un propósito mayor. ¡Sigue siendo ese remanso de paz, porque tu presencia transforma y aporta luz en los momentos más oscuros!",
+      "subtitulo": "para tu hacer en la vida, siempre ten presente...",
+      "recomendacion": "Sé un faro de calma y equilibrio para quienes te rodean. En un mundo que corre sin parar, tu serenidad es medicina. Inspiras con tu presencia tranquila y tu forma de ver la vida con perspectiva. No necesitas alzar la voz para guiar; tu paz interior habla más fuerte que mil palabras."
+    },
+    {
+      "valor": 7.0,
+      "titulo": "Resiliencia y generosidad: tu legado",
+      "descripcion": "Eres alguien con una gran capacidad de compasión, y eso te permite ver más allá de las dificultades o negatividades que puedan aparecer en tu vida. Tienes la habilidad de elevar tu conciencia, de mantenerte por encima de las circunstancias negativas, sin dejar que te definan o te derriben.Tu fortaleza es admirable. Sabes cómo mantenerte firme en los momentos difíciles, mostrando resiliencia y aprendiendo de cada experiencia. Pero lo que realmente te distingue es tu generosidad. No solo superas los desafíos, sino que también encuentras formas de dar y compartir con los demás, inspirándolos a seguir adelante.Eres un ejemplo vivo de cómo enfrentar la vida con integridad, valentía y bondad. Todo lo que haces refleja tu compromiso con ser una persona que no solo trasciende las adversidades, sino que también ilumina el camino para quienes te rodean. Esa combinación de fortaleza, resiliencia y generosidad es lo que te hace único y valioso. ¡Sigue brillando de esa manera, porque dejas una huella profunda en el mundo!",
+      "subtitulo": "para tu hacer en la vida, siempre ten presente...",
+      "recomendacion": "Usa tu resiliencia y generosidad para transformar la vida de otros. Tu fuerza no solo te sostiene, también inspira. Cuando das desde el corazón y te mantienes firme ante la adversidad, te conviertes en motor de cambio. Eres guía, impulso y esperanza para quienes caminan cerca de ti."
+    },
+    {
+      "valor": 8.0,
+      "titulo": "Sanar el mundo, sanar el alma",
+      "descripcion": "Tu propósito está profundamente ligado a la sanación, no solo de personas, sino también de la naturaleza y los animales. Tienes un don especial que te llevará a ayudar a otros a encontrar equilibrio y bienestar, ya sea a través de la medicina tradicional, enfoques holísticos o prácticas como la meditación y la sanación espiritual.Esta misión no se limita solo al ámbito humano; también tienes una conexión especial con los animales y el entorno natural. Tu sensibilidad te impulsa a cuidar, proteger y restaurar la armonía en todo lo que te rodea, defendiendo la vida en todas sus formas.Al seguir este camino, te convertirás en un puente entre el cuidado físico, emocional y espiritual. Todo lo que haces tiene el potencial de traer paz, salud y transformación, no solo a las personas que tocas, sino también al mundo natural. Este propósito es un llamado a vivir en coherencia con tu amor por la vida y a compartir ese regalo con quienes más lo necesitan. ¡Tu capacidad para sanar y proteger es un verdadero regalo para el mundo!",
+      "subtitulo": "para tu hacer en la vida, siempre ten presente...",
+      "recomendacion": "Canaliza tu energía en la sanación y el cuidado del mundo que te rodea. Tu sensibilidad es poder, y cuando la diriges con intención, puedes aliviar, inspirar y transformar. Eres un puente entre el dolor y la esperanza, alguien que cultiva bienestar con cada acto consciente y amoroso."
+    },
+    {
+      "valor": 9.0,
+      "titulo": "Liderazgo auténtico: el poder de inspirar",
+      "descripcion": "Tu esencia está diseñada para liderar, y lo harás desde un lugar de sabiduría y autenticidad. A medida que desarrolles tu sabiduría interna, irás construyendo una seguridad sólida que no solo te fortalecerá a ti, sino que también se convertirá en un pilar para quienes te rodean.Tu liderazgo no será impositivo, sino inspirador. Proyectarás tranquilidad, confianza y claridad, lo que hará que las personas te sigan de manera natural, porque verán en ti a alguien que sabe guiar con propósito y equilibrio. Eres de esas personas que marcan la diferencia, no solo porque saben hacia dónde van, sino porque también tienen la capacidad de ayudar a otros a encontrar su propio camino.Este don no es solo una responsabilidad, es una oportunidad para impactar positivamente en el mundo, para ser un ejemplo de cómo liderar con el corazón y la mente en perfecta armonía. Tu camino como líder será un faro que ilumine el de muchos otros. ¡Confía en ti mismo, porque naciste para inspirar y transformar!",
+      "subtitulo": "para tu hacer en la vida, siempre ten presente...",
+      "recomendacion": "Lidera con sabiduría y autenticidad para ser un ejemplo inspirador. Tu forma de guiar, desde lo real y lo profundo, deja huella. No necesitas imponer, tu coherencia habla por ti. Cuando te muestras tal como eres, invitas a otros a descubrir y expresar su propia grandeza con confianza y propósito."
+    },
+    {
+      "valor": 10.0,
+      "titulo": "Valentía en acción: forjando tu destino",
+      "descripcion": "En cada paso que des, tu valentía será evidente. Tienes una fuerza interna que te impulsa a enfrentar los desafíos con determinación y a participar en grandes causas que no solo resonarán contigo, sino que también te harán sentir que tu vida tiene un propósito más profundo.Serás parte de algo significativo, algo que conecte con tus valores y que te permita fluir con pasión. En este camino, desarrollarás un compromiso sólido y una capacidad de decisión que te ayudará a afrontar incluso las situaciones más retadoras con claridad y confianza.Los retos que enfrentes serán oportunidades para crecer y demostrar lo fuerte que eres. Tu capacidad para comprometerte y mantenerte firme en los momentos difíciles te llevará a superar límites que quizás antes parecían imposibles. Esa valentía, combinada con tu determinación, te permitirá no solo avanzar, sino también inspirar a otros a seguir su propio camino con coraje. ¡Eres un ejemplo de cómo enfrentar la vida con fuerza y propósito!",
+      "subtitulo": "para tu hacer en la vida, siempre ten presente...",
+      "recomendacion": "Usa tu valentía para comprometerte con causas que vibren con tu esencia. Cuando conectas con lo que realmente te mueve, tu fuerza se vuelve imparable. Eres pura coherencia en acción, y eso inspira. No estás aquí para ser espectador, sino para encender cambios reales desde tu verdad más profunda."
+    },
+    {
+      "valor": 11.0,
+      "titulo": "Integridad inquebrantable: tu sello personal",
+      "descripcion": "Tu propósito en esta vida es ser una persona íntegra, alguien que vive con principios y valores tan sólidos que ninguna circunstancia podrá quebrantarlos. Esa fortaleza interna no solo te define, sino que también te convierte en un ejemplo para quienes te rodean.Gracias a esa integridad y a tu carácter inalterable, podrás ocupar posiciones de altísima confianza. Serás alguien en quien los demás se apoyan porque proyectas seguridad, valentía y un compromiso genuino con lo correcto. Tu presencia será una fuente de inspiración, no solo por lo que haces, sino por cómo lo haces, siempre desde la coherencia y la autenticidad.Esa capacidad de mantenerte firme, sin importar las adversidades, te permitirá liderar con justicia y empatía, marcando la diferencia en cada responsabilidad que asumas. Tu impacto no se medirá solo en resultados, sino también en la confianza y el respeto que generarás en quienes te sigan. ¡Ese es tu poder, y es algo verdaderamente único!",
+      "subtitulo": "para tu hacer en la vida, siempre ten presente...",
+      "recomendacion": "Vive desde tus principios, esos que te anclan cuando todo se mueve. Mantén tu integridad como brújula, incluso cuando el camino sea incierto. Cada decisión que tomas desde tu verdad es una forma de honrar tu esencia. Ser auténtico no pasa de moda, y tú eres prueba viva de eso."
+    }
+  ]
+}

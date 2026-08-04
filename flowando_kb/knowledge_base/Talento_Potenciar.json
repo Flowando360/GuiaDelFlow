@@ -1,0 +1,114 @@
+{
+  "sheet": "Talento_Potenciar",
+  "tipo_calculo": "formula_numerologica",
+  "preambulo": [
+    {
+      "campo": "CATEGORÍA",
+      "valor": "TALENTOS PODEROSOS"
+    },
+    {
+      "campo": "TÍTULO DE LA CATEGORÍA:",
+      "valor": "Tu talento innato para potenciar"
+    },
+    {
+      "campo": "ASPECTO:",
+      "valor": "TALENTO PARA POTENCIAR"
+    },
+    {
+      "campo": "BASE DE CÁLCULO:",
+      "valor": "Fecha de Nacimiento"
+    },
+    {
+      "campo": "CÁLCULO:",
+      "valor": "Se obtiene sumando los cuatro dígitos del AÑO de nacimiento\nLuego se reduce el resultado a un número del 1 al 11\nEjemplo:\nAño de nacimiento: 1993\n1 + 9 + 9 + 3 = 22\n2 + 2 = 4\nEl número de Potenciación sería el 4"
+    },
+    {
+      "campo": "DESC. ASPECTO",
+      "valor": "Talento Innato para potenciar - El Talento que fluye si trabajas en él"
+    },
+    {
+      "campo": "INTRODUCCIÓN",
+      "valor": "Hay talentos en ti que apenas se asoman, tímidos pero poderosos. A veces no los reconoces, otras los subestimas. Pero están ahí, esperando ser escuchados. Potenciarlos no solo te hace crecer, también complementa lo que ya te hace único. Porque tu autenticidad no es una sola cosa: es la mezcla perfecta de todo lo que eres capaz de descubrir y transformar."
+    }
+  ],
+  "num_resultados": 11,
+  "resultados": [
+    {
+      "valor": 1.0,
+      "titulo": "El Arte del Equilibrio: Mente Clara, Corazón Sabio",
+      "descripcion": "Tienes un don muy especial: sabes encontrar el punto medio entre lo que dice tu mente y lo que siente tu corazón. Mientras muchos se pierden en ese conflicto, tú logras escuchar ambas partes y tomar decisiones con equilibrio y claridad. Eso te da una ventaja increíble, porque no solo actúas con lógica, sino también con empatía y autenticidad.Además, la gente te percibe como alguien creativo, tranquilo y lleno de armonía. Tu forma de ser transmite calma, pero también inspiración. Es como si siempre encontraras maneras originales y únicas de abordar las cosas, mientras mantienes una actitud relajada que da confianza a quienes te rodean.Esa capacidad de balance y creatividad no solo te define, sino que también impacta positivamente en los demás. Eres un ejemplo de cómo vivir en equilibrio y, al mismo tiempo, mantener una chispa especial que hace la diferencia. ¡Sigue cultivando esa energía única, porque es uno de tus mayores tesoros!",
+      "subtitulo": "de Tus potencialidades, siempre ten presente...",
+      "recomendacion": "Usa tu equilibrio entre mente y corazón como brújula. Cuando piensas con claridad y sientes con verdad, tomas decisiones que honran tu esencia. No necesitas elegir entre lógica o intuición: tu magia está en combinarlas. Ahí es donde nace tu poder auténtico y tus caminos más sabios."
+    },
+    {
+      "valor": 2.0,
+      "titulo": "El Poder de Conectar: Tu Autenticidad Inspira",
+      "descripcion": "Tienes una habilidad especial para conectar con las personas. Eres alguien accesible, cercano, y siempre dispuesto a escuchar y compartir desde un lugar genuino. Esto hace que los demás se sientan cómodos a tu lado, porque saben que pueden contar contigo, no importa la situación.Lo más bonito es cómo valoras la amistad. Para ti, no es solo una palabra, sino una forma de construir lazos profundos y significativos. Además, tienes un corazón que busca servir a los demás, encontrar maneras de aportar y hacer algo bueno por la humanidad, sin importar cuán grande o pequeño sea el gesto.Esa coherencia que tienes entre lo que piensas, sientes y haces es lo que te convierte en una persona íntegra y auténtica. Inspiras confianza y demuestras que ser fiel a tus valores es la base para marcar la diferencia en el mundo. ¡Tu capacidad de conexión y servicio es un regalo que merece ser compartido siempre!",
+      "subtitulo": "de Tus potencialidades, siempre ten presente...",
+      "recomendacion": "Cultiva tu capacidad de conectar y servir, porque tu presencia transforma. Pero recuerda: dar no significa vaciarte. Cuida tu energía con la misma dedicación con la que cuidas a los demás. Cuando te nutres primero, tu impacto es más profundo, más auténtico y sostenido en el tiempo."
+    },
+    {
+      "valor": 3.0,
+      "titulo": "Luz en la Tormenta: Tu Optimismo es Transformador",
+      "descripcion": "Tienes una habilidad única para mantener una actitud positiva, sin importar la situación. Esa forma de responder ante los desafíos no solo habla de tu fortaleza interior, sino también de tu capacidad para ver siempre el lado constructivo de las cosas, algo que inspira a quienes te rodean.Lo más especial es cómo logras animar y apoyar a los demás. Irradias una energía que transmite equilibrio, justicia y respeto, creando un ambiente donde todos se sienten valorados y escuchados. Tu capacidad de servir a los demás desde un lugar tan auténtico y optimista deja una huella positiva en cada interacción.Eres como un faro que, con su luz, guía a otros en momentos de oscuridad. Tu combinación de positivismo y empatía no solo transforma las situaciones, sino que también inspira a las personas a ser mejores y a enfrentar la vida con más confianza. ¡Esa es una fortaleza poderosa que merece ser celebrada y compartida!",
+      "subtitulo": "de Tus potencialidades, siempre ten presente...",
+      "recomendacion": "Usa tu actitud positiva como chispa para encender lo mejor en los demás. Tu forma de ver la vida inspira, pero el verdadero impacto nace cuando esa luz viene desde la autenticidad. No se trata de forzar sonrisas, sino de compartir esperanza real. Ahí está tu poder transformador."
+    },
+    {
+      "valor": 4.0,
+      "titulo": "La Brújula de la Intuición: Sabiduría que Guía",
+      "descripcion": "Tienes un don especial: tu intuición. Es como si llevaras una brújula interna que te guía para tomar decisiones sabias y acertadas, incluso en las situaciones más complicadas. Ese poder te permite ver las cosas con claridad, más allá de lo que está en la superficie, y siempre encontrar el camino correcto.La gente siente esa calma y sabiduría en ti, por eso no es raro que busquen tu consejo. Te ven como alguien neutral, alguien que sabe equilibrar las emociones sin dejar que estas nublen tu juicio. Esa capacidad de mantenerte objetivo y justo es algo que pocos tienen y que te convierte en una guía confiable para los demás.Tu intuición y tu capacidad para actuar desde la razón y el equilibrio te hacen alguien que no solo toma buenas decisiones, sino que también inspira confianza en quienes te rodean. Es una fortaleza que, usada con autenticidad, tiene el poder de transformar muchas vidas, empezando por la tuya. ¡Ese es tu poder, y es increíblemente valioso!",
+      "subtitulo": "de Tus potencialidades, siempre ten presente...",
+      "recomendacion": "Confía en tu intuición, esa voz sabia que habita en ti. No estás aquí solo para avanzar, sino para guiar con equilibrio y propósito. Tu sensibilidad es brújula, y cuando la usas desde el centro, inspiras confianza real. Liderar desde el alma es tu superpoder. Úsalo con intención."
+    },
+    {
+      "valor": 5.0,
+      "titulo": "El Don de Enseñar: Inspirando con Pasión",
+      "descripcion": "Tienes un don increíble para la enseñanza. Eres de esas personas que saben cómo explicar las cosas de manera clara, sencilla y llena de sentido, lo que hace que todo lo que compartes sea fácil de entender para los demás. No solo transmites conocimiento, sino que logras que quienes te escuchan se sientan motivados e inspirados a aprender más.Lo especial de tu talento es que enseñas desde un lugar auténtico y con pasión, y eso marca una gran diferencia. Tienes la habilidad de adaptar lo que sabes para conectar con diferentes personas y ayudarlas a crecer y mejorar. Tu capacidad de compartir conocimiento no solo impacta, sino que también deja huella en quienes tienen la suerte de aprender contigo.La enseñanza es más que un talento, es una herramienta poderosa que tienes para guiar, inspirar y transformar. ¡Sigue compartiendo lo que sabes, porque tu forma de enseñar hace del aprendizaje algo significativo y único!",
+      "subtitulo": "de Tus potencialidades, siempre ten presente...",
+      "recomendacion": "Comparte tu conocimiento con pasión, porque lo que sabes puede ser la semilla del cambio en otros. Enseñar no es solo transmitir datos, es encender curiosidades, abrir caminos y acompañar procesos. Cuando compartes desde el corazón, ayudas a crecer con propósito y magia."
+    },
+    {
+      "valor": 6.0,
+      "titulo": "Visión Interior: La Magia de Tu Intuición y Enfoque",
+      "descripcion": "Tienes un talento único que no todos poseen: la capacidad de interiorizar y conectar con lo más profundo de tu ser. Eres alguien que puede reflexionar y encontrar respuestas en su interior, lo que te da una sabiduría especial para entender las cosas desde una perspectiva más amplia y profunda.Además, cuentas con una percepción psíquica muy desarrollada. Es como si tu intuición estuviera afinada para captar lo que otros no pueden ver. Esa sensibilidad te permite percibir energías, intenciones y dinámicas más allá de lo evidente, lo que te convierte en alguien que puede anticipar y comprender situaciones de manera excepcional.Por si fuera poco, tienes el don de la proyección mental. Esto significa que puedes enfocar tus pensamientos de forma clara y dirigida, creando posibilidades y moldeando el camino hacia lo que deseas. Esa combinación de reflexión interna, intuición y enfoque mental es poderosa, y te abre puertas para manifestar lo que imaginas y transformar tanto tu vida como la de los demás.Es un conjunto de talentos que te hacen alguien especial y capaz de influir de manera positiva en todo lo que te rodea. ¡No subestimes esa conexión única que tienes contigo mismo y con el mundo!",
+      "subtitulo": "de Tus potencialidades, siempre ten presente...",
+      "recomendacion": "Aprovecha tu intuición y percepción, son tus aliadas más sabias. No estás aquí para seguir fórmulas ajenas, sino para decidir desde lo que vibra contigo. Cuando escuchas tu interior y actúas con intención, todo se alinea con tu propósito. Esa claridad es tu verdadero poder."
+    },
+    {
+      "valor": 7.0,
+      "titulo": "Fuerza que Eleva: Tu Voluntad es un Faro para Otros",
+      "descripcion": "Tienes una fuerza de voluntad impresionante que no solo te impulsa a superarte, sino que también te convierte en una inspiración para los demás. Cuando enfrentas desafíos, encuentras dentro de ti esa determinación necesaria para avanzar, y lo mejor de todo es que no te quedas con esa energía solo para ti: la compartes con quienes te rodean.Sabes exactamente qué decir o hacer para ayudar a otros a superar los momentos difíciles. Tu capacidad para conectar con las personas en sus momentos más vulnerables y ofrecerles palabras o acciones que realmente hacen la diferencia es un talento único. No solo les ayudas a encontrar su fuerza interior, sino que también les recuerdas que no están solos.Esa combinación de voluntad, empatía y acción te convierte en alguien que transforma los desafíos en oportunidades, no solo para ti, sino para todos los que tienes cerca. ¡Tu habilidad para levantar y motivar es un verdadero regalo! Sigue cultivando esa energía, porque es algo que deja una huella positiva en quienes comparten el camino contigo.",
+      "subtitulo": "de Tus potencialidades, siempre ten presente...",
+      "recomendacion": "Usa tu fortaleza interior como faro en la tormenta. Eres esa energía serena que inspira sin forzar y guía sin imponer. En momentos difíciles, tu presencia es refugio y dirección. No subestimes el poder de tu calma: puede ser justo lo que otros necesitan para volver a creer."
+    },
+    {
+      "valor": 8.0,
+      "titulo": "Valentía y Equilibrio: El Éxito con Propósito",
+      "descripcion": "Tienes una energía y valentía impresionantes, que te hacen destacar en los momentos en que otros podrían darse por vencidos. Es esa fuerza interior la que te permite superar los desafíos y mantenerte firme en el camino, siempre avanzando hacia tus metas con determinación y confianza.Lo que realmente te hace especial es tu capacidad para asegurar el éxito de cualquier proyecto en el que te involucres. Esto no solo se debe a tu enfoque y dedicación, sino también a tu habilidad para encontrar el equilibrio perfecto entre lo material y lo espiritual. Sabes cómo manejar las responsabilidades prácticas mientras mantienes tus valores y tu conexión con lo que realmente importa.Esa combinación de energía, valentía y equilibrio no solo te permite alcanzar tus objetivos, sino que también inspira a otros a seguir adelante. Tienes la capacidad de convertir cualquier idea en una realidad exitosa, sin perder de vista lo esencial. ¡Esa es una fortaleza que te llevará muy lejos!",
+      "subtitulo": "de Tus potencialidades, siempre ten presente...",
+      "recomendacion": "Equilibra tu valentía con tu sabiduría: no se trata solo de avanzar, sino de avanzar con sentido. Tu impulso es poderoso, pero cuando lo alineas con visión clara, generas un impacto que deja huella. Actuar con coraje y conciencia es lo que transforma ideas en legado real."
+    },
+    {
+      "valor": 9.0,
+      "titulo": "El Silencio que Observa: Sabiduría y Liderazgo Natural",
+      "descripcion": "Tienes un talento especial que no muchos tienen: el poder de la observación y el silencio. Eres de esas personas que no necesitan hablar constantemente para entender lo que está pasando; sabes escuchar, analizar y profundizar en cualquier situación, captando detalles que otros podrían pasar por alto.Esta habilidad te permite ver más allá de la superficie y comprender el panorama completo antes de actuar. Esa capacidad de reflexión no solo te hace sabio, sino también confiable, ya que siempre tomas decisiones desde un lugar de claridad y propósito.Además, proyectas una autoridad natural combinada con una serenidad que inspira respeto. La gente ve en ti a alguien con una presencia fuerte pero tranquila, alguien que no necesita imponer, porque tu energía y actitud hablan por sí solas. Ese equilibrio entre observación, reflexión y calma es una fortaleza poderosa que te diferencia y te da un liderazgo auténtico y lleno de propósito. ¡Sigue cultivando esa energía única, porque marca la diferencia en todo lo que haces!",
+      "subtitulo": "de Tus potencialidades, siempre ten presente...",
+      "recomendacion": "Tu capacidad de observación es una brújula poderosa. No solo ves lo evidente, captas lo sutil, lo que realmente importa. Esa mirada te permite tomar decisiones inteligentes y guiar con seguridad. Cuando observas con atención, lideras con claridad y marcas la diferencia."
+    },
+    {
+      "valor": 10.0,
+      "titulo": "Compromiso Inquebrantable: La Roca en la que se Confía",
+      "descripcion": "Eres alguien con una fuerza interna impresionante. Tu compromiso es firme y tu estabilidad emocional es como una roca: inalterable, sólida, siempre presente. Esa seguridad que proyectas hace que las personas sepan que pueden confiar en ti sin ninguna duda.Lo que más te define es que siempre cumples con lo que prometes. No solo dices, haces. Y esa coherencia entre tus palabras y tus acciones crea un vínculo de confianza genuina con quienes te rodean. Saben que, pase lo que pase, siempre estarás ahí, cumpliendo, apoyando y siendo una figura en la que pueden apoyarse.Esa capacidad de estabilidad y compromiso te convierte en un referente, alguien en quien los demás encuentran inspiración y tranquilidad. Es una fortaleza poderosa que te distingue y te hace invaluable en cualquier relación o proyecto. ¡Sigue construyendo desde esa seguridad, porque es un verdadero regalo para ti y para quienes te rodean!",
+      "subtitulo": "de Tus potencialidades, siempre ten presente...",
+      "recomendacion": "Cuando tu compromiso se alinea con tu coherencia, nace un liderazgo que inspira de verdad. No necesitas imponer, solo ser tú, firme y auténtico en cada paso. Esa constancia habla por ti y genera confianza. Liderar no es gritar más fuerte, es actuar con verdad cada día."
+    },
+    {
+      "valor": 11.0,
+      "titulo": "Autenticidad y Propósito: Un Faro para la Conciencia",
+      "descripcion": "Eres alguien que ha hecho un pacto profundo contigo mismo y con esa energía superior en la que crees, sea divina, cósmica o universal. Ese compromiso interno te da una fortaleza única, porque no solo trabajas en tu propio crecimiento, sino que buscas ser una mejor versión de ti cada día.Lo más especial es tu integridad. Eres una persona que vive de forma coherente con sus valores y principios, y esa seguridad en quién eres se proyecta en cada relación que construyes. Tienes la capacidad de impactar a quienes te rodean, ayudándolos a elevar su consciencia y a conectar con lo mejor de sí mismos.Tu presencia inspira confianza y reflexión. No necesitas imponer nada; simplemente, con tu autenticidad y tu compromiso, logras que las personas a tu alrededor encuentren una conexión más profunda con su propia esencia. Es un don que no todos tienen, y tu tarea es seguir cultivándolo para compartirlo con el mundo. ¡Eres un faro de luz en el camino de muchos!",
+      "subtitulo": "de Tus potencialidades, siempre ten presente...",
+      "recomendacion": "Vivir con integridad es tu superpoder: lo que piensas, dices y haces está en sintonía. Esa coherencia se siente, inspira y deja huella. Tu sabiduría no grita, guía con ejemplo. Al compartirla con el corazón, ayudas a otros a crecer desde su propia autenticidad. Así se lidera."
+    }
+  ]
+}

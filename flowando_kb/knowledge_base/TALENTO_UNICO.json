@@ -1,0 +1,319 @@
+{
+  "sheet": "TALENTO_UNICO",
+  "tipo_calculo": "formula_fecha_residuo_elemento",
+  "preambulo": [
+    {
+      "campo": "CATEGORÍA",
+      "valor": "TIENES UN TALENTO ÚNICO"
+    },
+    {
+      "campo": "TÍTULO DE LA CATEGORÍA:",
+      "valor": "Tu sello único: lo que te hace brillar y destacar en el mundo"
+    },
+    {
+      "campo": "ASPECTO:",
+      "valor": "Talento Único"
+    },
+    {
+      "campo": "BASE DE CÁLCULO:",
+      "valor": "Fecha de Nacimiento"
+    },
+    {
+      "campo": "CÁLCULO:",
+      "valor": "El residuo de dividir por 12 el año de nacimiento: Por ejemplo 1999 ÷ 12 = 166 con un residuo de 7 y, además, definir si el signo de la persona es Fuego, Tierra, Aire o agua"
+    },
+    "DESC. ASPECTO",
+    "INTRODUCCIÓN"
+  ],
+  "num_resultados": 48,
+  "resultados": [
+    {
+      "residuo": 0.0,
+      "elemento": "FUEGO",
+      "titulo": "Eres la llama que nunca se apaga",
+      "descripcion": "Eres una explosión de energía pura, un torbellino imparable que siempre está en busca de la próxima gran aventura. No hay reto que te detenga, porque para ti, cada obstáculo es un nuevo desafío esperando ser conquistado con audacia, pasión y creatividad.\nTu carisma es magnético, avasallador, imposible de ignorar. Cuando entras en un lugar, la energía cambia. Tu sola presencia enciende la chispa de la emoción, la acción y la transformación.\nNo puedes quedarte quieto. El fuego en tu interior te impulsa a avanzar siempre, a reinventarte una y otra vez, desafiando cualquier límite establecido.\nTu mente es un hervidero de ideas innovadoras, cada una más audaz que la anterior. Y no te conformas con soñarlas: las haces realidad con determinación inquebrantable y una visión clara.\nPara ti, lo imposible es solo una excusa más para demostrar de qué estás hecho.\nEres líder por naturaleza, un alma intensa y valiente que brilla con luz propia.\n\n¡Acepta tu fuego, deja que tu pasión ilumine el camino! No temas arder, porque dentro de ti vive el poder de encender revoluciones."
+    },
+    {
+      "residuo": 0.0,
+      "elemento": "TIERRA",
+      "titulo": "Eres la estrategia que transforma realidades",
+      "descripcion": "Eres un visionario con los pies en la tierra, una mente brillante que combina ingenio, enfoque y disciplina para construir paso a paso el futuro que imaginas. A diferencia de otros, no actúas por impulso: cada decisión tuya nace de la reflexión, la estrategia y una visión clara de hacia dónde vas. Sabes que el éxito no se trata solo de tener buenas ideas, sino de sostenerlas con trabajo constante, paciencia y determinación. Tienes una habilidad única para leer el entorno, conectar con las personas adecuadas y tomar decisiones que abren caminos. No improvisas, construyes con propósito. Tu carisma no eclipsa tu mente analítica: encuentras soluciones inteligentes donde otros solo ven obstáculos. Juegas con astucia, sin miedo al esfuerzo, porque entiendes que el crecimiento verdadero no tiene atajos. Eres el arquitecto de tu destino, firme pero adaptable, siempre listo para avanzar un paso más.\n\n¡Abraza tu fortaleza, confía en tu estrategia y construye sin miedo. El mundo es tu terreno, y cada paso firme que das te acerca más a la cima!"
+    },
+    {
+      "residuo": 0.0,
+      "elemento": "AIRE",
+      "titulo": "Eres el maestro de las grandes transiciones",
+      "descripcion": "Eres un espíritu libre, un explorador nato que jamás se conforma con lo de siempre. Tu mente es veloz, inquieta y creativa, en constante movimiento, buscando ideas frescas, nuevos retos y formas disruptivas de sorprender al mundo. La rutina te aburre, pero la innovación te enciende. No estás hecho para encasillarte, porque tu verdadera naturaleza es la adaptabilidad. Si algo vibra más fuerte en otro rumbo, no dudas en girar el timón. Aprender, compartir y crecer es parte de tu viaje. Tu entusiasmo es magnético, y ver el mundo con ojos distintos te convierte en alguien fascinante. Tienes la habilidad de comunicar con autenticidad, inspirar con tu voz y generar conexiones profundas. Eres viento que impulsa ideas nuevas, chispa que desafía lo predecible, mente libre con visión audaz.\n\n¡Deja que tu mente vuele alto, que tus palabras muevan almas y que tu esencia nunca se estanque. El cambio es tu aliado, úsalo para conquistar el mundo!"
+    },
+    {
+      "residuo": 0.0,
+      "elemento": "AGUA",
+      "titulo": "Eres el mago que despierta emociones",
+      "descripcion": "Eres un ser profundo, intuitivo y lleno de misterio. Mientras el mundo se mueve rápido buscando respuestas afuera, tú te sumerges en lo invisible, en lo que realmente importa. Exploras lo que hay más allá de las apariencias con una calma que revela sabiduría.\nEres un observador silencioso, capaz de leer emociones antes de que se expresen. Tu inteligencia emocional no solo te permite adaptarte, sino también sostener espacios con presencia, con una elegancia que no necesita ser explicada.\nTienes una mente creativa, ágil y despierta, pero lo que realmente te hace único es tu capacidad de tocar lo invisible, de conectar con lo esencial.\nSabes cuándo avanzar y cuándo esperar. Tu energía transforma sin esfuerzo, sin imponerse. No necesitas volumen para dejar huella.\nEres agua que fluye y transforma, aire que inspira y presencia que ancla. Un soñador lúcido, un creador de momentos que dejan una marca sutil pero poderosa.\n\n¡Fluye con tu intuición, deja que tus emociones sean tu brújula y descubre el poder que hay en la profundidad de tu esencia!"
+    },
+    {
+      "residuo": 1.0,
+      "elemento": "FUEGO",
+      "titulo": "Eres el guerrero que despierta con el sol",
+      "descripcion": "Eres una fuerza indomable, un espíritu encendido que no teme abrirse paso con coraje y autenticidad. Desde que llegas, marcas el ambiente. Tu energía vibra alto, imposible de ignorar. Caminas con firmeza, con la seguridad de quien tiene claro lo que quiere y no se detiene hasta lograrlo.\nLa pasión fluye en ti como corriente viva, dándote impulso, claridad y dirección. No esperas a que las oportunidades lleguen: las creas, las provocas y las haces realidad con voluntad firme y actitud inquebrantable.\nTu sola presencia inspira. Tu determinación contagia. Tu fuego interior despierta en otros las ganas de actuar. Te siguen porque encarnas lo que muchos desean: libertad, autenticidad, valentía.\nSabes que el miedo existe, pero también sabes cómo enfrentarlo. No huyes. Lo atraviesas. Porque para ti, cada reto es una puerta que abre un nuevo nivel de poder.\nEres el inicio de algo nuevo, el cambio que llega con fuerza, el guerrero que ilumina sin pedir permiso.\n\n¡Arde con tu propia luz, levántate con determinación y deja que el mundo vea el fuego inquebrantable que llevas dentro!"
+    },
+    {
+      "residuo": 1.0,
+      "elemento": "TIERRA",
+      "titulo": "Eres el arquitecto de tu propio destino",
+      "descripcion": "Eres la mezcla precisa entre disciplina, visión y ambición. Un líder auténtico que no espera a que las cosas pasen, las hace realidad con pasos firmes y mirada enfocada. Sabes que el éxito no es un golpe de suerte, es el resultado de decisiones conscientes, esfuerzo constante y una estrategia bien pensada.\nTienes los pies en la tierra y la mente en el futuro. No te dejas llevar por impulsos momentáneos; eliges avanzar con propósito, sabiendo que cada paso es una construcción sólida hacia algo más grande.\nMientras otros improvisan, tú perfeccionas. Tu enfoque, tu claridad y tu precisión te convierten en ese tipo de persona que no solo sueña, sino que también concreta.\nLos desafíos no te frenan, al contrario: te retan, te activan y te elevan.\nEres el arquitecto de tu destino, el que transforma ideas en estructuras reales con trabajo duro, temple y enfoque total.\n\n¡Planta tus raíces con fuerza, construye con determinación y conviértete en el pilar sobre el que se forjan los grandes cambios!"
+    },
+    {
+      "residuo": 1.0,
+      "elemento": "AIRE",
+      "titulo": "Eres el visionario que rompe esquemas",
+      "descripcion": "Eres un espíritu inquieto, un explorador incansable que vive en constante búsqueda de la próxima gran innovación. Tu mente es un torbellino creativo: no se detiene, no se conforma, siempre está mirando más allá de lo obvio. La rutina no es tu zona, porque sabes que el mundo está lleno de posibilidades esperando a ser descubiertas y transformadas.\nEres un estratega nato, capaz de ver el panorama completo y tomar decisiones con audacia e inteligencia. Siempre tienes una respuesta brillante, una idea que rompe moldes, un giro inesperado que marca la diferencia.\nTu forma de comunicar es poderosa: inspiras, conectas y haces que las ideas cobren vida en quienes te rodean. Tienes el don de sembrar pensamientos que abren puertas y mueven realidades.\nNada te frena, porque tu curiosidad te impulsa a ir más allá. Eres viento de cambio, mente brillante y visión sin límites.\n\n¡Deja que tu mente vuele, que tus ideas conquisten y que tu voz resuene en cada rincón del mundo!"
+    },
+    {
+      "residuo": 1.0,
+      "elemento": "AGUA",
+      "titulo": "Eres el sabio que escucha su intuición",
+      "descripcion": "Eres un alma intensa y profunda, una combinación única de inteligencia aguda y sensibilidad fina que se expresa con una gracia difícil de encontrar. No te quedas en la superficie, vas más allá. Percibes lo que otros no ven, lees entre líneas, escuchas lo que no se dice y captas las energías que se mueven en cada espacio. Tu intuición es poderosa, casi mágica, y te guía como una brújula silenciosa. Esa capacidad te permite adaptarte con soltura, leer el momento justo y actuar con precisión sin necesidad de ruido. Mientras el mundo corre sin dirección, tú sabes cuándo detenerte, observar y dar el siguiente paso con firmeza. No necesitas imponer tu voz, porque tu sola presencia ya inspira respeto y magnetismo. Eres ese tipo de líder que transforma sin buscar protagonismo. La gente se siente atraída a tu energía porque en ti hay una sabiduría viva que inspira, sostiene y transforma.\n\n¡Abraza tu intuición, confía en tu esencia y fluye con la sabiduría que llevas dentro!"
+    },
+    {
+      "residuo": 2.0,
+      "elemento": "FUEGO",
+      "titulo": "Eres la chispa inquebrantable que enciende caminos",
+      "descripcion": "Eres un guardián encendido por dentro, una fuerza de coraje y lealtad que nunca se apaga. En ti vive una pasión feroz por la verdad, la justicia y el bienestar de los tuyos. No hay obstáculo que te haga retroceder cuando se trata de proteger lo que amas. Tu instinto te convierte en un líder nato, con un espíritu indomable que no se rinde y una determinación que mueve montañas. No te conformas con lo fácil; desafías lo establecido, rompes moldes y enciendes la motivación en quienes te rodean. Tu presencia es pura intensidad: calienta, ilumina y transforma. Eres fuego que inspira, que purifica, que deja huella. Y aunque a veces ese fuego incomode a quienes temen el cambio, tú sabes que viniste a hacer arder todo lo que no vibra con autenticidad. El mundo necesita tu energía sin filtros, tu impulso sin miedo, tu verdad sin pausa.\n\n¡Tu fuerza está en tu llama. No dejes que nadie la apague. Enciéndete, arde y deja tu huella en la historia!"
+    },
+    {
+      "residuo": 2.0,
+      "elemento": "TIERRA",
+      "titulo": "Eres la fortaleza que nada detiene",
+      "descripcion": "Eres la definición de solidez, una fuerza que guía, protege y construye sin hacer ruido, pero dejando huella. Tu lealtad es inquebrantable y tu sentido del deber es el pilar en el que muchos se apoyan cuando todo parece incierto.\nEres esa presencia constante que sostiene incluso en medio del caos. Tienes la capacidad de generar calma, de mantener el rumbo, y de mostrar que la verdadera fortaleza no grita, simplemente está.\nLa paciencia y la sabiduría se sienten en cada paso que das. No buscas atajos ni promesas vacías, porque sabes que lo valioso se construye con tiempo, enfoque y propósito.\nTu mirada práctica y estratégica te convierte en un pilar fundamental para cualquier equipo, y aunque podrías avanzar solo, eliges construir junto a otros, acompañar, sostener y empujar hacia arriba a quienes caminan contigo.\n\n\n¡Eres la base de algo grande. Reconócelo, créelo y sigue construyendo el mundo con la fuerza inquebrantable que llevas dentro!"
+    },
+    {
+      "residuo": 2.0,
+      "elemento": "AIRE",
+      "titulo": "Eres el visionario leal a su propósito",
+      "descripcion": "Tu mente es un torbellino de ideas, una antena siempre activa que capta lo que pocos pueden percibir.\nVes conexiones donde otros ven caos. Analizas con agudeza, piensas rápido, profundo y con un ingenio que te coloca siempre un paso adelante.\nTu lealtad es firme, pero tu verdadero poder está en tu capacidad de adaptarte sin perder autenticidad.\nNo te riges por moldes: hablas con claridad, inspiras con tu lógica y mueves con tu carisma.\nNo sigues tendencias, las anticipas. No necesitas gritar para que te escuchen; tu voz, aunque serena, despierta.\nEres ese amigo que impulsa, el estratega que comprende el cambio no como amenaza, sino como posibilidad.\nPara ti, la evolución es la mayor prueba de lealtad contigo mismo.\nQuienes te rodean lo saben: a tu lado hay ideas brillantes, dirección clara y un fuego interno que no se apaga.\n\n¡Deja que tu visión rompa límites! No solo observes el cambio: sé quien lo provoca, lo lidera y lo convierte en revolución."
+    },
+    {
+      "residuo": 2.0,
+      "elemento": "AGUA",
+      "titulo": "Eres el guardián del sentir profundo",
+      "descripcion": "Eres un alma que vibra con intensidad, un canal sensible y poderoso por donde fluyen emociones reales. Tienes la capacidad de ver más allá de lo evidente, de leer entre líneas lo que otros no se atreven a expresar. Tu intuición guía tus pasos con firmeza, y tu empatía es ese refugio cálido donde otros encuentran calma. Detectas el dolor antes de que se pronuncie, ofreces apoyo sin pedir nada a cambio, y tu presencia tiene el poder de sanar sin necesidad de palabras.\nTu lealtad es firme, silenciosa y constante. No necesitas reconocimiento para entregar lo mejor de ti. Conectas desde lo auténtico y dejas huellas donde pasas. No rehúyes la vulnerabilidad, porque sabes que ahí habita una fuerza imparable.\nTu sensibilidad no es un límite, es tu superpoder. No eres solo alguien que cuida, eres quien transforma.\n\n¡Deja que tu intuición sea tu guía. No temas sentir con intensidad, porque en tu sensibilidad radica el poder de transformar el mundo!"
+    },
+    {
+      "residuo": 3.0,
+      "elemento": "FUEGO",
+      "titulo": "Eres el guerrero que nunca se rinde",
+      "descripcion": "Eres el guerrero que nunca se rinde\nEres un torbellino de energía y pasión, una fuerza que no conoce frenos ni le teme al vértigo de la vida. Donde otros dudan, tú te lanzas; donde retroceden, tú avanzas con esa determinación que te hace único. Tienes un fuego que no se apaga, una voluntad que no se quiebra. Luchas por lo que crees, vas de frente, con el corazón encendido y la mirada fija en lo que quieres lograr. No sabes ir a medias: cuando amas, lo das todo; cuando trabajas, te entregas sin reservas; y cuando sueñas, no aceptas menos que hacerlo realidad. No viniste a conformarte, viniste a trascender. Tu magnetismo es tan fuerte como tu hambre de victoria. Cada paso que das mueve algo en el mundo, porque lo haces con propósito. Y sí, tu reto está en sostener esa llama sin que te consuma. La clave está en encontrar tu ritmo, tu centro.\n\n¡No huyas de tu fuego interior, domínalo y conviértelo en la llama que forja tu destino!"
+    },
+    {
+      "residuo": 3.0,
+      "elemento": "TIERRA",
+      "titulo": "Eres la fuerza que resiste cualquier tormenta",
+      "descripcion": "Eres la base sobre la que se construyen grandes cosas. Una presencia firme, confiable, que permanece cuando todo a su alrededor cambia. Tu naturaleza es serena, determinada y profundamente leal. Para ti, la vida no se trata de correr, sino de construir paso a paso, con visión, paciencia y propósito. Sabes que las raíces profundas son las que sostienen los sueños más altos. En un mundo que gira sin pausa, tú representas lo que permanece: seguridad, constancia, integridad. Las personas confían en ti porque encuentran en tu energía un refugio, una roca que no se quiebra con la tormenta. Pero ese corazón gigante y ese compromiso genuino pueden llevarte a cargar más de lo necesario. Aprende a confiar en otros, a soltar lo que ya no te corresponde, a permitirte respirar. Recuerda: no necesitas demostrar tu valor sosteniéndolo todo.\n\n¡Eres la base sobre la que se edifica la grandeza. Usa tu solidez para crear, no solo para sostener!"
+    },
+    {
+      "residuo": 3.0,
+      "elemento": "AIRE",
+      "titulo": "Eres el visionario que avanza con valentía",
+      "descripcion": "Tu mente es un torbellino brillante, un universo en expansión donde las ideas nacen con fuerza y la innovación es parte de tu ADN. Para ti, el mundo es un enigma fascinante y cada reto, una invitación a romper moldes y explorar caminos distintos. No sigues lo establecido, porque dentro de ti vive un espíritu curioso que necesita descubrir, experimentar y reinventarlo todo. Piensas con agudeza, actúas con estrategia y tienes un don natural para inspirar desde la autenticidad. Eres esa persona que llega con aire fresco cuando todos respiran rutina. Pero lo sabes: una mente tan despierta también puede dispersarse. Por eso, enfocar tu energía, materializar tus ideas y cuidar los detalles es el siguiente nivel. Cuando conectas tu genialidad con dirección, nada te detiene. Te conviertes en una fuerza que no solo propone, sino que transforma.\n\n¡No te conformes con imaginar un mundo mejor, usa tu ingenio para crearlo!\n¡Eres la base sobre la que se edifica la grandeza. Usa tu solidez para crear, no solo para sostener!"
+    },
+    {
+      "residuo": 3.0,
+      "elemento": "AGUA",
+      "titulo": "Eres el protector de almas auténticas",
+      "descripcion": "Tu esencia es profunda como un océano y tan envolvente como un río que abraza todo a su paso. Eres un ser de emociones intensas, con una empatía innata y una sabiduría que no siempre se dice, pero se siente. Donde otros ven barreras, tú percibes movimientos sutiles; donde otros se quedan en la superficie, tú buceas hasta lo esencial. Tu forma de conectar es única: no solo escuchas, comprendes. Inspiras confianza, transmites calma y te conviertes en refugio para quienes necesitan comprensión real. Pero tanta sensibilidad también puede agotarte. Es vital que aprendas a cuidar tu energía, a poner límites y a soltar lo que no te corresponde. No estás aquí para cargarlo todo, sino para fluir con dirección. Cuando canalizas tu poder emocional con propósito, despiertas tu verdadera magia: la capacidad de sanar, transformar e inspirar desde lo más profundo.\n\n¡No eres solo un río que fluye, eres la corriente que guía y transforma todo a su paso!"
+    },
+    {
+      "residuo": 4.0,
+      "elemento": "FUEGO",
+      "titulo": "Eres el líder que inspira con coraje",
+      "descripcion": "Tienes un fuego interno que transforma todo lo que toca. Tu forma de ver el mundo no es común: donde otros ven límites, tú ves lanzaderas. Esa chispa que te impulsa es una mezcla poderosa de visión clara y acción decidida. No esperas a que las cosas pasen, tú las provocas. Inicias, impulsas y movilizas. Tu mente despierta diseña caminos nuevos, combinando lógica y pasión en cada paso. Lideras desde la convicción, no desde la imposición, y eso inspira de verdad. Lo tuyo es avanzar con intención, tomar decisiones valientes y seguir tu pulso con firmeza. No hay molde que te contenga, porque viniste a explorar, a construir, a dejar huella en cada espacio que habitas. Tu autenticidad es tu motor, y tu estrategia, el mapa. Sigue en movimiento, sigue siendo tú: creativo, libre, determinado.\n\n¡El fuego que llevas dentro no solo ilumina tu camino, sino que enciende el mundo a tu alrededor!"
+    },
+    {
+      "residuo": 4.0,
+      "elemento": "TIERRA",
+      "titulo": "Eres el estratega que nunca se quiebra",
+      "descripcion": "Eres una mente brillante con una visión clara del futuro. Tu forma de pensar, tan estratégica como serena, te permite tomar decisiones con sentido y construir desde la certeza. Tienes ese don especial de ver más allá del momento y convertir cada paso en parte de algo más grande. No improvisas: creas con intención, con foco y profundidad. Tu paciencia, inteligencia y enfoque hacen que tu avance sea constante, sin necesidad de forzar nada. Mientras otros se apuran, tú eliges avanzar con sabiduría, porque sabes que lo duradero se construye paso a paso. Inspiras desde la acción tranquila, porque tu presencia habla por ti. Y sí, también tienes el talento para cuidar lo material con visión a largo plazo, porque comprendes que la abundancia verdadera nace de la coherencia, del equilibrio y de una mente conectada con el propósito. Lo tuyo es dejar huella, desde lo sólido, desde lo auténtico.\n\n¡No solo avanzas con inteligencia, sino que dejas huella en cada camino que recorres!"
+    },
+    {
+      "residuo": 4.0,
+      "elemento": "AIRE",
+      "titulo": "Eres el visionario que nunca se detiene",
+      "descripcion": "Eres una mente brillante en movimiento constante, con una mirada estratégica y un talento natural para anticiparte. Tus ideas fluyen con rapidez, y eso que ves antes que otros, es tu superpoder. Tienes la habilidad de leer el momento, de analizar sin drama y decidir con firmeza. La creatividad te impulsa a explorar, a ir más allá de lo establecido y a transformar lo común en algo extraordinario. Tu forma de comunicar es clara, directa y siempre conectada; sabes inspirar sin imponer, conectar sin forzar. No necesitas aprobación para avanzar, tu independencia es tu sello y tu intuición, tu aliada. Te adaptas sin perder tu esencia, lideras sin miedo al cambio y navegas la incertidumbre con seguridad. Tu presencia deja huella porque haces que lo difícil parezca simple, posible y alcanzable. Sigue así, porque tu visión no solo transforma ideas: enciende caminos.\n\n¡Tu esencia es la de un pionero, alguien que no solo sueña en grande, sino que tiene la capacidad de hacer realidad cada una de sus visiones!"
+    },
+    {
+      "residuo": 4.0,
+      "elemento": "AGUA",
+      "titulo": "Eres el maestro del flujo inteligente",
+      "descripcion": "Tienes una mente poderosa y despierta, capaz de ver soluciones donde otros solo ven problemas. Tu habilidad para adaptarte y fluir con los cambios es tu mejor estrategia: no temes reinventarte y siempre encuentras una forma creativa de avanzar. Tu carisma natural te convierte en un imán de conexiones auténticas, inspirando a quienes te rodean con tu presencia, tu mirada clara y tu visión transformadora. Conectas con la vida desde un lugar profundo, donde tu intuición te guía, tu empatía abre puertas y tu creatividad marca el rumbo. Te mueves con independencia, pero también sabes cuándo compartir tu energía para multiplicar el impacto. Manejas lo que tienes con inteligencia, estrategia y visión de crecimiento, transformando ideas en acciones, recursos en oportunidades. Tienes esa mezcla única de fuerza interior, mentalidad estratégica y magia personal que convierte cada reto en una oportunidad para crecer, liderar y brillar.\n\n¡Tu presencia siempre deja huella!"
+    },
+    {
+      "residuo": 5.0,
+      "elemento": "FUEGO",
+      "titulo": "Eres la fuerza que todo lo puede",
+      "descripcion": "Eres pura fuerza bien dirigida. Tu combinación de disciplina, pasión y enfoque te convierte en alguien que transforma cada reto en posibilidad. No te asusta el trabajo duro, lo abrazas, porque sabes que ahí se esconde la magia de lo que vale la pena. Caminas con firmeza, pero también con fuego en el corazón. No necesitas gritar tus logros, ellos hablan por ti, dejando huella con cada acción que emprendes. Tu lealtad es tan fuerte como tu visión, y eso te hace una persona en la que se puede confiar sin dudar. No haces las cosas a medias, lo tuyo es ir con todo o nada. Y eso inspira. Eres esa mezcla poderosa de estabilidad e intensidad, como el fuego que no destruye, sino que ilumina. Tu energía es constructiva, tu enfoque es claro y tu esencia, imparable. Eres el tipo de persona que no solo cumple objetivos, sino que eleva el estándar. Sigue construyendo desde tu esencia, porque en ti hay una fuerza auténtica que transforma todo lo que toca.\n\n¡Un constructor de imperios, un líder imparable que avanza con pasos firmes, dejando una huella imborrable en todo lo que hace!"
+    },
+    {
+      "residuo": 5.0,
+      "elemento": "TIERRA",
+      "titulo": "Eres el constructor de mundos con propósito",
+      "descripcion": "Eres de esas personas que caminan con propósito, con los pies bien puestos en la tierra y la mirada siempre en alto. Tu estabilidad no es rigidez, es sabiduría en movimiento. Sabes que todo lo valioso se construye paso a paso, sin prisa, pero sin pausa. Lo tuyo no es lo inmediato, es lo verdadero. En ti habita la disciplina que convierte las metas en logros y la paciencia que da frutos duraderos. Inspiras sin buscarlo, porque tu presencia transmite certeza y tu forma de actuar genera confianza. No necesitas demostrar nada, porque lo que eres habla por ti. Cada decisión que tomas tiene intención, porque sabes pensar con claridad. Y aunque no sueles abrir tu mundo con facilidad, quienes entran en él encuentran un refugio firme y leal. Eres esa base sólida desde donde otros se atreven a crecer, y tu forma de estar en el mundo deja huella.\n\n¡Eres la roca sobre la que se construyen los sueños, un símbolo de perseverancia y grandeza que deja una marca imborrable en todo lo que toca!"
+    },
+    {
+      "residuo": 5.0,
+      "elemento": "AIRE",
+      "titulo": "Eres el estratega que actúa en silencio",
+      "descripcion": "Eres una mente brillante con los pies bien puestos en la tierra. Combinas visión, disciplina y una inteligencia estratégica que pocos poseen. No te aferras a una sola forma de hacer las cosas: exploras, experimentas y te adaptas con sabiduría. Cada paso que das tiene intención, aunque no necesites mostrarlo. Tu liderazgo es silencioso pero firme, de esos que inspiran sin imponerse. Das dirección, claridad y confianza a quienes te rodean. Sabes cuándo avanzar con fuerza y cuándo esperar con calma, porque entiendes los ritmos de la vida. No temes soltar lo que ya no aporta valor, porque sabes transformarte sin traicionar tu esencia. Tu lealtad es acción, no discurso, y tu forma de acompañar empodera desde la autenticidad. Eres esa presencia serena que construye sin hacer ruido, pero deja huella en todo lo que crea.\n\n¡No solo avanzas con esfuerzo, sino con inteligencia. Eres la mente maestra detrás del éxito, el arquitecto de estrategias que garantizan que cada paso sea un movimiento ganador!"
+    },
+    {
+      "residuo": 5.0,
+      "elemento": "AGUA",
+      "titulo": "Eres la corriente que fluye con determinación",
+      "descripcion": "Eres esa mezcla poderosa entre firmeza y fluidez, una sinergia que pocos logran dominar. Tienes la capacidad de adaptarte a lo inesperado sin dejar de ser tú, avanzando paso a paso con paciencia, claridad y propósito. No te dejas arrastrar por impulsos: eliges con conciencia cuándo actuar y cómo hacerlo. Esa calma interior, fruto de tu sabiduría emocional, te convierte en un guía natural: cercano, real, confiable. Sabes que la vida se mueve en ciclos y por eso no te desesperas en la espera. Observas, sientes, entiendes. Y cuando llega el momento, te lanzas con la fuerza de quien ya lo ha visto todo y aún así sigue creyendo. Tu manera de cuidar, de marcar límites y proteger tu energía, habla de un amor maduro, consciente y fuerte. Eres esa presencia que da estructura sin rigidez, que acompaña sin invadir. No todos lo comprenden, pero quienes lo hacen saben que están frente a alguien auténtico, profundo y transformador.\n\n¡Eres fuerza en movimiento. No solo construyes con paciencia, sino que también te adaptas con maestría, asegurándote de que cada paso que das sea tan firme como el agua que talla la piedra con el tiempo!"
+    },
+    {
+      "residuo": 6.0,
+      "elemento": "FUEGO",
+      "titulo": "Eres el guerrero que nunca ha sido vencido",
+      "descripcion": "Eres pura energía en movimiento, una fuerza creativa que transforma todo a su paso. Donde otros ven límites, tú ves posibilidades, rutas nuevas, formas distintas de llegar. Tu pasión no solo te impulsa, también enciende a quienes te rodean con esa chispa auténtica que te hace inolvidable. Vives con propósito, y eso se nota en cada paso que das. No estás aquí para seguir un guion, estás para escribir tu propia historia con audacia, autenticidad y visión. Tienes la capacidad de convertir cada reto en una plataforma para crecer, aprender y evolucionar con valentía. Tu intensidad es tu sello, tu determinación, tu motor. Inspiras porque te atreves, porque apuestas por ti sin miedo. Te mueves con el corazón encendido, la mente enfocada y los pies firmes en tu camino. Lo tuyo es el ahora, el intento, la conquista. No necesitas permiso para brillar, porque tu luz viene de adentro. Estás aquí para marcar la diferencia, para vivir en grande, construir tu camino y dejar una huella imposible de borrar.\n\n¡Eres un conquistador de destinos, un espíritu indomable que arde con la fuerza de mil soles!"
+    },
+    {
+      "residuo": 6.0,
+      "elemento": "TIERRA",
+      "titulo": "Eres el estratega que avanza sin miedo",
+      "descripcion": "Lo tuyo no es casualidad, es una grandeza que se diseña con intención, paso a paso y con una visión que impacta. Tienes esa mezcla poco común de intuición aguda y pensamiento estratégico que te permite avanzar sin perder el rumbo, incluso cuando todo a tu alrededor parece incierto. No necesitas gritar para ser escuchado, porque tu sola presencia transmite firmeza, claridad y dirección. Actúas con intención, y eso te convierte en alguien confiable, sólido y profundamente inspirador. No te dejas llevar por la urgencia del resultado inmediato; tú siembras con paciencia, sabiendo que lo auténtico necesita tiempo para florecer. Donde otros ven caos, tú ves un campo fértil para crear orden, propósito y estructuras que perduren. Tu liderazgo no busca protagonismo, busca impacto. Sabes cuidar lo que amas, sostener lo que construyes y proteger lo que importa, sin perderte a ti en el camino. Estás aquí para dejar legado.\n\n¡Eres la fuerza que edifica imperios, un estratega que sabe que la verdadera grandeza no es solo alcanzar la cima, sino mantenerse en ella.!"
+    },
+    {
+      "residuo": 6.0,
+      "elemento": "AIRE",
+      "titulo": "Eres el visionario que desafía lo imposible",
+      "descripcion": "Tienes un don poderoso: ver más allá de lo evidente y moverte con audacia donde otros se detienen. Tu mente ágil y estratégica no solo reacciona, crea, diseña, transforma. Eres energía en movimiento, pero también una visión que se anticipa y encuentra caminos nuevos incluso en medio de la incertidumbre. No necesitas seguir el mapa de nadie, porque tienes la capacidad única de trazar rutas propias con intuición y foco. Habitas un equilibrio fascinante entre impulso y propósito, entre acción y reflexión. Tu presencia impacta sin esfuerzo, y tu voz genera movimiento auténtico, porque conecta desde lo real. Tienes el magnetismo de quien lidera sin imponer, la fuerza de quien avanza sin dudar, y la autenticidad de quien vive sin pedir permiso. Si algo te impulsa es tu amor por la libertad, por lo nuevo, por aquello que aún está por descubrirse. Sigue fluyendo, creando y desafiando lo establecido. En ese fluir constante, nace tu magia.\n\n¡Eres un espíritu inquieto, un estratega del cambio, un líder que transforma el mundo con ideas audaces y acciones implacables!"
+    },
+    {
+      "residuo": 6.0,
+      "elemento": "AGUA",
+      "titulo": "Eres el maestro que domina su propio ritmo",
+      "descripcion": "Eres energía que se transforma y se adapta, una fuerza en constante movimiento que no necesita imponerse para dejar huella. Tu poder está en saber leer el momento, intuir por dónde va la corriente y fluir con ella sin perder tu centro. Entiendes que no todo se trata de avanzar sin parar; a veces, la verdadera victoria está en el giro inesperado, en la pausa sabia, en tomar la ruta menos evidente con confianza. Tienes un instinto afilado que no solo te guía, también te conecta profundamente con los demás. Sabes ver lo que otros aún no logran decir, y eso te convierte en alguien muy especial. Tu liderazgo no necesita gritar para hacerse sentir, porque tu presencia inspira desde lo real. Y no porque busques brillar, sino porque tu autenticidad enciende a quienes te rodean. Sigue confiando en ti, en ese magnetismo natural que atrae lo que vibra contigo. No estás aquí para repetir lo de siempre, sino para abrir caminos nuevos y hacerlo a tu manera.\n\n¡Eres un maestro del cambio, un estratega fluido, un guerrero que nunca se detiene, sino que encuentra siempre la mejor forma de avanzar, sin importar los obstáculos!"
+    },
+    {
+      "residuo": 7.0,
+      "elemento": "FUEGO",
+      "titulo": "Eres el espíritu que nada puede domar",
+      "descripcion": "Eres pura creatividad en movimiento. Lo tuyo no es pasar desapercibido, es dejar huella con cada paso que das. Cuando algo te inspira, lo sigues con decisión, porque sabes que lo extraordinario nace de atreverse sin miedo. No viniste a cumplir expectativas: viniste a romper moldes y a crear nuevas formas de vivir, sentir, comunicar y liderar. Tu impulso es transformación pura: convierte ideas en acción, retos en aventuras y sueños en realidades palpables que otros apenas comienzan a imaginar. Quienes te rodean sienten tu intensidad, y aunque a veces parezca mucha, en realidad es el motor que te impulsa lejos. No estás hecho para lo plano, necesitas vuelo, amplitud, exploración. Así que sigue apostando por ti, por tu autenticidad indomable y por ese ritmo único que solo tú sabes marcar. No tienes que esconder tu esencia para encajar, solo aprender a dirigirla con maestría. Porque cuando fluyes desde lo que eres, todo encuentra su lugar y tu poder se vuelve imparable.\n\n¡Eres creatividad y audacia en su máxima expresión. Un líder nato que deja una marca imborrable en cada lugar que pisa!"
+    },
+    {
+      "residuo": 7.0,
+      "elemento": "TIERRA",
+      "titulo": "Eres el estratega que no conoce límites",
+      "descripcion": "Eres la combinación perfecta entre inteligencia, pragmatismo y sensibilidad. No te dejas llevar por impulsos, prefieres la planificación y el cálculo preciso. Tu éxito no se basa en la suerte, sino en la estrategia y en la claridad con la que decides cada paso. Tu fortaleza reside en tu estabilidad. No importa el caos que te rodee, siempre encuentras la manera de mantener el control. Eres alguien en quien los demás confían porque transmites seguridad y sabes cómo resolver problemas con calma, enfoque y efectividad. Tu mente analítica te permite adelantarte a los acontecimientos. No tomas decisiones apresuradas, prefieres evaluar todas las opciones antes de actuar. Eso te convierte en un jugador estratégico en cualquier ámbito: los negocios, las relaciones, tus proyectos. Aunque eres reservado, tu lealtad es inquebrantable. No das tu confianza fácilmente, pero cuando lo haces, es para siempre. Proteges lo que construyes con decisión, integridad y visión a largo plazo.\n\n¡No dejas nada al azar. Eres un constructor de grandes obras, un visionario que entiende que la verdadera grandeza no se improvisa, se trabaja con paciencia y precisión!"
+    },
+    {
+      "residuo": 7.0,
+      "elemento": "AIRE",
+      "titulo": "Eres el genio de la curiosidad incesante",
+      "descripcion": "Eres la mente brillante que nunca deja de explorar. Tu inteligencia, curiosidad y capacidad de adaptación te hacen destacar en cualquier entorno. No te quedas atrapado en una sola idea o perspectiva, siempre buscas nuevos horizontes, nuevas preguntas y formas audaces de innovar. Tu creatividad no tiene límites. No solo piensas fuera de la caja, te preguntas por qué la caja existe en primer lugar. Eres rápido en tus pensamientos, en tus palabras y en tus acciones. La rutina te sofoca, por eso siempre buscas nuevos estímulos que te mantengan en movimiento y en evolución constante. Tu don para la comunicación es inigualable. Sabes cómo conectar con diferentes tipos de personas y adaptarte a cada situación con naturalidad, fluidez y autenticidad. Eres un negociador nato, capaz de influir sin imponer, de persuadir sin presionar. No soportas la mediocridad. Necesitas emoción, dinamismo y posibilidad de crecer. Si un camino no funciona, creas uno nuevo. Así, marcas la diferencia.\n\n¡Eres el pensador, el innovador y el estratega que transforma el mundo con ideas brillantes y acciones audaces!"
+    },
+    {
+      "residuo": 7.0,
+      "elemento": "AGUA",
+      "titulo": "Eres el maestro de la sabiduría interior",
+      "descripcion": "Eres una combinación perfecta entre sensibilidad, astucia e inteligencia emocional. Tu fortaleza está en tu capacidad de leer entre líneas, de captar lo que otros no ven y de moverte con fluidez en cualquier entorno sin perder tu centro. Tu intuición es tu brújula. No necesitas pruebas para saber cuándo algo es cierto, simplemente lo sientes. Te adelantas a los acontecimientos y rara vez te equivocas en tu percepción de las personas, los climas y las situaciones que otros apenas empiezan a notar. Tu empatía es tu mayor arma. Entiendes a los demás con una profundidad que pocos poseen, lo que te convierte en un consejero y un líder inspirador. No impones tu voluntad, pero logras que los demás confíen en tu guía de forma natural. Tienes una gran capacidad de adaptación. No te resistes al cambio, lo abrazas y lo usas a tu favor. Sabes cuándo ser paciente y cuándo actuar, cuándo hablar y cuándo guardar silencio. Esa habilidad sutil y poderosa te permite salir fortalecido incluso en las circunstancias más difíciles.\n\n¡Eres el sabio, el intuitivo y el estratega silencioso que siempre encuentra el mejor camino para avanzar!"
+    },
+    {
+      "residuo": 8.0,
+      "elemento": "FUEGO",
+      "titulo": "Eres el titán que nunca se doblega",
+      "descripcion": "Eres pura energía, un torbellino de pasión, ambición y determinación. No conoces límites ni temes a los desafíos. Tu esencia es arder con intensidad, liderar con coraje y avanzar con la certeza de que el mundo está hecho para quienes se atreven a conquistarlo. Tu presencia es magnética. No pasas desapercibido porque tu confianza y carisma iluminan cualquier espacio. Inspiras con tu fuerza, con tu forma audaz de enfrentar la vida y con esa seguridad inquebrantable que proyectas sin esfuerzo. No sigues tendencias, las creas. No buscas aprobación, simplemente te elevas por encima de cualquier expectativa. Tu fuego es inteligencia en acción. Sabes cuándo avanzar y cuándo transformar la energía en estrategia. El liderazgo es tu segunda naturaleza. No necesitas imponerlo, porque los demás te siguen por instinto. Tu impulso es visión, tu audacia es motor. Sabes que la grandeza se forja con valentía y acción.\n\n¡Tienes un espíritu imparable que deja huella en cada paso. No solo avanzas, arrasas. No solo brillas, incendias el mundo con tu determinación!"
+    },
+    {
+      "residuo": 8.0,
+      "elemento": "TIERRA",
+      "titulo": "Eres el arquitecto de lo extraordinario",
+      "descripcion": "Eres la perfecta combinación de poder, inteligencia y estabilidad. No solo tienes la ambición de conquistar grandes metas, sino también la estrategia para construir un camino sólido hacia ellas. No te dejas llevar por impulsos, porque entiendes que el verdadero éxito se alcanza con visión, paciencia y determinación. Tu liderazgo es natural. No necesitas imponer tu autoridad, porque tu presencia inspira respeto y confianza. Eres alguien en quien los demás confían por tu fortaleza y tu capacidad de decidir con inteligencia y equilibrio. La disciplina es una de tus mayores fortalezas. No te detienes ante los desafíos, porque cada esfuerzo, por mínimo que parezca, suma. Tu constancia te distingue. Ves oportunidades donde otros ven problemas y creas soluciones que garantizan estabilidad a largo plazo. Eres pragmático, pero también visionario. No solo sueñas, construyes. Y lo haces con enfoque, paciencia y convicción.\n\n¡Eres un estratega que no solo deja huella, sino que moldea el mundo a su manera!"
+    },
+    {
+      "residuo": 8.0,
+      "elemento": "AIRE",
+      "titulo": "Eres el visionario que rompe las reglas",
+      "descripcion": "Eres un ser destinado a brillar, una mezcla única de poder, inteligencia y creatividad. No solo sueñas en grande, también conviertes ideas en realidades que impactan. Tu mente es ágil, tu visión audaz y tu energía no conoce límites. No te conformas con lo establecido. Lo tuyo es explorar, innovar y desafiar lo convencional. Buscas conocimiento, nuevas experiencias y formas de superarte. La rutina te aburre, necesitas movimiento, descubrimiento y libertad para fluir a tu manera. Tu liderazgo nace de la inspiración. No impones, motivas. Tu carisma y seguridad hacen que otros quieran seguirte. No solo tienes grandes ideas, sabes cómo compartirlas con fuerza y claridad. Eres creativo por naturaleza. Donde otros ven obstáculos, tú ves oportunidades. Tu pensamiento estratégico te permite adelantarte y actuar con visión. La independencia es parte de tu esencia. Te guías por tu intuición y confías en tu instinto para construir tu propio camino.\n\n¡Eres un ser que no sigue el viento, sino que lo domina y lo usa a su favor!"
+    },
+    {
+      "residuo": 8.0,
+      "elemento": "AGUA",
+      "titulo": "Eres el estratega que piensa en el mañana",
+      "descripcion": "Eres una mente brillante con alma estratégica. Combinas inteligencia, intuición y visión para moverte con maestría en cualquier escenario. No solo piensas en grande, haces que las cosas sucedan. Tu adaptabilidad te permite fluir sin perder el rumbo, y tu liderazgo nace de la confianza que proyectas, no de imponer tu voz. Sabes leer el ambiente, conectar desde la empatía y actuar con precisión. Tienes la mirada puesta en el futuro y los pies firmes en el presente. Sabes cuándo avanzar, cuándo esperar, y en cada paso dejas huella. Hoy es una gran oportunidad para usar todo ese poder interno y seguir creando con intención. No hay reto que no puedas transformar ni idea que no puedas hacer realidad. Fluye, porque estás hecho para liderar con propósito.\n\n¡No solo conquistas tus metas, lo haces con una elegancia natural y una fluidez única que te distingue donde vayas!"
+    },
+    {
+      "residuo": 9.0,
+      "elemento": "FUEGO",
+      "titulo": "Eres la fuerza que arde con poder",
+      "descripcion": "Tu pasión es tu mayor motor. Tienes una energía inagotable y una determinación feroz que te impulsa a lograr lo que te propones. No te conformas con lo común, siempre vas por el siguiente nivel, el reto que pone a prueba tu grandeza. Eres magnético, audaz y seguro de ti mismo. No hay espacio para la duda en tu mundo. Cuando deseas algo, lo persigues con intensidad y no te detienes. Tu presencia se siente. Inspiras respeto, acción y confianza. Tienes un talento natural para liderar y movilizar. No esperas que las cosas pasen, las haces pasar. No temes al riesgo, porque sabes que quien se atreve, conquista. Pero tu fuego no es solo impulso: es visión. Piensas con rapidez, actúas con precisión. Sabes cuándo avanzar, cuándo frenar y cuándo dejar que el momento hable por ti. Eres acción con propósito, fuerza con estrategia, intensidad con dirección.\n\n¡No te sometes a la norma, impones tu propio camino. Abraza tu fuego, arde con intensidad y deja que tu pasión te lleve más lejos de lo que jamás imaginaste!"
+    },
+    {
+      "residuo": 9.0,
+      "elemento": "TIERRA",
+      "titulo": "Eres el maestro del control con propósito",
+      "descripcion": "Eres la manifestación del equilibrio y la estabilidad. Tu fuerza radica en tu paciencia, en tu capacidad de mantener el control sin importar la tormenta. No hay prisa en tus acciones, cada movimiento está basado en una estrategia clara y ejecutado con precisión quirúrgica. Tienes una fortaleza interna poderosa, una resistencia inquebrantable frente a los desafíos. No te dejas arrastrar por impulsos ni emociones pasajeras; sabes cuándo avanzar y cuándo esperar. Tu determinación es firme, y cuando decides algo, no hay fuerza que logre detenerte. Eres discreto, calculador y eficaz. No necesitas alardear ni probar nada, simplemente haces que las cosas sucedan. Tu silencio tiene más peso que mil palabras. Eres confiable, pero no ingenuo. Quienes confunden tu calma con pasividad descubren muy rápido que eres un rival formidable. Construyes tu propio destino con pasos firmes, visión clara y una estrategia sólida.\n\n¡Paciencia, estrategia y control son tus sellos distintivos. Mantente firme, avanza con seguridad y demuestra que el verdadero poder está en la constancia!"
+    },
+    {
+      "residuo": 9.0,
+      "elemento": "AIRE",
+      "titulo": "Eres la mente que ilumina el camino",
+      "descripcion": "Tu mente es un torbellino de ideas y estrategias. Posees una inteligencia aguda, siempre alerta a cada detalle y cada oportunidad. No te dejas atrapar por la rutina ni por lo convencional. Siempre tienes una salida, una respuesta ingeniosa o una forma inesperada de cambiar el rumbo de cualquier situación. Eres un visionario que piensa con claridad, combinando lógica y creatividad con maestría. No solo comprendes lo que sucede a tu alrededor, sino que vas un paso adelante. Tienes una capacidad innata para ver lo que otros no ven, descifrando patrones y señales ocultas en el caos del mundo. La comunicación es una de tus armas más poderosas. Sabes cómo influir en los demás con palabras precisas, cómo sembrar ideas y dejar huella en quienes te rodean. No necesitas imponerte con fuerza, porque tu carisma y tu intelecto hacen el trabajo por ti. No te detienes ante ningún desafío, porque para ti cada obstáculo es solo un rompecabezas esperando ser resuelto. Encuentras soluciones donde otros ven problemas y lo haces con una elegancia que desconcierta. No hay situación que te tome desprevenido, siempre tienes una carta bajo la manga.\n\n¡Expande tu visión, desafía lo establecido y deja que tu intelecto domine el juego!"
+    },
+    {
+      "residuo": 9.0,
+      "elemento": "AGUA",
+      "titulo": "Eres la estratega que guía desde el silencio",
+      "descripcion": "Eres la personificación de la astucia y la intuición. Posees una percepción casi sobrenatural de lo que ocurre a tu alrededor. Lees a las personas con facilidad y comprendes lo que piensan antes de que lo digan. No te dejas engañar, porque puedes ver más allá de las palabras y entender la verdadera intención de los demás. Tu inteligencia es sutil pero letal. No necesitas actuar con prisa, porque sabes cuándo y cómo moverte. Prefieres observar desde las sombras, dejando que los demás subestimen tu verdadero poder. No haces movimientos innecesarios, cada paso está calculado. La flexibilidad es tu sello. Te adaptas con naturalidad a cualquier entorno y aprovechas cada situación en tu beneficio. Si algo no funciona, encuentras otra manera sin esfuerzo aparente. No te apegas a lo obsoleto, sabes cuándo avanzar. Tu presencia es magnética. Rara vez revelas todo sobre ti. Prefieres el misterio, porque sabes que el poder se administra con inteligencia. No necesitas demostrar nada, tu forma de moverte en el mundo lo dice todo.\n\n¡Usa tu intuición, fluye con inteligencia y demuestra que el verdadero poder es silencioso pero imparable!"
+    },
+    {
+      "residuo": 10.0,
+      "elemento": "FUEGO",
+      "titulo": "Eres la llama que transforma con presencia",
+      "descripcion": "Eres una explosión de energía, intensidad y determinación. En ti arde un fuego que nunca se apaga, una chispa que enciende cada paso que das y que ilumina el camino de quienes tienen la suerte de cruzarse contigo. Nada te detiene cuando decides algo; tu convicción inspira a otros a soñar en grande, a romper límites y a encender su propio fuego interior. Tu creatividad es tan feroz como tu espíritu libre. No sigues normas; las creas. Tu mente inquieta busca nuevos horizontes, desafíos y formas de dejar huella. Para ti, la vida es un lienzo en llamas listo para ser pintado con ideas audaces y energía arrolladora. Te impulsa la acción, el riesgo y lo desconocido. Tienes una presencia magnética. Eres un líder carismático que atrae con pasión y determinación. Pero tu fuego puede volverse incontrolable si no lo canalizas con sabiduría. Cuando encuentras el equilibrio, eres pura transformación.\n\n¡Quema tus miedos, enciende tu grandeza y arde con el poder de tu autenticidad!"
+    },
+    {
+      "residuo": 10.0,
+      "elemento": "TIERRA",
+      "titulo": "Eres la fuerza que resiste con elegancia",
+      "descripcion": "Eres el equilibrio perfecto entre velocidad y estabilidad. No solo corres hacia tus metas con determinación, también construyes el camino con esfuerzo y estrategia. Tu esencia es la de un pionero incansable que entiende que los grandes logros requieren pasión, paciencia y planificación. Tu tenacidad es tu mayor virtud. No abandonas ante la dificultad; cada obstáculo refuerza tu carácter. Cuando te propones algo, trabajas con disciplina y constancia hasta lograrlo. Sabes que el éxito se construye paso a paso. La lealtad es otro de tus superpoderes. Eres un pilar para quienes te rodean. Tu instinto protector da seguridad, y tu compromiso inspira confianza. Prefieres lo seguro antes que lo incierto, pero cuando confías en tu intuición y te atreves a salir de la zona cómoda, descubres todo lo que eres capaz de lograr. Tu reto está en equilibrar estrategia con espontaneidad.\n\n¡Avanza con paso firme, deja una huella imborrable y demuestra al mundo que la perseverancia es la clave del éxito!"
+    },
+    {
+      "residuo": 10.0,
+      "elemento": "AIRE",
+      "titulo": "Eres el viento que impulsa revoluciones",
+      "descripcion": "Eres la manifestación de la libertad en su máxima expresión. El elemento aire potencia tu intelecto, tu ingenio y tu habilidad para adaptarte a cualquier situación. Eres un espíritu inquieto, curioso, siempre en busca de nuevas experiencias que nutran tu mente y tu alma. Tu esencia es la de un viajero incansable, ligero como el viento, sin ataduras ni límites. Tienes una capacidad extraordinaria para conectar, inspirar y cambiar la perspectiva de quienes te rodean. Tu energía no se agota y tu sed de conocimiento te vuelve un explorador nato. Compartes, aprendes y enseñas con la misma pasión. No hay tema que no despierte tu chispa mental. Pero tu mente veloz puede dispersarse fácilmente. Tu reto es enfocar tu energía sin sentir que pierdes libertad. Cuando canalizas tu esencia en un propósito, no hay límites.\n\n¡Suelta las riendas del miedo, atrévete a volar y conquista el mundo con tu visión única!"
+    },
+    {
+      "residuo": 10.0,
+      "elemento": "AGUA",
+      "titulo": "Eres el flujo que no puede ser contenido",
+      "descripcion": "Tu esencia es tan profunda como el océano y tan cambiante como un río en movimiento. Tienes una sensibilidad única que capta lo invisible, una intuición poderosa que te guía y una conexión profunda con las emociones propias y ajenas. Es tu corazón lo que te impulsa, guiado por el instinto y la magia de lo intangible. Te mueves con la fluidez del agua, adaptándote con elegancia a cada giro que la vida propone. Eres versátil, empático, con la habilidad de leer entre líneas lo que otros no dicen. Esta capacidad te convierte en un confidente natural, alguien que irradia consuelo y comprensión. Tu intensidad emocional también puede ser un reto, pero al equilibrar tu sensibilidad con tu fuerza interior, te conviertes en una fuente de calma y sabiduría. Tu creatividad es infinita, te atreves a explorar lo desconocido y transformar cada emoción en expresión auténtica.\n\n¡Déjate llevar por la corriente de tu intuición, fluye con confianza y demuestra que la verdadera fuerza reside en la autenticidad!"
+    },
+    {
+      "residuo": 11.0,
+      "elemento": "FUEGO",
+      "titulo": "Eres la llama creativa que no se apaga",
+      "descripcion": "Eres un espíritu libre, una chispa incandescente que transforma la rutina en arte y el caos en belleza. No hay barreras para tu imaginación: cada desafío es una nueva oportunidad para crear algo extraordinario. Tu fuego interior arde con una pasión inagotable que te impulsa a explorar, innovar y romper moldes. No sigues caminos trazados, los diseñas con la fuerza de tu visión única. Frente a los retos, no retrocedes ni dudas; confías en tu instinto y en la energía que vibra en tu interior. Irradias una presencia magnética, capaz de inspirar a quienes te rodean y encender en ellos el deseo de vivir con autenticidad. Amas la libertad, no por rebeldía, sino porque sabes que en ella despliegas todo tu potencial. Tu creatividad fluye como un torrente de lava, arrasando con la rutina e incendiando ideas que revolucionan lo que tocas. La emoción y la pasión son tu motor, y cuando pones el corazón en algo, no hay poder que te detenga.\n\n¡Abre las puertas a tu esencia ardiente y deja que tu fuego interno ilumine el mundo!"
+    },
+    {
+      "residuo": 11.0,
+      "elemento": "TIERRA",
+      "titulo": "Eres la fortaleza tranquila que inspira respeto",
+      "descripcion": "Eres una montaña, firme, estable e inamovible. Donde otros ven caos, tú ves estructura; donde hay incertidumbre, tú encuentras seguridad. Eres el equilibrio entre creatividad y disciplina, el artista que valora la constancia y el soñador que convierte ideas en realidades. No te dejas arrastrar por impulsos vacíos ni caminos inciertos. Construyes con paciencia, paso a paso, asegurando que cada decisión tenga raíces profundas y bases sólidas.\nTu conexión con la vida y la naturaleza te convierte en una fuente de sabiduría y templanza. No necesitas destacar con estridencias ni llamar la atención. Tu poder está en tu capacidad de sostener, de ser refugio y apoyo para quienes confían en ti. Amas la armonía, no por evitar el conflicto, sino porque sabes que la verdadera fuerza está en la estabilidad.\nTu lealtad es inquebrantable y tu compromiso, un sello que te define. Con un plan bien trazado, ningún sueño es imposible para ti.\n\n¡Eres la base sobre la que se construyen imperios, así que confía en tu fortaleza y haz que el mundo lo sepa!"
+    },
+    {
+      "residuo": 11.0,
+      "elemento": "AIRE",
+      "titulo": "Eres la visionaria que deja huella",
+      "descripcion": "Tu mente es un universo en constante expansión, lleno de ideas que brillan como estrellas en una constelación única. Tienes una curiosidad innata, un impulso profundo por explorar, cuestionar y reimaginar. No viniste a encajar, sino a imaginar lo que aún no existe, a darle forma a lo invisible. Reinventas lo establecido con intención, desarmas lo conocido para construir algo nuevo y con propósito. Donde muchxs ven caos, tú descubres patrones, conexiones brillantes, soluciones distintas. Trazas mapas mentales donde nadie ha mirado, y lo haces con pasión.\nTu pensamiento no es común, es una chispa poderosa. No solo te distingue, también inspira. Porque en ti, las palabras se vuelven puentes, las ideas toman vuelo y el cambio se vuelve posible. Eres quien abre puertas a nuevas formas de ver el mundo.\nSigue expandiendo tu visión con confianza. Tu autenticidad es revolución, y tu voz, una invitación a imaginar en grande.\n\n¡Atrévete a volar alto y deja que el mundo vea hasta dónde puede llegar tu genialidad!"
+    },
+    {
+      "residuo": 11.0,
+      "elemento": "AGUA",
+      "titulo": "Eres la esencia profunda que toca el alma",
+      "descripcion": "Eres un océano de emociones, un ser de sensibilidad infinita y profundidad inexplorada. En un mundo donde muchos se quedan en la superficie, tú tienes el don de ver lo que otros pasan por alto. Tu empatía es un superpoder, una brújula que te permite navegar la vida con un entendimiento único de los demás. Cada persona que cruza tu camino siente el impacto de tu calidez, tu intuición y la paz que transmites.\nNo buscas la confrontación, pero tampoco te dejas arrastrar sin rumbo. Sabes adaptarte, fluir y moverte con gracia en cualquier entorno. La creatividad es tu lenguaje y el arte, tu forma de transformar emociones en algo tangible. Donde otros ven caos, tú ves poesía; donde hay tristeza, tú descubres nuevas historias.\nTu fortaleza no está en la rigidez, sino en la flexibilidad. Como el agua, adoptas cualquier forma sin perder tu esencia. Sanas, conectas y armonizas.\n\n¡Sumérgete en la profundidad de tu esencia y deja que tu sensibilidad sea el faro que ilumine tu camino!"
+    }
+  ]
+}

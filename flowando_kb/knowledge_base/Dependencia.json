@@ -1,0 +1,39 @@
+{
+  "sheet": "Dependencia",
+  "tipo_calculo": "suma_likert",
+  "preambulo": [
+    "La Dependencia",
+    "Dependencia - La conexión entre el apoyo y la autonomía",
+    "Suma C09-C13"
+  ],
+  "num_resultados": 3,
+  "resultados": [
+    {
+      "min": 5.0,
+      "max": 10.0,
+      "introduccion": "Es normal querer ser reconocidos, pero cuando nuestra felicidad depende de la validación externa, corremos el riesgo de olvidar nuestro verdadero valor. Conectar con nosotros mismos y reconocer nuestra propia esencia nos permite brillar sin necesidad de aprobación.",
+      "titulo": "Confianza auténtica y autosuficiencia emocional",
+      "descripcion": "Tienes una confianza sólida que nace desde dentro. No necesitas depender de la aprobación externa para validar tu valor, porque has aprendido a sostenerte en tus propias convicciones. Sabes quién eres, en qué crees y qué necesitas para tomar decisiones con claridad. Tu criterio es tu guía, y eso te da una enorme libertad emocional. Esta autosuficiencia no te aísla, al contrario, te permite conectar con otros desde la autenticidad, sin máscaras ni exigencias. Puedes escuchar sin dejarte arrastrar, expresar sin miedo al juicio y construir relaciones desde la igualdad. Esta base te vuelve más resiliente, más claro y más coherente. Sigues tu camino con seguridad, pero también con apertura al aprendizaje. Esa es tu mayor fortaleza: la confianza en ti mismo como fuente de calma, dirección y crecimiento. Sigue cultivando esa autonomía emocional.",
+      "recomendacion": "Aprovecha esta fortaleza para inspirar a otros. Comparte tu seguridad y apoyo con quienes puedan necesitar un impulso en su autoestima. Sin embargo, mantente abierto/a al feedback constructivo sin sentir que compromete tu identidad.",
+      "reflexion": "Tu seguridad nace de adentro. No buscas agradar, te expresas. No esperas aprobación, confías. Has construido un espacio interno donde tu valor no fluctúa con la opinión ajena. Es libertad, es fortaleza. Y desde ese centro firme y sereno, puedes relacionarte con autenticidad."
+    },
+    {
+      "min": 11.0,
+      "max": 18.0,
+      "introduccion": "Es normal querer ser reconocidos, pero cuando nuestra felicidad depende de la validación externa, corremos el riesgo de olvidar nuestro verdadero valor. Conectar con nosotros mismos y reconocer nuestra propia esencia nos permite brillar sin necesidad de aprobación.",
+      "titulo": "Equilibrio entre validación y autonomía",
+      "descripcion": "Te mueves con un equilibrio interesante entre lo que opinan los demás y lo que tú sabes de ti. En general, valoras la retroalimentación y disfrutas sentirte reconocido, pero también tienes la capacidad de tomar decisiones por tu cuenta. Aun así, puede que en ciertos momentos sientas la necesidad de aprobación más fuerte de lo que te gustaría. Tal vez te preguntas si algunas elecciones las haces por ti… o por cómo serán percibidas. Este cuestionamiento es una gran oportunidad para seguir afinando tu brújula interna. Buscar reconocimiento es humano, pero cuando encuentras validación en tu propio juicio, tu autenticidad se fortalece. Puedes seguir cultivando ese equilibrio, permitiéndote crecer con cada paso. No se trata de ignorar la opinión ajena, sino de que esta no determine tu camino. Tu autenticidad vale más que cualquier aplauso.",
+      "recomendacion": "Cultiva tu autovaloración practicando el diálogo interno positivo. Antes de buscar aprobación externa, intenta preguntarte: ¿Estoy satisfecho/a conmigo mismo/a sin necesidad de confirmación externa? Esto fortalecerá tu confianza y autenticidad.",
+      "reflexion": "Has aprendido a mirar hacia dentro sin olvidar el reflejo del afuera. Sabes que recibir reconocimiento es valioso, pero no esencial. Confías más en tu intuición, agradeces, avanzas sin necesitar confirmaciones. Y ese equilibrio fortalece tu autenticidad."
+    },
+    {
+      "min": 19.0,
+      "max": 25.0,
+      "introduccion": "Es normal querer ser reconocidos, pero cuando nuestra felicidad depende de la validación externa, corremos el riesgo de olvidar nuestro verdadero valor. Conectar con nosotros mismos y reconocer nuestra propia esencia nos permite brillar sin necesidad de aprobación.",
+      "titulo": "Dependencia de la validación externa",
+      "descripcion": "Es posible que muchas veces tu autoestima se vea afectada por lo que otros piensan o dicen de ti. Tal vez sientes que necesitas aprobación constante para sentirte en paz, y eso puede volverse una fuente de ansiedad o inseguridad. Esta búsqueda de validación no te hace débil, solo muestra que estás aprendiendo a reconectar contigo. Lo importante aquí es preguntarte: ¿Qué pasa si no recibo la aprobación que espero? ¿Quién soy sin los elogios? La respuesta está en ti. Puedes empezar a reconocer tu propio valor sin necesidad de un espejo externo. No se trata de dejar de escuchar, sino de elegir a quién escuchas y qué crees sobre ti. Cuando te validas desde dentro, todo cambia. Confía en tus emociones, tus logros y tu proceso. Estás en camino de liberarte de expectativas ajenas. Tu voz interna tiene mucho por decir. Escúchala con amor.",
+      "recomendacion": "Trabaja en construir una autoestima más sólida desde dentro. Actividades como la escritura reflexiva, la meditación y el reconocimiento de tus logros sin compararte pueden ser claves. Pregúntate: ¿Qué cualidades valoro en mí más allá de lo que otros piensan? Pequeños pasos en este camino pueden hacer una gran diferencia en tu bienestar emocional.",
+      "reflexion": "Buscar aprobación no es debilidad, es humano. Pero cuando tu valor depende del afuera, te desconectas de ti. Comienza a escucharte más, a celebrar tus avances sin esperar aplausos. Tu voz interna merece ser la más fuerte. Mírate desde tu amor propio."
+    }
+  ]
+}

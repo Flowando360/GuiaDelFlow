@@ -1,0 +1,39 @@
+{
+  "sheet": "Cambios",
+  "tipo_calculo": "suma_likert",
+  "preambulo": [
+    "Los Cambios",
+    "Adaptación al cambio - La danza de la transformación",
+    "Suma C34-C38"
+  ],
+  "num_resultados": 3,
+  "resultados": [
+    {
+      "min": 15.0,
+      "max": 10.0,
+      "introduccion": "La vida nunca se detiene, y el cambio es parte del viaje. Resistirse solo trae frustración, mientras que fluir nos abre puertas a nuevas oportunidades. Adaptarse no es perder el rumbo, sino aprender a evolucionar sin dejar de ser nosotros mismos. Cada transformación trae un aprendizaje, y cuando soltamos el control, creamos espacio para lo inesperado. Porque crecer es avanzar con confianza, sin miedo al cambio.",
+      "titulo": "Resistencia al cambio y búsqueda de estabilidad",
+      "descripcion": "Prefieres mantener las cosas como están, porque la estabilidad te da seguridad, estructura y control. Esta necesidad es natural y valiosa, pero puede volverse limitante cuando impide explorar nuevas experiencias o enfrentar situaciones que te sacan de lo conocido. Es posible que el cambio te genere incomodidad o miedo a perder lo que ya has construido. Sin embargo, cada proceso de transformación contiene una oportunidad de expansión, de evolución personal y profesional. Tu desafío está en permitirte avanzar paso a paso, manteniendo tu centro, pero sin cerrarte a lo nuevo. El equilibrio no está en evitar el cambio, sino en transitarlo con conciencia. ¡Confía en que puedes crecer sin perder estabilidad, y que muchas veces, lo mejor llega después del salto!",
+      "recomendacion": "Introduce pequeños cambios en tu rutina para fortalecer tu flexibilidad. Algo tan simple como tomar una ruta diferente al trabajo o probar una nueva actividad puede ayudarte a acostumbrarte a la idea del cambio. Pregúntate: ¿Qué es lo peor que podría pasar si intento algo nuevo? Muchas veces, el miedo es más grande en nuestra mente que en la realidad.",
+      "reflexion": "Cambiar no siempre es fácil, pero quedarte quieto puede doler más. Fluir no es rendirse, es adaptarte sin perderte. Cada transformación trae una lección. Confía en tu capacidad de reconstruirte. La estabilidad real no está en lo fijo, sino en tu poder de avanzar sin perder el centro."
+    },
+    {
+      "min": 11.0,
+      "max": 18.0,
+      "introduccion": "La vida nunca se detiene, y el cambio es parte del viaje. Resistirse solo trae frustración, mientras que fluir nos abre puertas a nuevas oportunidades. Adaptarse no es perder el rumbo, sino aprender a evolucionar sin dejar de ser nosotros mismos. Cada transformación trae un aprendizaje, y cuando soltamos el control, creamos espacio para lo inesperado. Porque crecer es avanzar con confianza, sin miedo al cambio.",
+      "titulo": "Adaptabilidad moderada con momentos de duda",
+      "descripcion": "Tienes la capacidad de adaptarte a los cambios, aunque no siempre te resulta fácil. En algunos momentos, puedes aferrarte a lo conocido porque te brinda seguridad y control. Lo incierto puede generarte ansiedad, dudas o resistencia inicial. Sin embargo, cuando decides avanzar, lo haces con cautela y profundidad, evaluando los escenarios antes de actuar. Esta forma de adaptarte es valiosa, ya que equilibra reflexión con acción. Aun así, podrías beneficiarte al trabajar tu confianza en los procesos de transformación, soltando el miedo a lo impredecible. Cada vez que te permites fluir con el cambio, descubres nuevas habilidades y formas de crecer. ¡Recuerda que tu seguridad interna es tu verdadero ancla, y que puedes expandirte sin perder tu esencia!",
+      "recomendacion": "Refuerza tu mentalidad de crecimiento enfocándote en lo que puedes aprender de cada experiencia. Antes de rechazar un cambio, pregúntate: ¿Cómo puedo hacer que esto juegue a mi favor? También puedes practicar la visualización positiva, imaginando los beneficios que un nuevo escenario podría traerte en lugar de enfocarte solo en lo que podrías perder.",
+      "reflexion": "Te has movido antes, sabes cómo es. A veces el cambio inquieta, pero también te impulsa. Adaptarte no significa perder el rumbo, sino aprender nuevas formas de avanzar. Escucha tus dudas, pero no te detengas. La flexibilidad que hoy desarrollas es parte de tu crecimiento real."
+    },
+    {
+      "min": 19.0,
+      "max": 25.0,
+      "introduccion": "La vida nunca se detiene, y el cambio es parte del viaje. Resistirse solo trae frustración, mientras que fluir nos abre puertas a nuevas oportunidades. Adaptarse no es perder el rumbo, sino aprender a evolucionar sin dejar de ser nosotros mismos. Cada transformación trae un aprendizaje, y cuando soltamos el control, creamos espacio para lo inesperado. Porque crecer es avanzar con confianza, sin miedo al cambio.",
+      "titulo": "Alta flexibilidad y mentalidad de crecimiento",
+      "descripcion": "Eres una persona flexible, con una mentalidad abierta al cambio y al aprendizaje constante. Ves las transformaciones como oportunidades para evolucionar, crecer y descubrir nuevas formas de hacer las cosas. Te adaptas con facilidad a contextos diversos y no temes salir de tu zona de confort, porque sabes que ahí ocurre la magia del desarrollo personal y profesional. Esta habilidad te permite reinventarte, resolver problemas con creatividad y aprovechar al máximo cada experiencia. Tu apertura mental es un motor para la innovación y te conecta con posibilidades que otros no ven. Sigue cultivando esa actitud expansiva, porque te convierte en un agente de cambio. ¡Tu capacidad de fluir con los desafíos es una herramienta poderosa para construir el futuro que deseas!",
+      "recomendacion": "Aprovecha tu mentalidad flexible para desafiarte aún más. Sal de tu zona de confort con objetivos que te reten a otro nivel. También, comparte tu visión con quienes luchan con el cambio, ayudándolos a verlo como una oportunidad en lugar de una amenaza. Reflexiona: ¿Cuál es el siguiente gran paso que podría llevarme a un nuevo nivel de crecimiento?",
+      "reflexion": "Tu habilidad para fluir con el cambio es tu gran poder. No te aferras, te adaptas. Sabes que cada giro es una nueva posibilidad. Esa flexibilidad te permite avanzar con ligereza, aprender más rápido y crecer sin miedo. Cuando te mueves con el cambio, el cambio se convierte en impulso."
+    }
+  ]
+}

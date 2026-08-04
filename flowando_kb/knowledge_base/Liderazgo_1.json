@@ -1,0 +1,39 @@
+{
+  "sheet": "Liderazgo_1",
+  "tipo_calculo": "suma_likert",
+  "preambulo": [
+    "Liderazgo",
+    "Liderazgo - Inspirar, guiar y transformar",
+    "Suma C44-C48"
+  ],
+  "num_resultados": 3,
+  "resultados": [
+    {
+      "min": 5.0,
+      "max": 10.0,
+      "introduccion": "Liderar no es para todos, y eso está bien. Algunos disfrutan guiando equipos, mientras otros brillan aportando desde su propio espacio. No se trata de encajar en un rol, sino de encontrar dónde fluyes mejor. Ya sea liderando o colaborando, lo importante es que tu esencia y talento sumen al propósito. Porque el verdadero éxito no está en liderar, sino en hacer lo que realmente resuena contigo.",
+      "titulo": "Preferencia por roles de apoyo en lugar de liderazgo",
+      "descripcion": "Fluyes con naturalidad en roles que no requieren estar al frente. Te sientes cómodo siendo parte de un equipo, siguiendo directrices y aportando desde un lugar de colaboración. Tal vez el liderazgo tradicional no resuena contigo, y eso está bien. Liderar no siempre implica tener el control o dar órdenes; también significa inspirar, acompañar y generar impacto desde donde estés. Tu forma de sumar puede ser más poderosa de lo que imaginas. Este estilo aporta estabilidad, escucha activa y coherencia a los procesos. Recuerda que todo equipo necesita mentes como la tuya para avanzar con propósito. Si alguna vez sientes curiosidad por explorar nuevas formas de influir, hay caminos amables y auténticos para hacerlo. No se trata de cambiar quién eres, sino de descubrir cómo puedes potenciar tu talento desde nuevas perspectivas. El liderazgo también nace del servicio y la constancia. Y eso, ya lo estás practicando.",
+      "recomendacion": "Si quieres desarrollar tu liderazgo, empieza con pequeños pasos: toma la iniciativa, propón soluciones o apoya a otros. Pregúntate: ¿Qué tipo de líder quiero ser si pudiera diseñarlo a mi manera? Recuerda que liderar no es imponer, sino guiar con ejemplo, empatía e inspiración. ?",
+      "reflexion": "Tu poder no está en el protagonismo, sino en el impacto silencioso. Apoyar, sostener y acompañar también es transformar. El liderazgo auténtico nace del ejemplo. Puedes inspirar desde tu esencia en roles como mentor, terapeuta, guía espiritual, facilitador o asesor en procesos humanos."
+    },
+    {
+      "min": 11.0,
+      "max": 18.0,
+      "introduccion": "Liderar no es para todos, y eso está bien. Algunos disfrutan guiando equipos, mientras otros brillan aportando desde su propio espacio. No se trata de encajar en un rol, sino de encontrar dónde fluyes mejor. Ya sea liderando o colaborando, lo importante es que tu esencia y talento sumen al propósito. Porque el verdadero éxito no está en liderar, sino en hacer lo que realmente resuena contigo.",
+      "titulo": "Liderazgo ocasional con enfoque colaborativo",
+      "descripcion": "Tienes la habilidad de liderar, aunque no siempre sientes la necesidad de estar al frente. Sabes cuándo dar un paso adelante y cuándo acompañar, y eso te convierte en una pieza clave dentro de cualquier equipo. Tu forma de guiar es flexible, consciente y está basada en el respeto por las ideas de los demás. No te interesa liderar por ego o protagonismo, sino para aportar soluciones cuando más se necesitan. Esta actitud te permite generar confianza, facilitar procesos y fortalecer la colaboración. Tu energía se enfoca en construir, no en controlar. En escenarios donde hay apertura, creatividad y trabajo en red, floreces. Lo interesante de tu estilo es que puedes moverte entre distintos roles, adaptándote con inteligencia emocional. Si decides profundizar en tu capacidad de liderazgo, puedes lograr grandes cosas sin dejar de ser tú. Tu poder está en la autenticidad con la que eliges servir, construir y evolucionar.",
+      "recomendacion": "Fortalece tu confianza en el liderazgo explorando distintos estilos. Hay líderes estratégicos, empáticos, carismáticos... todos influyen a su modo. Identifica momentos para asumir más y pregúntate: ¿Cómo puedo sumar con mi liderazgo auténtico? Liderar no es encajar, es fluir siendo tú.",
+      "reflexion": "Liderar desde lo colaborativo es invitar a otros a brillar contigo. No necesitas estar al frente siempre, basta con ser quien enciende la chispa. Tu capacidad de sumar y crear equipo te convierte en guía. Puedes destacar como facilitador, coach de equipos, docente o líder de proyectos."
+    },
+    {
+      "min": 19.0,
+      "max": 25.0,
+      "introduccion": "Liderar no es para todos, y eso está bien. Algunos disfrutan guiando equipos, mientras otros brillan aportando desde su propio espacio. No se trata de encajar en un rol, sino de encontrar dónde fluyes mejor. Ya sea liderando o colaborando, lo importante es que tu esencia y talento sumen al propósito. Porque el verdadero éxito no está en liderar, sino en hacer lo que realmente resuena contigo.",
+      "titulo": "Pasión y habilidad para liderar",
+      "descripcion": "Sientes una conexión natural con el liderazgo. Te gusta inspirar, tomar decisiones y crear rutas claras hacia el logro de objetivos. Tienes la energía de quien confía en sus ideas, pero también escucha y aprende en el proceso. Sabes que liderar no es mandar, sino acompañar y hacer crecer a quienes te rodean. Tu mentalidad de crecimiento te impulsa a perfeccionar tu estilo, a buscar nuevas herramientas y a retarte con propósito. En ti hay una mezcla poderosa: visión, empatía y determinación. Tu talento brilla cuando se trata de movilizar equipos, abrir caminos y mantener el enfoque en los resultados. Si sigues cultivando tu liderazgo desde la autenticidad, puedes ser un referente de cambio real. A medida que te conoces más, te vuelves aún más consciente de tu impacto. Sigue apostando por el desarrollo continuo y la inspiración compartida. Tu liderazgo tiene magia: la de transformar e impulsar con propósito.",
+      "recomendacion": "Potencia tu liderazgo con inteligencia emocional y comunicación. Enfócate en el desarrollo del equipo: un gran líder no solo brilla solo, sino que hace brillar a otros. Pregúntate: ¿Cómo puedo ayudar a que otros lideren? La verdadera grandeza está en el impacto que dejas.",
+      "reflexion": "Liderar con pasión es sembrar inspiración. Tu habilidad para guiar con propósito transforma espacios, personas y procesos. El liderazgo que vibra desde la autenticidad impacta de verdad. Puedes ser mentor, CEO, director de cambio, speaker, estratega o formador de nuevas generaciones."
+    }
+  ]
+}

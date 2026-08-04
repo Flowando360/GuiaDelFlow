@@ -1,0 +1,48 @@
+{
+  "sheet": "Negociación",
+  "tipo_calculo": "suma_likert",
+  "preambulo": [
+    19.0,
+    "Negociación y solución de conflictos - La clave para armonizar y evolucionar",
+    "Suma C59-C63"
+  ],
+  "num_resultados": 4,
+  "resultados": [
+    {
+      "min": 5.0,
+      "max": 10.0,
+      "introduccion": "Los conflictos y las negociaciones son parte del juego, pero la clave está en cómo los manejas. No se trata de ganar o perder, sino de construir acuerdos, mantener el respeto y encontrar soluciones que sumen. Con inteligencia emocional y estrategia, fortaleces relaciones, tomas mejores decisiones y creces en el proceso. El éxito no es evitar desacuerdos, sino enfrentarlos con claridad, empatía y visión de futuro.",
+      "titulo": "Estilo Evitativo",
+      "descripcion": "Tiendes a evitar los conflictos siempre que puedes, ya sea por incomodidad, miedo a la confrontación o por preferir la paz sobre el enfrentamiento. Este enfoque puede ser útil en contextos donde el conflicto no aporta valor, pero si se convierte en un patrón constante, podría dejar asuntos sin resolver. Postergar conversaciones importantes o no expresar tus necesidades puede generar tensiones internas, afectar tus relaciones y dificultar el trabajo en equipo. Reconocer este estilo es una oportunidad para trabajar en tu asertividad y en tu confianza emocional. Aprender a expresar lo que piensas y sientes de forma respetuosa te permitirá liberar tensiones y generar vínculos más honestos. ¡Tienes la capacidad de comunicarte desde la calma, sin miedo a incomodar, confiando en que tu voz también es valiosa!",
+      "recomendacion": "Trabaja en enfrentar los conflictos de manera progresiva. Empieza con situaciones pequeñas y exprésate de forma clara pero tranquila. Pregúntate: ¿Qué pasaría si en lugar de evitar el conflicto, buscara una solución? Recuerda que el conflicto bien gestionado puede ser una oportunidad de crecimiento.",
+      "reflexion": "Evitar conflictos no los resuelve, solo los aplaza. Afrontarlos con empatía y escucha activa transforma la tensión en oportunidad. Negociar con apertura no es ceder, es construir. Cada conversación difícil es un paso hacia relaciones más sanas y una versión más consciente de ti."
+    },
+    {
+      "min": 11.0,
+      "max": 18.0,
+      "introduccion": "Los conflictos y las negociaciones son parte del juego, pero la clave está en cómo los manejas. No se trata de ganar o perder, sino de construir acuerdos, mantener el respeto y encontrar soluciones que sumen. Con inteligencia emocional y estrategia, fortaleces relaciones, tomas mejores decisiones y creces en el proceso. El éxito no es evitar desacuerdos, sino enfrentarlos con claridad, empatía y visión de futuro.",
+      "titulo": "Estilo Competitivo",
+      "descripcion": "Tienes una orientación enfocada en resultados y tiendes a priorizar tus intereses o ideas con determinación. Este estilo puede ser altamente efectivo en momentos donde es necesario tomar decisiones rápidas, marcar una posición o liderar en situaciones de alta presión. Sin embargo, si se aplica en exceso o sin sensibilidad al entorno, puede generar tensión, resistencia o dificultad para colaborar con otros. La clave está en equilibrar tu fortaleza con empatía, aprendiendo cuándo defender tu postura y cuándo abrir espacio para el diálogo. Tienes un gran potencial para liderar procesos complejos, siempre que combines firmeza con escucha activa. ¡Tu capacidad de decisión es valiosa, y puedes transformarla en una herramienta de liderazgo auténtico, que no solo alcanza metas, sino también construye relaciones de confianza!",
+      "recomendacion": "Practicar empatía también es una forma de liderazgo. Antes de reaccionar, respira y pregúntate qué está viviendo el otro. No se trata de ceder, sino de comprender. Equilibra tu voz con apertura, y verás cómo los puentes se construyen más fácil que los muros. Resolver desde el entendimiento transforma todo.",
+      "reflexion": "Buscar ganar no significa aplastar al otro. Si enfrentas el conflicto como un campo de batalla, limitas tu evolución. Escuchar también es estrategia. Cuando combinas firmeza con empatía, transformas la competencia en crecimiento. Negociar bien no es ganar solo, es construir con visión."
+    },
+    {
+      "min": 19.0,
+      "max": 25.0,
+      "introduccion": "Los conflictos y las negociaciones son parte del juego, pero la clave está en cómo los manejas. No se trata de ganar o perder, sino de construir acuerdos, mantener el respeto y encontrar soluciones que sumen. Con inteligencia emocional y estrategia, fortaleces relaciones, tomas mejores decisiones y creces en el proceso. El éxito no es evitar desacuerdos, sino enfrentarlos con claridad, empatía y visión de futuro.",
+      "titulo": "Estilo Colaborativo",
+      "descripcion": "Tienes un estilo de resolución de conflictos orientado al diálogo y al beneficio mutuo. Buscas soluciones donde todas las partes se sientan valoradas y escuchadas, lo que fortalece las relaciones a largo plazo. Tu disposición para construir acuerdos desde la empatía y la apertura te convierte en un puente entre diferentes visiones. Este enfoque requiere tiempo y energía, pero también genera resultados sólidos, porque se basa en el respeto, la escucha activa y la confianza. Puedes sostener conversaciones difíciles sin perder la calma ni el propósito, buscando siempre el bien común. Tu capacidad de construir desde lo colectivo es una gran fortaleza para liderar procesos, equipos o relaciones personales. ¡Sigue cultivando esa habilidad de crear armonía sin renunciar a tus ideas, porque es un don que transforma!",
+      "recomendacion": "Sigue cultivando tu don para mediar y transformar diferencias en puentes. Tienes esa chispa que ayuda a encontrar armonía donde otros solo ven conflicto. Pregúntate: ¿y si aplico esta habilidad en escenarios más desafiantes? Ahí es donde tu poder se eleva y tu impacto se vuelve aún más real.",
+      "reflexion": "Tu forma de negociar suma. Sabes que los conflictos bien abordados fortalecen vínculos y abren nuevas posibilidades. Escuchas, compartes, propones. Tu estilo colaborativo no evita las diferencias, las honra. Y así, creas acuerdos con valor real para todos. Eso también es liderazgo."
+    },
+    {
+      "min": 26.0,
+      "max": 30.0,
+      "introduccion": "Los conflictos y las negociaciones son parte del juego, pero la clave está en cómo los manejas. No se trata de ganar o perder, sino de construir acuerdos, mantener el respeto y encontrar soluciones que sumen. Con inteligencia emocional y estrategia, fortaleces relaciones, tomas mejores decisiones y creces en el proceso. El éxito no es evitar desacuerdos, sino enfrentarlos con claridad, empatía y visión de futuro.",
+      "titulo": "Estilo Comprometedor",
+      "descripcion": "Tienes la habilidad de llegar a acuerdos intermedios en los que ambas partes ceden algo para alcanzar una solución. Este estilo es útil en contextos donde se necesita resolver rápidamente un conflicto sin desgastarse, o cuando hay urgencia por tomar una decisión equilibrada. Sin embargo, si se utiliza de forma constante, puede dejar a ambas partes con cierta insatisfacción o sensación de pérdida. Tu reto está en diferenciar cuándo un compromiso es la mejor vía, y cuándo es necesario apostar por soluciones más integradoras. Tienes la capacidad de mediar y avanzar sin polarizar, lo cual es una gran herramienta en dinámicas grupales o negociaciones. ¡Sigue fortaleciendo tu criterio y tu escucha, porque desde ahí podrás construir acuerdos más sostenibles y satisfactorios para todos!",
+      "recomendacion": "Antes de decir sí, tómate un momento para sentir si ese compromiso resuena contigo. A veces, lo más valioso no es aceptar rápido, sino abrir espacio para una conversación más honesta. Explora posibilidades, busca acuerdos donde todos ganen y construyan algo más auténtico, justo y duradero juntos.",
+      "reflexion": "Sabes ceder cuando es necesario, sin perder de vista lo esencial. Buscas equilibrio, puntos medios que mantengan el respeto mutuo. Tu habilidad para generar acuerdos muestra madurez emocional. No todo se gana o se pierde; muchas veces, el verdadero logro es construir en conjunto."
+    }
+  ]
+}

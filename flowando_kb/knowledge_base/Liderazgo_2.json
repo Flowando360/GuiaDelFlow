@@ -1,0 +1,57 @@
+{
+  "sheet": "Liderazgo_2",
+  "tipo_calculo": "suma_likert",
+  "preambulo": [
+    "Liderazgo",
+    "Liderazgo - Empoderar, influir y trascender",
+    "Suma C49-C53"
+  ],
+  "num_resultados": 5,
+  "resultados": [
+    {
+      "min": 5.0,
+      "max": 10.0,
+      "introduccion": "Liderar con autenticidad empieza por el autoconocimiento. No es solo dirigir, sino comprender cómo inspiras, influyes y tomas decisiones. Identificar tu estilo te permite potenciar fortalezas, mejorar áreas de crecimiento y liderar con confianza. Un líder consciente se adapta con agilidad, conecta de forma genuina y deja una huella real. Porque el liderazgo más poderoso nace de conocer quién eres y cómo impactas en los demás.",
+      "titulo": "Liderazgo Autoritario",
+      "descripcion": "Tienes una personalidad decidida, te gusta tomar el control y asegurar que las cosas se hagan con eficiencia. Sueles tomar decisiones de forma directa, lo que puede ser muy útil en momentos críticos, donde se requiere rapidez y claridad. Tu estilo refleja seguridad, iniciativa y foco en el resultado. Sin embargo, a veces podrías estar perdiendo la oportunidad de potenciar el talento del equipo. Liderar también implica abrir espacios para la creatividad, la participación y el compromiso emocional. Cuando confías en otros y los haces parte del proceso, se multiplican las soluciones. Tal vez ya lo has notado: un equipo motivado es más potente que uno solo obediente. Si combinas tu capacidad de dirección con una dosis de escucha activa, tu liderazgo puede evolucionar de forma poderosa. No se trata de soltar el control, sino de integrarlo con nuevas formas de influir. Ahí está la magia: en aprender a liderar sin perder el impacto.",
+      "recomendacion": "Trabaja en fomentar la comunicación y la participación de tu equipo. Pregúntate: ¿Cómo puedo involucrar más a cada miembro sin perder efectividad? Pequeños cambios, como solicitar opiniones antes de decidir o delegar funciones clave, pueden ayudarte a formar un equipo autónomo, comprometido y eficaz. Avanza con firmeza; crece y lidera",
+      "reflexion": "Reconocer tu estilo es el primer paso para transformarlo. Liderar con firmeza no significa imponer, sino dirigir con conciencia y empatía. Cuando integras tu poder personal con sabiduría, todo se alinea. Puedes ser un gran líder si cultivas la escucha, la adaptación y la autenticidad."
+    },
+    {
+      "min": 11.0,
+      "max": 18.0,
+      "introduccion": "Liderar con autenticidad empieza por el autoconocimiento. No es solo dirigir, sino comprender cómo inspiras, influyes y tomas decisiones. Identificar tu estilo te permite potenciar fortalezas, mejorar áreas de crecimiento y liderar con confianza. Un líder consciente se adapta con agilidad, conecta de forma genuina y deja una huella real. Porque el liderazgo más poderoso nace de conocer quién eres y cómo impactas en los demás.",
+      "titulo": "Liderazgo Democrático",
+      "descripcion": "Te gusta construir con otros, y eso se nota. Escuchas, valoras las ideas de tu equipo y generas ambientes donde todos sienten que su voz importa. Este estilo genera confianza, sentido de pertenencia y compromiso auténtico. Tu liderazgo no impone, inspira. Sabes que las mejores decisiones surgen cuando se integran múltiples miradas, y por eso creas espacios de diálogo y colaboración. Sin embargo, también es importante que sepas cuándo tomar decisiones con claridad, especialmente si el grupo necesita guía o dirección. Equilibrar apertura y firmeza es parte de tu evolución como líder. Cuando encuentras ese balance, tu impacto se multiplica. Sigue cultivando esa mirada integradora que te caracteriza, pero recuerda que liderar también implica asumir riesgos y marcar el paso cuando sea necesario. Tu liderazgo es el puente entre la visión compartida y la acción concreta. Y eso, sin duda, transforma realidades.",
+      "recomendacion": "Refuerza tu capacidad de decidir con rapidez cuando sea necesario. Pregúntate: ¿Cuándo es mejor consultar y cuándo actuar? Encuentra equilibrio estableciendo límites de tiempo para decisiones grupales y criterios claros que definan cuándo liderar con autonomía. Fluye con claridad, propósito y confianza.",
+      "reflexion": "Escuchas, integras y valoras cada voz. Tu liderazgo se construye desde la empatía y el respeto. Promueves la participación consciente y sabes que las mejores decisiones nacen del diálogo. Liderar con apertura es guiar con sabiduría. Inspiras confianza, colaboración y un propósito compartido."
+    },
+    {
+      "min": 19.0,
+      "max": 25.0,
+      "introduccion": "Liderar con autenticidad empieza por el autoconocimiento. No es solo dirigir, sino comprender cómo inspiras, influyes y tomas decisiones. Identificar tu estilo te permite potenciar fortalezas, mejorar áreas de crecimiento y liderar con confianza. Un líder consciente se adapta con agilidad, conecta de forma genuina y deja una huella real. Porque el liderazgo más poderoso nace de conocer quién eres y cómo impactas en los demás.",
+      "titulo": "Liderazgo Transformacional",
+      "descripcion": "Tienes un fuego interno que inspira a quienes te rodean. No solo lideras, transformas. Tu visión clara y tu energía motivadora contagian entusiasmo y sentido de propósito. Estás en constante búsqueda de crecimiento, tanto propio como del equipo, y eso te convierte en un líder de alto impacto. Te enfocas en el desarrollo humano, fomentas la innovación y despiertas lo mejor de los demás. Tu estilo no se basa en el poder, sino en la influencia positiva. Eres capaz de conectar con las emociones de tu equipo, reconocer talentos y abrir caminos para que cada quien brille. Este tipo de liderazgo deja huella, porque no solo logra resultados, sino que eleva a las personas. Aun así, recuerda que hasta los líderes más inspiradores necesitan espacios para recargarse y revisar su rumbo. Sigue cultivando tu visión, cuidando tus relaciones y alimentando tu propósito. Tienes todo para crear impacto real desde lo que te hace único.",
+      "recomendacion": "Mantén el equilibrio entre inspiración y ejecución. Pregúntate: ¿Estoy dando herramientas y estructura para que mi equipo convierta la visión en acción? Que tu liderazgo no se quede en motivar: también impulsa resultados reales y sostenibles que dejen huella. Lidera con intención y coherencia.",
+      "reflexion": "Tienes la capacidad de ver más allá y despertar lo mejor en los demás. Inspiras con tu visión, motivas desde el ejemplo y generas cambios con propósito. Tu liderazgo no solo guía, transforma. Eres motor de evolución personal y colectiva, y eso te convierte en un líder con alma."
+    },
+    {
+      "min": 26.0,
+      "max": 30.0,
+      "introduccion": "Liderar con autenticidad empieza por el autoconocimiento. No es solo dirigir, sino comprender cómo inspiras, influyes y tomas decisiones. Identificar tu estilo te permite potenciar fortalezas, mejorar áreas de crecimiento y liderar con confianza. Un líder consciente se adapta con agilidad, conecta de forma genuina y deja una huella real. Porque el liderazgo más poderoso nace de conocer quién eres y cómo impactas en los demás.",
+      "titulo": "Liderazgo Delegativo (Laissez-Faire)",
+      "descripcion": "Crees en el poder de la autonomía y confías en la capacidad de las personas para tomar sus propias decisiones. Prefieres liderar desde la libertad, más que desde la dirección constante, y eso puede generar ambientes de alta responsabilidad cuando el equipo es maduro y sabe autorregularse. Tu estilo invita a la autogestión, la creatividad y el empoderamiento. Sin embargo, en situaciones de alta presión o cuando el equipo requiere guía, tu ausencia podría generar confusión o falta de foco. Aprender cuándo intervenir y cuándo dejar fluir es parte del arte de liderar con inteligencia. Tu desafío está en encontrar ese punto medio donde la libertad se acompañe de presencia consciente. Puedes seguir cultivando un liderazgo que potencie a otros, sin perder la capacidad de ofrecer dirección cuando hace falta. Al integrar claridad con confianza, tu influencia se vuelve aún más poderosa. Liderar es también estar disponible en los momentos clave.",
+      "recomendacion": "Encuentra un balance entre autonomía y supervisión estratégica. Pregúntate: ¿Mi equipo tiene claridad sobre objetivos y expectativas? Establece check-ins periódicos para asegurar avances sin caer en la microgestión. Liderar también es confiar y acompañar con inteligencia.",
+      "reflexion": "Confías en el talento del otro, das espacio para que florezca. Tu liderazgo se basa en la libertad, la confianza y el respeto por la autonomía. Sabes cuándo soltar el control y permitir el crecimiento. Acompañas sin invadir, inspiras desde la presencia, y cultivas entornos de autenticidad."
+    },
+    {
+      "min": 31.0,
+      "max": 35.0,
+      "introduccion": "Liderar con autenticidad empieza por el autoconocimiento. No es solo dirigir, sino comprender cómo inspiras, influyes y tomas decisiones. Identificar tu estilo te permite potenciar fortalezas, mejorar áreas de crecimiento y liderar con confianza. Un líder consciente se adapta con agilidad, conecta de forma genuina y deja una huella real. Porque el liderazgo más poderoso nace de conocer quién eres y cómo impactas en los demás.",
+      "titulo": "Liderazgo Carismático",
+      "descripcion": "Tienes una chispa especial: esa que inspira, moviliza y genera entusiasmo en quienes te rodean. Tu presencia transmite seguridad, y tu energía contagia. Las personas tienden a seguirte porque sienten conexión, motivación y confianza en tu visión. Este tipo de liderazgo tiene un gran poder transformador, ya que enciende el compromiso y la acción desde lo emocional. Sin embargo, tu reto está en que el equipo no dependa solo de tu carisma. Si no estás presente, podrían perder dirección o iniciativa. Por eso, es clave fortalecer las bases del liderazgo compartido: empoderar, formar y abrir espacios para que otros también brillen sin depender de ti. Tu don es innegable, y cuando lo combinas con estructuras claras y equipos autónomos, el resultado es extraordinario. Sigue siendo esa fuente de inspiración, pero recuerda que el liderazgo más duradero es el que deja huella incluso cuando no estás.",
+      "recomendacion": "Construye estructuras sólidas para que el equipo funcione más allá de ti. Pregúntate: ¿Estoy formando líderes dentro del equipo? Crea procesos claros y delega estratégicamente. Así, el impacto de tu liderazgo trasciende tu presencia y deja huella a largo plazo.",
+      "reflexion": "Tu presencia deja huella. Tienes el don de inspirar con tu energía, movilizar con tus ideas y conectar con el corazón de las personas. Tu carisma impulsa cambios reales. Cuando lideras desde tu autenticidad, las personas creen, se suman y se transforman. Eres luz que guía con propósito."
+    }
+  ]
+}

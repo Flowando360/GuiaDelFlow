@@ -1,0 +1,38 @@
+{
+  "sheet": "Recursividad",
+  "tipo_calculo": "suma_likert",
+  "preambulo": [
+    "Recursividad - Creatividad y resolución en acción",
+    "Suma C78-C82"
+  ],
+  "num_resultados": 3,
+  "resultados": [
+    {
+      "min": 5.0,
+      "max": 10.0,
+      "introduccion": "En un mundo que no deja de moverse, la clave está en adaptarnos y encontrar soluciones con lo que tenemos. Ser recursivo no es tenerlo todo, sino usar la creatividad para sacarle el máximo provecho a cada recurso. Cuando vemos los límites como oportunidades, transformamos los desafíos en innovación. La verdadera magia ocurre cuando descubrimos cómo hacer más con menos y abrir caminos donde otros solo ven barreras.",
+      "titulo": "Baja recursividad",
+      "descripcion": "Cuando enfrentas un problema, podrías quedarte atrapado/a en una sola forma de abordarlo, especialmente si no funciona como esperabas. Tiendes a buscar soluciones dentro de lo conocido, lo que puede limitar tu capacidad para adaptarte a contextos nuevos o complejos. Esta dificultad no está relacionada con tu inteligencia, sino con un hábito de pensamiento que puedes transformar. Desarrollar tu recursividad implica abrirte a nuevas perspectivas, explorar ideas sin juzgarlas de inmediato y permitirte experimentar. Cuando te das permiso para equivocarte y aprender, tu mente se expande y comienzas a generar alternativas más creativas y efectivas. ¡Confía en tu capacidad de cambiar el enfoque, reinventarte y encontrar soluciones inesperadas! Está en ti cultivar esta habilidad.",
+      "recomendacion": "Abre tu mente al juego de las posibilidades. Cuando surja un reto, no te quedes con la primera idea: busca tres caminos distintos para resolverlo. Preguntarte “¿de qué otra forma puedo hacerlo?” despierta tu creatividad. Sal de lo de siempre, explora, experimenta y verás cómo la flexibilidad se convierte en tu superpoder.",
+      "reflexion": "Esperar el momento perfecto puede frenar tu camino. Ser recursivo es usar lo que tienes con creatividad, sin excusas. Las soluciones no siempre llegan de afuera, muchas veces nacen en tu forma de mirar. Con ingenio, actitud y flexibilidad, siempre puedes crear una nueva posibilidad."
+    },
+    {
+      "min": 11.0,
+      "max": 18.0,
+      "introduccion": "En un mundo que no deja de moverse, la clave está en adaptarnos y encontrar soluciones con lo que tenemos. Ser recursivo no es tenerlo todo, sino usar la creatividad para sacarle el máximo provecho a cada recurso. Cuando vemos los límites como oportunidades, transformamos los desafíos en innovación. La verdadera magia ocurre cuando descubrimos cómo hacer más con menos y abrir caminos donde otros solo ven barreras.",
+      "titulo": "Moderada recursividad",
+      "descripcion": "Tienes una buena capacidad para resolver problemas, aunque a veces te aferras a un solo camino o forma de actuar. Puedes generar soluciones efectivas, pero ante situaciones nuevas o más complejas, es posible que necesites ampliar tus recursos internos. Desarrollar una mentalidad más flexible te permitirá encontrar alternativas que quizás antes no habías considerado. Fomentar tu creatividad, cuestionar tus propios esquemas y explorar nuevas perspectivas puede ser el impulso que necesitas para pasar al siguiente nivel de efectividad. Estás muy cerca de transformar tu potencial resolutivo en una herramienta aún más poderosa. ¡Confía en tu capacidad para ver más allá de lo evidente y usar cada desafío como una oportunidad para expandir tu forma de pensar!",
+      "recomendacion": "La adaptabilidad se entrena con curiosidad. Cuestiona lo que siempre haces igual y ábrete a nuevas formas de ver el mundo. Inspírate en quienes fluyen con el cambio, observa sus movimientos y adapta lo que resuene contigo. A veces, basta un giro diferente para descubrir una versión más poderosa de ti.",
+      "reflexion": "A veces dudas, pero tu ingenio siempre está ahí. No necesitas condiciones perfectas, solo otra forma de mirar lo que tienes. La solución casi siempre está más cerca de lo que crees. Ser recursivo es confiar en que puedes crear caminos nuevos, incluso con lo que parece limitado."
+    },
+    {
+      "min": 19.0,
+      "max": 25.0,
+      "introduccion": "En un mundo que no deja de moverse, la clave está en adaptarnos y encontrar soluciones con lo que tenemos. Ser recursivo no es tenerlo todo, sino usar la creatividad para sacarle el máximo provecho a cada recurso. Cuando vemos los límites como oportunidades, transformamos los desafíos en innovación. La verdadera magia ocurre cuando descubrimos cómo hacer más con menos y abrir caminos donde otros solo ven barreras.",
+      "titulo": "Alta recursividad",
+      "descripcion": "Eres una persona creativa, adaptable y con una gran capacidad para encontrar soluciones innovadoras. Cuando enfrentas un desafío, no te quedas estancado/a en el problema, sino que rápidamente buscas formas distintas de resolverlo, ajustando tu estrategia según las circunstancias. Esta habilidad te convierte en alguien resolutivo/a, con visión flexible y enfoque estratégico. Puedes enfrentar cambios o situaciones inesperadas sin perder tu centro, porque confías en tu capacidad para crear nuevas respuestas. Tu pensamiento divergente te ayuda a ver posibilidades donde otros ven límites. Esta fortaleza es clave para innovar, liderar y acompañar a otros en momentos de incertidumbre. ¡Sigue cultivando esa mentalidad expansiva! Es una herramienta valiosa que te impulsa a fluir, crecer y transformar tu entorno.",
+      "recomendacion": "Sigue explorando el poder creativo que ya vive en ti. Pregúntate cómo llevar tu ingenio a otro nivel, enfrentando retos más complejos con curiosidad y mente abierta. Prueba resolver acertijos, aprende algo nuevo o sal de tu zona habitual. Ahí, fuera del mapa, es donde tu innovación se convierte en magia real.",
+      "reflexion": "Tu mente encuentra oportunidades donde otros ven límites. La recursividad no es solo creatividad, es actitud. No esperas lo ideal, creas con lo disponible. Tu habilidad para ver soluciones te permite avanzar siempre. Porque cuando confías en tu ingenio, todo se vuelve posible."
+    }
+  ]
+}
