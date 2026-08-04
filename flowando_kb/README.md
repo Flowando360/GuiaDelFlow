@@ -109,12 +109,37 @@ hojas documentan la fórmula de cálculo explícitamente en las celdas.
    da exactamente 39 (3+9=12 → 1+2=3). `Desafio_Libera` e `Integra` nunca
    la necesitan. Ver `calculation_order.json` →
    `resuelto_2026_08_04_reduccion_numerologica_compuestos`.
+5. **Bug de datos corregido — `Cambios.json`**: el primer bucket tenía
+   `min: 15, max: 10` (min > max), un typo del Excel original (fila 5 de
+   la hoja `Cambios` en `BC_MADRE.xlsx` — todas las demás hojas de 3
+   buckets usan `min: 5` para el primero). Con ese typo, cualquier suma
+   Likert de 5-14 en `Cambios` (C34-C38) no encajaba en ningún resultado.
+   Corregido a `min: 5` en el JSON normalizado (no se tocó el Excel
+   fuente). Verificado que es el único bug de este tipo: se validó
+   contigüidad de buckets (sin huecos ni solapes) en los 15 aspectos
+   `suma_likert`, y las 30 hojas se cruzaron contra los 3 registros reales
+   de `CALCULADORA1`/`CALCULADORA2` sin encontrar ningún título faltante.
+6. **Nota de contenido (no bloqueante) — buckets superiores inalcanzables**:
+   `Comunicación`, `Negociación` y `Liderazgo_2` definen un bucket
+   adicional por encima de lo que una escala Likert 1-5 con 5 preguntas
+   puede sumar (máximo real 25): "Comunicación Agresiva" (26-30),
+   "Estilo Comprometedor" (26-30) y "Liderazgo Carismático" (31-35) nunca
+   se van a activar en la práctica. No genera un hueco de cobertura (los
+   valores 5-25 sí quedan completos), así que el motor de cálculo no
+   necesita ningún parche — pero vale la pena que Flowando confirme si
+   esos 3 resultados son contenido aspiracional a propósito o si en
+   algún momento se pensó en una escala más amplia para esas 3
+   preguntas específicas.
 
 ## Pendientes reales que quedan abiertos
 
 - Validación de Flowando sobre la propuesta de opciones A-E de Niñez (punto
   1 arriba) — el cálculo ya es ejecutable, pero el copy de las opciones es
   una interpretación razonable, no un dato extraído del Excel.
+- Confirmar si los 3 resultados con bucket inalcanzable (punto 6 arriba:
+  "Comunicación Agresiva", "Estilo Comprometedor", "Liderazgo Carismático")
+  son contenido aspiracional a propósito. No bloquea nada — el motor de
+  cálculo ya cubre correctamente todo el rango 5-25 que sí es alcanzable.
 
 ## Lo que NO se incluyó (intencional)
 
