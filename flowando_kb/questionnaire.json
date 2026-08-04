@@ -1,4 +1,5 @@
 {
+  "_nota_2026_08_04": "Esta lista original era de solo etiquetas ('Pregunta 1', 'Pregunta 2', 'Pregunta 3', 'Soy' sin sus opciones) porque se extrajo de ArquitecturaCuestionario.xlsx, que solo tiene el nombre del campo, no su contenido real. El contenido real (texto exacto de las 3 preguntas, intro 'Un Momento para Escucharte', y las opciones de 'Soy') se confirmó revisando el Google Form real en vivo (forms.gle/vdxYFpifDk4Q5o4V6) el 2026-08-04 y se agregó abajo en 'preguntas_abiertas_y_demograficas_detalle'. Se deja este array plano tal cual por compatibilidad, pero para el contenido real usar el detalle.",
   "preguntas_sin_codigo_demograficas_y_abiertas": [
     "Dirección de correo electrónico",
     "Nombres y Apellidos",
@@ -13,6 +14,24 @@
     "Pregunta 3",
     "Soy"
   ],
+  "preguntas_abiertas_y_demograficas_detalle": {
+    "intro_formulario": "Cada persona tiene un talento único, una forma especial de crear, liderar y transformar. Este cuestionario no es una prueba, es el inicio de un viaje hacia el autoconocimiento y la expansión. Responde con honestidad, sin pensar demasiado. Aquí no hay respuestas correctas ni equivocadas, solo pistas que te ayudarán a entender y expandir tu esencia.",
+    "genero_opciones": ["Femenino", "Masculino", "Otro (especificar)"],
+    "razon": "Sabiendo que la Guía del Flow es un espejo de quién eres y un mapa que revela tus talentos, tu propósito y tus posibilidades de evolución, ¿qué te está impulsando hoy a descubrirla y a llevar tu potencial a un nuevo nivel?",
+    "intro_cuestionamientos": "Un Momento para Escucharte — Estás a punto de iniciar un proceso de autoconocimiento profundo. La Guía del Flow te ayudará a comprender tu esencia, reconocer tus talentos y dar claridad a tu propósito. Antes de avanzar, tómate un instante para mirar hacia adentro. No respondas desde lo que 'deberías' sentir, sino desde lo que realmente está vivo en ti hoy. Estas preguntas no buscan respuestas perfectas, sino honestas. Son un punto de partida, no un diagnóstico. Respóndelas con apertura y sin juicio.",
+    "pregunta_1": "¿Qué hoy te duele, te inquieta o te tiene buscando respuestas?",
+    "pregunta_2": "¿Qué sientes que no está fluyendo como sabes que podría?",
+    "pregunta_3": "¿Qué anhelas transformar de ti o de tu vida en este momento?",
+    "soy_opciones": [
+      "Estudiante",
+      "Emprendedor",
+      "Empleado",
+      "Propietario de una empresa con trayectoria",
+      "Empleado con deseos de emprender",
+      "Trabajo de manera independiente sin empresa ni emprendimiento"
+    ],
+    "intro_bloques_likert": "Responde las próximas preguntas de acuerdo a tus comportamientos habituales. Escala: 1=Totalmente en desacuerdo, 2=En desacuerdo, 3=Neutral, 4=De acuerdo, 5=Totalmente de acuerdo."
+  },
   "preguntas_likert_codificadas": [
     {
       "codigo": "C9",

@@ -229,10 +229,14 @@ function PasoCuestionamientos({
   onCambiar: (v: RespuestasJson) => void;
 }) {
   const campos = [
-    { id: 'razon', etiqueta: '¿Qué te impulsa a descubrir tu Guía del Flow?' },
-    { id: 'cuestionamiento_1', etiqueta: 'Tu primer cuestionamiento — algo que te inquiete hoy' },
-    { id: 'cuestionamiento_2', etiqueta: 'Tu segundo cuestionamiento' },
-    { id: 'cuestionamiento_3', etiqueta: 'Tu tercer cuestionamiento' },
+    {
+      id: 'razon',
+      etiqueta:
+        'Sabiendo que la Guía del Flow es un espejo de quién eres y un mapa que revela tus talentos, tu propósito y tus posibilidades de evolución, ¿qué te está impulsando hoy a descubrirla y a llevar tu potencial a un nuevo nivel?',
+    },
+    { id: 'cuestionamiento_1', etiqueta: '¿Qué hoy te duele, te inquieta o te tiene buscando respuestas?' },
+    { id: 'cuestionamiento_2', etiqueta: '¿Qué sientes que no está fluyendo como sabes que podría?' },
+    { id: 'cuestionamiento_3', etiqueta: '¿Qué anhelas transformar de ti o de tu vida en este momento?' },
   ];
   return (
     <>
@@ -268,22 +272,26 @@ function PasoPreguntas({
         <fieldset key={codigo} className="border-t border-flow-100 pt-4 first:border-0 first:pt-0">
           <legend className="mb-3 text-sm font-semibold text-flow-900">{textoPregunta(codigo)}</legend>
           {tipo === 'likert' ? (
-            <div className="flex flex-wrap gap-2">
-              {ESCALA_LIKERT.map((op) => (
-                <button
-                  key={op.valor}
-                  type="button"
-                  title={op.etiqueta}
-                  onClick={() => onCambiar(codigo, op.valor)}
-                  className={`h-10 w-10 rounded-full text-sm font-bold transition ${
-                    valores[codigo] === op.valor
-                      ? 'bg-flow-600 text-white'
-                      : 'bg-flow-100 text-flow-800 hover:bg-flow-200'
-                  }`}
-                >
-                  {op.valor}
-                </button>
-              ))}
+            <div className="flex flex-wrap items-center gap-3">
+              <span className="text-xs text-flow-800">Totalmente en desacuerdo</span>
+              <div className="flex gap-2">
+                {ESCALA_LIKERT.map((op) => (
+                  <button
+                    key={op.valor}
+                    type="button"
+                    title={op.etiqueta}
+                    onClick={() => onCambiar(codigo, op.valor)}
+                    className={`h-10 w-10 rounded-full text-sm font-bold transition ${
+                      valores[codigo] === op.valor
+                        ? 'bg-flow-600 text-white'
+                        : 'bg-flow-100 text-flow-800 hover:bg-flow-200'
+                    }`}
+                  >
+                    {op.valor}
+                  </button>
+                ))}
+              </div>
+              <span className="text-xs text-flow-800">Totalmente de acuerdo</span>
             </div>
           ) : (
             <div className="space-y-2">
