@@ -1,5 +1,6 @@
 import { questionnaire } from '../kb/questionnaire';
 import { CODIGOS_SUMA_LIKERT, CODIGOS_INTELIGENCIAS } from '../calculo/codigos';
+import type { ClaveImagenWeb } from '../imagenesWeb';
 
 type PreguntaLikertRaw = (typeof questionnaire.preguntas_likert_codificadas)[number];
 
@@ -68,10 +69,16 @@ export const PASOS: Paso[] = [
     tipo: 'demografico',
     id: 'sobre-ti',
     titulo: 'Sobre ti',
-    subtitulo: 'Antes de empezar, contanos un poco de vos.',
+    subtitulo: 'Antes de empezar, cuéntanos un poco de ti.',
     campos: [
       { id: 'apodo', etiqueta: '¿Cómo te gusta que te llamen? (un nombre, diminutivo o apodo)', tipo: 'texto', requerido: true },
-      { id: 'genero', etiqueta: 'Con cuál género te identificás', tipo: 'texto', requerido: true },
+      {
+        id: 'genero',
+        etiqueta: 'Con cuál género te identificas',
+        tipo: 'seleccion',
+        opciones: ['Femenino', 'Masculino', 'No binario', 'Prefiero no decirlo'],
+        requerido: true,
+      },
       { id: 'fecha_nacimiento', etiqueta: 'Fecha exacta de nacimiento', tipo: 'fecha', requerido: true },
       { id: 'pais_ciudad', etiqueta: 'País y ciudad de nacimiento', tipo: 'texto', requerido: true },
       { id: 'telefono', etiqueta: 'Teléfono de contacto', tipo: 'texto', requerido: false },
@@ -83,7 +90,7 @@ export const PASOS: Paso[] = [
     id: 'cuestionamientos',
     titulo: 'Tu razón y tus preguntas',
     subtitulo:
-      'Esto es lo que después va a usar Flowi para escribirte tu Carta personal, así que respondé con calma y honestidad.',
+      'Esto es lo que después va a usar Flowi para escribirte tu Carta personal, así que responde con calma y honestidad.',
   },
   {
     tipo: 'likert',
@@ -103,7 +110,7 @@ export const PASOS: Paso[] = [
     tipo: 'likert',
     id: 'Compromiso',
     titulo: 'Compromiso',
-    subtitulo: 'Cómo sostenés lo que empezás.',
+    subtitulo: 'Cómo sostienes lo que empiezas.',
     codigos: [...CODIGOS_SUMA_LIKERT.Compromiso],
   },
   {
@@ -207,3 +214,26 @@ export const PASOS: Paso[] = [
 ];
 
 export const TOTAL_PASOS = PASOS.length;
+
+/** Ilustración que acompaña a cada paso, para darle vida a la pantalla. */
+export const IMAGEN_POR_PASO: Record<string, ClaveImagenWeb> = {
+  'sobre-ti': 'eureka',
+  cuestionamientos: 'escribe',
+  Dependencia: 'triste',
+  Pasado: 'medita',
+  Compromiso: 'p5',
+  Responsabilidad: 'compu',
+  Felicidad: 'eureka',
+  Cambios: 'puente',
+  TrabajoEnEquipo: 'pmundo',
+  Liderazgo_1: 'p3',
+  Liderazgo_2: 'p6',
+  Comunicación: 'escribe',
+  Negociación: 'p2',
+  Inteligencias: 'eureka',
+  Frustración: 'triste',
+  Recursividad: 'ilumina',
+  Estabilidad_Emocional: 'medita',
+  Pertenencia: 'pmundo',
+  ninez: 'eureka',
+};

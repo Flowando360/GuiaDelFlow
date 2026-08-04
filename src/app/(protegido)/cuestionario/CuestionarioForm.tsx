@@ -1,7 +1,9 @@
 'use client';
 
 import { useState, useTransition } from 'react';
-import { PASOS, TOTAL_PASOS, textoPregunta, opcionesPregunta } from '@/lib/cuestionario/estructura';
+import Image from 'next/image';
+import { PASOS, TOTAL_PASOS, IMAGEN_POR_PASO, textoPregunta, opcionesPregunta } from '@/lib/cuestionario/estructura';
+import { IMG } from '@/lib/imagenesWeb';
 import { guardarPaso, finalizarCuestionario } from './actions';
 
 type RespuestasJson = Record<string, unknown>;
@@ -89,8 +91,10 @@ export function CuestionarioForm({
     setPasoIndex((i) => Math.max(0, i - 1));
   }
 
+  const imagenPaso = IMG[IMAGEN_POR_PASO[paso.id] ?? 'eureka'];
+
   return (
-    <main className="mx-auto flex w-full max-w-xl flex-1 flex-col px-4 pb-16 sm:px-6">
+    <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col px-4 pb-16 sm:px-8">
       <div className="mb-6">
         <div className="mb-1.5 flex justify-between text-xs font-semibold text-flow-800">
           <span>
@@ -106,47 +110,60 @@ export function CuestionarioForm({
         </div>
       </div>
 
-      <div className="flex-1 rounded-2xl bg-white/70 p-6 shadow-sm ring-1 ring-flow-200 backdrop-blur sm:p-8">
-        <h1 className="font-serif text-2xl font-bold text-flow-900">{paso.titulo}</h1>
-        <p className="mt-1 text-sm text-flow-800">{paso.subtitulo}</p>
-
-        <div className="mt-6 space-y-6">
-          {paso.tipo === 'demografico' && (
-            <PasoDemografico campos={paso.campos} valores={demograficos} onCambiar={setDemograficos} />
-          )}
-          {paso.tipo === 'cuestionamientos' && (
-            <PasoCuestionamientos valores={cuestionamientos} onCambiar={setCuestionamientos} />
-          )}
-          {(paso.tipo === 'likert' || paso.tipo === 'ninez') && (
-            <PasoPreguntas
-              key={paso.id}
-              codigos={paso.codigos}
-              tipo={paso.tipo}
-              valores={likert}
-              onCambiar={(codigo, valor) => setLikert((prev) => ({ ...prev, [codigo]: valor }))}
-            />
-          )}
+      <div className="grid flex-1 gap-6 md:grid-cols-[minmax(0,320px)_1fr]">
+        <div className="relative hidden flex-col items-center justify-center overflow-hidden rounded-2xl bg-gradient-to-br from-flow-100 via-flow-50 to-flow-200 p-8 md:flex">
+          <Image
+            key={imagenPaso}
+            src={imagenPaso}
+            alt=""
+            width={280}
+            height={280}
+            className="max-h-64 w-auto object-contain"
+          />
         </div>
 
-        {error && <p className="mt-4 text-sm font-semibold text-red-600">{error}</p>}
+        <div className="rounded-2xl bg-white/70 p-6 shadow-sm ring-1 ring-flow-200 backdrop-blur sm:p-8">
+          <h1 className="font-serif text-2xl font-bold text-flow-900">{paso.titulo}</h1>
+          <p className="mt-1 text-sm text-flow-800">{paso.subtitulo}</p>
 
-        <div className="mt-8 flex items-center justify-between">
-          <button
-            type="button"
-            onClick={retroceder}
-            disabled={pasoIndex === 0 || enviando}
-            className="text-sm font-semibold text-flow-800 hover:underline disabled:opacity-0"
-          >
-            ← Anterior
-          </button>
-          <button
-            type="button"
-            onClick={avanzar}
-            disabled={enviando}
-            className="rounded-full bg-flow-600 px-6 py-2.5 text-sm font-bold text-white transition hover:bg-flow-800 disabled:opacity-60"
-          >
-            {enviando ? 'Guardando…' : esUltimoPaso ? 'Terminar' : 'Siguiente →'}
-          </button>
+          <div className="mt-6 space-y-6">
+            {paso.tipo === 'demografico' && (
+              <PasoDemografico campos={paso.campos} valores={demograficos} onCambiar={setDemograficos} />
+            )}
+            {paso.tipo === 'cuestionamientos' && (
+              <PasoCuestionamientos valores={cuestionamientos} onCambiar={setCuestionamientos} />
+            )}
+            {(paso.tipo === 'likert' || paso.tipo === 'ninez') && (
+              <PasoPreguntas
+                key={paso.id}
+                codigos={paso.codigos}
+                tipo={paso.tipo}
+                valores={likert}
+                onCambiar={(codigo, valor) => setLikert((prev) => ({ ...prev, [codigo]: valor }))}
+              />
+            )}
+          </div>
+
+          {error && <p className="mt-4 text-sm font-semibold text-red-600">{error}</p>}
+
+          <div className="mt-8 flex items-center justify-between">
+            <button
+              type="button"
+              onClick={retroceder}
+              disabled={pasoIndex === 0 || enviando}
+              className="text-sm font-semibold text-flow-800 hover:underline disabled:opacity-0"
+            >
+              ← Anterior
+            </button>
+            <button
+              type="button"
+              onClick={avanzar}
+              disabled={enviando}
+              className="rounded-full bg-flow-600 px-6 py-2.5 text-sm font-bold text-white transition hover:bg-flow-800 disabled:opacity-60"
+            >
+              {enviando ? 'Guardando…' : esUltimoPaso ? 'Terminar' : 'Siguiente →'}
+            </button>
+          </div>
         </div>
       </div>
     </main>
@@ -160,10 +177,13 @@ function PasoDemografico({
   valores,
   onCambiar,
 }: {
-  campos: { id: string; etiqueta: string; tipo: string; requerido?: boolean }[];
+  campos: { id: string; etiqueta: string; tipo: string; opciones?: string[]; requerido?: boolean }[];
   valores: RespuestasJson;
   onCambiar: (v: RespuestasJson) => void;
 }) {
+  const clasesCampo =
+    'w-full rounded-lg border border-flow-200 bg-white px-3 py-2 text-sm text-flow-text outline-none focus:border-flow-600 focus:ring-2 focus:ring-flow-200';
+
   return (
     <>
       {campos.map((campo) => (
@@ -172,12 +192,29 @@ function PasoDemografico({
             {campo.etiqueta}
             {!campo.requerido && <span className="ml-1 font-normal text-flow-800">(opcional)</span>}
           </span>
-          <input
-            type={campo.tipo === 'fecha' ? 'date' : 'text'}
-            value={(valores[campo.id] as string) ?? ''}
-            onChange={(e) => onCambiar({ ...valores, [campo.id]: e.target.value })}
-            className="w-full rounded-lg border border-flow-200 bg-white px-3 py-2 text-sm text-flow-text outline-none focus:border-flow-600 focus:ring-2 focus:ring-flow-200"
-          />
+          {campo.tipo === 'seleccion' ? (
+            <select
+              value={(valores[campo.id] as string) ?? ''}
+              onChange={(e) => onCambiar({ ...valores, [campo.id]: e.target.value })}
+              className={clasesCampo}
+            >
+              <option value="" disabled>
+                Selecciona una opción
+              </option>
+              {campo.opciones?.map((opcion) => (
+                <option key={opcion} value={opcion}>
+                  {opcion}
+                </option>
+              ))}
+            </select>
+          ) : (
+            <input
+              type={campo.tipo === 'fecha' ? 'date' : 'text'}
+              value={(valores[campo.id] as string) ?? ''}
+              onChange={(e) => onCambiar({ ...valores, [campo.id]: e.target.value })}
+              className={clasesCampo}
+            />
+          )}
         </label>
       ))}
     </>

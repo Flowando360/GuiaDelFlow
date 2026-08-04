@@ -30,13 +30,20 @@ Codigo/                ← prototipos originales (Python/WeasyPrint) que
                          definen el diseño real de la Guía y la Carta;
                          referencia para portar el diseño a la app, no se
                          ejecutan en producción
-public/images/flow/    ← ilustraciones e imágenes de marca (Flowi/Flowa/Flowe)
+public/images/flow-optimizado/  ← imágenes de marca (Flowi/Flowa/Flowe),
+                         comprimidas para PDF (~2MB en total, vs. 51MB de
+                         las originales) — ver scripts/optimizar-imagenes.ts
+scripts/               ← utilidades de mantenimiento (ej. re-optimizar
+                         imágenes si se agregan nuevas a Imagenes_Flow/)
 src/                   ← la app
 ```
 
 `Docs/` e `Imagenes_Flow/` (material fuente: Excel originales, PDFs de
 ejemplo con nombres reales, imágenes sin optimizar) quedan **fuera del
-repo** a propósito — ver `.gitignore`.
+repo** a propósito — ver `.gitignore`. Si se agrega una imagen nueva a
+`Imagenes_Flow/`, correr `npx tsx scripts/optimizar-imagenes.ts` para
+regenerar `public/images/flow-optimizado/` con todas las imágenes
+comprimidas (no solo la nueva).
 
 ## Cuentas de este proyecto
 
