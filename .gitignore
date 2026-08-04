@@ -52,3 +52,6 @@ next-env.d.ts
 
 # Claude Code: config local del usuario, no del proyecto
 .claude/settings.local.json
+
+.vercel
+.env*
