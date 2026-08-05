@@ -91,6 +91,21 @@ function FormularioRegistro() {
               autoComplete="new-password"
             />
 
+            <label className="flex items-start gap-2.5 text-xs text-flow-800">
+              <input
+                type="checkbox"
+                name="autorizacion_circulo"
+                value="si"
+                required
+                className="mt-0.5 h-4 w-4 shrink-0 rounded border-flow-300 text-flow-600 focus:ring-flow-400"
+              />
+              <span>
+                {token
+                  ? 'Autorizo que un resumen de 18 de mis resultados (talentos, propósito, liderazgo, comunicación, trabajo en equipo y similares — nunca los psicológicos/personales ni mi Guía completa) se comparta con la empresa que me invitó, dentro de Círculo de Crecimiento, para fines de desarrollo profesional. Puedo revocar esta autorización cuando quiera.'
+                  : 'Si mi correo coincide con el de una empresa cliente de FlowAndo, autorizo que un resumen de 18 de mis resultados (talentos, propósito, liderazgo, comunicación, trabajo en equipo y similares — nunca los psicológicos/personales ni mi Guía completa) se comparta con esa empresa dentro de Círculo de Crecimiento, para fines de desarrollo profesional. Puedo revocar esta autorización cuando quiera.'}
+              </span>
+            </label>
+
             {estado.error && <p className="text-sm font-semibold text-red-600">{estado.error}</p>}
 
             <button

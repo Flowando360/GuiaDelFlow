@@ -3,6 +3,7 @@ import { redirect } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
 import { IMG } from '@/lib/imagenesWeb';
 import { GeneradorDocumento } from './GeneradorDocumento';
+import { PrivacidadCirculo } from './PrivacidadCirculo';
 
 export default async function ResultadoPage() {
   const supabase = await createClient();
@@ -22,6 +23,12 @@ export default async function ResultadoPage() {
   if (!cuestionario?.completado_at) {
     redirect('/cuestionario');
   }
+
+  const { data: perfil } = await supabase
+    .from('flow_perfiles')
+    .select('autorizacion_circulo_en')
+    .eq('id', user.id)
+    .maybeSingle();
 
   const { data: documentos } = await supabase
     .from('flow_documentos')
@@ -106,6 +113,8 @@ export default async function ResultadoPage() {
             )}
           </div>
         )}
+
+        <PrivacidadCirculo autorizadoInicial={Boolean(perfil?.autorizacion_circulo_en)} />
       </div>
     </main>
   );

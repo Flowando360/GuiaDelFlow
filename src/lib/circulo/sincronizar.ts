@@ -113,7 +113,7 @@ async function pedirInforme(system: string, listaAspectos: string): Promise<stri
 }
 
 type ResultadoSincronizacion = { ok: boolean; motivo: string };
-type ResultadoBitacora = 'vinculado' | 'sin_colaborador' | 'correo_ambiguo' | 'error';
+type ResultadoBitacora = 'vinculado' | 'sin_colaborador' | 'correo_ambiguo' | 'sin_autorizacion' | 'error';
 
 /**
  * Deja rastro de CADA intento (con o sin match) en
@@ -162,7 +162,7 @@ export async function sincronizarConCirculo(usuarioId: string): Promise<Resultad
   const [{ data: perfil }, { data: cuestionario }] = await Promise.all([
     admin
       .from('flow_perfiles')
-      .select('email, nombre_completo, fecha_nacimiento, colaborador_circulo_id')
+      .select('email, nombre_completo, fecha_nacimiento, colaborador_circulo_id, autorizacion_circulo_en')
       .eq('id', usuarioId)
       .maybeSingle(),
     admin
@@ -181,6 +181,15 @@ export async function sincronizarConCirculo(usuarioId: string): Promise<Resultad
   const correo = perfil.email;
   const nombreFlow = perfil.nombre_completo ?? null;
 
+  // Sin autorización explícita (checkbox del registro), no se comparte
+  // nada — sin importar si el correo o una invitación coinciden con un
+  // colaborador. Esto es lo primero que se revisa, antes de tocar
+  // cualquier dato de Círculo de Crecimiento.
+  if (!perfil.autorizacion_circulo_en) {
+    await registrarIntento(admin, { correo, nombreFlow, resultado: 'sin_autorizacion' });
+    return { ok: false, motivo: 'La persona no autorizó compartir sus resultados con su empresa' };
+  }
+
   const { data: resultadosRow } = await admin
     .from('flow_resultados')
     .select('aspectos')
@@ -192,6 +201,28 @@ export async function sincronizarConCirculo(usuarioId: string): Promise<Resultad
   if (!resultadosRow) {
     await registrarIntento(admin, { correo, nombreFlow, resultado: 'error', detalle: 'Aún no hay resultados calculados' });
     return { ok: false, motivo: 'Aún no hay resultados calculados' };
+  }
+
+  // Idempotencia: si este cuestionario ya se sincronizó antes (doble clic
+  // en "Generar mi Guía", reintento de red), no crear una segunda
+  // aplicación real duplicada — el índice único de cuestionario_flow_id
+  // es la garantía de fondo, esto es solo para no gastar 2 llamadas a
+  // Claude de más si ya sabemos que va a fallar por duplicado.
+  const { data: yaSincronizado } = await admin
+    .from('guia_del_flow')
+    .select('id')
+    .eq('cuestionario_flow_id', cuestionario.id)
+    .maybeSingle();
+
+  if (yaSincronizado) {
+    await registrarIntento(admin, {
+      correo,
+      nombreFlow,
+      resultado: 'vinculado',
+      detalle: 'Ya estaba sincronizado — no se duplicó',
+      guiaDelFlowId: yaSincronizado.id,
+    });
+    return { ok: true, motivo: 'Ya estaba sincronizado' };
   }
 
   // Si la cuenta se registró con un link de invitación, el colaborador ya
@@ -255,10 +286,31 @@ export async function sincronizarConCirculo(usuarioId: string): Promise<Resultad
 
   const { data: guia, error: errorGuia } = await admin
     .from('guia_del_flow')
-    .insert({ colaborador_id: colaborador.id, origen_flow: perfil.fecha_nacimiento })
+    .insert({ colaborador_id: colaborador.id, origen_flow: perfil.fecha_nacimiento, cuestionario_flow_id: cuestionario.id })
     .select('id')
     .single();
   if (errorGuia || !guia) {
+    // 23505 = unique_violation — dos sincronizaciones del mismo
+    // cuestionario corriendo casi al mismo tiempo (carrera real, no solo
+    // el chequeo de arriba). No es un error de verdad: alguien más ya
+    // ganó la carrera y ya existe la aplicación real.
+    if (errorGuia?.code === '23505') {
+      const { data: existente } = await admin
+        .from('guia_del_flow')
+        .select('id')
+        .eq('cuestionario_flow_id', cuestionario.id)
+        .maybeSingle();
+      await registrarIntento(admin, {
+        correo,
+        nombreFlow,
+        resultado: 'vinculado',
+        detalle: 'Ya estaba sincronizado (carrera) — no se duplicó',
+        colaboradorId: colaborador.id,
+        empresaId: colaborador.empresa_id,
+        guiaDelFlowId: existente?.id,
+      });
+      return { ok: true, motivo: 'Ya estaba sincronizado' };
+    }
     const motivo = `Error creando guia_del_flow: ${errorGuia?.message}`;
     await registrarIntento(admin, { correo, nombreFlow, resultado: 'error', detalle: motivo, colaboradorId: colaborador.id, empresaId: colaborador.empresa_id });
     return { ok: false, motivo };
