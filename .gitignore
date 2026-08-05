@@ -57,3 +57,6 @@ next-env.d.ts
 .env*
 AGENTS.md
 CLAUDE.md
+
+# supabase CLI cache
+supabase/.temp/

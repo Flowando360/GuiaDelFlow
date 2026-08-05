@@ -68,6 +68,7 @@ export default async function ResultadoPage() {
               textoBoton="Generar mi Guía del Flow"
               textoEspera="Estamos escribiendo tu Guía del Flow… esto puede tardar un minuto, no cierres esta página."
               estadoInicial={guia?.estado === 'error' ? 'error' : null}
+              dispararTrasExito="/api/circulo/sincronizar"
             />
           </>
         )}

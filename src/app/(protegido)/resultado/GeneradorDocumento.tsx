@@ -8,11 +8,20 @@ export function GeneradorDocumento({
   textoBoton,
   textoEspera,
   estadoInicial,
+  dispararTrasExito,
 }: {
   endpoint: string;
   textoBoton: string;
   textoEspera: string;
   estadoInicial: 'error' | null;
+  /**
+   * URL opcional a la que se dispara un POST en segundo plano, sin esperar
+   * su respuesta, si `endpoint` responde ok. Hoy solo la usa la Guía, para
+   * sincronizar con Círculo de Crecimiento (ver /api/circulo/sincronizar) —
+   * si falla, no afecta en nada la experiencia de la persona: ni se le
+   * muestra error, ni se retrasa su Guía.
+   */
+  dispararTrasExito?: string;
 }) {
   const [cargando, setCargando] = useState(false);
   const [error, setError] = useState<string | null>(
@@ -28,6 +37,11 @@ export function GeneradorDocumento({
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
         throw new Error(data.error ?? 'No se pudo generar el documento.');
+      }
+      if (dispararTrasExito) {
+        fetch(dispararTrasExito, { method: 'POST' }).catch(() => {
+          // silencioso a propósito — ver comentario del prop.
+        });
       }
       router.refresh();
     } catch (e) {
