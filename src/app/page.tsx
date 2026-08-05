@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { redirect } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
 import { IMG } from '@/lib/imagenesWeb';
 
@@ -8,6 +9,16 @@ export default async function LandingPage() {
   const {
     data: { user },
   } = await supabase.auth.getUser();
+
+  // Si ya hay sesión, no tiene sentido mostrarle la página de mercadeo con
+  // un solo botón ambiguo ("Continuar mi cuestionario", que además no se ve
+  // en esta página porque el header con "Cerrar sesión" solo vive dentro
+  // de (protegido)/layout.tsx). Mandamos derecho a /cuestionario, que ya
+  // sabe redirigir a /resultado si el cuestionario está completo — así la
+  // persona siempre aterriza en la pantalla correcta, con navegación real.
+  if (user) {
+    redirect('/cuestionario');
+  }
 
   return (
     <main className="mx-auto flex w-full max-w-6xl flex-1 flex-col items-center gap-10 px-4 py-12 sm:px-8 md:flex-row md:justify-between md:py-20">
@@ -21,29 +32,18 @@ export default async function LandingPage() {
         </p>
 
         <div className="mt-8 flex flex-wrap justify-center gap-3 md:justify-start">
-          {user ? (
-            <Link
-              href="/cuestionario"
-              className="rounded-full bg-flow-600 px-6 py-3 text-sm font-bold text-white transition hover:bg-flow-800"
-            >
-              Continuar mi cuestionario
-            </Link>
-          ) : (
-            <>
-              <Link
-                href="/registro"
-                className="rounded-full bg-flow-600 px-6 py-3 text-sm font-bold text-white transition hover:bg-flow-800"
-              >
-                Empezar mi Guía del Flow
-              </Link>
-              <Link
-                href="/login"
-                className="rounded-full border border-flow-200 bg-white px-6 py-3 text-sm font-bold text-flow-800 transition hover:border-flow-400"
-              >
-                Ya tengo cuenta
-              </Link>
-            </>
-          )}
+          <Link
+            href="/registro"
+            className="rounded-full bg-flow-600 px-6 py-3 text-sm font-bold text-white transition hover:bg-flow-800"
+          >
+            Empezar mi Guía del Flow
+          </Link>
+          <Link
+            href="/login"
+            className="rounded-full border border-flow-200 bg-white px-6 py-3 text-sm font-bold text-flow-800 transition hover:border-flow-400"
+          >
+            Ya tengo cuenta
+          </Link>
         </div>
       </div>
 
