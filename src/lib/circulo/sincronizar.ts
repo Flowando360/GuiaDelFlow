@@ -160,7 +160,11 @@ export async function sincronizarConCirculo(usuarioId: string): Promise<Resultad
   const admin = createAdminClient();
 
   const [{ data: perfil }, { data: cuestionario }] = await Promise.all([
-    admin.from('flow_perfiles').select('email, nombre_completo, fecha_nacimiento').eq('id', usuarioId).maybeSingle(),
+    admin
+      .from('flow_perfiles')
+      .select('email, nombre_completo, fecha_nacimiento, colaborador_circulo_id')
+      .eq('id', usuarioId)
+      .maybeSingle(),
     admin
       .from('flow_cuestionarios')
       .select('id')
@@ -190,25 +194,54 @@ export async function sincronizarConCirculo(usuarioId: string): Promise<Resultad
     return { ok: false, motivo: 'Aún no hay resultados calculados' };
   }
 
-  const { data: colaboradores, error: errorColaboradores } = await admin
-    .from('colaboradores')
-    .select('id, empresa_id')
-    .ilike('email', correo);
+  // Si la cuenta se registró con un link de invitación, el colaborador ya
+  // se conoce con certeza — no hay que adivinar nada por correo. Solo si
+  // no hubo invitación (cuenta genérica) se cae al emparejamiento de
+  // siempre.
+  let colaborador: { id: string; empresa_id: string } | null = null;
+  let metodo: 'invitación' | 'correo' = 'correo';
 
-  if (errorColaboradores) {
-    const motivo = `Error buscando colaborador: ${errorColaboradores.message}`;
-    await registrarIntento(admin, { correo, nombreFlow, resultado: 'error', detalle: motivo });
-    return { ok: false, motivo };
+  if (perfil.colaborador_circulo_id) {
+    const { data: colaboradorInvitado, error: errorColaboradorInvitado } = await admin
+      .from('colaboradores')
+      .select('id, empresa_id')
+      .eq('id', perfil.colaborador_circulo_id)
+      .maybeSingle();
+
+    if (errorColaboradorInvitado) {
+      const motivo = `Error buscando colaborador invitado: ${errorColaboradorInvitado.message}`;
+      await registrarIntento(admin, { correo, nombreFlow, resultado: 'error', detalle: motivo });
+      return { ok: false, motivo };
+    }
+    if (colaboradorInvitado) {
+      colaborador = colaboradorInvitado;
+      metodo = 'invitación';
+    }
+    // Si no se encontró (p. ej. el colaborador se borró después de mandar
+    // la invitación), sigue de largo y prueba con el correo como respaldo.
   }
-  if (!colaboradores || colaboradores.length === 0) {
-    await registrarIntento(admin, { correo, nombreFlow, resultado: 'sin_colaborador' });
-    return { ok: false, motivo: 'No es colaboradora/colaborador de ninguna empresa cliente — sin acción' };
+
+  if (!colaborador) {
+    const { data: colaboradores, error: errorColaboradores } = await admin
+      .from('colaboradores')
+      .select('id, empresa_id')
+      .ilike('email', correo);
+
+    if (errorColaboradores) {
+      const motivo = `Error buscando colaborador: ${errorColaboradores.message}`;
+      await registrarIntento(admin, { correo, nombreFlow, resultado: 'error', detalle: motivo });
+      return { ok: false, motivo };
+    }
+    if (!colaboradores || colaboradores.length === 0) {
+      await registrarIntento(admin, { correo, nombreFlow, resultado: 'sin_colaborador' });
+      return { ok: false, motivo: 'No es colaboradora/colaborador de ninguna empresa cliente — sin acción' };
+    }
+    if (colaboradores.length > 1) {
+      await registrarIntento(admin, { correo, nombreFlow, resultado: 'correo_ambiguo', detalle: `${colaboradores.length} colaboradores comparten este correo` });
+      return { ok: false, motivo: 'Correo ambiguo: coincide con más de un colaborador, no se adivina' };
+    }
+    colaborador = colaboradores[0];
   }
-  if (colaboradores.length > 1) {
-    await registrarIntento(admin, { correo, nombreFlow, resultado: 'correo_ambiguo', detalle: `${colaboradores.length} colaboradores comparten este correo` });
-    return { ok: false, motivo: 'Correo ambiguo: coincide con más de un colaborador, no se adivina' };
-  }
-  const colaborador = colaboradores[0];
 
   const aspectos = aspectosSeguros(resultadosRow.aspectos as unknown as ResultadosCalculados);
 
@@ -270,6 +303,7 @@ export async function sincronizarConCirculo(usuarioId: string): Promise<Resultad
     correo,
     nombreFlow,
     resultado: 'vinculado',
+    detalle: `Vinculado por ${metodo}`,
     colaboradorId: colaborador.id,
     empresaId: colaborador.empresa_id,
     guiaDelFlowId: guia.id,

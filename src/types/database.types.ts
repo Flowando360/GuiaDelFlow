@@ -2439,6 +2439,7 @@ export type Database = {
       }
       flow_perfiles: {
         Row: {
+          colaborador_circulo_id: string | null
           created_at: string
           email: string
           fecha_nacimiento: string | null
@@ -2446,6 +2447,7 @@ export type Database = {
           nombre_completo: string
         }
         Insert: {
+          colaborador_circulo_id?: string | null
           created_at?: string
           email: string
           fecha_nacimiento?: string | null
@@ -2453,13 +2455,71 @@ export type Database = {
           nombre_completo: string
         }
         Update: {
+          colaborador_circulo_id?: string | null
           created_at?: string
           email?: string
           fecha_nacimiento?: string | null
           id?: string
           nombre_completo?: string
         }
-        Relationships: []
+        Relationships: [
+          {
+            foreignKeyName: "flow_perfiles_colaborador_circulo_id_fkey"
+            columns: ["colaborador_circulo_id"]
+            isOneToOne: false
+            referencedRelation: "colaboradores"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "flow_perfiles_colaborador_circulo_id_fkey"
+            columns: ["colaborador_circulo_id"]
+            isOneToOne: false
+            referencedRelation: "v_alineacion_talento_rol"
+            referencedColumns: ["colaborador_id"]
+          },
+          {
+            foreignKeyName: "flow_perfiles_colaborador_circulo_id_fkey"
+            columns: ["colaborador_circulo_id"]
+            isOneToOne: false
+            referencedRelation: "v_indicadores_equipo"
+            referencedColumns: ["lider_id"]
+          },
+          {
+            foreignKeyName: "flow_perfiles_colaborador_circulo_id_fkey"
+            columns: ["colaborador_circulo_id"]
+            isOneToOne: false
+            referencedRelation: "v_lideres_de_linea_sin_lider_interno"
+            referencedColumns: ["colaborador_id"]
+          },
+          {
+            foreignKeyName: "flow_perfiles_colaborador_circulo_id_fkey"
+            columns: ["colaborador_circulo_id"]
+            isOneToOne: false
+            referencedRelation: "v_organigrama_colaboradores_a_cargo"
+            referencedColumns: ["colaborador_a_cargo_id"]
+          },
+          {
+            foreignKeyName: "flow_perfiles_colaborador_circulo_id_fkey"
+            columns: ["colaborador_circulo_id"]
+            isOneToOne: false
+            referencedRelation: "v_organigrama_colaboradores_a_cargo"
+            referencedColumns: ["colaborador_id"]
+          },
+          {
+            foreignKeyName: "flow_perfiles_colaborador_circulo_id_fkey"
+            columns: ["colaborador_circulo_id"]
+            isOneToOne: false
+            referencedRelation: "v_organigrama_pares"
+            referencedColumns: ["colaborador_id"]
+          },
+          {
+            foreignKeyName: "flow_perfiles_colaborador_circulo_id_fkey"
+            columns: ["colaborador_circulo_id"]
+            isOneToOne: false
+            referencedRelation: "v_organigrama_pares"
+            referencedColumns: ["par_id"]
+          },
+        ]
       }
       flow_resultados: {
         Row: {
@@ -2613,6 +2673,100 @@ export type Database = {
             isOneToOne: false
             referencedRelation: "v_organigrama_pares"
             referencedColumns: ["par_id"]
+          },
+        ]
+      }
+      guia_del_flow_invitaciones: {
+        Row: {
+          colaborador_id: string
+          creado_por: string | null
+          created_at: string
+          id: string
+          token: string
+          usado_at: string | null
+          usado_por_usuario_flow_id: string | null
+        }
+        Insert: {
+          colaborador_id: string
+          creado_por?: string | null
+          created_at?: string
+          id?: string
+          token?: string
+          usado_at?: string | null
+          usado_por_usuario_flow_id?: string | null
+        }
+        Update: {
+          colaborador_id?: string
+          creado_por?: string | null
+          created_at?: string
+          id?: string
+          token?: string
+          usado_at?: string | null
+          usado_por_usuario_flow_id?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "guia_del_flow_invitaciones_colaborador_id_fkey"
+            columns: ["colaborador_id"]
+            isOneToOne: false
+            referencedRelation: "colaboradores"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "guia_del_flow_invitaciones_colaborador_id_fkey"
+            columns: ["colaborador_id"]
+            isOneToOne: false
+            referencedRelation: "v_alineacion_talento_rol"
+            referencedColumns: ["colaborador_id"]
+          },
+          {
+            foreignKeyName: "guia_del_flow_invitaciones_colaborador_id_fkey"
+            columns: ["colaborador_id"]
+            isOneToOne: false
+            referencedRelation: "v_indicadores_equipo"
+            referencedColumns: ["lider_id"]
+          },
+          {
+            foreignKeyName: "guia_del_flow_invitaciones_colaborador_id_fkey"
+            columns: ["colaborador_id"]
+            isOneToOne: false
+            referencedRelation: "v_lideres_de_linea_sin_lider_interno"
+            referencedColumns: ["colaborador_id"]
+          },
+          {
+            foreignKeyName: "guia_del_flow_invitaciones_colaborador_id_fkey"
+            columns: ["colaborador_id"]
+            isOneToOne: false
+            referencedRelation: "v_organigrama_colaboradores_a_cargo"
+            referencedColumns: ["colaborador_a_cargo_id"]
+          },
+          {
+            foreignKeyName: "guia_del_flow_invitaciones_colaborador_id_fkey"
+            columns: ["colaborador_id"]
+            isOneToOne: false
+            referencedRelation: "v_organigrama_colaboradores_a_cargo"
+            referencedColumns: ["colaborador_id"]
+          },
+          {
+            foreignKeyName: "guia_del_flow_invitaciones_colaborador_id_fkey"
+            columns: ["colaborador_id"]
+            isOneToOne: false
+            referencedRelation: "v_organigrama_pares"
+            referencedColumns: ["colaborador_id"]
+          },
+          {
+            foreignKeyName: "guia_del_flow_invitaciones_colaborador_id_fkey"
+            columns: ["colaborador_id"]
+            isOneToOne: false
+            referencedRelation: "v_organigrama_pares"
+            referencedColumns: ["par_id"]
+          },
+          {
+            foreignKeyName: "guia_del_flow_invitaciones_creado_por_fkey"
+            columns: ["creado_por"]
+            isOneToOne: false
+            referencedRelation: "perfiles_usuario"
+            referencedColumns: ["id"]
           },
         ]
       }

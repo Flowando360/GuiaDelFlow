@@ -1,6 +1,7 @@
 'use client';
 
-import { useActionState } from 'react';
+import { Suspense, useActionState, useEffect, useState } from 'react';
+import { useSearchParams } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 import { registrarse, type EstadoAuth } from '../actions';
@@ -8,8 +9,48 @@ import { IMG } from '@/lib/imagenesWeb';
 
 const estadoInicial: EstadoAuth = {};
 
+function Cargando() {
+  return (
+    <main className="flex flex-1 items-center justify-center px-4 py-10">
+      <div className="h-8 w-8 animate-spin rounded-full border-4 border-flow-200 border-t-flow-600" />
+    </main>
+  );
+}
+
 export default function RegistroPage() {
+  return (
+    <Suspense fallback={<Cargando />}>
+      <FormularioRegistro />
+    </Suspense>
+  );
+}
+
+function FormularioRegistro() {
   const [estado, accion, enviando] = useActionState(registrarse, estadoInicial);
+  const searchParams = useSearchParams();
+  const token = searchParams.get('invitacion');
+
+  // Si viene de un link de invitación (ver Círculo de Crecimiento), se
+  // prellenan nombre y correo con los datos reales del colaborador — la
+  // persona los puede editar igual, esto es solo comodidad. La conexión
+  // real no depende de lo que quede aquí, sino del token en sí (se manda
+  // como campo oculto del formulario, ver más abajo).
+  const [cargandoInvitacion, setCargandoInvitacion] = useState(Boolean(token));
+  const [prellenado, setPrellenado] = useState({ nombre_completo: '', email: '' });
+
+  useEffect(() => {
+    if (!token) return;
+    fetch(`/api/circulo/invitacion?token=${encodeURIComponent(token)}`)
+      .then((r) => r.json())
+      .then((data: { nombre: string | null; correo: string | null }) => {
+        setPrellenado({ nombre_completo: data.nombre ?? '', email: data.correo ?? '' });
+      })
+      .finally(() => setCargandoInvitacion(false));
+  }, [token]);
+
+  if (cargandoInvitacion) {
+    return <Cargando />;
+  }
 
   return (
     <main className="flex flex-1 items-center justify-center px-4 py-10 sm:px-8">
@@ -34,12 +75,15 @@ export default function RegistroPage() {
           <p className="text-xs font-bold uppercase tracking-widest text-flow-600">Guía del Flow</p>
           <h1 className="mt-1 font-serif text-2xl font-bold text-flow-900">Crea tu cuenta</h1>
           <p className="mt-1 text-sm text-flow-800">
-            Para guardar tu progreso y entregarte tus documentos cuando estén listos.
+            {token
+              ? 'Te invitaron a hacer tu Guía del Flow. Revisa que estos datos sean los tuyos.'
+              : 'Para guardar tu progreso y entregarte tus documentos cuando estén listos.'}
           </p>
 
           <form action={accion} className="mt-6 space-y-4">
-            <Campo id="nombre_completo" etiqueta="Nombres y apellidos" tipo="text" autoComplete="name" />
-            <Campo id="email" etiqueta="Correo electrónico" tipo="email" autoComplete="email" />
+            <input type="hidden" name="invitacion_token" value={token ?? ''} />
+            <Campo id="nombre_completo" etiqueta="Nombres y apellidos" tipo="text" autoComplete="name" defaultValue={prellenado.nombre_completo} />
+            <Campo id="email" etiqueta="Correo electrónico" tipo="email" autoComplete="email" defaultValue={prellenado.email} />
             <Campo
               id="password"
               etiqueta="Contraseña (mínimo 8 caracteres)"
@@ -75,11 +119,13 @@ function Campo({
   etiqueta,
   tipo,
   autoComplete,
+  defaultValue,
 }: {
   id: string;
   etiqueta: string;
   tipo: string;
   autoComplete: string;
+  defaultValue?: string;
 }) {
   return (
     <label className="block">
@@ -90,6 +136,7 @@ function Campo({
         type={tipo}
         required
         autoComplete={autoComplete}
+        defaultValue={defaultValue}
         className="w-full rounded-lg border border-flow-200 bg-white px-3 py-2 text-sm text-flow-text outline-none focus:border-flow-600 focus:ring-2 focus:ring-flow-200"
       />
     </label>

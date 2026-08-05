@@ -2,6 +2,7 @@
 
 import { redirect } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
+import { vincularInvitacion } from '@/lib/circulo/invitacion';
 
 export interface EstadoAuth {
   error?: string;
@@ -11,6 +12,7 @@ export async function registrarse(_prev: EstadoAuth, formData: FormData): Promis
   const email = String(formData.get('email') ?? '').trim();
   const password = String(formData.get('password') ?? '');
   const nombreCompleto = String(formData.get('nombre_completo') ?? '').trim();
+  const invitacionToken = String(formData.get('invitacion_token') ?? '').trim();
 
   if (!email || !password || !nombreCompleto) {
     return { error: 'Completá todos los campos.' };
@@ -22,7 +24,7 @@ export async function registrarse(_prev: EstadoAuth, formData: FormData): Promis
   const supabase = await createClient();
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000';
 
-  const { error } = await supabase.auth.signUp({
+  const { data, error } = await supabase.auth.signUp({
     email,
     password,
     options: {
@@ -36,6 +38,14 @@ export async function registrarse(_prev: EstadoAuth, formData: FormData): Promis
       return { error: 'Ese correo ya tiene una cuenta — probá iniciar sesión.' };
     }
     return { error: error.message };
+  }
+
+  // Si vino de un link de invitación de Círculo de Crecimiento, deja la
+  // cuenta ya vinculada a ese colaborador — sin esto, sincronizar.ts cae
+  // de vuelta al emparejamiento por correo. Nunca bloquea el registro si
+  // falla (ver comentario en vincularInvitacion).
+  if (invitacionToken && data.user) {
+    await vincularInvitacion(data.user.id, invitacionToken);
   }
 
   redirect('/registro/revisa-tu-correo');
