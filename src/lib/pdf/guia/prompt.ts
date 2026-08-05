@@ -1,6 +1,6 @@
 import type { ResultadoAspecto, ResultadosCalculados } from '../../calculo/tipos';
 
-interface EntradaSeccion {
+export interface EntradaSeccion {
   seccion: string;
   aspecto: ResultadoAspecto;
 }
@@ -28,7 +28,7 @@ ${textoAspecto(aspecto)}`
  * sección tenga imagen — los que no coincidan (ej. inteligencias
  * dinámicas) caen en la imagen por defecto, sin romper nada.
  */
-function agruparPorCategoria(r: ResultadosCalculados) {
+export function agruparPorCategoria(r: ResultadosCalculados) {
   const talentos: EntradaSeccion[] = [
     { seccion: 'Carácter', aspecto: r.CARACTER },
     { seccion: 'Temperamento', aspecto: r.TEMPERAMENTO },
@@ -78,55 +78,70 @@ function agruparPorCategoria(r: ResultadosCalculados) {
   return { talentos, emociones, pertenencia, desafios };
 }
 
-export function construirPromptGuia(datos: {
-  nombre: string;
-  fecha: string;
-  origen: string;
-  resultados: ResultadosCalculados;
-}): string {
-  const { talentos, emociones, pertenencia, desafios } = agruparPorCategoria(datos.resultados);
-  const integra = textoAspecto(datos.resultados.Integra);
-
-  return `Eres el asistente de FlowAndo. Te doy los resultados YA CALCULADOS del cuestionario de ${datos.nombre} — cada aspecto con su título, descripción, recomendación y reflexión originales (salen de la base de conocimiento de FlowAndo, ya redactados por el equipo). Tu trabajo NO es inventar contenido nuevo: es CONDENSAR y darle voz humana y cálida a lo que ya está ahí, para armar la Guía del Flow.
-
-REGLAS CRÍTICAS:
+const REGLAS_COMUNES = `REGLAS CRÍTICAS:
 - No inventes datos ni resultados — solo condensa lo que te doy.
 - Conserva la esencia emocional de cada texto: que llegue al corazón.
 - Elimina repeticiones y frases de relleno.
 - Cada "texto" condensado: 3-4 oraciones, fluido, humano, directo, en segunda persona ("tú").
 - Los "recuerda_izq"/"recuerda_der": máximo 2 oraciones cada uno, en tono de recordatorio íntimo.
 - El "subtitulo" de cada sección es una frase corta que resume su esencia (no repitas el nombre de la sección).
-- Responde SOLO con el JSON, sin explicaciones ni markdown.
+- Responde SOLO usando la herramienta que se te dio, sin explicaciones ni markdown.`;
 
-ESTRUCTURA JSON REQUERIDA:
-{
-  "nombre": "${datos.nombre}",
-  "fecha": "${datos.fecha}",
-  "origen": "${datos.origen}",
-  "talento_unico": { "titulo_sello": "string (frase potente, ej: Eres el visionario que nunca se detiene)", "texto": "string (3-4 oraciones)" },
-  "talentos": [ { "seccion": "string (usa EXACTAMENTE el nombre de sección que te doy abajo)", "subtitulo": "string", "texto": "string", "recuerda_izq": "string", "recuerda_der": "string" }, ... uno por cada sección de TALENTOS ],
-  "emociones": [ ... uno por cada sección de EMOCIONES ],
-  "pertenencia": [ ... uno por cada sección de PERTENENCIA ],
-  "desafios": [ ... uno por cada sección de DESAFÍOS ],
-  "frase_cierre": "string (frase motivacional final, cálida, que cierre el documento)"
-}
+/**
+ * La Guía se genera en 4 llamadas a Claude EN PARALELO (una por
+ * capítulo) en vez de una sola llamada gigante — la versión de un solo
+ * llamado tardaba 80-100s, más que el límite de 60s de las funciones de
+ * Vercel en el plan Hobby. Dividido así, cada llamada es más chica y
+ * rápida, y el tiempo total es el de la más lenta, no la suma de las 4.
+ */
 
---- TALENTO ÚNICO (va aparte, no en el array talentos) ---
-${textoAspecto(datos.resultados.TALENTO_UNICO)}
+export function promptTalentos(nombre: string, resultados: ResultadosCalculados): string {
+  const { talentos } = agruparPorCategoria(resultados);
+  return `Eres el asistente de FlowAndo. Te doy los resultados YA CALCULADOS del cuestionario de ${nombre} — cada aspecto con su título, descripción, recomendación y reflexión originales (de la base de conocimiento de FlowAndo). Tu trabajo es CONDENSAR y darle voz humana y cálida a lo que ya está ahí, para la sección "Talentos Poderosos" y el "Talento Único" de su Guía del Flow.
 
---- TALENTOS ---
+${REGLAS_COMUNES}
+- "frase_cierre": UNA sola oración breve (máximo ~120 caracteres) que cierre TODA la Guía con calidez — no un párrafo. Ejemplo de longitud correcta: "El verdadero crecimiento no es un destino, sino una aventura en constante evolución."
+
+--- TALENTO ÚNICO ---
+${textoAspecto(resultados.TALENTO_UNICO)}
+
+--- TALENTOS (usa EXACTAMENTE estos nombres de "seccion") ---
 ${bloque(talentos)}
 
---- EMOCIONES ---
+--- INTEGRA (contexto adicional, úsalo para inspirar la frase_cierre) ---
+${textoAspecto(resultados.Integra)}
+`;
+}
+
+export function promptEmociones(nombre: string, resultados: ResultadosCalculados): string {
+  const { emociones } = agruparPorCategoria(resultados);
+  return `Eres el asistente de FlowAndo. Te doy los resultados YA CALCULADOS del cuestionario de ${nombre} para la sección "Emociones" de su Guía del Flow.
+
+${REGLAS_COMUNES}
+
+--- EMOCIONES (usa EXACTAMENTE estos nombres de "seccion") ---
 ${bloque(emociones)}
+`;
+}
 
---- PERTENENCIA ---
+export function promptPertenencia(nombre: string, resultados: ResultadosCalculados): string {
+  const { pertenencia } = agruparPorCategoria(resultados);
+  return `Eres el asistente de FlowAndo. Te doy los resultados YA CALCULADOS del cuestionario de ${nombre} para la sección "Pertenencia y Compromiso" de su Guía del Flow.
+
+${REGLAS_COMUNES}
+
+--- PERTENENCIA (usa EXACTAMENTE estos nombres de "seccion") ---
 ${bloque(pertenencia)}
+`;
+}
 
---- DESAFÍOS ---
+export function promptDesafios(nombre: string, resultados: ResultadosCalculados): string {
+  const { desafios } = agruparPorCategoria(resultados);
+  return `Eres el asistente de FlowAndo. Te doy los resultados YA CALCULADOS del cuestionario de ${nombre} para la sección "Desafíos" de su Guía del Flow.
+
+${REGLAS_COMUNES}
+
+--- DESAFÍOS (usa EXACTAMENTE estos nombres de "seccion") ---
 ${bloque(desafios)}
-
---- INTEGRA (contexto adicional, no necesita su propia sección, pero puedes usarlo para inspirar la frase_cierre) ---
-${integra}
 `;
 }

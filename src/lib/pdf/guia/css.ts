@@ -280,25 +280,28 @@ body {
     border-radius: 12pt;
     padding: 0.3in 0.3in;
 }
-.closing img.cl-logo { height: 32pt; margin-bottom: 20pt; }
-.closing img.cl-char { max-height: 160pt; margin-bottom: 20pt; object-fit: contain; }
+.closing img.cl-logo { height: 28pt; margin-bottom: 14pt; }
+.closing img.cl-char { max-height: 130pt; margin-bottom: 14pt; object-fit: contain; }
 .closing-quote {
     font-size: 12pt;
     font-weight: 700;
     color: #4c1d95;
-    line-height: 1.7;
+    line-height: 1.6;
     font-style: italic;
     max-width: 4in;
-    margin-bottom: 20pt;
+    margin-bottom: 14pt;
 }
 .closing-bar {
     width: 120pt;
     height: 3pt;
     background: linear-gradient(90deg,#7c3aed,#a855f7);
     border-radius: 2pt;
-    margin: 0 auto 14pt;
+    margin: 0 auto 10pt;
 }
-.closing-flowi img { max-height: 80pt; object-fit: contain; }
+/* Margen defensivo: la frase_cierre que redacta Claude varía de largo;
+   estos tamaños ya traen colchón para que quepa en una sola página
+   incluso si sale un poco más larga de lo pedido. */
+.closing-flowi img { max-height: 60pt; object-fit: contain; }
 .closing-fecha {
     font-size: 8.5pt;
     color: #7c3aed;
