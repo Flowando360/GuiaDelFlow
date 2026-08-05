@@ -113,18 +113,54 @@ async function pedirInforme(system: string, listaAspectos: string): Promise<stri
 }
 
 type ResultadoSincronizacion = { ok: boolean; motivo: string };
+type ResultadoBitacora = 'vinculado' | 'sin_colaborador' | 'correo_ambiguo' | 'error';
+
+/**
+ * Deja rastro de CADA intento (con o sin match) en
+ * guia_del_flow_sincronizaciones, para que admin_th pueda ver en Círculo de
+ * Crecimiento los casos que no encontraron a nadie (típicamente: correo
+ * distinto al que tiene cargado su ficha) y no solo los que sí funcionaron.
+ * Nunca lanza — un fallo acá no debe tumbar la sincronización real.
+ */
+async function registrarIntento(
+  admin: ReturnType<typeof createAdminClient>,
+  datos: {
+    correo: string;
+    nombreFlow: string | null;
+    resultado: ResultadoBitacora;
+    detalle?: string;
+    colaboradorId?: string;
+    empresaId?: string;
+    guiaDelFlowId?: string;
+  }
+) {
+  try {
+    await admin.from('guia_del_flow_sincronizaciones').insert({
+      correo: datos.correo,
+      nombre_flow: datos.nombreFlow,
+      resultado: datos.resultado,
+      detalle: datos.detalle ?? null,
+      colaborador_id: datos.colaboradorId ?? null,
+      empresa_id: datos.empresaId ?? null,
+      guia_del_flow_id: datos.guiaDelFlowId ?? null,
+    });
+  } catch (error) {
+    console.error('No se pudo registrar el intento de sincronización en la bitácora:', error);
+  }
+}
 
 /**
  * Empareja a la persona (por correo) con un colaborador de Círculo de
  * Crecimiento, carga los 18 aspectos seguros y genera sus dos informes.
- * No hace nada (y no revienta) si la persona no es colaboradora de ninguna
- * empresa cliente — sigue teniendo su Guía y Carta completas igual.
+ * No hace nada distinto (y no revienta) si la persona no es colaboradora de
+ * ninguna empresa cliente — sigue teniendo su Guía y Carta completas igual;
+ * solo queda un registro en la bitácora para que admin_th lo pueda revisar.
  */
 export async function sincronizarConCirculo(usuarioId: string): Promise<ResultadoSincronizacion> {
   const admin = createAdminClient();
 
   const [{ data: perfil }, { data: cuestionario }] = await Promise.all([
-    admin.from('flow_perfiles').select('email, fecha_nacimiento').eq('id', usuarioId).maybeSingle(),
+    admin.from('flow_perfiles').select('email, nombre_completo, fecha_nacimiento').eq('id', usuarioId).maybeSingle(),
     admin
       .from('flow_cuestionarios')
       .select('id')
@@ -134,7 +170,12 @@ export async function sincronizarConCirculo(usuarioId: string): Promise<Resultad
       .maybeSingle(),
   ]);
 
+  // Sin correo no hay nada que registrar en la bitácora tampoco (no hay
+  // llave con la que emparejar ni con la que dejar rastro útil).
   if (!perfil?.email || !cuestionario) return { ok: false, motivo: 'Sin perfil o cuestionario' };
+
+  const correo = perfil.email;
+  const nombreFlow = perfil.nombre_completo ?? null;
 
   const { data: resultadosRow } = await admin
     .from('flow_resultados')
@@ -144,18 +185,27 @@ export async function sincronizarConCirculo(usuarioId: string): Promise<Resultad
     .limit(1)
     .maybeSingle();
 
-  if (!resultadosRow) return { ok: false, motivo: 'Aún no hay resultados calculados' };
+  if (!resultadosRow) {
+    await registrarIntento(admin, { correo, nombreFlow, resultado: 'error', detalle: 'Aún no hay resultados calculados' });
+    return { ok: false, motivo: 'Aún no hay resultados calculados' };
+  }
 
   const { data: colaboradores, error: errorColaboradores } = await admin
     .from('colaboradores')
     .select('id, empresa_id')
-    .ilike('email', perfil.email);
+    .ilike('email', correo);
 
-  if (errorColaboradores) return { ok: false, motivo: `Error buscando colaborador: ${errorColaboradores.message}` };
+  if (errorColaboradores) {
+    const motivo = `Error buscando colaborador: ${errorColaboradores.message}`;
+    await registrarIntento(admin, { correo, nombreFlow, resultado: 'error', detalle: motivo });
+    return { ok: false, motivo };
+  }
   if (!colaboradores || colaboradores.length === 0) {
+    await registrarIntento(admin, { correo, nombreFlow, resultado: 'sin_colaborador' });
     return { ok: false, motivo: 'No es colaboradora/colaborador de ninguna empresa cliente — sin acción' };
   }
   if (colaboradores.length > 1) {
+    await registrarIntento(admin, { correo, nombreFlow, resultado: 'correo_ambiguo', detalle: `${colaboradores.length} colaboradores comparten este correo` });
     return { ok: false, motivo: 'Correo ambiguo: coincide con más de un colaborador, no se adivina' };
   }
   const colaborador = colaboradores[0];
@@ -175,7 +225,11 @@ export async function sincronizarConCirculo(usuarioId: string): Promise<Resultad
     .insert({ colaborador_id: colaborador.id, origen_flow: perfil.fecha_nacimiento })
     .select('id')
     .single();
-  if (errorGuia || !guia) return { ok: false, motivo: `Error creando guia_del_flow: ${errorGuia?.message}` };
+  if (errorGuia || !guia) {
+    const motivo = `Error creando guia_del_flow: ${errorGuia?.message}`;
+    await registrarIntento(admin, { correo, nombreFlow, resultado: 'error', detalle: motivo, colaboradorId: colaborador.id, empresaId: colaborador.empresa_id });
+    return { ok: false, motivo };
+  }
 
   const filas = aspectos
     .map((a) => ({ guia_del_flow_id: guia.id, aspecto_id: idPorNombre.get(a.nombre), puntaje: a.puntaje, nota: a.nota }))
@@ -185,7 +239,11 @@ export async function sincronizarConCirculo(usuarioId: string): Promise<Resultad
 
   if (filas.length > 0) {
     const { error: errorPuntajes } = await admin.from('ser_puntajes').insert(filas);
-    if (errorPuntajes) return { ok: false, motivo: `Error cargando puntajes: ${errorPuntajes.message}` };
+    if (errorPuntajes) {
+      const motivo = `Error cargando puntajes: ${errorPuntajes.message}`;
+      await registrarIntento(admin, { correo, nombreFlow, resultado: 'error', detalle: motivo, colaboradorId: colaborador.id, empresaId: colaborador.empresa_id, guiaDelFlowId: guia.id });
+      return { ok: false, motivo };
+    }
   }
 
   const listaAspectos = aspectos
@@ -207,6 +265,15 @@ export async function sincronizarConCirculo(usuarioId: string): Promise<Resultad
       informe_colaborador_generado_at: ahora,
     })
     .eq('id', guia.id);
+
+  await registrarIntento(admin, {
+    correo,
+    nombreFlow,
+    resultado: 'vinculado',
+    colaboradorId: colaborador.id,
+    empresaId: colaborador.empresa_id,
+    guiaDelFlowId: guia.id,
+  });
 
   return { ok: true, motivo: 'Sincronizado con Círculo de Crecimiento' };
 }

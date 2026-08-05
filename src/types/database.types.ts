@@ -2616,6 +2616,113 @@ export type Database = {
           },
         ]
       }
+      guia_del_flow_sincronizaciones: {
+        Row: {
+          colaborador_id: string | null
+          correo: string
+          detalle: string | null
+          empresa_id: string | null
+          guia_del_flow_id: string | null
+          id: string
+          intentado_at: string
+          nombre_flow: string | null
+          resultado: string
+        }
+        Insert: {
+          colaborador_id?: string | null
+          correo: string
+          detalle?: string | null
+          empresa_id?: string | null
+          guia_del_flow_id?: string | null
+          id?: string
+          intentado_at?: string
+          nombre_flow?: string | null
+          resultado: string
+        }
+        Update: {
+          colaborador_id?: string | null
+          correo?: string
+          detalle?: string | null
+          empresa_id?: string | null
+          guia_del_flow_id?: string | null
+          id?: string
+          intentado_at?: string
+          nombre_flow?: string | null
+          resultado?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "guia_del_flow_sincronizaciones_colaborador_id_fkey"
+            columns: ["colaborador_id"]
+            isOneToOne: false
+            referencedRelation: "colaboradores"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "guia_del_flow_sincronizaciones_colaborador_id_fkey"
+            columns: ["colaborador_id"]
+            isOneToOne: false
+            referencedRelation: "v_alineacion_talento_rol"
+            referencedColumns: ["colaborador_id"]
+          },
+          {
+            foreignKeyName: "guia_del_flow_sincronizaciones_colaborador_id_fkey"
+            columns: ["colaborador_id"]
+            isOneToOne: false
+            referencedRelation: "v_indicadores_equipo"
+            referencedColumns: ["lider_id"]
+          },
+          {
+            foreignKeyName: "guia_del_flow_sincronizaciones_colaborador_id_fkey"
+            columns: ["colaborador_id"]
+            isOneToOne: false
+            referencedRelation: "v_lideres_de_linea_sin_lider_interno"
+            referencedColumns: ["colaborador_id"]
+          },
+          {
+            foreignKeyName: "guia_del_flow_sincronizaciones_colaborador_id_fkey"
+            columns: ["colaborador_id"]
+            isOneToOne: false
+            referencedRelation: "v_organigrama_colaboradores_a_cargo"
+            referencedColumns: ["colaborador_a_cargo_id"]
+          },
+          {
+            foreignKeyName: "guia_del_flow_sincronizaciones_colaborador_id_fkey"
+            columns: ["colaborador_id"]
+            isOneToOne: false
+            referencedRelation: "v_organigrama_colaboradores_a_cargo"
+            referencedColumns: ["colaborador_id"]
+          },
+          {
+            foreignKeyName: "guia_del_flow_sincronizaciones_colaborador_id_fkey"
+            columns: ["colaborador_id"]
+            isOneToOne: false
+            referencedRelation: "v_organigrama_pares"
+            referencedColumns: ["colaborador_id"]
+          },
+          {
+            foreignKeyName: "guia_del_flow_sincronizaciones_colaborador_id_fkey"
+            columns: ["colaborador_id"]
+            isOneToOne: false
+            referencedRelation: "v_organigrama_pares"
+            referencedColumns: ["par_id"]
+          },
+          {
+            foreignKeyName: "guia_del_flow_sincronizaciones_empresa_id_fkey"
+            columns: ["empresa_id"]
+            isOneToOne: false
+            referencedRelation: "empresas"
+            referencedColumns: ["id"]
+          },
+          {
+            foreignKeyName: "guia_del_flow_sincronizaciones_guia_del_flow_id_fkey"
+            columns: ["guia_del_flow_id"]
+            isOneToOne: false
+            referencedRelation: "guia_del_flow"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       historial_movimientos: {
         Row: {
           cargo_anterior_id: string | null
