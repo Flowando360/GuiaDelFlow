@@ -31,14 +31,11 @@ export default async function ResultadoPage() {
   const guia = documentos?.find((d) => d.tipo === 'guia');
   const carta = documentos?.find((d) => d.tipo === 'carta');
 
-  async function urlDe(path: string | null | undefined) {
-    if (!path) return null;
-    const { data } = await supabase.storage.from('guia-del-flow').createSignedUrl(path, 3600);
-    return data?.signedUrl ?? null;
-  }
-
-  const urlGuia = guia?.estado === 'listo' ? await urlDe(guia.storage_path) : null;
-  const urlCarta = carta?.estado === 'listo' ? await urlDe(carta.storage_path) : null;
+  // La descarga pasa por /api/descargar/[tipo] (nuestro propio dominio, con
+  // Content-Disposition: attachment) en vez de un link directo a una URL
+  // firmada de Supabase Storage — ver comentario en esa ruta para el porqué.
+  const guiaLista = guia?.estado === 'listo';
+  const cartaLista = carta?.estado === 'listo';
 
   return (
     <main className="flex flex-1 items-center justify-center px-4 py-12">
@@ -47,14 +44,14 @@ export default async function ResultadoPage() {
         <p className="text-xs font-bold uppercase tracking-widest text-flow-600">Guía del Flow</p>
 
         {/* ── Paso 1: la Guía ── */}
-        {urlGuia ? (
+        {guiaLista ? (
           <>
             <h1 className="mt-1 font-serif text-2xl font-bold text-flow-900">¡Tu Guía está lista!</h1>
             <p className="mt-3 text-sm leading-relaxed text-flow-800">
               La escribimos especialmente para ti a partir de todo lo que respondiste.
             </p>
             <a
-              href={urlGuia}
+              href="/api/descargar/guia"
               className="mt-6 inline-block w-full rounded-full bg-flow-600 px-6 py-3 text-sm font-bold text-white transition hover:bg-flow-800"
             >
               Descargar mi Guía del Flow
@@ -76,16 +73,16 @@ export default async function ResultadoPage() {
         )}
 
         {/* ── Paso 2: la Carta (solo aparece cuando la Guía ya está lista) ── */}
-        {urlGuia && (
+        {guiaLista && (
           <div className="mt-8 border-t border-flow-100 pt-6">
-            {urlCarta ? (
+            {cartaLista ? (
               <>
                 <h2 className="font-serif text-xl font-bold text-flow-900">Tu Carta de Flowi también está lista</h2>
                 <p className="mt-2 text-sm leading-relaxed text-flow-800">
                   Un mensaje personal respondiendo lo que nos compartiste, escrito con todo el cariño.
                 </p>
                 <a
-                  href={urlCarta}
+                  href="/api/descargar/carta"
                   className="mt-4 inline-block w-full rounded-full border border-flow-300 bg-white px-6 py-3 text-sm font-bold text-flow-800 transition hover:border-flow-500"
                 >
                   Descargar mi Carta

@@ -149,7 +149,7 @@ body {
 .bloque-respuesta p:last-child { margin-bottom: 0; }
 
 .pie-foto-wrap { text-align: center; margin-top: 14pt; }
-.pie-foto-wrap img { width: 82%; border-radius: 8pt; object-fit: cover; }
+.pie-foto-wrap img { max-width: 82%; max-height: 1.7in; border-radius: 8pt; object-fit: cover; }
 .pie-foto {
     font-family: 'Playfair Display', Georgia, serif;
     font-style: italic;
@@ -158,14 +158,14 @@ body {
     margin-top: 8pt;
 }
 
-.firma-wrap { text-align: center; margin-top: 24pt; }
-.firma-label { font-size: 9pt; font-weight: 800; letter-spacing: 1.5pt; color: #a855f7; margin-bottom: 6pt; }
+.firma-wrap { text-align: center; margin-top: 12pt; }
+.firma-label { font-size: 9pt; font-weight: 800; letter-spacing: 1.5pt; color: #a855f7; margin-bottom: 4pt; }
 .firma-nombre {
     font-family: 'Playfair Display', Georgia, serif;
     font-style: italic;
-    font-size: 24pt;
+    font-size: 22pt;
     color: #7c3aed;
-    margin-bottom: 6pt;
+    margin-bottom: 4pt;
 }
 .firma-pie { font-size: 8.5pt; color: #a78bfa; letter-spacing: 0.3pt; }
 

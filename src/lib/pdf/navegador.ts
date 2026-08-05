@@ -55,6 +55,17 @@ export async function htmlAPdf(
  * imágenes solas en páginas vacías cuando el contenido varía de tamaño
  * entre secciones. Renderizando cada página por separado a tamaño de
  * carta exacto y uniéndolas después (pdf-lib) se evita ese problema.
+ *
+ * IMPORTANTE: si el contenido de un capítulo es más alto que el tamaño
+ * de página fijado (ej. una respuesta larga de Claude + una imagen),
+ * Chromium genera automáticamente una página física adicional para el
+ * desborde. Antes este código solo copiaba la página [0] de cada
+ * capítulo, así que ese desborde se perdía EN SILENCIO (bug real: la
+ * imagen y el pie de foto del cuestionamiento_2 desaparecían sin error
+ * ni página en blanco delatora). Ahora se copian todas las páginas que
+ * Chromium haya generado por capítulo, para no perder contenido nunca —
+ * el costo es que la Carta puede terminar con más de 5 páginas si algún
+ * capítulo se desborda, en vez de perder texto o imágenes.
  */
 export async function htmlsAPdfUnido(
   htmls: string[],
@@ -75,8 +86,9 @@ export async function htmlsAPdfUnido(
           preferCSSPageSize: false,
         });
         const pdfPagina = await PDFDocument.load(bufferPagina);
-        const [copiada] = await pdfFinal.copyPages(pdfPagina, [0]);
-        pdfFinal.addPage(copiada);
+        const indices = pdfPagina.getPageIndices();
+        const copiadas = await pdfFinal.copyPages(pdfPagina, indices);
+        for (const copiada of copiadas) pdfFinal.addPage(copiada);
       } finally {
         await pagina.close();
       }
