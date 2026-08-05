@@ -14,7 +14,6 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     '/api/generar-guia': ['./node_modules/@sparticuz/chromium/bin/**'],
     '/api/generar-carta': ['./node_modules/@sparticuz/chromium/bin/**'],
-    '/api/diagnostico-pdf-temp': ['./node_modules/@sparticuz/chromium/bin/**'],
   },
 };
 
