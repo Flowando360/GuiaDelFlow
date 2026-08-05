@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { createClient, createAdminClient } from '@/lib/supabase/server';
 import { generarCartaCondensada, generarPdfCarta } from '@/lib/pdf/carta/generar';
+import { enviarCorreoDocumentos } from '@/lib/email/enviar';
 import type { GuiaCondensada } from '@/lib/pdf/guia/tipos';
 
 export const runtime = 'nodejs';
@@ -29,10 +30,11 @@ export async function POST() {
 
   const admin = createAdminClient();
 
-  // La Carta necesita la Guía YA generada — usa su contenido como contexto.
+  // La Carta necesita la Guía YA generada — usa su contenido como contexto,
+  // y también se reusa el PDF ya subido para adjuntarlo al correo final.
   const { data: docGuia } = await admin
     .from('flow_documentos')
-    .select('estado, contenido')
+    .select('estado, contenido, storage_path')
     .eq('cuestionario_id', cuestionario.id)
     .eq('tipo', 'guia')
     .maybeSingle();
@@ -103,6 +105,27 @@ export async function POST() {
       },
       { onConflict: 'cuestionario_id,tipo' }
     );
+
+    // Correo final con los 2 PDFs adjuntos. Si falla, no se revienta la
+    // respuesta — el usuario siempre puede descargar ambos documentos
+    // desde /resultado; el correo es una comodidad extra, no el único
+    // camino de entrega.
+    if (user.email) {
+      const { data: pdfGuiaDescargado } = await admin.storage
+        .from('guia-del-flow')
+        .download(docGuia.storage_path!);
+      if (pdfGuiaDescargado) {
+        const resultadoCorreo = await enviarCorreoDocumentos({
+          destinatario: user.email,
+          nombre: nombreMostrado,
+          pdfGuia: Buffer.from(await pdfGuiaDescargado.arrayBuffer()),
+          pdfCarta: pdf,
+        });
+        if (!resultadoCorreo.ok) {
+          console.error('No se pudo enviar el correo con los documentos:', resultadoCorreo.error);
+        }
+      }
+    }
 
     return NextResponse.json({ ok: true });
   } catch (error) {

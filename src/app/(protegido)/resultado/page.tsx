@@ -79,7 +79,8 @@ export default async function ResultadoPage() {
               <>
                 <h2 className="font-serif text-xl font-bold text-flow-900">Tu Carta de Flowi también está lista</h2>
                 <p className="mt-2 text-sm leading-relaxed text-flow-800">
-                  Un mensaje personal respondiendo lo que nos compartiste, escrito con todo el cariño.
+                  Un mensaje personal respondiendo lo que nos compartiste, escrito con todo el cariño. También te
+                  enviamos los dos documentos a tu correo.
                 </p>
                 <a
                   href="/api/descargar/carta"
