@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { redirect } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
 import { IMG } from '@/lib/imagenesWeb';
-import { GeneradorGuia } from './GeneradorGuia';
+import { GeneradorDocumento } from './GeneradorDocumento';
 
 export default async function ResultadoPage() {
   const supabase = await createClient();
@@ -23,18 +23,22 @@ export default async function ResultadoPage() {
     redirect('/cuestionario');
   }
 
-  const { data: documento } = await supabase
+  const { data: documentos } = await supabase
     .from('flow_documentos')
     .select('*')
-    .eq('cuestionario_id', cuestionario.id)
-    .eq('tipo', 'guia')
-    .maybeSingle();
+    .eq('cuestionario_id', cuestionario.id);
 
-  let urlDescarga: string | null = null;
-  if (documento?.estado === 'listo' && documento.storage_path) {
-    const { data } = await supabase.storage.from('guia-del-flow').createSignedUrl(documento.storage_path, 3600);
-    urlDescarga = data?.signedUrl ?? null;
+  const guia = documentos?.find((d) => d.tipo === 'guia');
+  const carta = documentos?.find((d) => d.tipo === 'carta');
+
+  async function urlDe(path: string | null | undefined) {
+    if (!path) return null;
+    const { data } = await supabase.storage.from('guia-del-flow').createSignedUrl(path, 3600);
+    return data?.signedUrl ?? null;
   }
+
+  const urlGuia = guia?.estado === 'listo' ? await urlDe(guia.storage_path) : null;
+  const urlCarta = carta?.estado === 'listo' ? await urlDe(carta.storage_path) : null;
 
   return (
     <main className="flex flex-1 items-center justify-center px-4 py-12">
@@ -42,14 +46,15 @@ export default async function ResultadoPage() {
         <Image src={IMG.p6} alt="" width={160} height={160} className="mx-auto mb-4 h-32 w-auto object-contain" />
         <p className="text-xs font-bold uppercase tracking-widest text-flow-600">Guía del Flow</p>
 
-        {documento?.estado === 'listo' && urlDescarga ? (
+        {/* ── Paso 1: la Guía ── */}
+        {urlGuia ? (
           <>
             <h1 className="mt-1 font-serif text-2xl font-bold text-flow-900">¡Tu Guía está lista!</h1>
             <p className="mt-3 text-sm leading-relaxed text-flow-800">
-              La escribimos especialmente para ti a partir de todo lo que respondiste. Descárgala y léela con calma.
+              La escribimos especialmente para ti a partir de todo lo que respondiste.
             </p>
             <a
-              href={urlDescarga}
+              href={urlGuia}
               className="mt-6 inline-block w-full rounded-full bg-flow-600 px-6 py-3 text-sm font-bold text-white transition hover:bg-flow-800"
             >
               Descargar mi Guía del Flow
@@ -61,8 +66,46 @@ export default async function ResultadoPage() {
             <p className="mt-3 text-sm leading-relaxed text-flow-800">
               Ahora podemos escribir tu Guía del Flow, tu documento personal con tus talentos, propósito y desafíos.
             </p>
-            <GeneradorGuia estadoInicial={documento?.estado === 'error' ? 'error' : null} />
+            <GeneradorDocumento
+              endpoint="/api/generar-guia"
+              textoBoton="Generar mi Guía del Flow"
+              textoEspera="Estamos escribiendo tu Guía del Flow… esto puede tardar un minuto, no cierres esta página."
+              estadoInicial={guia?.estado === 'error' ? 'error' : null}
+            />
           </>
+        )}
+
+        {/* ── Paso 2: la Carta (solo aparece cuando la Guía ya está lista) ── */}
+        {urlGuia && (
+          <div className="mt-8 border-t border-flow-100 pt-6">
+            {urlCarta ? (
+              <>
+                <h2 className="font-serif text-xl font-bold text-flow-900">Tu Carta de Flowi también está lista</h2>
+                <p className="mt-2 text-sm leading-relaxed text-flow-800">
+                  Un mensaje personal respondiendo lo que nos compartiste, escrito con todo el cariño.
+                </p>
+                <a
+                  href={urlCarta}
+                  className="mt-4 inline-block w-full rounded-full border border-flow-300 bg-white px-6 py-3 text-sm font-bold text-flow-800 transition hover:border-flow-500"
+                >
+                  Descargar mi Carta
+                </a>
+              </>
+            ) : (
+              <>
+                <h2 className="font-serif text-xl font-bold text-flow-900">Todavía falta tu Carta</h2>
+                <p className="mt-2 text-sm leading-relaxed text-flow-800">
+                  Flowi ya leyó tu Guía — ahora puede responder tus 3 cuestionamientos en un mensaje personal.
+                </p>
+                <GeneradorDocumento
+                  endpoint="/api/generar-carta"
+                  textoBoton="Generar mi Carta"
+                  textoEspera="Flowi está escribiendo tu Carta…"
+                  estadoInicial={carta?.estado === 'error' ? 'error' : null}
+                />
+              </>
+            )}
+          </div>
         )}
       </div>
     </main>

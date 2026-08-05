@@ -139,6 +139,8 @@ export interface Database {
           error_detalle: string | null;
           generado_at: string | null;
           created_at: string;
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          contenido: Record<string, any> | null;
         };
         Insert: {
           id?: string;
@@ -149,6 +151,8 @@ export interface Database {
           error_detalle?: string | null;
           generado_at?: string | null;
           created_at?: string;
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          contenido?: Record<string, any> | null;
         };
         Update: {
           id?: string;
@@ -159,6 +163,8 @@ export interface Database {
           error_detalle?: string | null;
           generado_at?: string | null;
           created_at?: string;
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          contenido?: Record<string, any> | null;
         };
         Relationships: [];
       };

@@ -3,10 +3,20 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 
-export function GeneradorGuia({ estadoInicial }: { estadoInicial: 'error' | null }) {
+export function GeneradorDocumento({
+  endpoint,
+  textoBoton,
+  textoEspera,
+  estadoInicial,
+}: {
+  endpoint: string;
+  textoBoton: string;
+  textoEspera: string;
+  estadoInicial: 'error' | null;
+}) {
   const [cargando, setCargando] = useState(false);
   const [error, setError] = useState<string | null>(
-    estadoInicial === 'error' ? 'Algo falló generando tu Guía. Intenta de nuevo.' : null
+    estadoInicial === 'error' ? 'Algo falló generando tu documento. Intenta de nuevo.' : null
   );
   const router = useRouter();
 
@@ -14,14 +24,14 @@ export function GeneradorGuia({ estadoInicial }: { estadoInicial: 'error' | null
     setCargando(true);
     setError(null);
     try {
-      const res = await fetch('/api/generar-guia', { method: 'POST' });
+      const res = await fetch(endpoint, { method: 'POST' });
       if (!res.ok) {
         const data = await res.json().catch(() => ({}));
-        throw new Error(data.error ?? 'No se pudo generar la Guía.');
+        throw new Error(data.error ?? 'No se pudo generar el documento.');
       }
       router.refresh();
     } catch (e) {
-      setError(e instanceof Error ? e.message : 'No se pudo generar la Guía.');
+      setError(e instanceof Error ? e.message : 'No se pudo generar el documento.');
       setCargando(false);
     }
   }
@@ -30,9 +40,7 @@ export function GeneradorGuia({ estadoInicial }: { estadoInicial: 'error' | null
     return (
       <div className="mt-6 text-center">
         <div className="mx-auto mb-3 h-8 w-8 animate-spin rounded-full border-4 border-flow-200 border-t-flow-600" />
-        <p className="text-sm text-flow-800">
-          Estamos escribiendo tu Guía del Flow… esto puede tardar un minuto, no cierres esta página.
-        </p>
+        <p className="text-sm text-flow-800">{textoEspera}</p>
       </div>
     );
   }
@@ -45,7 +53,7 @@ export function GeneradorGuia({ estadoInicial }: { estadoInicial: 'error' | null
         onClick={generar}
         className="w-full rounded-full bg-flow-600 px-6 py-3 text-sm font-bold text-white transition hover:bg-flow-800"
       >
-        {error ? 'Intentar de nuevo' : 'Generar mi Guía del Flow'}
+        {error ? 'Intentar de nuevo' : textoBoton}
       </button>
     </div>
   );

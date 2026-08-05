@@ -46,3 +46,43 @@ export async function htmlAPdf(
     await navegador.close();
   }
 }
+
+/**
+ * Varios HTML -> un solo PDF, cada uno renderizado como su PROPIA página
+ * (no como un solo HTML largo con saltos de página). Es el método que
+ * pide Codigo/Generar_Carta.txt: con un solo HTML largo, WeasyPrint (y
+ * Chromium/Puppeteer igual) puede cortar texto a mitad de página o dejar
+ * imágenes solas en páginas vacías cuando el contenido varía de tamaño
+ * entre secciones. Renderizando cada página por separado a tamaño de
+ * carta exacto y uniéndolas después (pdf-lib) se evita ese problema.
+ */
+export async function htmlsAPdfUnido(
+  htmls: string[],
+  opciones: { anchoPulgadas: number; altoPulgadas: number }
+): Promise<Buffer> {
+  const { PDFDocument } = await import('pdf-lib');
+  const navegador = await lanzarNavegador();
+  try {
+    const pdfFinal = await PDFDocument.create();
+    for (const html of htmls) {
+      const pagina = await navegador.newPage();
+      try {
+        await pagina.setContent(html, { waitUntil: 'load' });
+        const bufferPagina = await pagina.pdf({
+          width: `${opciones.anchoPulgadas}in`,
+          height: `${opciones.altoPulgadas}in`,
+          printBackground: true,
+          preferCSSPageSize: false,
+        });
+        const pdfPagina = await PDFDocument.load(bufferPagina);
+        const [copiada] = await pdfFinal.copyPages(pdfPagina, [0]);
+        pdfFinal.addPage(copiada);
+      } finally {
+        await pagina.close();
+      }
+    }
+    return Buffer.from(await pdfFinal.save());
+  } finally {
+    await navegador.close();
+  }
+}
