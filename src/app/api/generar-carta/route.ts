@@ -106,17 +106,34 @@ export async function POST() {
       { onConflict: 'cuestionario_id,tipo' }
     );
 
+    // Si la cuenta se creó desde un link de envío configurado (?envio= en
+    // /registro, ver src/lib/envio/enlace.ts), el correo con los 2 PDFs va
+    // al destinatario que quedó fijado en ese link (ej. la empresa que
+    // compartió el link con varios candidatos) en vez de al dueño de la
+    // cuenta — es el comportamiento por defecto (sin link) el que manda al
+    // propio usuario.
+    const perfilEnvio = await admin.from('flow_perfiles').select('envio_link_id').eq('id', user.id).single();
+    let destinatarioCorreo = user.email;
+    if (perfilEnvio.data?.envio_link_id) {
+      const { data: linkEnvio } = await admin
+        .from('flow_links_envio')
+        .select('correo_destino')
+        .eq('id', perfilEnvio.data.envio_link_id)
+        .maybeSingle();
+      if (linkEnvio?.correo_destino) destinatarioCorreo = linkEnvio.correo_destino;
+    }
+
     // Correo final con los 2 PDFs adjuntos. Si falla, no se revienta la
     // respuesta — el usuario siempre puede descargar ambos documentos
     // desde /resultado; el correo es una comodidad extra, no el único
     // camino de entrega.
-    if (user.email) {
+    if (destinatarioCorreo) {
       const { data: pdfGuiaDescargado } = await admin.storage
         .from('guia-del-flow')
         .download(docGuia.storage_path!);
       if (pdfGuiaDescargado) {
         const resultadoCorreo = await enviarCorreoDocumentos({
-          destinatario: user.email,
+          destinatario: destinatarioCorreo,
           nombre: nombreMostrado,
           pdfGuia: Buffer.from(await pdfGuiaDescargado.arrayBuffer()),
           pdfCarta: pdf,

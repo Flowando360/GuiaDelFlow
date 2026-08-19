@@ -29,6 +29,9 @@ function FormularioRegistro() {
   const [estado, accion, enviando] = useActionState(registrarse, estadoInicial);
   const searchParams = useSearchParams();
   const token = searchParams.get('invitacion');
+  // Link de envío configurado (ver src/lib/envio/enlace.ts): no cambia nada
+  // visible del formulario, solo viaja como campo oculto hasta la acción.
+  const envioToken = searchParams.get('envio');
 
   // Si viene de un link de invitación (ver Círculo de Crecimiento), se
   // prellenan nombre y correo con los datos reales del colaborador — la
@@ -82,6 +85,7 @@ function FormularioRegistro() {
 
           <form action={accion} className="mt-6 space-y-4">
             <input type="hidden" name="invitacion_token" value={token ?? ''} />
+            <input type="hidden" name="envio_token" value={envioToken ?? ''} />
             <Campo id="nombre_completo" etiqueta="Nombres y apellidos" tipo="text" autoComplete="name" defaultValue={prellenado.nombre_completo} />
             <Campo id="email" etiqueta="Correo electrónico" tipo="email" autoComplete="email" defaultValue={prellenado.email} />
             <Campo

@@ -3,6 +3,7 @@
 import { redirect } from 'next/navigation';
 import { createClient, createAdminClient } from '@/lib/supabase/server';
 import { vincularInvitacion } from '@/lib/circulo/invitacion';
+import { vincularLinkEnvio } from '@/lib/envio/enlace';
 
 export interface EstadoAuth {
   error?: string;
@@ -13,6 +14,7 @@ export async function registrarse(_prev: EstadoAuth, formData: FormData): Promis
   const password = String(formData.get('password') ?? '');
   const nombreCompleto = String(formData.get('nombre_completo') ?? '').trim();
   const invitacionToken = String(formData.get('invitacion_token') ?? '').trim();
+  const envioToken = String(formData.get('envio_token') ?? '').trim();
   const autorizaCirculo = formData.get('autorizacion_circulo') === 'si';
 
   if (!email || !password || !nombreCompleto) {
@@ -64,6 +66,14 @@ export async function registrarse(_prev: EstadoAuth, formData: FormData): Promis
     // falla (ver comentario en vincularInvitacion).
     if (invitacionToken) {
       await vincularInvitacion(data.user.id, invitacionToken);
+    }
+
+    // Si vino de un link de envío configurado (?envio=, ver
+    // src/lib/envio/enlace.ts), deja la cuenta marcada para que
+    // /api/generar-carta mande el correo final a ese destinatario en vez
+    // de al dueño de la cuenta. Nunca bloquea el registro si falla.
+    if (envioToken) {
+      await vincularLinkEnvio(data.user.id, envioToken);
     }
   }
 

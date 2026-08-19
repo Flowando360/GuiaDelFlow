@@ -2437,12 +2437,34 @@ export type Database = {
           },
         ]
       }
+      flow_links_envio: {
+        Row: {
+          correo_destino: string
+          creado_at: string
+          etiqueta: string | null
+          id: string
+        }
+        Insert: {
+          correo_destino: string
+          creado_at?: string
+          etiqueta?: string | null
+          id?: string
+        }
+        Update: {
+          correo_destino?: string
+          creado_at?: string
+          etiqueta?: string | null
+          id?: string
+        }
+        Relationships: []
+      }
       flow_perfiles: {
         Row: {
           autorizacion_circulo_en: string | null
           colaborador_circulo_id: string | null
           created_at: string
           email: string
+          envio_link_id: string | null
           fecha_nacimiento: string | null
           id: string
           nombre_completo: string
@@ -2452,6 +2474,7 @@ export type Database = {
           colaborador_circulo_id?: string | null
           created_at?: string
           email: string
+          envio_link_id?: string | null
           fecha_nacimiento?: string | null
           id: string
           nombre_completo: string
@@ -2461,11 +2484,19 @@ export type Database = {
           colaborador_circulo_id?: string | null
           created_at?: string
           email?: string
+          envio_link_id?: string | null
           fecha_nacimiento?: string | null
           id?: string
           nombre_completo?: string
         }
         Relationships: [
+          {
+            foreignKeyName: "flow_perfiles_envio_link_id_fkey"
+            columns: ["envio_link_id"]
+            isOneToOne: false
+            referencedRelation: "flow_links_envio"
+            referencedColumns: ["id"]
+          },
           {
             foreignKeyName: "flow_perfiles_colaborador_circulo_id_fkey"
             columns: ["colaborador_circulo_id"]
