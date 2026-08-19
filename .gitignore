@@ -47,6 +47,12 @@ next-env.d.ts
 /Docs/
 /flowando_kb_normalizada.zip
 
+# Excel de respuestas de personas reales procesados a mano (fuera del flujo
+# web) y los PDF que salen de scripts/generar-desde-excel.ts — igual que
+# /Docs/, son datos reales de personas, nunca van al repo.
+/DatosFlowando.xlsx
+/pdfs-generados/
+
 # Carpeta de imágenes originales (ya copiadas a public/images/flow/)
 /Imagenes_Flow/
 
