@@ -66,3 +66,7 @@ CLAUDE.md
 
 # supabase CLI cache
 supabase/.temp/
+
+# token de Supabase de este proyecto, activado automáticamente por el
+# perfil de PowerShell — nunca va al repo
+.supabase-token
