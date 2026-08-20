@@ -90,7 +90,10 @@ export async function registrarse(_prev: EstadoAuth, formData: FormData): Promis
     }
   }
 
-  redirect('/registro/revisa-tu-correo');
+  // Se manda el id (no el correo) para que /registro/revisa-tu-correo pueda
+  // consultar si ya se confirmó sin exponer datos personales en la URL —
+  // ver src/app/api/auth/estado-confirmacion/route.ts.
+  redirect(`/registro/revisa-tu-correo?id=${data.user?.id ?? ''}`);
 }
 
 export async function iniciarSesion(_prev: EstadoAuth, formData: FormData): Promise<EstadoAuth> {
