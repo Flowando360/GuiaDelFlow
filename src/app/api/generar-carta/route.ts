@@ -106,22 +106,26 @@ export async function POST() {
       { onConflict: 'cuestionario_id,tipo' }
     );
 
-    // Si la cuenta se creó desde un link de envío configurado (?envio= en
-    // /registro, ver src/lib/envio/enlace.ts), el correo con los 2 PDFs va
-    // al destinatario que quedó fijado en ese link (ej. la empresa que
-    // compartió el link con varios candidatos) en vez de al dueño de la
-    // cuenta — es el comportamiento por defecto (sin link) el que manda al
-    // propio usuario.
+    // Si la cuenta se creó desde un link de envío (?envio= en /registro,
+    // ver src/lib/envio/enlace.ts) en modo 'acompanado', no se manda nada
+    // acá — la superusuaria revisa desde /panel y decide cuándo liberar
+    // (src/app/panel/actions.ts, liberarDocumentos, que reusa estos mismos
+    // PDF ya generados sin volver a llamar a Claude). En cualquier otro
+    // caso (sin link, o link en modo 'directo') el correo va al dueño de
+    // la cuenta, como siempre — el link 'directo' no cambia a quién le
+    // llega el correo, solo le da además acceso de descarga a la
+    // superusuaria desde el panel.
     const perfilEnvio = await admin.from('flow_perfiles').select('envio_link_id').eq('id', user.id).single();
-    let destinatarioCorreo = user.email;
+    let modoEnvio: string | null = null;
     if (perfilEnvio.data?.envio_link_id) {
       const { data: linkEnvio } = await admin
         .from('flow_links_envio')
-        .select('correo_destino')
+        .select('modo')
         .eq('id', perfilEnvio.data.envio_link_id)
         .maybeSingle();
-      if (linkEnvio?.correo_destino) destinatarioCorreo = linkEnvio.correo_destino;
+      modoEnvio = linkEnvio?.modo ?? null;
     }
+    const destinatarioCorreo = modoEnvio === 'acompanado' ? null : user.email;
 
     // Correo final con los 2 PDFs adjuntos. Si falla, no se revienta la
     // respuesta — el usuario siempre puede descargar ambos documentos

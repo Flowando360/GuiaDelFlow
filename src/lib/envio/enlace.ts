@@ -18,7 +18,14 @@ export async function vincularLinkEnvio(usuarioId: string, token: string): Promi
 
     if (!link) return;
 
-    await admin.from('flow_perfiles').update({ envio_link_id: link.id }).eq('id', usuarioId);
+    // autorizacion_envio_en queda como constancia de que la persona vio y
+    // aceptó la casilla de consentimiento del link (ver registro/page.tsx)
+    // antes de que su cuenta quedara vinculada — mismo patrón que
+    // autorizacion_circulo_en.
+    await admin
+      .from('flow_perfiles')
+      .update({ envio_link_id: link.id, autorizacion_envio_en: new Date().toISOString() })
+      .eq('id', usuarioId);
   } catch (error) {
     console.error('No se pudo vincular el link de envío:', error);
   }

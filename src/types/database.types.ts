@@ -2357,6 +2357,7 @@ export type Database = {
           completado_at: string | null
           created_at: string
           id: string
+          liberado_at: string | null
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           respuestas: Record<string, any>
           updated_at: string
@@ -2366,6 +2367,7 @@ export type Database = {
           completado_at?: string | null
           created_at?: string
           id?: string
+          liberado_at?: string | null
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           respuestas?: Record<string, any>
           updated_at?: string
@@ -2375,6 +2377,7 @@ export type Database = {
           completado_at?: string | null
           created_at?: string
           id?: string
+          liberado_at?: string | null
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           respuestas?: Record<string, any>
           updated_at?: string
@@ -2443,24 +2446,28 @@ export type Database = {
           creado_at: string
           etiqueta: string | null
           id: string
+          modo: string
         }
         Insert: {
           correo_destino: string
           creado_at?: string
           etiqueta?: string | null
           id?: string
+          modo?: string
         }
         Update: {
           correo_destino?: string
           creado_at?: string
           etiqueta?: string | null
           id?: string
+          modo?: string
         }
         Relationships: []
       }
       flow_perfiles: {
         Row: {
           autorizacion_circulo_en: string | null
+          autorizacion_envio_en: string | null
           colaborador_circulo_id: string | null
           created_at: string
           email: string
@@ -2471,6 +2478,7 @@ export type Database = {
         }
         Insert: {
           autorizacion_circulo_en?: string | null
+          autorizacion_envio_en?: string | null
           colaborador_circulo_id?: string | null
           created_at?: string
           email: string
@@ -2481,6 +2489,7 @@ export type Database = {
         }
         Update: {
           autorizacion_circulo_en?: string | null
+          autorizacion_envio_en?: string | null
           colaborador_circulo_id?: string | null
           created_at?: string
           email?: string

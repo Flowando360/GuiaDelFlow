@@ -1,13 +1,15 @@
 'use client';
 
 import { useActionState, useState } from 'react';
-import { crearLinksEnvio, type EstadoCrearLinks } from './actions';
+import { crearLinksEnvio, type EstadoCrearLinks } from '../actions';
+import { COPY_MODO_ENVIO } from '@/lib/envio/copy';
 
 const estadoInicial: EstadoCrearLinks = {};
 
 export function FormularioLinks() {
   const [estado, accion, enviando] = useActionState(crearLinksEnvio, estadoInicial);
   const [copiado, setCopiado] = useState(false);
+  const [modo, setModo] = useState<'directo' | 'acompanado'>('directo');
 
   async function copiarTodos() {
     if (!estado.links) return;
@@ -25,7 +27,7 @@ export function FormularioLinks() {
             name="correo_destino"
             type="email"
             required
-            placeholder="psicologo@correo.com"
+            placeholder="tucorreo@ejemplo.com"
             className="w-full rounded-lg border border-flow-200 bg-white px-3 py-2 text-sm text-flow-text outline-none focus:border-flow-600 focus:ring-2 focus:ring-flow-200"
           />
         </label>
@@ -48,17 +50,41 @@ export function FormularioLinks() {
         >
           {enviando ? 'Creando…' : 'Crear'}
         </button>
+
         <label className="block sm:col-span-3">
           <span className="mb-1 block text-sm font-semibold text-flow-900">
-            Etiqueta (opcional — para reconocerlo después, ej. nombre del profesional)
+            Etiqueta (opcional — para reconocerlo después, ej. nombre de la persona/consultorio)
           </span>
           <input
             name="etiqueta"
             type="text"
-            placeholder="Consultorio Dra. Pérez"
+            placeholder="Paciente Juan Pérez"
             className="w-full rounded-lg border border-flow-200 bg-white px-3 py-2 text-sm text-flow-text outline-none focus:border-flow-600 focus:ring-2 focus:ring-flow-200"
           />
         </label>
+
+        <fieldset className="sm:col-span-3">
+          <legend className="mb-2 block text-sm font-semibold text-flow-900">¿Cómo llegan los resultados?</legend>
+          <div className="grid gap-3 sm:grid-cols-2">
+            <OpcionModo
+              valor="directo"
+              seleccionado={modo === 'directo'}
+              onSelect={() => setModo('directo')}
+              titulo="Directo a la persona"
+              descripcion="La Guía y la Carta le llegan por correo a la persona apenas termina. Tú también puedes verla y descargarla desde el panel cuando quieras."
+            />
+            <OpcionModo
+              valor="acompanado"
+              seleccionado={modo === 'acompanado'}
+              onSelect={() => setModo('acompanado')}
+              titulo="Acompañado (yo la reviso primero)"
+              descripcion="No se manda nada automático. Tú la revisas desde el panel y decides cuándo liberarla — ahí le llega a la persona y queda descargable para ella."
+            />
+          </div>
+          <p className="mt-3 rounded-lg bg-flow-50 px-3 py-2 text-xs italic text-flow-700">
+            {COPY_MODO_ENVIO[modo].texto}
+          </p>
+        </fieldset>
       </form>
 
       {estado.error && <p className="mt-4 text-sm font-semibold text-red-600">{estado.error}</p>}
@@ -87,5 +113,31 @@ export function FormularioLinks() {
         </div>
       )}
     </div>
+  );
+}
+
+function OpcionModo({
+  valor,
+  seleccionado,
+  onSelect,
+  titulo,
+  descripcion,
+}: {
+  valor: string;
+  seleccionado: boolean;
+  onSelect: () => void;
+  titulo: string;
+  descripcion: string;
+}) {
+  return (
+    <label
+      className={`block cursor-pointer rounded-xl border p-3 text-sm transition ${
+        seleccionado ? 'border-flow-500 bg-flow-50' : 'border-flow-200 bg-white hover:border-flow-300'
+      }`}
+    >
+      <input type="radio" name="modo" value={valor} checked={seleccionado} onChange={onSelect} className="sr-only" />
+      <span className="block font-semibold text-flow-900">{titulo}</span>
+      <span className="mt-1 block text-xs text-flow-700">{descripcion}</span>
+    </label>
   );
 }

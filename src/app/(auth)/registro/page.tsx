@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { registrarse, type EstadoAuth } from '../actions';
 import { IMG } from '@/lib/imagenesWeb';
 import { CampoContrasena } from '@/components/CampoContrasena';
+import { COPY_MODO_ENVIO } from '@/lib/envio/copy';
 
 const estadoInicial: EstadoAuth = {};
 
@@ -51,6 +52,18 @@ function FormularioRegistro() {
       })
       .finally(() => setCargandoInvitacion(false));
   }, [token]);
+
+  // Link de envío (?envio=) — solo necesitamos saber el modo para mostrar
+  // el aviso de consentimiento correcto (ver src/lib/envio/copy.ts). Nunca
+  // se pide correo_destino ni etiqueta acá, esos son internos.
+  const [modoEnvio, setModoEnvio] = useState<'directo' | 'acompanado' | null>(null);
+  useEffect(() => {
+    if (!envioToken) return;
+    fetch(`/api/envio/modo?id=${encodeURIComponent(envioToken)}`)
+      .then((r) => r.json())
+      .then((data: { modo: 'directo' | 'acompanado' | null }) => setModoEnvio(data.modo))
+      .catch(() => setModoEnvio(null));
+  }, [envioToken]);
 
   if (cargandoInvitacion) {
     return <Cargando />;
@@ -110,6 +123,21 @@ function FormularioRegistro() {
                   : 'Si mi correo coincide con el de una empresa cliente de FlowAndo, autorizo que un resumen de 18 de mis resultados (talentos, propósito, liderazgo, comunicación, trabajo en equipo y similares — nunca los psicológicos/personales ni mi Guía completa) se comparta con esa empresa dentro de Círculo de Crecimiento, para fines de desarrollo profesional. Puedo revocar esta autorización cuando quiera.'}
               </span>
             </label>
+
+            {envioToken && modoEnvio && (
+              <label className="flex items-start gap-2.5 text-xs text-flow-800">
+                <input
+                  type="checkbox"
+                  name="autorizacion_envio"
+                  value="si"
+                  required
+                  className="mt-0.5 h-4 w-4 shrink-0 rounded border-flow-300 text-flow-600 focus:ring-flow-400"
+                />
+                <span>
+                  <strong>{COPY_MODO_ENVIO[modoEnvio].titulo}.</strong> {COPY_MODO_ENVIO[modoEnvio].texto}
+                </span>
+              </label>
+            )}
 
             {estado.error && <p className="text-sm font-semibold text-red-600">{estado.error}</p>}
 

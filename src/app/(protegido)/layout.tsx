@@ -4,6 +4,7 @@ import { createClient } from '@/lib/supabase/server';
 import { cerrarSesion } from '../(auth)/actions';
 import { IMG } from '@/lib/imagenesWeb';
 import { asegurarPerfil } from '@/lib/perfil/asegurar';
+import { esAdmin } from '@/lib/envio/admin';
 
 export default async function ProtegidoLayout({ children }: LayoutProps<'/'>) {
   const supabase = await createClient();
@@ -13,6 +14,13 @@ export default async function ProtegidoLayout({ children }: LayoutProps<'/'>) {
 
   if (!user) {
     redirect('/login');
+  }
+
+  // La cuenta de la superusuaria (FlowAndo) nunca debe caer en el
+  // cuestionario/resultado como si fuera una persona diligenciándolo —
+  // tiene su propia experiencia en /panel.
+  if (esAdmin(user.email)) {
+    redirect('/panel');
   }
 
   await asegurarPerfil(user);
