@@ -46,6 +46,19 @@ export async function registrarse(_prev: EstadoAuth, formData: FormData): Promis
     return { error: error.message };
   }
 
+  // Cuando el correo ya tiene una cuenta CONFIRMADA, Supabase no lo dice
+  // con un error — por diseño, para no revelar a un atacante qué correos
+  // están registrados, signUp() responde como si hubiera creado una cuenta
+  // nueva (sin mandar ningún correo de verdad) y el formulario redirige a
+  // "revisa tu correo" sin que nunca llegue nada. La señal real está acá:
+  // Supabase devuelve el usuario existente pero con identities: [] (un
+  // registro genuinamente nuevo trae al menos una identity). Sin este
+  // chequeo, la persona queda esperando un correo que nunca se manda, sin
+  // ninguna pista de por qué.
+  if (data.user && data.user.identities && data.user.identities.length === 0) {
+    return { error: 'Ese correo ya tiene una cuenta — probá iniciar sesión en vez de crear una nueva.' };
+  }
+
   if (data.user) {
     // Queda registrada la autorización explícita — sincronizar.ts nunca
     // comparte nada sin esto, sin importar si hay match por correo o
