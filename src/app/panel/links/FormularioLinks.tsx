@@ -22,12 +22,12 @@ export function FormularioLinks() {
     <div className="rounded-2xl bg-white/70 p-6 shadow-sm ring-1 ring-flow-200 backdrop-blur">
       <form action={accion} className="grid gap-4 sm:grid-cols-[2fr_1fr_auto] sm:items-end">
         <label className="block">
-          <span className="mb-1 block text-sm font-semibold text-flow-900">Correo de destino</span>
+          <span className="mb-1 block text-sm font-semibold text-flow-900">Nombre del paciente</span>
           <input
-            name="correo_destino"
-            type="email"
+            name="etiqueta"
+            type="text"
             required
-            placeholder="tucorreo@ejemplo.com"
+            placeholder="Juan Pérez"
             className="w-full rounded-lg border border-flow-200 bg-white px-3 py-2 text-sm text-flow-text outline-none focus:border-flow-600 focus:ring-2 focus:ring-flow-200"
           />
         </label>
@@ -53,12 +53,12 @@ export function FormularioLinks() {
 
         <label className="block sm:col-span-3">
           <span className="mb-1 block text-sm font-semibold text-flow-900">
-            Etiqueta (opcional — para reconocerlo después, ej. nombre de la persona/consultorio)
+            Correo del paciente (opcional — solo si ya lo tienes, es únicamente para tu propia referencia)
           </span>
           <input
-            name="etiqueta"
-            type="text"
-            placeholder="Paciente Juan Pérez"
+            name="correo_destino"
+            type="email"
+            placeholder="tucorreo@ejemplo.com"
             className="w-full rounded-lg border border-flow-200 bg-white px-3 py-2 text-sm text-flow-text outline-none focus:border-flow-600 focus:ring-2 focus:ring-flow-200"
           />
         </label>

@@ -38,8 +38,8 @@ export default async function LinksEnvioPage() {
             <table className="w-full text-left text-sm">
               <thead className="bg-flow-50 text-xs font-semibold uppercase tracking-wide text-flow-700">
                 <tr>
-                  <th className="px-3 py-2">Destino</th>
-                  <th className="px-3 py-2">Etiqueta</th>
+                  <th className="px-3 py-2">Paciente</th>
+                  <th className="px-3 py-2">Correo</th>
                   <th className="px-3 py-2">Modo</th>
                   <th className="px-3 py-2">Creado</th>
                   <th className="px-3 py-2">Usado</th>
@@ -48,8 +48,8 @@ export default async function LinksEnvioPage() {
               <tbody>
                 {links.map((link) => (
                   <tr key={link.id} className="border-t border-flow-100">
-                    <td className="px-3 py-2">{link.correo_destino}</td>
-                    <td className="px-3 py-2 text-flow-700">{link.etiqueta ?? '—'}</td>
+                    <td className="px-3 py-2">{link.etiqueta ?? '—'}</td>
+                    <td className="px-3 py-2 text-flow-700">{link.correo_destino ?? '—'}</td>
                     <td className="px-3 py-2 text-flow-700">
                       {link.modo === 'acompanado' ? 'Acompañado' : 'Directo'}
                     </td>

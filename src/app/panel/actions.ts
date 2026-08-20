@@ -20,14 +20,19 @@ export async function crearLinksEnvio(_prev: EstadoCrearLinks, formData: FormDat
     return { error: 'No autorizado.' };
   }
 
-  const correoDestino = String(formData.get('correo_destino') ?? '').trim();
+  const correoDestino = String(formData.get('correo_destino') ?? '').trim() || null;
   const etiqueta = String(formData.get('etiqueta') ?? '').trim() || null;
   const modo = String(formData.get('modo') ?? 'directo');
   const cantidadCruda = Number(formData.get('cantidad'));
   const cantidad = Math.max(1, Math.min(100, Number.isFinite(cantidadCruda) ? cantidadCruda : 1));
 
-  if (!correoDestino || !correoDestino.includes('@')) {
-    return { error: 'Escribe un correo de destino válido.' };
+  // El correo es opcional — casi nunca se tiene al crear el link (ver
+  // migración 0007). Basta con el nombre del paciente para identificarlo.
+  if (!etiqueta) {
+    return { error: 'Escribe el nombre del paciente.' };
+  }
+  if (correoDestino && !correoDestino.includes('@')) {
+    return { error: 'El correo no es válido — déjalo vacío si todavía no lo tienes.' };
   }
   if (modo !== 'directo' && modo !== 'acompanado') {
     return { error: 'Modo inválido.' };
