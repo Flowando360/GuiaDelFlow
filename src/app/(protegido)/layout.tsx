@@ -3,6 +3,7 @@ import { redirect } from 'next/navigation';
 import { createClient } from '@/lib/supabase/server';
 import { cerrarSesion } from '../(auth)/actions';
 import { IMG } from '@/lib/imagenesWeb';
+import { asegurarPerfil } from '@/lib/perfil/asegurar';
 
 export default async function ProtegidoLayout({ children }: LayoutProps<'/'>) {
   const supabase = await createClient();
@@ -13,6 +14,8 @@ export default async function ProtegidoLayout({ children }: LayoutProps<'/'>) {
   if (!user) {
     redirect('/login');
   }
+
+  await asegurarPerfil(user);
 
   return (
     <div className="flex min-h-screen flex-1 flex-col">
