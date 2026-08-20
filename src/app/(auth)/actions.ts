@@ -7,6 +7,7 @@ import { vincularLinkEnvio } from '@/lib/envio/enlace';
 
 export interface EstadoAuth {
   error?: string;
+  mensaje?: string;
 }
 
 export async function registrarse(_prev: EstadoAuth, formData: FormData): Promise<EstadoAuth> {
@@ -108,10 +109,71 @@ export async function iniciarSesion(_prev: EstadoAuth, formData: FormData): Prom
   const { error } = await supabase.auth.signInWithPassword({ email, password });
 
   if (error) {
-    if (error.message.toLowerCase().includes('email not confirmed')) {
+    // Antes esto caía siempre en "correo o contraseña incorrectos" sin
+    // importar la causa real — con una cuenta bloqueada (ban_duration en
+    // Supabase) o cualquier otro error distinto a credenciales inválidas,
+    // eso es directamente falso y confunde a quien lee "pero si mi
+    // contraseña SÍ es correcta". Se distinguen los casos que sí tienen
+    // una causa concreta y un mensaje honesto.
+    const mensaje = error.message.toLowerCase();
+    if (mensaje.includes('email not confirmed')) {
       return { error: 'Todavía no confirmaste tu correo — revisá tu bandeja de entrada.' };
     }
+    if (error.code === 'user_banned' || mensaje.includes('banned')) {
+      return { error: 'Esta cuenta está bloqueada. Escribinos si creés que es un error.' };
+    }
+    if (error.code !== 'invalid_credentials' && !mensaje.includes('invalid login credentials')) {
+      return { error: `No se pudo iniciar sesión: ${error.message}` };
+    }
     return { error: 'Correo o contraseña incorrectos.' };
+  }
+
+  redirect('/cuestionario');
+}
+
+export async function recuperarContrasena(_prev: EstadoAuth, formData: FormData): Promise<EstadoAuth> {
+  const email = String(formData.get('email') ?? '').trim();
+  if (!email) {
+    return { error: 'Escribe tu correo.' };
+  }
+
+  const supabase = await createClient();
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000';
+
+  await supabase.auth.resetPasswordForEmail(email, {
+    redirectTo: `${siteUrl}/auth/callback?next=/nueva-contrasena`,
+  });
+
+  // Siempre el mismo mensaje exista o no la cuenta con ese correo — evita
+  // revelar qué correos están registrados (mismo motivo que el chequeo de
+  // identities en registrarse()).
+  return {
+    mensaje: 'Si ese correo tiene una cuenta, te mandamos un link para restablecer tu contraseña. Revisa tu bandeja de entrada (y spam).',
+  };
+}
+
+export async function actualizarContrasena(_prev: EstadoAuth, formData: FormData): Promise<EstadoAuth> {
+  const password = String(formData.get('password') ?? '');
+  if (password.length < 8) {
+    return { error: 'La contraseña debe tener al menos 8 caracteres.' };
+  }
+
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  // El link de "olvidé mi contraseña" deja una sesión temporal de
+  // recuperación al hacer clic (vía /auth/callback) — si no hay sesión acá
+  // es porque el link ya expiró, ya se usó, o llegaron directo sin pasar
+  // por ese link.
+  if (!user) {
+    return { error: 'Este link ya expiró o no es válido — pedí uno nuevo desde "Olvidé mi contraseña".' };
+  }
+
+  const { error } = await supabase.auth.updateUser({ password });
+  if (error) {
+    return { error: error.message };
   }
 
   redirect('/cuestionario');

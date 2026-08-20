@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { iniciarSesion, type EstadoAuth } from '../actions';
 import { IMG } from '@/lib/imagenesWeb';
+import { CampoContrasena } from '@/components/CampoContrasena';
 
 const estadoInicial: EstadoAuth = {};
 
@@ -56,16 +57,13 @@ function LoginContenido() {
                 className="w-full rounded-lg border border-flow-200 bg-white px-3 py-2 text-sm text-flow-text outline-none focus:border-flow-600 focus:ring-2 focus:ring-flow-200"
               />
             </label>
-            <label className="block">
-              <span className="mb-1 block text-sm font-semibold text-flow-900">Contraseña</span>
-              <input
-                name="password"
-                type="password"
-                required
-                autoComplete="current-password"
-                className="w-full rounded-lg border border-flow-200 bg-white px-3 py-2 text-sm text-flow-text outline-none focus:border-flow-600 focus:ring-2 focus:ring-flow-200"
-              />
-            </label>
+            <CampoContrasena id="password" etiqueta="Contraseña" autoComplete="current-password" />
+
+            <p className="text-right text-sm">
+              <Link href="/recuperar" className="font-semibold text-flow-600 hover:underline">
+                ¿Olvidaste tu contraseña?
+              </Link>
+            </p>
 
             {estado.error && <p className="text-sm font-semibold text-red-600">{estado.error}</p>}
 

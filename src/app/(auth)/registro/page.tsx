@@ -6,6 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { registrarse, type EstadoAuth } from '../actions';
 import { IMG } from '@/lib/imagenesWeb';
+import { CampoContrasena } from '@/components/CampoContrasena';
 
 const estadoInicial: EstadoAuth = {};
 
@@ -88,11 +89,11 @@ function FormularioRegistro() {
             <input type="hidden" name="envio_token" value={envioToken ?? ''} />
             <Campo id="nombre_completo" etiqueta="Nombres y apellidos" tipo="text" autoComplete="name" defaultValue={prellenado.nombre_completo} />
             <Campo id="email" etiqueta="Correo electrónico" tipo="email" autoComplete="email" defaultValue={prellenado.email} />
-            <Campo
+            <CampoContrasena
               id="password"
               etiqueta="Contraseña (mínimo 8 caracteres)"
-              tipo="password"
               autoComplete="new-password"
+              minLength={8}
             />
 
             <label className="flex items-start gap-2.5 text-xs text-flow-800">
