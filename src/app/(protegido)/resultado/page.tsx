@@ -93,6 +93,12 @@ export default async function ResultadoPage() {
             <p className="mt-3 text-sm leading-relaxed text-flow-800">
               La escribimos especialmente para ti a partir de todo lo que respondiste.
             </p>
+            {!cartaLista && (
+              <p className="mt-3 rounded-lg bg-flow-50 px-3 py-2 text-sm font-semibold text-flow-700">
+                No olvides generar también tu Carta más abajo — el correo con los dos documentos te llega solo
+                cuando generas ambos.
+              </p>
+            )}
             <a
               href="/api/descargar/guia"
               className="mt-6 inline-block w-full rounded-full bg-flow-600 px-6 py-3 text-sm font-bold text-white transition hover:bg-flow-800"
