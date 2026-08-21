@@ -89,6 +89,18 @@ export function FormularioLinks() {
 
       {estado.error && <p className="mt-4 text-sm font-semibold text-red-600">{estado.error}</p>}
 
+      {estado.correoEnviado && (
+        <p className="mt-4 text-sm font-semibold text-flow-700">
+          💜 Le mandamos la invitación por correo a {estado.correoEnviado}.
+        </p>
+      )}
+      {estado.correoError && (
+        <p className="mt-4 text-sm font-semibold text-red-600">
+          El link se creó bien, pero no se pudo mandar el correo de invitación ({estado.correoError}). Puedes
+          copiar el link de abajo y mandárselo tú.
+        </p>
+      )}
+
       {estado.links && estado.links.length > 0 && (
         <div className="mt-6">
           <div className="mb-2 flex items-center justify-between">

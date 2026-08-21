@@ -3,11 +3,13 @@
 import { revalidatePath } from 'next/cache';
 import { createClient, createAdminClient } from '@/lib/supabase/server';
 import { esAdmin } from '@/lib/envio/admin';
-import { enviarCorreoDocumentos } from '@/lib/email/enviar';
+import { enviarCorreoDocumentos, enviarCorreoInvitacion } from '@/lib/email/enviar';
 
 export interface EstadoCrearLinks {
   error?: string;
   links?: string[];
+  correoEnviado?: string;
+  correoError?: string;
 }
 
 export async function crearLinksEnvio(_prev: EstadoCrearLinks, formData: FormData): Promise<EstadoCrearLinks> {
@@ -53,6 +55,19 @@ export async function crearLinksEnvio(_prev: EstadoCrearLinks, formData: FormDat
   const links = (data ?? []).map((fila) => `${siteUrl}/registro?envio=${fila.id}`);
 
   revalidatePath('/panel/links');
+
+  // Solo se manda invitación por correo cuando hay UN paciente concreto
+  // (un solo link) con correo — un lote de varios links comparte el mismo
+  // correo_destino de referencia, así que mandarle el mismo correo N veces
+  // no tendría sentido.
+  if (correoDestino && cantidad === 1 && links[0]) {
+    const resultado = await enviarCorreoInvitacion({ destinatario: correoDestino, nombre: etiqueta, urlLink: links[0] });
+    if (resultado.ok) {
+      return { links, correoEnviado: correoDestino };
+    }
+    return { links, correoError: resultado.error };
+  }
+
   return { links };
 }
 
