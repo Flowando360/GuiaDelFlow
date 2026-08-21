@@ -9,7 +9,7 @@ import type { GuiaCondensada, SeccionGuia } from './tipos';
 import type { ResultadosCalculados } from '../../calculo/tipos';
 
 const MODELO = 'claude-sonnet-5';
-const MAX_TOKENS = 6000; // cada llamada ahora es un capítulo, no la Guía entera
+const MAX_TOKENS = 8000; // cada llamada ahora es un capítulo, no la Guía entera
 
 async function llamarClaude<T>(prompt: string, tool: Anthropic.Tool): Promise<T> {
   const respuesta = await clienteClaude().messages.create({
@@ -19,7 +19,30 @@ async function llamarClaude<T>(prompt: string, tool: Anthropic.Tool): Promise<T>
     tool_choice: { type: 'tool', name: tool.name },
     messages: [{ role: 'user', content: prompt }],
   });
+
+  // Si Claude se quedó sin tokens a mitad del tool_use (capítulo largo,
+  // ej. Talentos con muchos ítems), el JSON queda incompleto — algunos
+  // campos requeridos del schema (típicamente el array, que va al final)
+  // simplemente no llegan. Sin este chequeo, eso se cuela como un objeto
+  // "válido" con campos undefined y explota después, más abajo, con un
+  // error genérico tipo "Cannot read properties of undefined (reading
+  // 'length')" en plantilla.ts — ya con la llamada (y su costo) hecha y
+  // sin pista de qué pasó. Fallar acá, con el motivo claro, deja el mismo
+  // costo ya gastado pero al menos identificable en error_detalle.
+  if (respuesta.stop_reason === 'max_tokens') {
+    throw new Error(
+      `Claude cortó la respuesta de "${tool.name}" por límite de tokens (max_tokens=${MAX_TOKENS}) — el capítulo quedó incompleto.`
+    );
+  }
+
   return corregirCamposStringificados(extraerToolUse<Record<string, unknown>>(respuesta, tool.name)) as T;
+}
+
+/** Revienta con un mensaje claro (campo + capítulo) si el array esperado no llegó completo. */
+function exigirArrayNoVacio(valor: unknown, campo: string, capitulo: string): asserts valor is SeccionGuia[] {
+  if (!Array.isArray(valor) || valor.length === 0) {
+    throw new Error(`Claude no devolvió "${campo}" en "${capitulo}" (respuesta incompleta o malformada).`);
+  }
 }
 
 /**
@@ -68,6 +91,16 @@ export async function generarGuiaCondensada(datos: {
     llamarClaude<{ pertenencia: SeccionGuia[] }>(promptPertenencia(nombre, resultados), ESQUEMA_PERTENENCIA),
     llamarClaude<{ desafios: SeccionGuia[] }>(promptDesafios(nombre, resultados), ESQUEMA_DESAFIOS),
   ]);
+
+  // Las 4 llamadas ya se hicieron (y ya se cobraron) — validar acá, antes
+  // de construir el PDF, para que si algo vino incompleto el error diga
+  // exactamente cuál capítulo y campo falló, en vez de un genérico
+  // "Cannot read properties of undefined (reading 'length')" varios pasos
+  // después en plantilla.ts.
+  exigirArrayNoVacio(talentos.talentos, 'talentos', 'Talentos');
+  exigirArrayNoVacio(emociones.emociones, 'emociones', 'Emociones');
+  exigirArrayNoVacio(pertenencia.pertenencia, 'pertenencia', 'Pertenencia');
+  exigirArrayNoVacio(desafios.desafios, 'desafios', 'Desafíos');
 
   return {
     nombre,
