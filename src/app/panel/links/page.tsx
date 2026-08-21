@@ -1,5 +1,5 @@
 import { createAdminClient } from '@/lib/supabase/server';
-import { FormularioLinks } from './FormularioLinks';
+import { FormularioLinks, BotonEliminarLink } from './FormularioLinks';
 
 export default async function LinksEnvioPage() {
   const admin = createAdminClient();
@@ -43,6 +43,7 @@ export default async function LinksEnvioPage() {
                   <th className="px-3 py-2">Modo</th>
                   <th className="px-3 py-2">Creado</th>
                   <th className="px-3 py-2">Usado</th>
+                  <th className="px-3 py-2"></th>
                 </tr>
               </thead>
               <tbody>
@@ -66,6 +67,9 @@ export default async function LinksEnvioPage() {
                       ) : (
                         <span className="text-flow-400">No</span>
                       )}
+                    </td>
+                    <td className="px-3 py-2 text-right">
+                      <BotonEliminarLink linkId={link.id} />
                     </td>
                   </tr>
                 ))}

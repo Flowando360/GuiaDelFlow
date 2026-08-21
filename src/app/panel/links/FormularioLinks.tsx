@@ -1,7 +1,7 @@
 'use client';
 
-import { useActionState, useState } from 'react';
-import { crearLinksEnvio, type EstadoCrearLinks } from '../actions';
+import { useActionState, useState, useTransition } from 'react';
+import { crearLinksEnvio, eliminarLinkEnvio, type EstadoCrearLinks } from '../actions';
 import { COPY_MODO_ENVIO } from '@/lib/envio/copy';
 
 const estadoInicial: EstadoCrearLinks = {};
@@ -125,6 +125,48 @@ export function FormularioLinks() {
         </div>
       )}
     </div>
+  );
+}
+
+export function BotonEliminarLink({ linkId }: { linkId: string }) {
+  const [pendiente, iniciar] = useTransition();
+  const [error, setError] = useState<string | null>(null);
+  const [confirmando, setConfirmando] = useState(false);
+
+  function onClick() {
+    if (!confirmando) {
+      setConfirmando(true);
+      return;
+    }
+    setError(null);
+    iniciar(async () => {
+      const resultado = await eliminarLinkEnvio(linkId);
+      if (!resultado.ok) {
+        setError(resultado.error ?? 'No se pudo eliminar.');
+        setConfirmando(false);
+      }
+      // si sale bien, revalidatePath ya quita la fila de la tabla — no hay
+      // más que hacer acá.
+    });
+  }
+
+  return (
+    <span className="inline-flex flex-col items-end gap-1">
+      <button
+        type="button"
+        onClick={onClick}
+        onBlur={() => setConfirmando(false)}
+        disabled={pendiente}
+        className={`rounded-full px-3 py-1 text-xs font-bold transition disabled:opacity-60 ${
+          confirmando
+            ? 'bg-red-600 text-white hover:bg-red-700'
+            : 'border border-flow-300 bg-white text-flow-700 hover:border-red-400 hover:text-red-600'
+        }`}
+      >
+        {pendiente ? 'Eliminando…' : confirmando ? '¿Seguro? Confirmar' : 'Eliminar'}
+      </button>
+      {error && <span className="text-xs font-semibold text-red-600">{error}</span>}
+    </span>
   );
 }
 

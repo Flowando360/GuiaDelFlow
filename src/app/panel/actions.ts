@@ -71,6 +71,41 @@ export async function crearLinksEnvio(_prev: EstadoCrearLinks, formData: FormDat
   return { links };
 }
 
+export interface EstadoEliminar {
+  ok: boolean;
+  error?: string;
+}
+
+/**
+ * Borra un link de envío por completo de la base de datos, sin importar si
+ * ya fue usado por alguien para registrarse. flow_perfiles.envio_link_id
+ * tiene "on delete set null" (ver migración 0005), así que si el link ya
+ * tenía cuentas registradas, esas cuentas simplemente quedan con
+ * envio_link_id = null (dejan de aparecer en /panel, pero la cuenta y sus
+ * documentos generados no se tocan).
+ */
+export async function eliminarLinkEnvio(linkId: string): Promise<EstadoEliminar> {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!esAdmin(user?.email)) {
+    return { ok: false, error: 'No autorizado.' };
+  }
+
+  const admin = createAdminClient();
+  const { error } = await admin.from('flow_links_envio').delete().eq('id', linkId);
+
+  if (error) {
+    return { ok: false, error: error.message };
+  }
+
+  revalidatePath('/panel/links');
+  revalidatePath('/panel');
+  return { ok: true };
+}
+
 export interface EstadoLiberar {
   ok: boolean;
   error?: string;
