@@ -6,9 +6,10 @@ export const runtime = 'nodejs';
 
 /**
  * Igual que /api/descargar/[tipo], pero para que la superusuaria descargue
- * el documento de CUALQUIER persona registrada con uno de sus links de
- * envío (no el suyo propio) — ver /panel. Nunca regenera nada, solo sirve
- * el PDF que ya está guardado en Storage.
+ * el documento de cualquier persona registrada con uno de sus links de
+ * envío, o invitada desde Círculo de Crecimiento por una empresa cliente
+ * (no el suyo propio) — ver /panel. Nunca regenera nada, solo sirve el PDF
+ * que ya está guardado en Storage.
  */
 export async function GET(
   _req: Request,
@@ -30,7 +31,9 @@ export async function GET(
   const admin = createAdminClient();
 
   // Confirma que el cuestionario pertenece a alguien registrado con un link
-  // de envío — evita usar esta ruta para asomarse a cuentas orgánicas.
+  // de envío o invitado desde Círculo de Crecimiento — evita usar esta ruta
+  // para asomarse a cuentas orgánicas (registro público sin relación con
+  // ningún cliente).
   const { data: cuestionario } = await admin
     .from('flow_cuestionarios')
     .select('id, usuario_id')
@@ -42,11 +45,11 @@ export async function GET(
 
   const { data: perfil } = await admin
     .from('flow_perfiles')
-    .select('envio_link_id')
+    .select('envio_link_id, colaborador_circulo_id')
     .eq('id', cuestionario.usuario_id)
     .maybeSingle();
-  if (!perfil?.envio_link_id) {
-    return NextResponse.json({ error: 'Esa cuenta no vino de un link de envío.' }, { status: 403 });
+  if (!perfil?.envio_link_id && !perfil?.colaborador_circulo_id) {
+    return NextResponse.json({ error: 'Esa cuenta no vino de un link tuyo ni de una invitación.' }, { status: 403 });
   }
 
   const { data: documento } = await admin

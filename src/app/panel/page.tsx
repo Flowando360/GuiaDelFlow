@@ -5,6 +5,7 @@ interface FilaPanel {
   usuarioId: string;
   nombre: string;
   email: string;
+  empresa: string | null;
   etiqueta: string | null;
   modo: string;
   cuestionarioId: string | null;
@@ -17,27 +18,52 @@ interface FilaPanel {
 export default async function PanelPage() {
   const admin = createAdminClient();
 
+  // Una cuenta llega acá por dos caminos: un link de envío manual
+  // (envio_link_id, ver 0005) o una invitación desde Círculo de Crecimiento
+  // (colaborador_circulo_id, ver 0004) -- este segundo es el camino real de
+  // casi todos los colaboradores hoy (Mármoles y Servicios y las empresas
+  // que vengan después). Cuentas sin ninguno de los dos (registro público
+  // orgánico, sin relación con ningún cliente) quedan afuera a propósito.
   const { data: perfiles } = await admin
     .from('flow_perfiles')
-    .select('id, nombre_completo, email, envio_link_id')
-    .not('envio_link_id', 'is', null)
+    .select('id, nombre_completo, email, envio_link_id, colaborador_circulo_id')
+    .or('envio_link_id.not.is.null,colaborador_circulo_id.not.is.null')
     .order('created_at', { ascending: false });
 
   if (!perfiles || perfiles.length === 0) {
     return <PanelVacio />;
   }
 
-  const linkIds = [...new Set(perfiles.map((p) => p.envio_link_id as string))];
+  const linkIds = [...new Set(perfiles.map((p) => p.envio_link_id).filter((id): id is string => Boolean(id)))];
+  const colaboradorIds = [
+    ...new Set(perfiles.map((p) => p.colaborador_circulo_id).filter((id): id is string => Boolean(id))),
+  ];
   const usuarioIds = perfiles.map((p) => p.id);
 
-  const [{ data: links }, { data: cuestionarios }] = await Promise.all([
-    admin.from('flow_links_envio').select('id, etiqueta, modo, correo_destino').in('id', linkIds),
+  const [{ data: links }, { data: cuestionarios }, { data: colaboradores }] = await Promise.all([
+    linkIds.length > 0
+      ? admin.from('flow_links_envio').select('id, etiqueta, modo, correo_destino').in('id', linkIds)
+      : Promise.resolve({ data: [] as { id: string; etiqueta: string | null; modo: string; correo_destino: string | null }[] }),
     admin
       .from('flow_cuestionarios')
       .select('id, usuario_id, completado_at, liberado_at, created_at')
       .in('usuario_id', usuarioIds)
       .order('created_at', { ascending: false }),
+    colaboradorIds.length > 0
+      ? admin.from('colaboradores').select('id, empresa_id').in('id', colaboradorIds)
+      : Promise.resolve({ data: [] as { id: string; empresa_id: string }[] }),
   ]);
+
+  const empresaIds = [...new Set((colaboradores ?? []).map((c) => c.empresa_id))];
+  const { data: empresas } =
+    empresaIds.length > 0
+      ? await admin.from('empresas').select('id, nombre').in('id', empresaIds)
+      : { data: [] as { id: string; nombre: string }[] };
+
+  const empresaNombrePorId = new Map((empresas ?? []).map((e) => [e.id, e.nombre]));
+  const empresaPorColaborador = new Map(
+    (colaboradores ?? []).map((c) => [c.id, empresaNombrePorId.get(c.empresa_id) ?? null])
+  );
 
   const linkPorId = new Map((links ?? []).map((l) => [l.id, l]));
 
@@ -62,13 +88,14 @@ export default async function PanelPage() {
   }
 
   const filas: FilaPanel[] = perfiles.map((p) => {
-    const link = linkPorId.get(p.envio_link_id as string);
+    const link = p.envio_link_id ? linkPorId.get(p.envio_link_id) : undefined;
     const cuestionario = cuestionarioPorUsuario.get(p.id);
     const docs = cuestionario ? (docsPorCuestionario.get(cuestionario.id) ?? {}) : {};
     return {
       usuarioId: p.id,
       nombre: p.nombre_completo,
       email: p.email,
+      empresa: p.colaborador_circulo_id ? (empresaPorColaborador.get(p.colaborador_circulo_id) ?? null) : null,
       etiqueta: link?.etiqueta ?? null,
       modo: link?.modo ?? 'directo',
       cuestionarioId: cuestionario?.id ?? null,
@@ -84,8 +111,9 @@ export default async function PanelPage() {
       <p className="text-xs font-bold uppercase tracking-widest text-flow-600">Guía del Flow · Panel</p>
       <h1 className="mt-1 font-serif text-2xl font-bold text-flow-900">Tus registros</h1>
       <p className="mt-2 text-sm text-flow-800">
-        Personas que se registraron con alguno de tus links de envío. Desde acá puedes descargar su Guía y su
-        Carta, y liberarlas cuando el link es de modo acompañado.
+        Personas que se registraron con alguno de tus links de envío, o invitadas desde Círculo de Crecimiento
+        por una empresa cliente. Desde acá puedes descargar su Guía y su Carta, y liberarlas cuando el link es
+        de modo acompañado.
       </p>
 
       <div className="mt-6 overflow-x-auto rounded-xl ring-1 ring-flow-200">
@@ -93,8 +121,8 @@ export default async function PanelPage() {
           <thead className="bg-flow-50 text-xs font-semibold uppercase tracking-wide text-flow-700">
             <tr>
               <th className="px-3 py-2">Nombre</th>
-              <th className="px-3 py-2">Etiqueta</th>
-              <th className="px-3 py-2">Modo</th>
+              <th className="px-3 py-2">Empresa / Etiqueta</th>
+              <th className="px-3 py-2">Origen</th>
               <th className="px-3 py-2">Estado</th>
               <th className="px-3 py-2">Documentos</th>
             </tr>
@@ -106,9 +134,9 @@ export default async function PanelPage() {
                   <div className="font-semibold text-flow-900">{fila.nombre}</div>
                   <div className="text-xs text-flow-600">{fila.email}</div>
                 </td>
-                <td className="px-3 py-3 text-flow-700">{fila.etiqueta ?? '—'}</td>
+                <td className="px-3 py-3 text-flow-700">{fila.empresa ?? fila.etiqueta ?? '—'}</td>
                 <td className="px-3 py-3 text-flow-700">
-                  {fila.modo === 'acompanado' ? 'Acompañado' : 'Directo'}
+                  {fila.empresa ? 'Círculo de Crecimiento' : fila.modo === 'acompanado' ? 'Acompañado' : 'Directo'}
                 </td>
                 <td className="px-3 py-3 text-flow-700">
                   {!fila.completado
