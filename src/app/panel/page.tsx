@@ -1,5 +1,5 @@
 import { createAdminClient } from '@/lib/supabase/server';
-import { BotonLiberar, BotonDescargar } from './Acciones';
+import { BotonLiberar, BotonDescargar, BotonReintentar } from './Acciones';
 
 interface FilaPanel {
   usuarioId: string;
@@ -13,6 +13,30 @@ interface FilaPanel {
   liberadoAt: string | null;
   guiaLista: boolean;
   cartaLista: boolean;
+  guiaEstado: string | null;
+  cartaEstado: string | null;
+}
+
+/**
+ * Todo el proceso de generación depende de que la persona deje su pestaña
+ * abierta un par de minutos después de responder -- no hay reintento
+ * automático. Este texto distingue los 3 formas en que puede quedar
+ * atascado (nunca arrancó / se cortó a mitad de camino / reventó con un
+ * error real) de lo que sí es solo cuestión de esperar, para que quede
+ * claro cuándo conviene usar "Reintentar".
+ */
+function textoEstado(fila: FilaPanel): string {
+  if (!fila.completado) return 'Sin terminar el cuestionario';
+  if (fila.guiaEstado === 'error') return 'Error generando la Guía';
+  if (fila.cartaEstado === 'error') return 'Error generando la Carta';
+  if (!fila.guiaEstado) return 'Nunca se generó (la persona no llegó a iniciar)';
+  if (fila.guiaEstado === 'generando' || fila.cartaEstado === 'generando') {
+    return 'Generando… (si lleva más de unos minutos, probablemente se atascó)';
+  }
+  if (fila.guiaLista && fila.cartaLista) {
+    return fila.modo === 'acompanado' && !fila.liberadoAt ? 'Lista — pendiente de liberar' : 'Completo';
+  }
+  return 'Generando documentos…';
 }
 
 export default async function PanelPage() {
@@ -103,6 +127,8 @@ export default async function PanelPage() {
       liberadoAt: cuestionario?.liberado_at ?? null,
       guiaLista: docs.guia === 'listo',
       cartaLista: docs.carta === 'listo',
+      guiaEstado: docs.guia ?? null,
+      cartaEstado: docs.carta ?? null,
     };
   });
 
@@ -138,17 +164,9 @@ export default async function PanelPage() {
                 <td className="px-3 py-3 text-flow-700">
                   {fila.empresa ? 'Círculo de Crecimiento' : fila.modo === 'acompanado' ? 'Acompañado' : 'Directo'}
                 </td>
-                <td className="px-3 py-3 text-flow-700">
-                  {!fila.completado
-                    ? 'Sin terminar el cuestionario'
-                    : !fila.guiaLista || !fila.cartaLista
-                      ? 'Generando documentos…'
-                      : fila.modo === 'acompanado' && !fila.liberadoAt
-                        ? 'Lista — pendiente de liberar'
-                        : 'Completo'}
-                </td>
+                <td className="px-3 py-3 text-flow-700">{textoEstado(fila)}</td>
                 <td className="px-3 py-3">
-                  {fila.cuestionarioId && fila.guiaLista && fila.cartaLista ? (
+                  {fila.guiaLista && fila.cartaLista && fila.cuestionarioId ? (
                     <div className="flex flex-wrap items-center gap-2">
                       <BotonDescargar cuestionarioId={fila.cuestionarioId} tipo="guia" texto="Guía" />
                       <BotonDescargar cuestionarioId={fila.cuestionarioId} tipo="carta" texto="Carta" />
@@ -159,6 +177,8 @@ export default async function PanelPage() {
                         <span className="text-xs font-semibold text-flow-500">Ya liberada</span>
                       )}
                     </div>
+                  ) : fila.completado ? (
+                    <BotonReintentar usuarioId={fila.usuarioId} />
                   ) : (
                     <span className="text-xs text-flow-400">—</span>
                   )}

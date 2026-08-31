@@ -4,6 +4,8 @@ import { revalidatePath } from 'next/cache';
 import { createClient, createAdminClient } from '@/lib/supabase/server';
 import { esAdmin } from '@/lib/envio/admin';
 import { enviarCorreoDocumentos, enviarCorreoInvitacion } from '@/lib/email/enviar';
+import { generarGuiaParaUsuario } from '@/lib/generacion/guia';
+import { generarCartaParaUsuario } from '@/lib/generacion/carta';
 
 export interface EstadoCrearLinks {
   error?: string;
@@ -186,6 +188,45 @@ export async function liberarDocumentos(cuestionarioId: string): Promise<EstadoL
   }
 
   await admin.from('flow_cuestionarios').update({ liberado_at: new Date().toISOString() }).eq('id', cuestionarioId);
+
+  revalidatePath('/panel');
+  return { ok: true };
+}
+
+export interface EstadoRegenerar {
+  ok: boolean;
+  error?: string;
+}
+
+/**
+ * Reintenta la Guía y/o la Carta de `usuarioId` desde /panel. Existe porque
+ * todo el proceso normal depende de que la persona deje su pestaña abierta
+ * un par de minutos después de responder -- si cierra el navegador o se
+ * corta la conexión a mitad de camino, el documento queda marcado
+ * "generando" (o ni siquiera llega a crearse) para siempre, sin que nadie
+ * lo reintente solo. Reusa exactamente la misma lógica que /api/generar-guia
+ * y /api/generar-carta (ver src/lib/generacion/), solo que apuntada al
+ * usuario que la superusuaria elige en vez de a quien esté logueado.
+ */
+export async function regenerarDocumentos(usuarioId: string): Promise<EstadoRegenerar> {
+  const supabase = await createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+
+  if (!esAdmin(user?.email)) {
+    return { ok: false, error: 'No autorizado.' };
+  }
+
+  const resultadoGuia = await generarGuiaParaUsuario(usuarioId);
+  if (!resultadoGuia.ok) {
+    return { ok: false, error: `Guía: ${resultadoGuia.error}` };
+  }
+
+  const resultadoCarta = await generarCartaParaUsuario(usuarioId);
+  if (!resultadoCarta.ok) {
+    return { ok: false, error: `Carta: ${resultadoCarta.error}` };
+  }
 
   revalidatePath('/panel');
   return { ok: true };
