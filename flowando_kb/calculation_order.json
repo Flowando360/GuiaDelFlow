@@ -77,5 +77,11 @@
       "Desafio_Libera": "2 terminos, suma maxima 22. El digito-suma maximo alcanzable en ese rango es 10 (para suma=19) -- nunca supera 11, nunca necesita 2a pasada.",
       "Integra": "3 terminos, suma maxima 33. El digito-suma maximo alcanzable en ese rango es 11 (para suma=19 o 29) -- nunca supera 11, nunca necesita 2a pasada."
     }
+  },
+
+  "resuelto_2026_08_31_talento_innato_anio_terminado_en_00": {
+    "conclusion": "Talento_Innato (suma de los 2 ultimos digitos del anio de nacimiento) da 0 cuando esos 2 digitos son '00' (anios 1900, 2000, 2100...) -- un caso que el texto fuente de BC_MADRE.xlsx nunca contemplo (su ejemplo usa 1998). El motor (porValor en motor.ts) reventaba porque el catalogo solo tenia valores 1-11. Talento_Innato.json ahora tiene una entrada valor=0 (num_resultados subio de 11 a 12) con contenido dictado por Diana Said (dueña del producto) el 2026-08-31 -- NO es una convencion numerologica estandar (0->9 o 0->11), es contenido nuevo escrito para este caso especifico. No se toco motor.ts: porValor ya encuentra la entrada por busqueda generica.",
+    "encontrado_en": "Eveli Cordoba Restrepo (nacida 2000-01-27), primer caso real que reprodujo el error en produccion.",
+    "efecto_en_los_compuestos": "Talento_Innato.valor entra en las formulas de Proposito_2 y CualidadesPotencia (ver 'resuelto_2026_08_04_reduccion_numerologica_compuestos' arriba). Que ahora pueda ser 0 en vez de 1-11 solo BAJA la suma minima posible (nunca la sube), asi que el analisis de rango ya hecho ahi (que 10-11 no rompen la regla de <=11, y que solo suma=39 necesita 2a pasada) sigue siendo valido sin cambios."
   }
 }
