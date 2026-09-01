@@ -31,6 +31,9 @@ export default async function PanelLayout({ children }: LayoutProps<'/'>) {
             <Link href="/panel/links" className="hover:text-flow-600">
               Links de envío
             </Link>
+            <Link href="/panel/estados-manuales" className="hover:text-flow-600">
+              Estados manuales
+            </Link>
           </nav>
         </div>
         <form action={cerrarSesion}>

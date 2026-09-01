@@ -4,9 +4,10 @@ import { useMemo, useState } from 'react';
 import { BotonLiberar, BotonDescargar, BotonReintentar } from './Acciones';
 
 export interface FilaPanel {
-  usuarioId: string;
+  /** Null = sin cuenta en Guía del Flow -- solo tiene estado manual (ver /panel/estados-manuales). */
+  usuarioId: string | null;
   nombre: string;
-  email: string;
+  email: string | null;
   empresa: string | null;
   empresaSiglas: string | null;
   etiqueta: string | null;
@@ -20,6 +21,8 @@ export interface FilaPanel {
   cartaEstado: string | null;
   correoEnviadoAt: string | null;
   correoError: string | null;
+  estadoManual: string | null;
+  notaManual: string | null;
   /** ISO -- la más reciente entre generado_at de la Guía y la Carta. */
   fechaGeneracion: string | null;
   estadoTexto: string;
@@ -28,6 +31,11 @@ export interface FilaPanel {
 
 const SIN_EMPRESA = '__sin_empresa__';
 const TODAS = '__todas__';
+
+/** Clave estable por fila -- las filas sin cuenta (usuarioId null) no tienen nada que descargar ni seleccionar. */
+function clave(fila: FilaPanel): string {
+  return fila.usuarioId ?? `sin-cuenta:${fila.email ?? fila.nombre}`;
+}
 
 export function PanelTabla({ filas }: { filas: FilaPanel[] }) {
   const [seleccion, setSeleccion] = useState<Set<string>>(new Set());
@@ -59,13 +67,13 @@ export function PanelTabla({ filas }: { filas: FilaPanel[] }) {
   // documento listo -- lo demás (sin terminar, generando, en error) no
   // tiene nada que meter al zip.
   const filasDescargables = useMemo(() => filasFiltradas.filter((f) => f.guiaLista || f.cartaLista), [filasFiltradas]);
-  const todasSeleccionadas = filasDescargables.length > 0 && filasDescargables.every((f) => seleccion.has(f.usuarioId));
+  const todasSeleccionadas = filasDescargables.length > 0 && filasDescargables.every((f) => seleccion.has(clave(f)));
 
-  function alternarFila(usuarioId: string) {
+  function alternarFila(key: string) {
     setSeleccion((prev) => {
       const nuevo = new Set(prev);
-      if (nuevo.has(usuarioId)) nuevo.delete(usuarioId);
-      else nuevo.add(usuarioId);
+      if (nuevo.has(key)) nuevo.delete(key);
+      else nuevo.add(key);
       return nuevo;
     });
   }
@@ -74,19 +82,19 @@ export function PanelTabla({ filas }: { filas: FilaPanel[] }) {
     setSeleccion((prev) => {
       if (todasSeleccionadas) {
         const nuevo = new Set(prev);
-        for (const f of filasDescargables) nuevo.delete(f.usuarioId);
+        for (const f of filasDescargables) nuevo.delete(clave(f));
         return nuevo;
       }
       const nuevo = new Set(prev);
-      for (const f of filasDescargables) nuevo.add(f.usuarioId);
+      for (const f of filasDescargables) nuevo.add(clave(f));
       return nuevo;
     });
   }
 
   async function descargarSeleccion() {
     const items = filas
-      .filter((f) => seleccion.has(f.usuarioId) && f.cuestionarioId)
-      .map((f) => ({ usuarioId: f.usuarioId, cuestionarioId: f.cuestionarioId }));
+      .filter((f) => seleccion.has(clave(f)) && f.usuarioId && f.cuestionarioId)
+      .map((f) => ({ usuarioId: f.usuarioId!, cuestionarioId: f.cuestionarioId }));
     if (items.length === 0) return;
 
     setErrorDescarga(null);
@@ -209,19 +217,19 @@ export function PanelTabla({ filas }: { filas: FilaPanel[] }) {
           </thead>
           <tbody>
             {filasFiltradas.map((fila) => (
-              <tr key={fila.usuarioId} className="border-t border-flow-100 align-top">
+              <tr key={clave(fila)} className="border-t border-flow-100 align-top">
                 <td className="px-3 py-3">
                   <input
                     type="checkbox"
-                    checked={seleccion.has(fila.usuarioId)}
-                    onChange={() => alternarFila(fila.usuarioId)}
+                    checked={seleccion.has(clave(fila))}
+                    onChange={() => alternarFila(clave(fila))}
                     disabled={!fila.guiaLista && !fila.cartaLista}
                     aria-label={`Seleccionar a ${fila.nombre}`}
                   />
                 </td>
                 <td className="px-3 py-3">
                   <div className="font-semibold text-flow-900">{fila.nombre}</div>
-                  <div className="text-xs text-flow-600">{fila.email}</div>
+                  <div className="text-xs text-flow-600">{fila.email ?? '—'}</div>
                 </td>
                 <td className="px-3 py-3 text-flow-700">{fila.empresa ?? fila.etiqueta ?? '—'}</td>
                 <td className="px-3 py-3 text-flow-700">
@@ -242,8 +250,13 @@ export function PanelTabla({ filas }: { filas: FilaPanel[] }) {
                       {fila.modo === 'acompanado' && fila.liberadoAt && (
                         <span className="text-xs font-semibold text-flow-500">Ya liberada</span>
                       )}
+                      {/* Documentos listos pero el correo nunca se confirmó -- Reintentar
+                          acá NO regenera el PDF, solo reintenta el envío (ver carta.ts). */}
+                      {fila.correoTexto !== '—' && fila.correoTexto !== 'Enviado' && fila.usuarioId && (
+                        <BotonReintentar usuarioId={fila.usuarioId} texto="Reenviar correo" />
+                      )}
                     </div>
-                  ) : fila.completado ? (
+                  ) : fila.completado && fila.usuarioId ? (
                     <BotonReintentar usuarioId={fila.usuarioId} />
                   ) : (
                     <span className="text-xs text-flow-400">—</span>

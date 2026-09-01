@@ -63,7 +63,7 @@ export function BotonLiberar({ cuestionarioId }: { cuestionarioId: string }) {
  * cortó la conexión) y su documento quedó en "generando" o en "error" para
  * siempre, o ni se llegó a crear -- ver comentario de regenerarDocumentos.
  */
-export function BotonReintentar({ usuarioId }: { usuarioId: string }) {
+export function BotonReintentar({ usuarioId, texto = 'Reintentar' }: { usuarioId: string; texto?: string }) {
   const [pendiente, iniciar] = useTransition();
   const [error, setError] = useState<string | null>(null);
   const [listo, setListo] = useState(false);
@@ -92,7 +92,7 @@ export function BotonReintentar({ usuarioId }: { usuarioId: string }) {
         disabled={pendiente}
         className="rounded-full border border-flow-300 bg-white px-3 py-1 text-xs font-bold text-flow-800 transition hover:border-flow-500 disabled:opacity-60"
       >
-        {pendiente ? 'Reintentando… (puede tardar un par de minutos)' : 'Reintentar'}
+        {pendiente ? 'Reintentando… (puede tardar un par de minutos)' : texto}
       </button>
       {error && <span className="max-w-[220px] text-xs font-semibold text-red-600">{error}</span>}
     </span>

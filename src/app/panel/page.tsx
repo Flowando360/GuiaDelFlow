@@ -1,14 +1,7 @@
 import { createAdminClient } from '@/lib/supabase/server';
 import { PanelTabla, type FilaPanel } from './PanelTabla';
+import { etiquetaEstadoManual } from '@/lib/panel/estadosManuales';
 
-/**
- * Todo el proceso de generación depende de que la persona deje su pestaña
- * abierta un par de minutos después de responder -- no hay reintento
- * automático. Este texto distingue los 3 formas en que puede quedar
- * atascado (nunca arrancó / se cortó a mitad de camino / reventó con un
- * error real) de lo que sí es solo cuestión de esperar, para que quede
- * claro cuándo conviene usar "Reintentar".
- */
 /**
  * El correo (Guía+Carta adjuntas) solo se manda cuando el modo NO es
  * 'acompanado' -- ver enviarCorreoSiCorresponde en src/lib/generacion/
@@ -23,7 +16,18 @@ function textoCorreo(fila: FilaPanel): string {
   return 'Nunca se intentó';
 }
 
+/**
+ * Todo el proceso de generación depende de que la persona deje su pestaña
+ * abierta un par de minutos después de responder -- no hay reintento
+ * automático. Este texto distingue las 3 formas en que puede quedar
+ * atascado (nunca arrancó / se cortó a mitad de camino / reventó con un
+ * error real) de lo que sí es solo cuestión de esperar, para que quede
+ * claro cuándo conviene usar "Reintentar". Un estado manual (ver
+ * /panel/estados-manuales -- gente cuya Guía se resolvió por fuera del
+ * sistema) siempre gana sobre lo que diga la generación automática.
+ */
 function textoEstado(fila: FilaPanel): string {
+  if (fila.estadoManual) return etiquetaEstadoManual(fila.estadoManual) + (fila.notaManual ? ` — ${fila.notaManual}` : '');
   if (!fila.completado) return 'Sin terminar el cuestionario';
   if (fila.guiaEstado === 'error') return 'Error generando la Guía';
   if (fila.cartaEstado === 'error') return 'Error generando la Carta';
@@ -46,21 +50,37 @@ export default async function PanelPage() {
   // casi todos los colaboradores hoy (Mármoles y Servicios y las empresas
   // que vengan después). Cuentas sin ninguno de los dos (registro público
   // orgánico, sin relación con ningún cliente) quedan afuera a propósito.
-  const { data: perfiles } = await admin
-    .from('flow_perfiles')
-    .select('id, nombre_completo, email, envio_link_id, colaborador_circulo_id')
-    .or('envio_link_id.not.is.null,colaborador_circulo_id.not.is.null')
-    .order('created_at', { ascending: false });
+  const [{ data: perfiles }, { data: estadosManuales }] = await Promise.all([
+    admin
+      .from('flow_perfiles')
+      .select('id, nombre_completo, email, envio_link_id, colaborador_circulo_id')
+      .or('envio_link_id.not.is.null,colaborador_circulo_id.not.is.null')
+      .order('created_at', { ascending: false }),
+    // Gente cuya Guía se resolvió por fuera de este sistema -- ver
+    // /panel/estados-manuales. No depende de tener cuenta acá, así que
+    // puede haber colaboradores con estado manual que perfiles nunca trae.
+    admin.from('flow_estados_manuales').select('colaborador_id, estado, nota'),
+  ]);
 
-  if (!perfiles || perfiles.length === 0) {
+  const perfilesSeguro = perfiles ?? [];
+  const colaboradorIdsConManual = (estadosManuales ?? []).map((e) => e.colaborador_id);
+  const colaboradorIdsYaEnPerfiles = new Set(
+    perfilesSeguro.map((p) => p.colaborador_circulo_id).filter((id): id is string => Boolean(id))
+  );
+  // Solo se agregan como fila "sintética" los que tienen estado manual pero
+  // NINGUNA cuenta registrada -- si ya aparecen vía perfiles, su estado
+  // manual se les pega a esa fila más abajo en vez de duplicarlos.
+  const colaboradorIdsSoloManual = colaboradorIdsConManual.filter((id) => !colaboradorIdsYaEnPerfiles.has(id));
+
+  if (perfilesSeguro.length === 0 && colaboradorIdsSoloManual.length === 0) {
     return <PanelVacio />;
   }
 
-  const linkIds = [...new Set(perfiles.map((p) => p.envio_link_id).filter((id): id is string => Boolean(id)))];
+  const linkIds = [...new Set(perfilesSeguro.map((p) => p.envio_link_id).filter((id): id is string => Boolean(id)))];
   const colaboradorIds = [
-    ...new Set(perfiles.map((p) => p.colaborador_circulo_id).filter((id): id is string => Boolean(id))),
+    ...new Set([...colaboradorIdsYaEnPerfiles, ...colaboradorIdsSoloManual]),
   ];
-  const usuarioIds = perfiles.map((p) => p.id);
+  const usuarioIds = perfilesSeguro.map((p) => p.id);
 
   const [{ data: links }, { data: cuestionarios }, { data: colaboradores }] = await Promise.all([
     linkIds.length > 0
@@ -72,8 +92,8 @@ export default async function PanelPage() {
       .in('usuario_id', usuarioIds)
       .order('created_at', { ascending: false }),
     colaboradorIds.length > 0
-      ? admin.from('colaboradores').select('id, empresa_id').in('id', colaboradorIds)
-      : Promise.resolve({ data: [] as { id: string; empresa_id: string }[] }),
+      ? admin.from('colaboradores').select('id, nombre_completo, email, empresa_id').in('id', colaboradorIds)
+      : Promise.resolve({ data: [] as { id: string; nombre_completo: string; email: string; empresa_id: string }[] }),
   ]);
 
   const empresaIds = [...new Set((colaboradores ?? []).map((c) => c.empresa_id))];
@@ -90,6 +110,8 @@ export default async function PanelPage() {
   const empresaPorColaborador = new Map(
     (colaboradores ?? []).map((c) => [c.id, empresaPorId.get(c.empresa_id) ?? null])
   );
+  const colaboradorPorId = new Map((colaboradores ?? []).map((c) => [c.id, c]));
+  const estadoManualPorColaborador = new Map((estadosManuales ?? []).map((e) => [e.colaborador_id, e]));
 
   const linkPorId = new Map((links ?? []).map((l) => [l.id, l]));
 
@@ -114,9 +136,10 @@ export default async function PanelPage() {
     docsPorCuestionario.set(d.cuestionario_id, actual);
   }
 
-  const filas: FilaPanel[] = perfiles.map((p) => {
+  const filas: FilaPanel[] = perfilesSeguro.map((p) => {
     const link = p.envio_link_id ? linkPorId.get(p.envio_link_id) : undefined;
     const empresa = p.colaborador_circulo_id ? (empresaPorColaborador.get(p.colaborador_circulo_id) ?? null) : null;
+    const manual = p.colaborador_circulo_id ? estadoManualPorColaborador.get(p.colaborador_circulo_id) : undefined;
     const cuestionario = cuestionarioPorUsuario.get(p.id);
     const docs = cuestionario ? (docsPorCuestionario.get(cuestionario.id) ?? {}) : {};
     // La "fecha de generación" para filtrar es la más reciente entre Guía y
@@ -142,6 +165,8 @@ export default async function PanelPage() {
       cartaEstado: docs.carta ?? null,
       correoEnviadoAt: cuestionario?.correo_documentos_enviado_at ?? null,
       correoError: cuestionario?.correo_documentos_error ?? null,
+      estadoManual: manual?.estado ?? null,
+      notaManual: manual?.nota ?? null,
       fechaGeneracion,
       estadoTexto: '',
       correoTexto: '',
@@ -150,6 +175,44 @@ export default async function PanelPage() {
     fila.correoTexto = textoCorreo(fila);
     return fila;
   });
+
+  // Gente con estado manual pero sin ninguna cuenta registrada acá --
+  // filas "sintéticas" (sin usuarioId real) solo para que se vean en esta
+  // misma tabla junto a todos los demás, en vez de vivir escondidas en
+  // /panel/estados-manuales.
+  for (const colaboradorId of colaboradorIdsSoloManual) {
+    const colaborador = colaboradorPorId.get(colaboradorId);
+    if (!colaborador) continue;
+    const manual = estadoManualPorColaborador.get(colaboradorId);
+    const empresa = empresaPorColaborador.get(colaboradorId) ?? null;
+
+    const fila: FilaPanel = {
+      usuarioId: null,
+      nombre: colaborador.nombre_completo,
+      email: colaborador.email,
+      empresa: empresa?.nombre ?? null,
+      empresaSiglas: empresa?.siglas ?? null,
+      etiqueta: null,
+      modo: 'directo',
+      cuestionarioId: null,
+      completado: false,
+      liberadoAt: null,
+      guiaLista: false,
+      cartaLista: false,
+      guiaEstado: null,
+      cartaEstado: null,
+      correoEnviadoAt: null,
+      correoError: null,
+      estadoManual: manual?.estado ?? null,
+      notaManual: manual?.nota ?? null,
+      fechaGeneracion: null,
+      estadoTexto: '',
+      correoTexto: '',
+    };
+    fila.estadoTexto = textoEstado(fila);
+    fila.correoTexto = textoCorreo(fila);
+    filas.push(fila);
+  }
 
   return (
     <main className="mx-auto w-full max-w-5xl flex-1 px-4 py-10 sm:px-8">
