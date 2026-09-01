@@ -9,6 +9,20 @@ import { PanelTabla, type FilaPanel } from './PanelTabla';
  * error real) de lo que sí es solo cuestión de esperar, para que quede
  * claro cuándo conviene usar "Reintentar".
  */
+/**
+ * El correo (Guía+Carta adjuntas) solo se manda cuando el modo NO es
+ * 'acompanado' -- ver enviarCorreoSiCorresponde en src/lib/generacion/
+ * carta.ts. Para 'acompanado' nunca hay nada que reportar acá, así que
+ * "—" es el estado correcto, no un error.
+ */
+function textoCorreo(fila: FilaPanel): string {
+  if (fila.modo === 'acompanado') return '—';
+  if (!fila.cartaLista) return '—';
+  if (fila.correoEnviadoAt) return 'Enviado';
+  if (fila.correoError) return `Falló: ${fila.correoError}`;
+  return 'Nunca se intentó';
+}
+
 function textoEstado(fila: FilaPanel): string {
   if (!fila.completado) return 'Sin terminar el cuestionario';
   if (fila.guiaEstado === 'error') return 'Error generando la Guía';
@@ -54,7 +68,7 @@ export default async function PanelPage() {
       : Promise.resolve({ data: [] as { id: string; etiqueta: string | null; modo: string; correo_destino: string | null }[] }),
     admin
       .from('flow_cuestionarios')
-      .select('id, usuario_id, completado_at, liberado_at, created_at')
+      .select('id, usuario_id, completado_at, liberado_at, created_at, correo_documentos_enviado_at, correo_documentos_error')
       .in('usuario_id', usuarioIds)
       .order('created_at', { ascending: false }),
     colaboradorIds.length > 0
@@ -126,10 +140,14 @@ export default async function PanelPage() {
       cartaLista: docs.carta === 'listo',
       guiaEstado: docs.guia ?? null,
       cartaEstado: docs.carta ?? null,
+      correoEnviadoAt: cuestionario?.correo_documentos_enviado_at ?? null,
+      correoError: cuestionario?.correo_documentos_error ?? null,
       fechaGeneracion,
       estadoTexto: '',
+      correoTexto: '',
     };
     fila.estadoTexto = textoEstado(fila);
+    fila.correoTexto = textoCorreo(fila);
     return fila;
   });
 

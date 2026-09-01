@@ -2404,6 +2404,8 @@ export type Database = {
       flow_cuestionarios: {
         Row: {
           completado_at: string | null
+          correo_documentos_enviado_at: string | null
+          correo_documentos_error: string | null
           created_at: string
           id: string
           liberado_at: string | null
@@ -2414,6 +2416,8 @@ export type Database = {
         }
         Insert: {
           completado_at?: string | null
+          correo_documentos_enviado_at?: string | null
+          correo_documentos_error?: string | null
           created_at?: string
           id?: string
           liberado_at?: string | null
@@ -2424,6 +2428,8 @@ export type Database = {
         }
         Update: {
           completado_at?: string | null
+          correo_documentos_enviado_at?: string | null
+          correo_documentos_error?: string | null
           created_at?: string
           id?: string
           liberado_at?: string | null

@@ -18,9 +18,12 @@ export interface FilaPanel {
   cartaLista: boolean;
   guiaEstado: string | null;
   cartaEstado: string | null;
+  correoEnviadoAt: string | null;
+  correoError: string | null;
   /** ISO -- la más reciente entre generado_at de la Guía y la Carta. */
   fechaGeneracion: string | null;
   estadoTexto: string;
+  correoTexto: string;
 }
 
 const SIN_EMPRESA = '__sin_empresa__';
@@ -184,7 +187,7 @@ export function PanelTabla({ filas }: { filas: FilaPanel[] }) {
       </div>
 
       <div className="overflow-x-auto rounded-xl ring-1 ring-flow-200">
-        <table className="w-full min-w-[780px] text-left text-sm">
+        <table className="w-full min-w-[880px] text-left text-sm">
           <thead className="bg-flow-50 text-xs font-semibold uppercase tracking-wide text-flow-700">
             <tr>
               <th className="px-3 py-2">
@@ -200,6 +203,7 @@ export function PanelTabla({ filas }: { filas: FilaPanel[] }) {
               <th className="px-3 py-2">Empresa / Etiqueta</th>
               <th className="px-3 py-2">Origen</th>
               <th className="px-3 py-2">Estado</th>
+              <th className="px-3 py-2">Correo</th>
               <th className="px-3 py-2">Documentos</th>
             </tr>
           </thead>
@@ -224,6 +228,9 @@ export function PanelTabla({ filas }: { filas: FilaPanel[] }) {
                   {fila.empresa ? 'Círculo de Crecimiento' : fila.modo === 'acompanado' ? 'Acompañado' : 'Directo'}
                 </td>
                 <td className="px-3 py-3 text-flow-700">{fila.estadoTexto}</td>
+                <td className={`px-3 py-3 ${fila.correoTexto.startsWith('Falló') ? 'font-semibold text-red-600' : 'text-flow-700'}`}>
+                  {fila.correoTexto}
+                </td>
                 <td className="px-3 py-3">
                   {fila.guiaLista && fila.cartaLista && fila.cuestionarioId ? (
                     <div className="flex flex-wrap items-center gap-2">
@@ -246,7 +253,7 @@ export function PanelTabla({ filas }: { filas: FilaPanel[] }) {
             ))}
             {filasFiltradas.length === 0 && (
               <tr>
-                <td colSpan={6} className="px-3 py-8 text-center text-sm text-flow-400">
+                <td colSpan={7} className="px-3 py-8 text-center text-sm text-flow-400">
                   Ningún registro coincide con estos filtros.
                 </td>
               </tr>

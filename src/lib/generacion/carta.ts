@@ -5,12 +5,76 @@ import type { GuiaCondensada } from '@/lib/pdf/guia/tipos';
 import type { ResultadoGeneracion } from './guia';
 
 type RespuestasJson = Record<string, unknown>;
+type AdminClient = ReturnType<typeof createAdminClient>;
+
+/**
+ * Manda el correo final (Guía+Carta adjuntas) si corresponde, y deja
+ * registrado el resultado en flow_cuestionarios -- ver migración 0008.
+ * Antes este resultado solo quedaba en un console.error de la función
+ * serverless, invisible desde /panel (Diana lo pidió el 2026-08-31 después
+ * de preguntar si el correo realmente había llegado).
+ *
+ * "No corresponde" (modo 'acompanado') no es un error -- se deja
+ * enviado_at y error en null a propósito, para no confundirlo con un
+ * intento fallido.
+ */
+async function enviarCorreoSiCorresponde(
+  admin: AdminClient,
+  params: { usuarioId: string; cuestionarioId: string; nombreMostrado: string; storagePathGuia: string; pdfCarta: Buffer }
+): Promise<void> {
+  const { usuarioId, cuestionarioId, nombreMostrado, storagePathGuia, pdfCarta } = params;
+
+  const perfilEnvio = await admin.from('flow_perfiles').select('email, envio_link_id').eq('id', usuarioId).single();
+  let modoEnvio: string | null = null;
+  if (perfilEnvio.data?.envio_link_id) {
+    const { data: linkEnvio } = await admin
+      .from('flow_links_envio')
+      .select('modo')
+      .eq('id', perfilEnvio.data.envio_link_id)
+      .maybeSingle();
+    modoEnvio = linkEnvio?.modo ?? null;
+  }
+  const destinatarioCorreo = modoEnvio === 'acompanado' ? null : perfilEnvio.data?.email;
+  if (!destinatarioCorreo) return;
+
+  const { data: pdfGuiaDescargado } = await admin.storage.from('guia-del-flow').download(storagePathGuia);
+  if (!pdfGuiaDescargado) {
+    await admin
+      .from('flow_cuestionarios')
+      .update({ correo_documentos_error: 'No se pudo leer el PDF de la Guía ya subido para adjuntarlo.' })
+      .eq('id', cuestionarioId);
+    return;
+  }
+
+  const resultadoCorreo = await enviarCorreoDocumentos({
+    destinatario: destinatarioCorreo,
+    nombre: nombreMostrado,
+    pdfGuia: Buffer.from(await pdfGuiaDescargado.arrayBuffer()),
+    pdfCarta,
+  });
+
+  if (resultadoCorreo.ok) {
+    await admin
+      .from('flow_cuestionarios')
+      .update({ correo_documentos_enviado_at: new Date().toISOString(), correo_documentos_error: null })
+      .eq('id', cuestionarioId);
+  } else {
+    console.error('No se pudo enviar el correo con los documentos:', resultadoCorreo.error);
+    await admin.from('flow_cuestionarios').update({ correo_documentos_error: resultadoCorreo.error }).eq('id', cuestionarioId);
+  }
+}
 
 /**
  * Genera la Carta de `usuarioId` (busca su cuestionario más reciente ya
  * completado). Extraído de /api/generar-carta -- ver comentario en
  * guia.ts, misma razón: reusarse desde /panel para reintentar por alguien
  * que se quedó a mitad de camino.
+ *
+ * Si la Carta ya estaba lista pero el correo nunca se mandó (o falló), NO
+ * vuelve a generar el PDF -- solo reintenta el envío con el que ya existe.
+ * Antes esto quedaba invisible: "Reintentar" devolvía yaExistia:true y no
+ * hacía nada más, así que un correo fallido se quedaba fallido para
+ * siempre sin que nadie pudiera arreglarlo desde acá.
  */
 export async function generarCartaParaUsuario(usuarioId: string): Promise<ResultadoGeneracion> {
   const admin = createAdminClient();
@@ -48,6 +112,22 @@ export async function generarCartaParaUsuario(usuarioId: string): Promise<Result
     .maybeSingle();
 
   if (existente?.estado === 'listo') {
+    if (cuestionario.correo_documentos_enviado_at || !existente.storage_path) {
+      return { ok: true, yaExistia: true };
+    }
+    // La Carta ya existe pero el correo nunca se confirmó -- reintenta solo
+    // el envío, sin tocar el PDF.
+    const perfil = await admin.from('flow_perfiles').select('nombre_completo').eq('id', usuarioId).single();
+    const { data: pdfCartaDescargada } = await admin.storage.from('guia-del-flow').download(existente.storage_path);
+    if (pdfCartaDescargada) {
+      await enviarCorreoSiCorresponde(admin, {
+        usuarioId,
+        cuestionarioId: cuestionario.id,
+        nombreMostrado: perfil.data?.nombre_completo || 'Amiga/o',
+        storagePathGuia: docGuia.storage_path!,
+        pdfCarta: Buffer.from(await pdfCartaDescargada.arrayBuffer()),
+      });
+    }
     return { ok: true, yaExistia: true };
   }
 
@@ -103,37 +183,13 @@ export async function generarCartaParaUsuario(usuarioId: string): Promise<Result
       { onConflict: 'cuestionario_id,tipo' }
     );
 
-    // Mismo criterio que el endpoint original: en modo 'acompanado' no se
-    // manda nada acá, la superusuaria libera desde /panel cuando quiera.
-    // En cualquier otro caso (incluida una invitación de Círculo de
-    // Crecimiento, o un reintento manual desde /panel) el correo va al
-    // dueño de la cuenta.
-    const perfilEnvio = await admin.from('flow_perfiles').select('email, envio_link_id').eq('id', usuarioId).single();
-    let modoEnvio: string | null = null;
-    if (perfilEnvio.data?.envio_link_id) {
-      const { data: linkEnvio } = await admin
-        .from('flow_links_envio')
-        .select('modo')
-        .eq('id', perfilEnvio.data.envio_link_id)
-        .maybeSingle();
-      modoEnvio = linkEnvio?.modo ?? null;
-    }
-    const destinatarioCorreo = modoEnvio === 'acompanado' ? null : perfilEnvio.data?.email;
-
-    if (destinatarioCorreo) {
-      const { data: pdfGuiaDescargado } = await admin.storage.from('guia-del-flow').download(docGuia.storage_path!);
-      if (pdfGuiaDescargado) {
-        const resultadoCorreo = await enviarCorreoDocumentos({
-          destinatario: destinatarioCorreo,
-          nombre: nombreMostrado,
-          pdfGuia: Buffer.from(await pdfGuiaDescargado.arrayBuffer()),
-          pdfCarta: pdf,
-        });
-        if (!resultadoCorreo.ok) {
-          console.error('No se pudo enviar el correo con los documentos:', resultadoCorreo.error);
-        }
-      }
-    }
+    await enviarCorreoSiCorresponde(admin, {
+      usuarioId,
+      cuestionarioId: cuestionario.id,
+      nombreMostrado,
+      storagePathGuia: docGuia.storage_path!,
+      pdfCarta: pdf,
+    });
 
     return { ok: true };
   } catch (error) {
