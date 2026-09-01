@@ -1,21 +1,5 @@
 import { createAdminClient } from '@/lib/supabase/server';
-import { BotonLiberar, BotonDescargar, BotonReintentar } from './Acciones';
-
-interface FilaPanel {
-  usuarioId: string;
-  nombre: string;
-  email: string;
-  empresa: string | null;
-  etiqueta: string | null;
-  modo: string;
-  cuestionarioId: string | null;
-  completado: boolean;
-  liberadoAt: string | null;
-  guiaLista: boolean;
-  cartaLista: boolean;
-  guiaEstado: string | null;
-  cartaEstado: string | null;
-}
+import { PanelTabla, type FilaPanel } from './PanelTabla';
 
 /**
  * Todo el proceso de generación depende de que la persona deje su pestaña
@@ -79,14 +63,18 @@ export default async function PanelPage() {
   ]);
 
   const empresaIds = [...new Set((colaboradores ?? []).map((c) => c.empresa_id))];
+  // "siglas" (Círculo de Crecimiento, migración 0064 de ese repo) es lo que
+  // arma el nombre de archivo de la descarga masiva -- ver
+  // src/lib/panel/nombreArchivo.ts. Si una empresa no la tiene cargada
+  // todavía, esa función cae sola a "PS".
   const { data: empresas } =
     empresaIds.length > 0
-      ? await admin.from('empresas').select('id, nombre').in('id', empresaIds)
-      : { data: [] as { id: string; nombre: string }[] };
+      ? await admin.from('empresas').select('id, nombre, siglas').in('id', empresaIds)
+      : { data: [] as { id: string; nombre: string; siglas: string | null }[] };
 
-  const empresaNombrePorId = new Map((empresas ?? []).map((e) => [e.id, e.nombre]));
+  const empresaPorId = new Map((empresas ?? []).map((e) => [e.id, e]));
   const empresaPorColaborador = new Map(
-    (colaboradores ?? []).map((c) => [c.id, empresaNombrePorId.get(c.empresa_id) ?? null])
+    (colaboradores ?? []).map((c) => [c.id, empresaPorId.get(c.empresa_id) ?? null])
   );
 
   const linkPorId = new Map((links ?? []).map((l) => [l.id, l]));
@@ -101,25 +89,34 @@ export default async function PanelPage() {
   const cuestionarioIds = [...cuestionarioPorUsuario.values()].map((c) => c.id);
   const { data: documentos } = await admin
     .from('flow_documentos')
-    .select('cuestionario_id, tipo, estado')
+    .select('cuestionario_id, tipo, estado, generado_at')
     .in('cuestionario_id', cuestionarioIds);
 
-  const docsPorCuestionario = new Map<string, { guia?: string; carta?: string }>();
+  const docsPorCuestionario = new Map<string, { guia?: string; carta?: string; guiaAt?: string; cartaAt?: string }>();
   for (const d of documentos ?? []) {
     const actual = docsPorCuestionario.get(d.cuestionario_id) ?? {};
     actual[d.tipo as 'guia' | 'carta'] = d.estado;
+    if (d.generado_at) actual[d.tipo === 'guia' ? 'guiaAt' : 'cartaAt'] = d.generado_at;
     docsPorCuestionario.set(d.cuestionario_id, actual);
   }
 
   const filas: FilaPanel[] = perfiles.map((p) => {
     const link = p.envio_link_id ? linkPorId.get(p.envio_link_id) : undefined;
+    const empresa = p.colaborador_circulo_id ? (empresaPorColaborador.get(p.colaborador_circulo_id) ?? null) : null;
     const cuestionario = cuestionarioPorUsuario.get(p.id);
     const docs = cuestionario ? (docsPorCuestionario.get(cuestionario.id) ?? {}) : {};
-    return {
+    // La "fecha de generación" para filtrar es la más reciente entre Guía y
+    // Carta -- normalmente casi seguidas, pero si solo una está lista se usa
+    // esa sola.
+    const fechas = [docs.guiaAt, docs.cartaAt].filter((f): f is string => Boolean(f));
+    const fechaGeneracion = fechas.length > 0 ? fechas.sort().at(-1)! : null;
+
+    const fila: FilaPanel = {
       usuarioId: p.id,
       nombre: p.nombre_completo,
       email: p.email,
-      empresa: p.colaborador_circulo_id ? (empresaPorColaborador.get(p.colaborador_circulo_id) ?? null) : null,
+      empresa: empresa?.nombre ?? null,
+      empresaSiglas: empresa?.siglas ?? null,
       etiqueta: link?.etiqueta ?? null,
       modo: link?.modo ?? 'directo',
       cuestionarioId: cuestionario?.id ?? null,
@@ -129,7 +126,11 @@ export default async function PanelPage() {
       cartaLista: docs.carta === 'listo',
       guiaEstado: docs.guia ?? null,
       cartaEstado: docs.carta ?? null,
+      fechaGeneracion,
+      estadoTexto: '',
     };
+    fila.estadoTexto = textoEstado(fila);
+    return fila;
   });
 
   return (
@@ -142,52 +143,7 @@ export default async function PanelPage() {
         de modo acompañado.
       </p>
 
-      <div className="mt-6 overflow-x-auto rounded-xl ring-1 ring-flow-200">
-        <table className="w-full min-w-[720px] text-left text-sm">
-          <thead className="bg-flow-50 text-xs font-semibold uppercase tracking-wide text-flow-700">
-            <tr>
-              <th className="px-3 py-2">Nombre</th>
-              <th className="px-3 py-2">Empresa / Etiqueta</th>
-              <th className="px-3 py-2">Origen</th>
-              <th className="px-3 py-2">Estado</th>
-              <th className="px-3 py-2">Documentos</th>
-            </tr>
-          </thead>
-          <tbody>
-            {filas.map((fila) => (
-              <tr key={fila.usuarioId} className="border-t border-flow-100 align-top">
-                <td className="px-3 py-3">
-                  <div className="font-semibold text-flow-900">{fila.nombre}</div>
-                  <div className="text-xs text-flow-600">{fila.email}</div>
-                </td>
-                <td className="px-3 py-3 text-flow-700">{fila.empresa ?? fila.etiqueta ?? '—'}</td>
-                <td className="px-3 py-3 text-flow-700">
-                  {fila.empresa ? 'Círculo de Crecimiento' : fila.modo === 'acompanado' ? 'Acompañado' : 'Directo'}
-                </td>
-                <td className="px-3 py-3 text-flow-700">{textoEstado(fila)}</td>
-                <td className="px-3 py-3">
-                  {fila.guiaLista && fila.cartaLista && fila.cuestionarioId ? (
-                    <div className="flex flex-wrap items-center gap-2">
-                      <BotonDescargar cuestionarioId={fila.cuestionarioId} tipo="guia" texto="Guía" />
-                      <BotonDescargar cuestionarioId={fila.cuestionarioId} tipo="carta" texto="Carta" />
-                      {fila.modo === 'acompanado' && !fila.liberadoAt && (
-                        <BotonLiberar cuestionarioId={fila.cuestionarioId} />
-                      )}
-                      {fila.modo === 'acompanado' && fila.liberadoAt && (
-                        <span className="text-xs font-semibold text-flow-500">Ya liberada</span>
-                      )}
-                    </div>
-                  ) : fila.completado ? (
-                    <BotonReintentar usuarioId={fila.usuarioId} />
-                  ) : (
-                    <span className="text-xs text-flow-400">—</span>
-                  )}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
+      <PanelTabla filas={filas} />
     </main>
   );
 }

@@ -1692,6 +1692,7 @@ export type Database = {
           nombre: string
           plan_membresia: string
           precio_membresia_mensual: number | null
+          siglas: string | null
           slug: string
           telefono: string | null
         }
@@ -1722,6 +1723,7 @@ export type Database = {
           nombre: string
           plan_membresia?: string
           precio_membresia_mensual?: number | null
+          siglas?: string | null
           slug: string
           telefono?: string | null
         }
@@ -1752,6 +1754,7 @@ export type Database = {
           nombre?: string
           plan_membresia?: string
           precio_membresia_mensual?: number | null
+          siglas?: string | null
           slug?: string
           telefono?: string | null
         }
