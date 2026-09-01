@@ -70,3 +70,6 @@ supabase/.temp/
 # token de Supabase de este proyecto, activado automáticamente por el
 # perfil de PowerShell — nunca va al repo
 .supabase-token
+
+.vercel
+.env*

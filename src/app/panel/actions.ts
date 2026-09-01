@@ -6,6 +6,7 @@ import { esAdmin } from '@/lib/envio/admin';
 import { enviarCorreoDocumentos, enviarCorreoInvitacion } from '@/lib/email/enviar';
 import { generarGuiaParaUsuario } from '@/lib/generacion/guia';
 import { generarCartaParaUsuario } from '@/lib/generacion/carta';
+import { obtenerEmpresaYFirmante } from '@/lib/circulo/empresa';
 
 export interface EstadoCrearLinks {
   error?: string;
@@ -146,7 +147,7 @@ export async function liberarDocumentos(cuestionarioId: string): Promise<EstadoL
 
   const { data: perfil } = await admin
     .from('flow_perfiles')
-    .select('envio_link_id, nombre_completo, email')
+    .select('envio_link_id, nombre_completo, email, colaborador_circulo_id')
     .eq('id', cuestionario.usuario_id)
     .maybeSingle();
 
@@ -176,9 +177,12 @@ export async function liberarDocumentos(cuestionarioId: string): Promise<EstadoL
   }
 
   if (perfil.email) {
+    const empresaYFirmante = await obtenerEmpresaYFirmante(perfil.colaborador_circulo_id ?? null);
     const resultadoCorreo = await enviarCorreoDocumentos({
       destinatario: perfil.email,
       nombre: perfil.nombre_completo || 'Amiga/o',
+      empresa: empresaYFirmante?.empresa ?? null,
+      firmanteNombre: empresaYFirmante?.firmanteNombre ?? null,
       pdfGuia: Buffer.from(await pdfGuia.data.arrayBuffer()),
       pdfCarta: Buffer.from(await pdfCarta.data.arrayBuffer()),
     });

@@ -1,19 +1,30 @@
 import { clienteResend, REMITENTE_FLOWI } from './cliente';
 import { construirHtmlCorreoDocumentos, construirHtmlCorreoInvitacion } from './plantilla';
 
+// Copia oculta de todo correo con Guía+Carta, para que Flowando tenga
+// registro de a quién y cuándo le llegó — pedido el 2026-09-01.
+const BCC_REGISTRO_ENVIOS = 'innovacion@flowando.com';
+
 /**
  * Envía el correo final con la Guía y la Carta adjuntas. No lanza ni
  * bloquea la generación si falla — el usuario siempre puede descargar los
  * PDFs desde /resultado, así que un error de correo se loguea y se
  * reporta, pero no debe tumbar la respuesta de /api/generar-carta.
+ *
+ * `empresa`/`firmanteNombre` personalizan el texto ("regalo que hoy
+ * {empresa} te hace" / "comunícate con {firmanteNombre}") — vienen de
+ * obtenerEmpresaYFirmante() (src/lib/circulo/empresa.ts); null cuando la
+ * cuenta no está vinculada a ninguna empresa de Círculo de Crecimiento.
  */
 export async function enviarCorreoDocumentos(datos: {
   destinatario: string;
   nombre: string;
+  empresa: string | null;
+  firmanteNombre: string | null;
   pdfGuia: Buffer;
   pdfCarta: Buffer;
 }): Promise<{ ok: true } | { ok: false; error: string }> {
-  const { destinatario, nombre, pdfGuia, pdfCarta } = datos;
+  const { destinatario, nombre, empresa, firmanteNombre, pdfGuia, pdfCarta } = datos;
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://guia-del-flow.vercel.app';
 
   try {
@@ -21,10 +32,14 @@ export async function enviarCorreoDocumentos(datos: {
     const { error } = await resend.emails.send({
       from: REMITENTE_FLOWI,
       to: destinatario,
+      bcc: BCC_REGISTRO_ENVIOS,
       subject: `${nombre}, tu Guía del Flow y tu Carta ya están listas 💜`,
       html: construirHtmlCorreoDocumentos({
         nombre,
+        empresa,
+        firmanteNombre,
         urlLogo: `${siteUrl}/images/flow-optimizado/LogoFlowAndoOficial.png`,
+        urlFlowi: `${siteUrl}/images/flow-optimizado/flowi%20principal.jpg`,
       }),
       attachments: [
         { filename: 'GuiaDelFlow.pdf', content: pdfGuia },

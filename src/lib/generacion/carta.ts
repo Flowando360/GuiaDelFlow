@@ -1,6 +1,7 @@
 import { createAdminClient } from '@/lib/supabase/server';
 import { generarCartaCondensada, generarPdfCarta } from '@/lib/pdf/carta/generar';
 import { enviarCorreoDocumentos } from '@/lib/email/enviar';
+import { obtenerEmpresaYFirmante } from '@/lib/circulo/empresa';
 import type { GuiaCondensada } from '@/lib/pdf/guia/tipos';
 import type { ResultadoGeneracion } from './guia';
 
@@ -24,7 +25,11 @@ async function enviarCorreoSiCorresponde(
 ): Promise<void> {
   const { usuarioId, cuestionarioId, nombreMostrado, storagePathGuia, pdfCarta } = params;
 
-  const perfilEnvio = await admin.from('flow_perfiles').select('email, envio_link_id').eq('id', usuarioId).single();
+  const perfilEnvio = await admin
+    .from('flow_perfiles')
+    .select('email, envio_link_id, colaborador_circulo_id')
+    .eq('id', usuarioId)
+    .single();
   let modoEnvio: string | null = null;
   if (perfilEnvio.data?.envio_link_id) {
     const { data: linkEnvio } = await admin
@@ -46,9 +51,13 @@ async function enviarCorreoSiCorresponde(
     return;
   }
 
+  const empresaYFirmante = await obtenerEmpresaYFirmante(perfilEnvio.data?.colaborador_circulo_id ?? null);
+
   const resultadoCorreo = await enviarCorreoDocumentos({
     destinatario: destinatarioCorreo,
     nombre: nombreMostrado,
+    empresa: empresaYFirmante?.empresa ?? null,
+    firmanteNombre: empresaYFirmante?.firmanteNombre ?? null,
     pdfGuia: Buffer.from(await pdfGuiaDescargado.arrayBuffer()),
     pdfCarta,
   });

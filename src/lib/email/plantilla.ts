@@ -3,9 +3,34 @@
  * externo ni @import de fuentes) porque los clientes de correo ignoran o
  * bloquean eso — se usan fuentes "web-safe" con fallback, igual que
  * cualquier plantilla de email tradicional.
+ *
+ * Texto acordado con Flowando el 2026-09-01 para usarse con TODAS las
+ * empresas de ahora en adelante — nombra a la empresa que regala la Guía y
+ * a quien lidera Talento Humano ahí, para que la persona sepa a quién
+ * buscar si quiere hablarlo. `empresa`/`firmanteNombre` vienen de
+ * obtenerEmpresaYFirmante() (src/lib/circulo/empresa.ts) — null cuando la
+ * cuenta no está vinculada a ninguna empresa de Círculo de Crecimiento
+ * (registro directo), caso en el que se usa un texto genérico de respaldo.
  */
-export function construirHtmlCorreoDocumentos(datos: { nombre: string; urlLogo: string }): string {
-  const { nombre, urlLogo } = datos;
+export function construirHtmlCorreoDocumentos(datos: {
+  nombre: string;
+  empresa: string | null;
+  firmanteNombre: string | null;
+  urlLogo: string;
+  urlFlowi: string;
+}): string {
+  const { nombre, empresa, firmanteNombre, urlLogo, urlFlowi } = datos;
+
+  const parrafoRegalo = empresa
+    ? `Los dos van adjuntos a este correo en PDF y son documentos privados que solamente tú conoces. Es un regalo que hoy
+       <strong>${escaparHtml(empresa)}</strong> te hace para que potencies tus talentos y te enfoques en aquello que te hace feliz.`
+    : `Los dos van adjuntos a este correo en PDF y son documentos privados que solamente tú conoces. Es un regalo para que
+       potencies tus talentos y te enfoques en aquello que te hace feliz.`;
+
+  const parrafoCierre = firmanteNombre
+    ? `Tómate tu tiempo para leerlos con calma, disfrútalos, disfrútate y si quieres algún apoyo, comunícate con
+       <strong>${escaparHtml(firmanteNombre)}</strong>, quien con gusto estará para ti.`
+    : `Tómate tu tiempo para leerlos con calma, disfrútalos, disfrútate.`;
 
   return `<!DOCTYPE html>
 <html lang="es">
@@ -33,14 +58,22 @@ export function construirHtmlCorreoDocumentos(datos: { nombre: string; urlLogo: 
                 sobre tus talentos, tu propósito y tus desafíos, y <strong>tu Carta</strong>, un mensaje
                 personal donde te respondo a lo que me compartiste.
               </p>
+              <p style="margin:0 0 16px 0;color:#2e1065;font-size:15px;line-height:1.7;">
+                ${parrafoRegalo}
+              </p>
               <p style="margin:0 0 24px 0;color:#2e1065;font-size:15px;line-height:1.7;">
-                Los dos van adjuntos a este correo en PDF. Tómate tu tiempo para leerlos con calma.
+                ${parrafoCierre}
               </p>
             </td>
           </tr>
           <tr>
-            <td style="padding:0 32px 32px 32px;">
-              <p style="margin:24px 0 0 0;font-style:italic;color:#a855f7;font-size:13px;">Con todo el cariño,</p>
+            <td style="padding:0 32px 8px 32px;" align="center">
+              <img src="${urlFlowi}" alt="Flowi" width="120" style="display:block;height:auto;"/>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 32px 32px 32px;" align="center">
+              <p style="margin:0;font-style:italic;color:#a855f7;font-size:13px;">Con todo el cariño,</p>
               <p style="margin:2px 0 0 0;font-style:italic;color:#7c3aed;font-size:20px;">Flowi ♥</p>
             </td>
           </tr>
