@@ -1,6 +1,6 @@
 import { createAdminClient } from '@/lib/supabase/server';
 import { generarCartaCondensada, generarPdfCarta } from '@/lib/pdf/carta/generar';
-import { enviarCorreoDocumentos } from '@/lib/email/enviar';
+import { enviarCorreoDocumentos, enviarCorreoAvisoInterno } from '@/lib/email/enviar';
 import { obtenerEmpresaYFirmante } from '@/lib/circulo/empresa';
 import type { GuiaCondensada } from '@/lib/pdf/guia/tipos';
 import type { ResultadoGeneracion } from './guia';
@@ -9,15 +9,19 @@ type RespuestasJson = Record<string, unknown>;
 type AdminClient = ReturnType<typeof createAdminClient>;
 
 /**
- * Manda el correo final (Guía+Carta adjuntas) si corresponde, y deja
- * registrado el resultado en flow_cuestionarios -- ver migración 0008.
- * Antes este resultado solo quedaba en un console.error de la función
- * serverless, invisible desde /panel (Diana lo pidió el 2026-08-31 después
- * de preguntar si el correo realmente había llegado).
+ * Manda el correo final (Guía+Carta adjuntas) a la persona cuando el modo
+ * lo permite, Y SIEMPRE manda el aviso interno a Flowando
+ * (enviarCorreoAvisoInterno) sin importar el modo -- pedido el 2026-09-02
+ * porque en modo "acompañado" antes no llegaba absolutamente ningún correo
+ * a nadie. Deja registrado en flow_cuestionarios el resultado del envío A
+ * LA PERSONA -- ver migración 0008. Antes este resultado solo quedaba en un
+ * console.error de la función serverless, invisible desde /panel (Diana lo
+ * pidió el 2026-08-31 después de preguntar si el correo realmente había
+ * llegado).
  *
- * "No corresponde" (modo 'acompanado') no es un error -- se deja
- * enviado_at y error en null a propósito, para no confundirlo con un
- * intento fallido.
+ * "No corresponde" el envío a la persona (modo 'acompanado', o cuenta sin
+ * correo registrado) no es un error -- se deja enviado_at y error en null a
+ * propósito, para no confundirlo con un intento fallido.
  */
 async function enviarCorreoSiCorresponde(
   admin: AdminClient,
@@ -30,17 +34,16 @@ async function enviarCorreoSiCorresponde(
     .select('email, envio_link_id, colaborador_circulo_id')
     .eq('id', usuarioId)
     .single();
-  let modoEnvio: string | null = null;
+  let modoEnvio: 'directo' | 'acompanado' = 'directo';
   if (perfilEnvio.data?.envio_link_id) {
     const { data: linkEnvio } = await admin
       .from('flow_links_envio')
       .select('modo')
       .eq('id', perfilEnvio.data.envio_link_id)
       .maybeSingle();
-    modoEnvio = linkEnvio?.modo ?? null;
+    if (linkEnvio?.modo === 'acompanado') modoEnvio = 'acompanado';
   }
-  const destinatarioCorreo = modoEnvio === 'acompanado' ? null : perfilEnvio.data?.email;
-  if (!destinatarioCorreo) return;
+  const destinatarioCorreo = modoEnvio === 'acompanado' ? null : (perfilEnvio.data?.email ?? null);
 
   const { data: pdfGuiaDescargado } = await admin.storage.from('guia-del-flow').download(storagePathGuia);
   if (!pdfGuiaDescargado) {
@@ -50,26 +53,43 @@ async function enviarCorreoSiCorresponde(
       .eq('id', cuestionarioId);
     return;
   }
+  const pdfGuia = Buffer.from(await pdfGuiaDescargado.arrayBuffer());
 
-  const empresaYFirmante = await obtenerEmpresaYFirmante(perfilEnvio.data?.colaborador_circulo_id ?? null);
+  let resultadoParaPersona: { ok: true } | { ok: false; error: string } | null = null;
+  if (destinatarioCorreo) {
+    const empresaYFirmante = await obtenerEmpresaYFirmante(perfilEnvio.data?.colaborador_circulo_id ?? null);
+    resultadoParaPersona = await enviarCorreoDocumentos({
+      destinatario: destinatarioCorreo,
+      nombre: nombreMostrado,
+      empresa: empresaYFirmante?.empresa ?? null,
+      firmanteNombre: empresaYFirmante?.firmanteNombre ?? null,
+      pdfGuia,
+      pdfCarta,
+    });
+  }
 
-  const resultadoCorreo = await enviarCorreoDocumentos({
-    destinatario: destinatarioCorreo,
+  const resultadoAviso = await enviarCorreoAvisoInterno({
     nombre: nombreMostrado,
-    empresa: empresaYFirmante?.empresa ?? null,
-    firmanteNombre: empresaYFirmante?.firmanteNombre ?? null,
-    pdfGuia: Buffer.from(await pdfGuiaDescargado.arrayBuffer()),
+    modo: modoEnvio,
+    correoPersona: destinatarioCorreo,
+    envioPersonaOk: resultadoParaPersona?.ok ?? null,
+    pdfGuia,
     pdfCarta,
   });
+  if (!resultadoAviso.ok) {
+    console.error('No se pudo enviar el aviso interno a Flowando:', resultadoAviso.error);
+  }
 
-  if (resultadoCorreo.ok) {
+  if (!destinatarioCorreo) return;
+
+  if (resultadoParaPersona?.ok) {
     await admin
       .from('flow_cuestionarios')
       .update({ correo_documentos_enviado_at: new Date().toISOString(), correo_documentos_error: null })
       .eq('id', cuestionarioId);
   } else {
-    console.error('No se pudo enviar el correo con los documentos:', resultadoCorreo.error);
-    await admin.from('flow_cuestionarios').update({ correo_documentos_error: resultadoCorreo.error }).eq('id', cuestionarioId);
+    console.error('No se pudo enviar el correo con los documentos:', resultadoParaPersona?.error);
+    await admin.from('flow_cuestionarios').update({ correo_documentos_error: resultadoParaPersona?.error }).eq('id', cuestionarioId);
   }
 }
 

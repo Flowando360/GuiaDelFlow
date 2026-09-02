@@ -172,6 +172,68 @@ export function construirHtmlCorreoInvitacion(datos: {
 </html>`;
 }
 
+/**
+ * HTML del aviso interno a Flowando (ver enviarCorreoAvisoInterno) -- más
+ * simple que las plantillas para la persona, es un memo informativo con el
+ * contexto de qué modo era y qué pasó con el envío a la persona, no un
+ * correo pensado para leerse como un regalo.
+ */
+export function construirHtmlAvisoInterno(datos: {
+  nombre: string;
+  modo: 'directo' | 'acompanado';
+  correoPersona: string | null;
+  envioPersonaOk: boolean | null;
+}): string {
+  const { nombre, modo, correoPersona, envioPersonaOk } = datos;
+
+  const lineaEnvio =
+    modo === 'acompanado'
+      ? 'Modo acompañado: no se le manda correo automático a la persona, así que la entrega queda pendiente de coordinarse manualmente.'
+      : envioPersonaOk === true
+        ? `Modo directo: el correo con sus documentos ya se le envió a ${escaparHtml(correoPersona ?? 'su correo')}.`
+        : correoPersona
+          ? `Modo directo: el envío a ${escaparHtml(correoPersona)} FALLÓ. Revisa /panel para reintentarlo.`
+          : 'Modo directo, pero esta cuenta no tiene un correo registrado -- no se le pudo enviar nada a la persona.';
+
+  return `<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/></head>
+<body style="margin:0;padding:0;background-color:#f5f3ff;font-family:Georgia,'Times New Roman',serif;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#f5f3ff;padding:32px 16px;">
+    <tr>
+      <td align="center">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:480px;background-color:#ffffff;border-radius:12px;overflow:hidden;">
+          <tr>
+            <td style="padding:24px 28px 8px 28px;">
+              <p style="margin:0 0 4px 0;color:#a78bfa;font-size:11px;letter-spacing:0.5px;text-transform:uppercase;">Aviso interno · Guía del Flow</p>
+              <h1 style="margin:0 0 16px 0;color:#4c1d95;font-size:20px;">${escaparHtml(nombre)} terminó su cuestionario</h1>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 28px;">
+              <p style="margin:0 0 12px 0;color:#2e1065;font-size:14px;line-height:1.6;">
+                Ya se generaron su Guía del Flow y su Carta -- van las dos adjuntas en PDF a este correo.
+              </p>
+              <p style="margin:0 0 20px 0;color:#2e1065;font-size:14px;line-height:1.6;">
+                ${lineaEnvio}
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:16px 28px;background-color:#f5f3ff;">
+              <p style="margin:0;color:#a78bfa;font-size:11px;letter-spacing:0.5px;text-transform:uppercase;">
+                El Lab del Talento · FlowAndo
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`;
+}
+
 function escaparHtml(texto: string): string {
   return texto.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
