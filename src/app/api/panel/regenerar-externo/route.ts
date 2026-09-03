@@ -2,11 +2,19 @@ import { NextRequest, NextResponse } from 'next/server';
 import { generarGuiaParaUsuario } from '@/lib/generacion/guia';
 import { generarCartaParaUsuario } from '@/lib/generacion/carta';
 
-// Igual que /api/generar-guia y /api/generar-carta: Puppeteer necesita
-// Node.js, y la llamada a Claude + el render del PDF se acercan al límite
-// de 60s del plan Hobby de Vercel.
+// A diferencia de /api/generar-guia y /api/generar-carta (que solo generan
+// UN documento cada uno), este endpoint hace los dos seguidos -- Guía y
+// Carta -- porque así funciona "Reintentar". Con maxDuration=60 (límite
+// viejo de Vercel Hobby, que ya no aplica -- el default subió a 300s en
+// todos los planes) la función se mataba a los 60s en seco
+// (FUNCTION_INVOCATION_TIMEOUT) antes de que la Carta alcanzara a
+// terminar -- caso real: Leonel Uribe Correa (2026-09-03), reintento desde
+// Círculo de Crecimiento fallaba con "No se pudo contactar a Guía del
+// Flow" del lado de la otra app, que es como se ve un timeout de conexión
+// ahí. 60s le alcanza casi siempre a la Guía sola, pero Guía+Carta
+// seguidas puede pasarse fácil.
 export const runtime = 'nodejs';
-export const maxDuration = 60;
+export const maxDuration = 300;
 
 /**
  * Versión de "Reintentar" (ver regenerarDocumentos en /panel/actions.ts)
