@@ -93,6 +93,11 @@ export async function generarGuiaParaUsuario(usuarioId: string): Promise<Resulta
         storage_path: rutaArchivo,
         contenido: guia,
         generado_at: new Date().toISOString(),
+        // Limpia el error de un intento fallido anterior -- sin esto, un
+        // reintento exitoso deja el mensaje de error viejo pegado en la
+        // fila junto a estado 'listo', confuso para cualquiera que mire
+        // flow_documentos directo.
+        error_detalle: null,
       },
       { onConflict: 'cuestionario_id,tipo' }
     );

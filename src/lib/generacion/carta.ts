@@ -208,6 +208,9 @@ export async function generarCartaParaUsuario(usuarioId: string): Promise<Result
         estado: 'listo',
         storage_path: rutaArchivo,
         generado_at: new Date().toISOString(),
+        // Limpia el error de un intento fallido anterior -- ver mismo
+        // comentario en guia.ts.
+        error_detalle: null,
       },
       { onConflict: 'cuestionario_id,tipo' }
     );
