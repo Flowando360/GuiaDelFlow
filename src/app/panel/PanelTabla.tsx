@@ -37,8 +37,18 @@ function clave(fila: FilaPanel): string {
   return fila.usuarioId ?? `sin-cuenta:${fila.email ?? fila.nombre}`;
 }
 
+/** minúsculas y sin tildes, para que la búsqueda no dependa de que Diana
+ * escriba el acento exacto (ni de mayúsculas). */
+function normalizar(texto: string): string {
+  return texto
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, ''); // marcas diacríticas (tildes) sueltas tras NFD
+}
+
 export function PanelTabla({ filas }: { filas: FilaPanel[] }) {
   const [seleccion, setSeleccion] = useState<Set<string>>(new Set());
+  const [busqueda, setBusqueda] = useState('');
   const [filtroEmpresa, setFiltroEmpresa] = useState(TODAS);
   const [desde, setDesde] = useState('');
   const [hasta, setHasta] = useState('');
@@ -50,6 +60,10 @@ export function PanelTabla({ filas }: { filas: FilaPanel[] }) {
     [filas]
   );
 
+  // Búsqueda en vivo por nombre o correo -- sin acentos ni mayúsculas, para
+  // que "jose" encuentre "José" sin que Diana tenga que escribir la tilde.
+  const busquedaNormalizada = useMemo(() => normalizar(busqueda), [busqueda]);
+
   const filasFiltradas = useMemo(() => {
     return filas.filter((f) => {
       if (filtroEmpresa === SIN_EMPRESA && f.empresa) return false;
@@ -59,9 +73,16 @@ export function PanelTabla({ filas }: { filas: FilaPanel[] }) {
       // El input date da "AAAA-MM-DD" (sin hora) -- se compara contra la
       // fecha completa agregando el final del día para incluir "hasta" completo.
       if (hasta && f.fechaGeneracion! > `${hasta}T23:59:59`) return false;
+      if (
+        busquedaNormalizada &&
+        !normalizar(f.nombre).includes(busquedaNormalizada) &&
+        !normalizar(f.email ?? '').includes(busquedaNormalizada)
+      ) {
+        return false;
+      }
       return true;
     });
-  }, [filas, filtroEmpresa, desde, hasta]);
+  }, [filas, filtroEmpresa, desde, hasta, busquedaNormalizada]);
 
   // Solo tiene sentido seleccionar/descargar lo que ya tenga al menos un
   // documento listo -- lo demás (sin terminar, generando, en error) no
@@ -129,6 +150,16 @@ export function PanelTabla({ filas }: { filas: FilaPanel[] }) {
     <div className="mt-6 space-y-4">
       <div className="flex flex-wrap items-end gap-3 rounded-xl bg-flow-50 p-4 ring-1 ring-flow-200">
         <div>
+          <label className="mb-1 block text-xs font-semibold text-flow-700">Buscar</label>
+          <input
+            type="text"
+            value={busqueda}
+            onChange={(e) => setBusqueda(e.target.value)}
+            placeholder="Nombre o correo…"
+            className="w-48 rounded-lg border border-flow-300 bg-white px-2.5 py-1.5 text-sm text-flow-900"
+          />
+        </div>
+        <div>
           <label className="mb-1 block text-xs font-semibold text-flow-700">Empresa</label>
           <select
             value={filtroEmpresa}
@@ -162,10 +193,11 @@ export function PanelTabla({ filas }: { filas: FilaPanel[] }) {
             className="rounded-lg border border-flow-300 bg-white px-2.5 py-1.5 text-sm text-flow-900"
           />
         </div>
-        {(filtroEmpresa !== TODAS || desde || hasta) && (
+        {(busqueda || filtroEmpresa !== TODAS || desde || hasta) && (
           <button
             type="button"
             onClick={() => {
+              setBusqueda('');
               setFiltroEmpresa(TODAS);
               setDesde('');
               setHasta('');

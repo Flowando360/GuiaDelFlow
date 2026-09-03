@@ -45,14 +45,22 @@ export async function POST(req: Request) {
   const usuarioIds = items.map((it) => it.usuarioId);
   const cuestionarioIds = items.map((it) => it.cuestionarioId!);
 
-  const [{ data: perfiles }, { data: documentos }] = await Promise.all([
+  const [{ data: perfiles }, { data: documentos }, { data: cuestionarios }] = await Promise.all([
     admin.from('flow_perfiles').select('id, nombre_completo, colaborador_circulo_id').in('id', usuarioIds),
     admin
       .from('flow_documentos')
       .select('cuestionario_id, tipo, estado, storage_path')
       .in('cuestionario_id', cuestionarioIds)
       .eq('estado', 'listo'),
+    // Para el apodo ("cómo le gusta que le llamen") -- ver nombreArchivo.ts.
+    admin.from('flow_cuestionarios').select('id, usuario_id, respuestas').in('id', cuestionarioIds),
   ]);
+
+  const apodoPorUsuario = new Map<string, string | undefined>();
+  for (const c of cuestionarios ?? []) {
+    const respuestas = c.respuestas as { demograficos?: { apodo?: string } } | null;
+    apodoPorUsuario.set(c.usuario_id, respuestas?.demograficos?.apodo);
+  }
 
   const colaboradorIds = [
     ...new Set((perfiles ?? []).map((p) => p.colaborador_circulo_id).filter((id): id is string => Boolean(id))),
@@ -105,7 +113,7 @@ export async function POST(req: Request) {
       if (!path) continue;
       const { data: archivo, error } = await admin.storage.from('guia-del-flow').download(path);
       if (error || !archivo) continue;
-      const nombre = nombreSinChocar(nombreArchivoPdf(tipo, perfil.nombre_completo, siglas));
+      const nombre = nombreSinChocar(nombreArchivoPdf(tipo, perfil.nombre_completo, siglas, apodoPorUsuario.get(item.usuarioId)));
       zip.file(nombre, await archivo.arrayBuffer());
       agregados++;
     }

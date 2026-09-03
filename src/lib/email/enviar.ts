@@ -80,21 +80,31 @@ export async function enviarCorreoDocumentos(datos: {
  */
 export async function enviarCorreoAvisoInterno(datos: {
   nombre: string;
+  /** Correo de la CUENTA (flow_perfiles.email) -- siempre que exista, sin
+   * importar el modo. Distinto de correoPersona, que es a dónde se le
+   * mandó (o no) el correo con los documentos. */
+  correo: string | null;
   modo: 'directo' | 'acompanado';
   correoPersona: string | null;
   envioPersonaOk: boolean | null;
   pdfGuia: Buffer;
   pdfCarta: Buffer;
 }): Promise<{ ok: true } | { ok: false; error: string }> {
-  const { nombre, modo, correoPersona, envioPersonaOk, pdfGuia, pdfCarta } = datos;
+  const { nombre, correo, modo, correoPersona, envioPersonaOk, pdfGuia, pdfCarta } = datos;
 
   try {
     const resend = clienteResend();
     const { error } = await resend.emails.send({
       from: REMITENTE_FLOWI,
       to: CORREO_AVISO_INTERNO,
-      subject: `${nombre} terminó su cuestionario — Guía y Carta listas`,
-      html: construirHtmlAvisoInterno({ nombre, modo, correoPersona, envioPersonaOk }),
+      // Nombre Y correo en el asunto -- para identificar a la persona sin
+      // tener que abrir el correo (pedido el 2026-09-03, después de que
+      // fue difícil ubicar de quién se trataba un aviso con solo el
+      // nombre/apodo).
+      subject: correo
+        ? `${nombre} (${correo}) terminó su cuestionario — Guía y Carta listas`
+        : `${nombre} terminó su cuestionario — Guía y Carta listas`,
+      html: construirHtmlAvisoInterno({ nombre, correo, modo, correoPersona, envioPersonaOk }),
       attachments: [
         { filename: 'GuiaDelFlow.pdf', content: pdfGuia },
         { filename: 'CartaDelFlow.pdf', content: pdfCarta },

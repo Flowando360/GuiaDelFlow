@@ -31,7 +31,7 @@ async function enviarCorreoSiCorresponde(
 
   const perfilEnvio = await admin
     .from('flow_perfiles')
-    .select('email, envio_link_id, colaborador_circulo_id')
+    .select('email, nombre_completo, envio_link_id, colaborador_circulo_id')
     .eq('id', usuarioId)
     .single();
   let modoEnvio: 'directo' | 'acompanado' = 'directo';
@@ -69,7 +69,13 @@ async function enviarCorreoSiCorresponde(
   }
 
   const resultadoAviso = await enviarCorreoAvisoInterno({
-    nombre: nombreMostrado,
+    // El nombre real (no el apodo de nombreMostrado) y el correo de la
+    // CUENTA (no solo el de envío, que en modo 'acompanado' siempre viene
+    // null) -- pedido el 2026-09-03: Diana necesita poder identificar a la
+    // persona desde este correo, y un apodo o un correo ausente no
+    // alcanza para eso.
+    nombre: perfilEnvio.data?.nombre_completo || nombreMostrado,
+    correo: perfilEnvio.data?.email ?? null,
     modo: modoEnvio,
     correoPersona: destinatarioCorreo,
     envioPersonaOk: resultadoParaPersona?.ok ?? null,

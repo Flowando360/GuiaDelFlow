@@ -180,11 +180,12 @@ export function construirHtmlCorreoInvitacion(datos: {
  */
 export function construirHtmlAvisoInterno(datos: {
   nombre: string;
+  correo: string | null;
   modo: 'directo' | 'acompanado';
   correoPersona: string | null;
   envioPersonaOk: boolean | null;
 }): string {
-  const { nombre, modo, correoPersona, envioPersonaOk } = datos;
+  const { nombre, correo, modo, correoPersona, envioPersonaOk } = datos;
 
   const lineaEnvio =
     modo === 'acompanado'
@@ -206,7 +207,10 @@ export function construirHtmlAvisoInterno(datos: {
           <tr>
             <td style="padding:24px 28px 8px 28px;">
               <p style="margin:0 0 4px 0;color:#a78bfa;font-size:11px;letter-spacing:0.5px;text-transform:uppercase;">Aviso interno · Guía del Flow</p>
-              <h1 style="margin:0 0 16px 0;color:#4c1d95;font-size:20px;">${escaparHtml(nombre)} terminó su cuestionario</h1>
+              <h1 style="margin:0 0 12px 0;color:#4c1d95;font-size:20px;">${escaparHtml(nombre)} terminó su cuestionario</h1>
+              <p style="margin:0 0 16px 0;color:#5b21b6;font-size:13px;line-height:1.5;">
+                <strong>Correo:</strong> ${correo ? escaparHtml(correo) : 'sin correo registrado'}
+              </p>
             </td>
           </tr>
           <tr>
