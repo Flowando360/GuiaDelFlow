@@ -114,6 +114,10 @@ function paginaHistoriaYCierre(c: PilaresCondensado, imgs: Imagenes): string {
     <p>${escaparHtml(c.historia_reescrita.parrafo_2)}</p>
   </div>
   ${parrafos([c.historia_reescrita.cierre, c.invitacion_final])}
+  <div class="bloque-experimento">
+    <div class="bloque-experimento-etiqueta">Y ahora, una pequeña acción</div>
+    <p>${escaparHtml(c.experimento_24h)}</p>
+  </div>
   <div class="firma-wrap">
     <div class="firma-label">Con todo el cariño del mundo,</div>
     <div class="firma-nombre">Flowi ♥</div>

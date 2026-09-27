@@ -163,6 +163,23 @@ body {
 }
 .bloque-historia p:last-child { margin-bottom: 0; }
 
+.bloque-experimento {
+    background: #fdf4ff;
+    border: 1pt dashed #d8b4fe;
+    border-radius: 8pt;
+    padding: 14pt 16pt;
+    margin-bottom: 8pt;
+}
+.bloque-experimento-etiqueta {
+    font-size: 8pt;
+    font-weight: 800;
+    letter-spacing: 1.5pt;
+    text-transform: uppercase;
+    color: #a855f7;
+    margin-bottom: 6pt;
+}
+.bloque-experimento p { font-size: 11.5pt; line-height: 1.7; color: #3b0764; }
+
 .firma-wrap { text-align: center; margin-top: 12pt; }
 .firma-label { font-size: 9pt; font-weight: 800; letter-spacing: 1.5pt; color: #a855f7; margin-bottom: 4pt; }
 .firma-nombre {

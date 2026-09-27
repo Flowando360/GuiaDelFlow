@@ -2728,7 +2728,8 @@ export type Database = {
         Row: {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           clasificacion: Record<string, any>
-          correo: string
+          compromiso_24h: string | null
+          correo: string | null
           correo_enviado_at: string | null
           correo_error: string | null
           creado_at: string
@@ -2748,7 +2749,8 @@ export type Database = {
         Insert: {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           clasificacion?: Record<string, any>
-          correo: string
+          compromiso_24h?: string | null
+          correo?: string | null
           correo_enviado_at?: string | null
           correo_error?: string | null
           creado_at?: string
@@ -2768,7 +2770,8 @@ export type Database = {
         Update: {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           clasificacion?: Record<string, any>
-          correo?: string
+          compromiso_24h?: string | null
+          correo?: string | null
           correo_enviado_at?: string | null
           correo_error?: string | null
           creado_at?: string
@@ -5979,7 +5982,7 @@ export type Database = {
       estado_verificacion: "cumple" | "cumple_parcial" | "no_cumple_pendiente"
       flow_documento_estado: "pendiente" | "generando" | "listo" | "error"
       flow_documento_tipo: "guia" | "carta"
-      flow_pilares_estado: "generando" | "listo" | "error"
+      flow_pilares_estado: "generando" | "listo" | "error" | "jugando" | "esperando_correo"
       nivel_esperado: "bajo" | "medio" | "alto"
       nivel_riesgo_cargo: "alto" | "medio" | "bajo"
       origen_item_evaluacion: "competencia" | "funcion_cargo"
@@ -6219,7 +6222,7 @@ export const Constants = {
       estado_verificacion: ["cumple", "cumple_parcial", "no_cumple_pendiente"],
       flow_documento_estado: ["pendiente", "generando", "listo", "error"],
       flow_documento_tipo: ["guia", "carta"],
-      flow_pilares_estado: ["generando", "listo", "error"],
+      flow_pilares_estado: ["generando", "listo", "error", "jugando", "esperando_correo"],
       nivel_esperado: ["bajo", "medio", "alto"],
       nivel_riesgo_cargo: ["alto", "medio", "bajo"],
       origen_item_evaluacion: ["competencia", "funcion_cargo"],

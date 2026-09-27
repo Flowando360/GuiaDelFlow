@@ -37,6 +37,10 @@ function exigirPilaresCompleto(c: Partial<PilaresCondensado>): asserts c is Pila
   }
   if (faltante(c.invitacion_final)) throw new Error('Claude no devolvió "invitacion_final" (respuesta incompleta).');
   if (faltante(c.pilar_mas_vivo)) throw new Error('Claude no devolvió "pilar_mas_vivo" (respuesta incompleta).');
+  if (faltante(c.explicacion_pilar_mas_visible)) {
+    throw new Error('Claude no devolvió "explicacion_pilar_mas_visible" (respuesta incompleta).');
+  }
+  if (faltante(c.experimento_24h)) throw new Error('Claude no devolvió "experimento_24h" (respuesta incompleta).');
 }
 
 export async function generarPilaresCondensado(datos: {

@@ -3,6 +3,9 @@ import { notFound } from 'next/navigation';
 import { createAdminClient } from '@/lib/supabase/server';
 import { IMG } from '@/lib/imagenesWeb';
 import { GeneradorPilares } from './GeneradorPilares';
+import { ExperimentoPilares } from './ExperimentoPilares';
+import { EXPERIMENTO_24H_RESPALDO } from '@/lib/pilares/contenido';
+import type { PilaresCondensado } from '@/lib/pdf/pilares/tipos';
 
 export default async function ResultadoPilaresPage({ params }: { params: Promise<{ sesionId: string }> }) {
   const { sesionId } = await params;
@@ -10,11 +13,14 @@ export default async function ResultadoPilaresPage({ params }: { params: Promise
   const admin = createAdminClient();
   const { data: sesion } = await admin
     .from('flow_pilares_sesiones')
-    .select('id, nombre, estado')
+    .select('id, nombre, estado, resultado')
     .eq('id', sesionId)
     .maybeSingle();
 
   if (!sesion) notFound();
+
+  const resultado = sesion.resultado as PilaresCondensado | null;
+  const sugerenciaExperimento = resultado?.experimento_24h ?? EXPERIMENTO_24H_RESPALDO.pertenencia;
 
   return (
     <main className="flex flex-1 items-center justify-center px-4 py-12">
@@ -35,10 +41,11 @@ export default async function ResultadoPilaresPage({ params }: { params: Promise
             >
               Descargar mis 4 Pilares
             </a>
+            <ExperimentoPilares sesionId={sesion.id} sugerencia={sugerenciaExperimento} />
           </>
         )}
 
-        {sesion.estado === 'generando' && (
+        {(sesion.estado === 'generando' || sesion.estado === 'jugando' || sesion.estado === 'esperando_correo') && (
           <>
             <h1 className="mt-1 font-serif text-2xl font-bold text-flow-900">Todavía lo estamos tejiendo…</h1>
             <p className="mt-3 text-sm leading-relaxed text-flow-800">Espera un momento y recarga esta página.</p>

@@ -45,7 +45,24 @@ export const ESQUEMA_PILARES: Anthropic.Tool = {
         enum: ['Pertenencia', 'Propósito', 'Trascendencia', 'Narración'],
         description: 'El pilar que más viva esta persona hoy, a tu juicio como Flowi, según lo que escribió.',
       },
+      explicacion_pilar_mas_visible: {
+        type: 'string',
+        description: '1-2 frases, cálidas, explicando por qué ese pilar se hizo visible en SUS respuestas concretas. Nunca digas "tu pilar más fuerte" ni "tu puntuación" ni "tú eres [pilar]".',
+      },
+      experimento_24h: {
+        type: 'string',
+        description: 'Una acción pequeña y realizable para las próximas 24 horas, personalizada con lo que escribió -- nunca una obligación ni un cambio de vida grande.',
+      },
     },
-    required: ['frase_portada', 'introduccion', 'pilares', 'historia_reescrita', 'invitacion_final', 'pilar_mas_vivo'],
+    required: [
+      'frase_portada',
+      'introduccion',
+      'pilares',
+      'historia_reescrita',
+      'invitacion_final',
+      'pilar_mas_vivo',
+      'explicacion_pilar_mas_visible',
+      'experimento_24h',
+    ],
   },
 };

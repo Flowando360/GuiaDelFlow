@@ -70,7 +70,10 @@ export default async function PanelPilaresPage() {
       </div>
 
       <div>
-        <h2 className="font-serif text-lg font-bold text-flow-900">Quién ha jugado</h2>
+        <div className="flex items-center justify-between">
+          <h2 className="font-serif text-lg font-bold text-flow-900">Quién ha jugado</h2>
+          {sesiones && sesiones.length > 0 && <ResumenEstados sesiones={sesiones} />}
+        </div>
         {!sesiones || sesiones.length === 0 ? (
           <p className="mt-2 text-sm text-flow-700">Todavía nadie ha jugado.</p>
         ) : (
@@ -81,7 +84,7 @@ export default async function PanelPilaresPage() {
                   <th className="px-3 py-2">Nombre</th>
                   <th className="px-3 py-2">Correo</th>
                   <th className="px-3 py-2">Campaña</th>
-                  <th className="px-3 py-2">Pilar más vivo</th>
+                  <th className="px-3 py-2">Lo más visible</th>
                   <th className="px-3 py-2">Estado</th>
                   <th className="px-3 py-2"></th>
                 </tr>
@@ -92,15 +95,13 @@ export default async function PanelPilaresPage() {
                   return (
                     <tr key={s.id} className="border-t border-flow-100">
                       <td className="px-3 py-2">{s.nombre}</td>
-                      <td className="px-3 py-2 text-flow-700">{s.correo}</td>
+                      <td className="px-3 py-2 text-flow-700">{s.correo ?? '—'}</td>
                       <td className="px-3 py-2 text-flow-700">
                         {(s.flow_pilares_links as unknown as { etiqueta: string } | null)?.etiqueta ?? '—'}
                       </td>
                       <td className="px-3 py-2 text-flow-700">{resultado?.pilar_mas_vivo ?? '—'}</td>
                       <td className="px-3 py-2">
-                        {s.estado === 'listo' && <span className="font-semibold text-emerald-600">Listo</span>}
-                        {s.estado === 'generando' && <span className="text-flow-500">Generando…</span>}
-                        {s.estado === 'error' && <span className="font-semibold text-red-600">Error</span>}
+                        <EstadoBadge estado={s.estado} />
                       </td>
                       <td className="px-3 py-2 text-right">
                         {s.estado === 'listo' && (
@@ -118,5 +119,37 @@ export default async function PanelPilaresPage() {
         )}
       </div>
     </main>
+  );
+}
+
+type EstadoSesion = 'jugando' | 'esperando_correo' | 'generando' | 'listo' | 'error';
+
+function EstadoBadge({ estado }: { estado: EstadoSesion }) {
+  const estilos: Record<EstadoSesion, string> = {
+    jugando: 'text-flow-500',
+    esperando_correo: 'text-flow-500',
+    generando: 'text-flow-500',
+    listo: 'font-semibold text-emerald-600',
+    error: 'font-semibold text-red-600',
+  };
+  const etiquetas: Record<EstadoSesion, string> = {
+    jugando: 'Jugando…',
+    esperando_correo: 'Esperando correo',
+    generando: 'Generando…',
+    listo: 'Listo',
+    error: 'Error',
+  };
+  return <span className={estilos[estado]}>{etiquetas[estado]}</span>;
+}
+
+/** Conteo por estado -- para medir abandono por etapa (sección 17/19 de la especificación). */
+function ResumenEstados({ sesiones }: { sesiones: { estado: EstadoSesion }[] }) {
+  const conteo: Record<EstadoSesion, number> = { jugando: 0, esperando_correo: 0, generando: 0, listo: 0, error: 0 };
+  for (const s of sesiones) conteo[s.estado]++;
+
+  return (
+    <p className="text-xs text-flow-500">
+      {conteo.jugando} jugando · {conteo.esperando_correo} esperando correo · {conteo.listo} listas · {conteo.error} con error
+    </p>
   );
 }

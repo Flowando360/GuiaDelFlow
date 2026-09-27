@@ -7,17 +7,20 @@
  * ella cuenta en su charla (a propósito, para no rayar en derechos de
  * autor sobre su expresión concreta; el marco conceptual de los 4 pilares
  * no es lo mismo que sus historias). Ver Diseno-Juego-4-Pilares.md (repo
- * espiralcrecimiento360) para el diseño original -- el ejercicio 2 se
- * redefinió después, de escalas 1-5 a preguntas cortas de autoindagación.
+ * espiralcrecimiento360) para el diseño original, y
+ * Especificacion_Juego_4_Pilares_FlowAndo.docx (mismo repo) para la
+ * especificación v1.0 (27/09/2026) con la que se reescribió el flujo:
+ * correo solo al final, feedback sin correcto/incorrecto, ronda 2 dividida
+ * en una mini-experiencia por pilar, y experimento de 24h al cierre.
  */
 
 export type Pilar = 'pertenencia' | 'proposito' | 'trascendencia' | 'narracion';
 
-export const PILARES: { id: Pilar; nombre: string }[] = [
-  { id: 'pertenencia', nombre: 'Pertenencia' },
-  { id: 'proposito', nombre: 'Propósito' },
-  { id: 'trascendencia', nombre: 'Trascendencia' },
-  { id: 'narracion', nombre: 'Narración' },
+export const PILARES: { id: Pilar; nombre: string; icono: string; pregunta_esencial: string }[] = [
+  { id: 'pertenencia', nombre: 'Pertenencia', icono: '🫂', pregunta_esencial: '¿Con quién y dónde siento que pertenezco de verdad?' },
+  { id: 'proposito', nombre: 'Propósito', icono: '🎯', pregunta_esencial: '¿Para quién o para qué estoy usando lo que tengo?' },
+  { id: 'trascendencia', nombre: 'Trascendencia', icono: '✨', pregunta_esencial: '¿Qué me conecta con algo más grande que yo?' },
+  { id: 'narracion', nombre: 'Narración', icono: '📖', pregunta_esencial: '¿Qué historia estoy construyendo con lo que me ha pasado?' },
 ];
 
 export interface Tarjeta {
@@ -129,10 +132,26 @@ export const PREGUNTAS_PILARES: PreguntaPilar[] = [
 
 /** Ejercicio 3 — narración guiada (3 respuestas cortas). */
 export const PROMPTS_HISTORIA = {
-  momento_antes: 'Piensa en un momento difícil de tu vida. ¿Cómo lo hubieras contado justo después de que pasó?',
-  momento_despues: '¿Cómo lo cuentas hoy? ¿Qué cambió en la forma en que lo entiendes?',
-  titulo: 'Si esa historia tuviera un título, ¿cuál sería?',
+  momento_antes:
+    'Piensa en una situación que te haya cambiado. Puede haber sido difícil, inesperada, dolorosa, desafiante o incluso muy feliz. No tienes que contar nada que no quieras compartir. ¿Cómo la contabas justo después de que ocurrió?',
+  momento_despues: '¿Cómo la cuentas hoy? ¿Qué cambió en la forma en que la entiendes?',
+  titulo: 'Si esta historia fuera un libro, ¿cómo se llamaría este capítulo?',
 } as const;
+
+/** Micro-reconocimiento (pantalla 05 de la especificación): aparece cada 3
+ * tarjetas de clasificación, solo para generar interacción -- no se
+ * persiste ni se le pasa a Claude, no construye ninguna puntuación. */
+export const OPCIONES_MICRORRECONOCIMIENTO = ['Mucho', 'A veces', 'Nunca lo había pensado'] as const;
+
+/** Sugerencia de respaldo si Claude no devuelve `experimento_24h` (sección
+ * 13 de la especificación) -- el juego prioriza siempre la de Claude,
+ * personalizada; esto es solo una red de seguridad. */
+export const EXPERIMENTO_24H_RESPALDO: Record<Pilar, string> = {
+  pertenencia: 'Escribe a alguien con quien hace tiempo no tienes una conversación de verdad.',
+  proposito: 'Haz hoy una cosa que ayude a alguien sin esperar reconocimiento.',
+  trascendencia: 'Regálate 10 minutos para hacer algo que te conecte con algo mayor que tú.',
+  narracion: 'Escribe una frase nueva sobre una situación que hasta hoy has contado siempre de la misma manera.',
+};
 
 export type RespuestasClasificacion = Record<string, Pilar>;
 /** id de pregunta (PREGUNTAS_PILARES) → lo que escribió la persona. */
@@ -141,4 +160,18 @@ export interface RespuestasHistoria {
   momento_antes: string;
   momento_despues: string;
   titulo: string;
+}
+
+/**
+ * Orden aleatorio pero FIJO por sesión (se llama una sola vez al montar el
+ * juego, no en cada render) -- la especificación pide que las 12 tarjetas
+ * se mezclen al azar y que nunca se muestren agrupadas por pilar.
+ */
+export function barajarTarjetas(): Tarjeta[] {
+  const copia = [...TARJETAS];
+  for (let i = copia.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [copia[i], copia[j]] = [copia[j], copia[i]];
+  }
+  return copia;
 }
