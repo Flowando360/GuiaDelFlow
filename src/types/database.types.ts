@@ -2703,6 +2703,98 @@ export type Database = {
           },
         ]
       }
+      flow_pilares_links: {
+        Row: {
+          activo: boolean
+          creado_at: string
+          etiqueta: string
+          id: string
+        }
+        Insert: {
+          activo?: boolean
+          creado_at?: string
+          etiqueta: string
+          id?: string
+        }
+        Update: {
+          activo?: boolean
+          creado_at?: string
+          etiqueta?: string
+          id?: string
+        }
+        Relationships: []
+      }
+      flow_pilares_sesiones: {
+        Row: {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          clasificacion: Record<string, any>
+          correo: string
+          correo_enviado_at: string | null
+          correo_error: string | null
+          creado_at: string
+          error_detalle: string | null
+          estado: Database["public"]["Enums"]["flow_pilares_estado"]
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          historia: Record<string, any>
+          id: string
+          link_id: string | null
+          nombre: string
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          reflexiones: Record<string, any>
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          resultado: Record<string, any> | null
+          storage_path: string | null
+        }
+        Insert: {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          clasificacion?: Record<string, any>
+          correo: string
+          correo_enviado_at?: string | null
+          correo_error?: string | null
+          creado_at?: string
+          error_detalle?: string | null
+          estado?: Database["public"]["Enums"]["flow_pilares_estado"]
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          historia?: Record<string, any>
+          id?: string
+          link_id?: string | null
+          nombre: string
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          reflexiones?: Record<string, any>
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          resultado?: Record<string, any> | null
+          storage_path?: string | null
+        }
+        Update: {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          clasificacion?: Record<string, any>
+          correo?: string
+          correo_enviado_at?: string | null
+          correo_error?: string | null
+          creado_at?: string
+          error_detalle?: string | null
+          estado?: Database["public"]["Enums"]["flow_pilares_estado"]
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          historia?: Record<string, any>
+          id?: string
+          link_id?: string | null
+          nombre?: string
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          reflexiones?: Record<string, any>
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          resultado?: Record<string, any> | null
+          storage_path?: string | null
+        }
+        Relationships: [
+          {
+            foreignKeyName: "flow_pilares_sesiones_link_id_fkey"
+            columns: ["link_id"]
+            isOneToOne: false
+            referencedRelation: "flow_pilares_links"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       flow_resultados: {
         Row: {
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -5887,6 +5979,7 @@ export type Database = {
       estado_verificacion: "cumple" | "cumple_parcial" | "no_cumple_pendiente"
       flow_documento_estado: "pendiente" | "generando" | "listo" | "error"
       flow_documento_tipo: "guia" | "carta"
+      flow_pilares_estado: "generando" | "listo" | "error"
       nivel_esperado: "bajo" | "medio" | "alto"
       nivel_riesgo_cargo: "alto" | "medio" | "bajo"
       origen_item_evaluacion: "competencia" | "funcion_cargo"
@@ -6126,6 +6219,7 @@ export const Constants = {
       estado_verificacion: ["cumple", "cumple_parcial", "no_cumple_pendiente"],
       flow_documento_estado: ["pendiente", "generando", "listo", "error"],
       flow_documento_tipo: ["guia", "carta"],
+      flow_pilares_estado: ["generando", "listo", "error"],
       nivel_esperado: ["bajo", "medio", "alto"],
       nivel_riesgo_cargo: ["alto", "medio", "bajo"],
       origen_item_evaluacion: ["competencia", "funcion_cargo"],

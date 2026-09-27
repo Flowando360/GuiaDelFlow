@@ -238,6 +238,76 @@ export function construirHtmlAvisoInterno(datos: {
 </html>`;
 }
 
+/**
+ * HTML del correo con el PDF de "Los 4 Pilares" adjunto — juego público sin
+ * cuenta (ver src/lib/pilares/, src/lib/pdf/pilares/). Mismo sistema visual
+ * que construirHtmlCorreoDocumentos, pero con su propio texto: acá no hay
+ * "empresa que regala" ni "firmante", porque no depende de Círculo de
+ * Crecimiento en absoluto.
+ */
+export function construirHtmlCorreoPilares(datos: {
+  nombre: string;
+  urlLogo: string;
+  urlFlowi: string;
+}): string {
+  const { nombre, urlLogo, urlFlowi } = datos;
+
+  return `<!DOCTYPE html>
+<html lang="es">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/></head>
+<body style="margin:0;padding:0;background-color:#faf5ff;font-family:Georgia,'Times New Roman',serif;">
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#faf5ff;padding:32px 16px;">
+    <tr>
+      <td align="center">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:520px;background-color:#ffffff;border-radius:16px;overflow:hidden;">
+          <tr>
+            <td style="padding:32px 32px 0 32px;">
+              <img src="${urlLogo}" alt="FlowAndo" width="140" style="display:block;height:auto;"/>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:24px 32px 8px 32px;">
+              <p style="margin:0 0 4px 0;font-style:italic;color:#7c3aed;font-size:14px;">Hola,</p>
+              <h1 style="margin:0 0 16px 0;color:#4c1d95;font-size:24px;">${escaparHtml(nombre)}, tus 4 Pilares ya están listos</h1>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 32px;">
+              <p style="margin:0 0 16px 0;color:#2e1065;font-size:15px;line-height:1.7;">
+                Va adjunto en PDF: lo que descubriste sobre tu Pertenencia, tu Propósito, tu Trascendencia y tu
+                forma de contarte tu propia historia — con tus propias respuestas del juego.
+              </p>
+              <p style="margin:0 0 24px 0;color:#2e1065;font-size:15px;line-height:1.7;">
+                Tómate tu tiempo para leerlo con calma, disfrútalo, disfrútate.
+              </p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 32px 8px 32px;" align="center">
+              <img src="${urlFlowi}" alt="Flowi" width="120" style="display:block;height:auto;"/>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:0 32px 32px 32px;" align="center">
+              <p style="margin:0;font-style:italic;color:#a855f7;font-size:13px;">Con todo el cariño,</p>
+              <p style="margin:2px 0 0 0;font-style:italic;color:#7c3aed;font-size:20px;">Flowi ♥</p>
+            </td>
+          </tr>
+          <tr>
+            <td style="padding:16px 32px;background-color:#f5f3ff;">
+              <p style="margin:0;color:#a78bfa;font-size:11px;letter-spacing:0.5px;text-transform:uppercase;">
+                El Lab del Talento · FlowAndo
+              </p>
+            </td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>`;
+}
+
 function escaparHtml(texto: string): string {
   return texto.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }

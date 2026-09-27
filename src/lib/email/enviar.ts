@@ -3,6 +3,7 @@ import {
   construirHtmlCorreoDocumentos,
   construirHtmlCorreoInvitacion,
   construirHtmlAvisoInterno,
+  construirHtmlCorreoPilares,
 } from './plantilla';
 
 // A dónde llega el aviso interno de cada Guía+Carta completada -- pedido el
@@ -118,6 +119,46 @@ export async function enviarCorreoAvisoInterno(datos: {
     return { ok: true };
   } catch (error) {
     console.error('Error enviando aviso interno:', error);
+    return { ok: false, error: error instanceof Error ? error.message : String(error) };
+  }
+}
+
+/**
+ * Envía el PDF de "Los 4 Pilares" a quien jugó — juego público sin cuenta
+ * (ver src/lib/pilares/, src/app/pilares/). A diferencia de
+ * enviarCorreoDocumentos, no depende de flow_links_envio/modo ni de
+ * Círculo de Crecimiento: siempre se manda directo a `destinatario` apenas
+ * el PDF queda listo (ver src/lib/generacion/pilares.ts).
+ */
+export async function enviarCorreoPilares(datos: {
+  destinatario: string;
+  nombre: string;
+  pdfPilares: Buffer;
+}): Promise<{ ok: true } | { ok: false; error: string }> {
+  const { destinatario, nombre, pdfPilares } = datos;
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://guia-del-flow.vercel.app';
+
+  try {
+    const resend = clienteResend();
+    const { error } = await resend.emails.send({
+      from: REMITENTE_FLOWI,
+      to: destinatario,
+      subject: `${nombre}, tus 4 Pilares ya están listos 💜`,
+      html: construirHtmlCorreoPilares({
+        nombre,
+        urlLogo: `${siteUrl}/images/flow-optimizado/LogoFlowAndoOficial.png`,
+        urlFlowi: `${siteUrl}/images/flow-optimizado/flowi%20principal.jpg`,
+      }),
+      attachments: [{ filename: 'Los4Pilares.pdf', content: pdfPilares }],
+    });
+
+    if (error) {
+      console.error('Error enviando correo de Los 4 Pilares con Resend:', error);
+      return { ok: false, error: error.message };
+    }
+    return { ok: true };
+  } catch (error) {
+    console.error('Error enviando correo de Los 4 Pilares:', error);
     return { ok: false, error: error instanceof Error ? error.message : String(error) };
   }
 }
