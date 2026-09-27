@@ -1,10 +1,14 @@
 /**
- * Contenido fijo de "Los 4 Pilares" — inspirado en la charla TEDx de Emily
- * Esfahani Smith, "Los cuatro pilares de una vida con significado". Ver
- * Diseno-Juego-4-Pilares.md (repo espiralcrecimiento360) para el diseño con
- * el que se escribió esto originalmente — el ejercicio 2 se redefinió
- * después, de escalas 1-5 a preguntas cortas de autoindagación, para
- * invitar a escribir en cada pilar en vez de solo calificarse.
+ * Contenido fijo de "Los 4 Pilares" — el marco de los 4 pilares (Pertenencia,
+ * Propósito, Trascendencia, Narración) está inspirado en la charla TEDx de
+ * Emily Esfahani Smith, "Los cuatro pilares de una vida con significado".
+ * Las 12 escenas de clasificación son escenarios cotidianos INVENTADOS para
+ * este juego -- ninguno reproduce ni parafrasea las anécdotas puntuales que
+ * ella cuenta en su charla (a propósito, para no rayar en derechos de
+ * autor sobre su expresión concreta; el marco conceptual de los 4 pilares
+ * no es lo mismo que sus historias). Ver Diseno-Juego-4-Pilares.md (repo
+ * espiralcrecimiento360) para el diseño original -- el ejercicio 2 se
+ * redefinió después, de escalas 1-5 a preguntas cortas de autoindagación.
  */
 
 export type Pilar = 'pertenencia' | 'proposito' | 'trascendencia' | 'narracion';
@@ -27,73 +31,73 @@ export interface Tarjeta {
 export const TARJETAS: Tarjeta[] = [
   {
     id: 't1',
-    texto: 'Jonathan compra el periódico cada mañana al mismo vendedor. No es solo una transacción: se detienen a conversar, a tratarse como seres humanos.',
+    texto: 'Cada mañana antes de llegar a la oficina, Juan desayuna en el puesto de arepas de la esquina. No es solo comprar algo rápido: se detiene a preguntarle a doña Marta cómo amaneció, y ella ya sabe cómo le gusta el tinto.',
     pilar: 'pertenencia',
     feedback: 'La pertenencia vive en esos momentos pequeños entre personas — es una elección, no una casualidad.',
   },
   {
     id: 't2',
-    texto: 'Una trabajadora de limpieza de un hospital dice que su propósito es sanar a las personas enfermas.',
+    texto: 'Una enfermera de turno de noche dice que su trabajo no es solo aplicar medicamentos a tiempo, sino que cada paciente sienta que alguien de verdad está pendiente de él.',
     pilar: 'proposito',
     feedback: 'El propósito no depende del cargo — depende de a quién sirves con lo que haces.',
   },
   {
     id: 't3',
-    texto: 'Estudiantes que miraron durante un minuto un eucalipto de 60 metros terminaron comportándose de forma más generosa después.',
+    texto: 'Un grupo de amigos sube a caminar a la montaña un domingo, y al llegar arriba se quedan un rato en silencio mirando el paisaje, sintiendo que sus problemas se ven más pequeños desde ahí.',
     pilar: 'trascendencia',
     feedback: 'Basta un instante en que tu ego se achica para que algo en ti cambie.',
   },
   {
     id: 't4',
-    texto: 'Emika, paralizado jugando fútbol, cambió su historia de "mi vida era buena y ahora es mala" a "mi lesión me hizo un hombre mejor".',
+    texto: 'Andrés perdió su negocio en la pandemia. Por mucho tiempo se repetía: "yo era alguien exitoso, y ahora no soy nadie". Hoy dice: "esa quiebra me enseñó a valorar lo que de verdad importa, y desde ahí empecé de nuevo siendo más honesto conmigo mismo".',
     pilar: 'narracion',
     feedback: 'Los hechos no cambiaron. La historia que se contó a sí mismo, sí.',
   },
   {
     id: 't5',
-    texto: 'Revisar el teléfono mientras alguien te habla, o pasar junto a un conocido sin reconocerlo de verdad.',
+    texto: 'Contestar el chat de la oficina mientras tu pareja te está contando algo importante, o saludar de pasada a alguien conocido sin mirarlo realmente a los ojos.',
     pilar: 'pertenencia',
     feedback: 'Son rechazos pequeños que casi nadie nota — pero le quitan valor al otro.',
   },
   {
     id: 't6',
-    texto: 'Muchos padres dicen: "mi propósito es criar a mis hijos".',
+    texto: 'Muchas mamás y papás dicen: "mi propósito ahora es sacar adelante a mis hijos", aunque eso signifique turnos dobles y noches cortas.',
     pilar: 'proposito',
     feedback: 'El propósito tiene menos que ver con lo que quieres, y más con lo que das.',
   },
   {
     id: 't7',
-    texto: 'Emily entra en tal concentración escribiendo, que pierde por completo la noción del tiempo y el lugar.',
+    texto: 'A Camila se le va el tiempo sin darse cuenta cuando pinta — empieza a las tres de la tarde convencida de que lleva diez minutos, y de repente ya oscureció.',
     pilar: 'trascendencia',
     feedback: 'La trascendencia no siempre es mística — a veces es solo perderte en lo que haces.',
   },
   {
     id: 't8',
-    texto: 'El papá de Emily, en cirugía de emergencia, repitió los nombres de sus hijos como un mantra en vez de contar hacia atrás.',
+    texto: 'A la abuela de Valentina la operaron de urgencia. Lo último que alcanzó a pensar antes de la anestesia fue el nombre de sus nietos — eso, dijo después, fue lo que la hizo aferrarse a despertar.',
     pilar: 'narracion',
     feedback: 'En ese momento, esa fue su historia de para qué vivir.',
   },
   {
     id: 't9',
-    texto: 'Algunos grupos dan una pertenencia barata: te valoran por lo que odias, no por quien eres. La verdadera pertenencia nace del amor.',
+    texto: 'Hay grupos de amigos que solo te aceptan de verdad si opinas igual que ellos en todo. La pertenencia real nace de que te valoren siendo distinto, no de estar siempre de acuerdo.',
     pilar: 'pertenencia',
     feedback: 'Vale la pena distinguir entre pertenecer y solo encajar.',
   },
   {
     id: 't10',
-    texto: 'El desempleo y la falta de compromiso en el trabajo no son solo problemas económicos — son problemas existenciales.',
+    texto: 'Cuando alguien lleva meses buscando trabajo sin conseguirlo, no solo le hace falta el ingreso — también extraña sentirse útil para algo o para alguien.',
     pilar: 'proposito',
     feedback: 'Sin algo valioso que hacer, las personas se desorientan.',
   },
   {
     id: 't11',
-    texto: 'Para unos, la trascendencia llega contemplando arte. Para otros, en la iglesia.',
+    texto: 'Para algunos la trascendencia llega bailando hasta perder la cuenta del tiempo; para otros, en silencio, rezando con la abuela los domingos.',
     pilar: 'trascendencia',
     feedback: 'El lugar cambia de persona a persona; la sensación de conectarse con algo más grande, no.',
   },
   {
     id: 't12',
-    texto: 'El psicólogo Dan McAdams encontró que las vidas con más significado se cuentan como historias de redención, no solo de pérdida.',
+    texto: 'Las personas que sienten que su vida tiene sentido no son las que nunca han sufrido — son las que aprendieron a contar lo malo como parte de algo que las hizo crecer.',
     pilar: 'narracion',
     feedback: 'No se trata de que te hayan pasado cosas buenas — se trata de cómo las cuentas.',
   },
