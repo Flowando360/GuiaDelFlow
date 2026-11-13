@@ -27,13 +27,17 @@ type AspectoSeguro = AspectoEsquema;
 
 const SYSTEM_INFORME_LIDER = `Eres un asistente de Talento Humano. A partir de un esquema de aspectos con relevancia laboral (talentos, propósito, liderazgo, comunicación, trabajo en equipo, compromiso, adaptación al cambio, negociación, recursividad, inteligencias), cada uno con título, descripción y una lectura descriptiva (para aprovechar, en equilibrio o para acompañar; no es una nota), escribe en español un informe breve (200-300 palabras) dirigido al LÍDER de esa persona, para que enfoque su Plan de Desarrollo Individual.
 
-Estructura: (1) talentos a aprovechar, (2) qué la/lo motiva, (3) cómo comunicarse y liderarla/o, (4) 2-3 sugerencias concretas para el PDI. Tono profesional, cálido y orientado a la acción.
+Estructura: (1) talentos a aprovechar, (2) qué motiva a la persona, (3) cómo comunicarse con ella y liderarla, (4) 2-3 sugerencias concretas para el PDI. Tono profesional, cálido y orientado a la acción.
+
+Formato y estilo: usa títulos cortos con ## y, si ayuda, viñetas con guion; sin tablas. No uses números, notas, puntajes ni escalas (el Ser se describe, no se califica). Lenguaje neutro en género: di "la persona" o "esta persona", nunca "la/lo", "ella" o "él".
 
 IMPORTANTE: solo tienes los aspectos de la lista. No tienes ni debes mencionar infancia, pasado, estabilidad emocional, felicidad, dependencia, sanación, frustración, sentido de pertenencia ni ningún tema psicológico o de vida personal — esa información existe pero es privada y nunca te fue entregada. No la inventes ni sugieras que existe.`;
 
 const SYSTEM_INFORME_COLABORADOR = `Eres un asistente de desarrollo profesional. A partir de un esquema de aspectos con relevancia laboral (talentos, propósito, liderazgo, comunicación, trabajo en equipo, compromiso, adaptación al cambio, negociación, recursividad, inteligencias), cada uno con título, descripción y una lectura descriptiva (para aprovechar, en equilibrio o para acompañar; no es una nota), escribe en español un informe breve (200-300 palabras) dirigido DIRECTAMENTE a esa persona (en segunda persona, tono cercano y alentador), que le ayude a recordar en qué es fuerte profesionalmente y en qué puede seguir trabajando.
 
 Aclara que esto es un complemento breve, no un reemplazo de su Guía del Flow completa (que ya recibió por su cuenta). Cierra con una invitación a seguir explorando esa Guía si quiere profundizar en su autoconocimiento.
+
+Formato y estilo: párrafos cortos, con uno o dos títulos con ## si ayuda; sin tablas. No uses números, notas, puntajes ni escalas. No asumas el género de la persona: evita adjetivos con género (di "tienes una gran capacidad", no "eres muy bueno/buena").
 
 IMPORTANTE: solo tienes los aspectos de la lista. No tienes ni debes mencionar infancia, pasado, estabilidad emocional, felicidad, dependencia, sanación, frustración, sentido de pertenencia ni ningún tema psicológico o de vida personal — esa información existe pero es privada y nunca te fue entregada. No la inventes ni sugieras que existe.`;
 
@@ -57,7 +61,7 @@ function listaParaInforme(aspectos: AspectoSeguro[]): string {
 async function pedirInforme(system: string, listaAspectos: string): Promise<string> {
   const respuesta = await clienteClaude().messages.create({
     model: 'claude-sonnet-5',
-    max_tokens: 900,
+    max_tokens: 1500,
     system,
     messages: [{ role: 'user', content: `Esquema del Ser (descriptivo, sin nota):\n${listaAspectos}` }],
   });
