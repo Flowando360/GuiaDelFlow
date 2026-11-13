@@ -5198,7 +5198,11 @@ export type Database = {
           guia_del_flow_id: string
           id: string
           nota: string | null
-          puntaje: number
+          descripcion: string | null
+          aprovechar: string | null
+          acompanar: string | null
+          enfoque: string | null
+          puntaje: number | null
           updated_at: string
         }
         Insert: {
@@ -5207,7 +5211,11 @@ export type Database = {
           guia_del_flow_id: string
           id?: string
           nota?: string | null
-          puntaje: number
+          descripcion?: string | null
+          aprovechar?: string | null
+          acompanar?: string | null
+          enfoque?: string | null
+          puntaje?: number | null
           updated_at?: string
         }
         Update: {
@@ -5216,7 +5224,11 @@ export type Database = {
           guia_del_flow_id?: string
           id?: string
           nota?: string | null
-          puntaje?: number
+          descripcion?: string | null
+          aprovechar?: string | null
+          acompanar?: string | null
+          enfoque?: string | null
+          puntaje?: number | null
           updated_at?: string
         }
         Relationships: [
